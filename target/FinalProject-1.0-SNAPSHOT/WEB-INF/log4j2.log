@@ -1,0 +1,216 @@
+04:40:02.774 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+04:40:19.668 [http-nio-8080-exec-7] TRACE - commandName ==> login
+04:40:19.674 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@51c03083
+04:40:19.681 [http-nio-8080-exec-7] TRACE - login ==> jhsgd
+04:40:19.681 [http-nio-8080-exec-7] TRACE - password ==> 
+04:40:31.847 [http-nio-8080-exec-2] TRACE - commandName ==> login
+04:40:31.847 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@51c03083
+04:40:31.847 [http-nio-8080-exec-2] TRACE - login ==> admin
+04:40:31.848 [http-nio-8080-exec-2] TRACE - password ==> admin
+04:56:53.546 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+04:57:00.154 [http-nio-8080-exec-5] TRACE - commandName ==> login
+04:57:00.160 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4901cb57
+04:57:00.168 [http-nio-8080-exec-5] TRACE - login ==> admin
+04:57:00.169 [http-nio-8080-exec-5] TRACE - password ==> hh
+04:57:10.258 [http-nio-8080-exec-9] TRACE - commandName ==> login
+04:57:10.259 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4901cb57
+04:57:10.259 [http-nio-8080-exec-9] TRACE - login ==> admin
+04:57:10.259 [http-nio-8080-exec-9] TRACE - password ==> admin
+05:01:10.479 [RMI TCP Connection(5)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+05:01:20.474 [http-nio-8080-exec-6] TRACE - commandName ==> login
+05:01:20.480 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4d5562fc
+05:01:20.493 [http-nio-8080-exec-6] TRACE - login ==> admin
+05:01:21.147 [http-nio-8080-exec-6] TRACE - Logged as admin successfully
+14:25:11.422 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+14:25:22.213 [http-nio-8080-exec-8] TRACE - commandName ==> login
+14:25:22.219 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@5bb77f42
+14:25:22.228 [http-nio-8080-exec-8] TRACE - login ==> admin
+14:25:22.927 [http-nio-8080-exec-8] TRACE - Logged successfully as null
+14:25:22.927 [http-nio-8080-exec-8] TRACE - Login stored in session
+14:27:01.908 [RMI TCP Connection(5)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+14:27:12.107 [http-nio-8080-exec-6] TRACE - commandName ==> login
+14:27:12.113 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@468b9f79
+14:27:12.122 [http-nio-8080-exec-6] TRACE - login ==> admin
+14:27:12.777 [http-nio-8080-exec-6] TRACE - Logged successfully as null
+14:27:12.778 [http-nio-8080-exec-6] TRACE - Login stored in session
+14:28:11.891 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+14:28:21.477 [http-nio-8080-exec-6] TRACE - commandName ==> login
+14:28:21.483 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6d198718
+14:28:21.492 [http-nio-8080-exec-6] TRACE - login ==> admin
+14:28:22.123 [http-nio-8080-exec-6] TRACE - Logged successfully as admin
+14:28:22.124 [http-nio-8080-exec-6] TRACE - Login stored in session
+14:28:44.967 [http-nio-8080-exec-10] TRACE - commandName ==> login
+14:28:44.968 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6d198718
+14:28:44.969 [http-nio-8080-exec-10] TRACE - login ==> jhgj
+14:28:44.973 [http-nio-8080-exec-10] TRACE - Login stored in session
+14:29:15.120 [http-nio-8080-exec-6] TRACE - commandName ==> login
+14:29:15.121 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6d198718
+14:29:15.122 [http-nio-8080-exec-6] TRACE - login ==> admin
+14:29:15.125 [http-nio-8080-exec-6] TRACE - Logged successfully as admin
+14:29:15.126 [http-nio-8080-exec-6] TRACE - Login stored in session
+14:31:34.305 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+14:31:42.028 [http-nio-8080-exec-4] TRACE - commandName ==> login
+14:31:42.034 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@26c62ced
+14:31:42.043 [http-nio-8080-exec-4] TRACE - login ==> jhhjhjhj
+14:31:42.671 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='jhhjhjhj', password='72B289EC78E0A928C565480A435453E30ACB92EDDB3B78FF168B28737CF6A849', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+14:31:42.671 [http-nio-8080-exec-4] TRACE - User from DB ==>null
+14:31:42.671 [http-nio-8080-exec-4] TRACE - Login stored in session
+14:32:18.656 [http-nio-8080-exec-8] TRACE - commandName ==> login
+14:32:18.657 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@26c62ced
+14:32:18.658 [http-nio-8080-exec-8] TRACE - login ==> admin
+14:32:18.661 [http-nio-8080-exec-8] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+14:32:18.662 [http-nio-8080-exec-8] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+14:32:18.662 [http-nio-8080-exec-8] TRACE - Logged successfully as admin
+14:32:18.663 [http-nio-8080-exec-8] TRACE - Login stored in session
+14:36:38.125 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+14:36:48.273 [http-nio-8080-exec-6] TRACE - commandName ==> login
+14:36:48.279 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7e7c216a
+14:36:48.287 [http-nio-8080-exec-6] TRACE - login ==> admin
+14:36:48.928 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+14:36:48.928 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+14:36:48.928 [http-nio-8080-exec-6] TRACE - Logged successfully as admin
+14:36:48.929 [http-nio-8080-exec-6] TRACE - Login stored in session
+14:36:48.929 [http-nio-8080-exec-6] TRACE - User role ==> USER
+14:41:10.409 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+14:41:22.086 [http-nio-8080-exec-6] TRACE - commandName ==> login
+14:41:22.092 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3931f93b
+14:41:22.101 [http-nio-8080-exec-6] TRACE - login ==> admin
+14:50:21.876 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+14:50:47.093 [http-nio-8080-exec-6] TRACE - commandName ==> login
+14:50:47.098 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@493ae075
+14:50:47.107 [http-nio-8080-exec-6] TRACE - login ==> admin
+14:50:47.774 [http-nio-8080-exec-6] DEBUG - lang == >adminrole ==>admin
+14:56:55.755 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+14:57:04.965 [http-nio-8080-exec-6] TRACE - commandName ==> login
+14:57:04.971 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@2f54c963
+14:57:04.980 [http-nio-8080-exec-6] TRACE - login ==> admin
+14:57:05.615 [http-nio-8080-exec-6] DEBUG - lang == >ru role ==>admin
+15:00:36.507 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+15:00:44.562 [http-nio-8080-exec-4] TRACE - commandName ==> login
+15:00:44.568 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@976d07
+15:00:44.577 [http-nio-8080-exec-4] TRACE - login ==> admin
+15:00:45.233 [http-nio-8080-exec-4] DEBUG - lang == >ru role ==>admin
+15:01:15.356 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+15:01:18.446 [http-nio-8080-exec-7] TRACE - commandName ==> login
+15:01:18.450 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6381fb8
+15:01:18.458 [http-nio-8080-exec-7] TRACE - login ==> 
+15:01:19.105 [http-nio-8080-exec-7] TRACE - Current user ==>User{login='', password='E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:01:19.105 [http-nio-8080-exec-7] TRACE - User from DB ==>null
+15:01:19.105 [http-nio-8080-exec-7] TRACE - Login stored in session
+15:01:28.238 [http-nio-8080-exec-1] TRACE - commandName ==> login
+15:01:28.238 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6381fb8
+15:01:28.239 [http-nio-8080-exec-1] TRACE - login ==> hkhjkjh
+15:01:28.243 [http-nio-8080-exec-1] TRACE - Current user ==>User{login='hkhjkjh', password='E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:01:28.244 [http-nio-8080-exec-1] TRACE - User from DB ==>null
+15:01:28.244 [http-nio-8080-exec-1] TRACE - Login stored in session
+15:01:36.060 [http-nio-8080-exec-3] TRACE - commandName ==> login
+15:01:36.060 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6381fb8
+15:01:36.061 [http-nio-8080-exec-3] TRACE - login ==> admin
+15:01:36.064 [http-nio-8080-exec-3] DEBUG - lang == >ru role ==>admin
+15:09:59.581 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+15:10:08.021 [http-nio-8080-exec-6] TRACE - commandName ==> login
+15:10:08.027 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3a8239de
+15:10:08.037 [http-nio-8080-exec-6] TRACE - login ==> admin
+15:10:08.676 [http-nio-8080-exec-6] DEBUG - lang == >RU role ==>admin
+15:10:08.678 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:10:08.678 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:10:08.678 [http-nio-8080-exec-6] TRACE - Logged successfully as admin
+15:10:08.679 [http-nio-8080-exec-6] TRACE - Login stored in session
+15:10:08.679 [http-nio-8080-exec-6] TRACE - User role ==> USER
+15:29:24.365 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+15:29:29.566 [http-nio-8080-exec-4] TRACE - commandName ==> login
+15:29:29.571 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3f28fac3
+15:29:29.580 [http-nio-8080-exec-4] TRACE - login ==> jh
+15:29:30.224 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='jh', password='E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:29:30.224 [http-nio-8080-exec-4] TRACE - User from DB ==>null
+15:29:30.225 [http-nio-8080-exec-4] TRACE - Login stored in session
+15:29:39.256 [http-nio-8080-exec-8] TRACE - commandName ==> login
+15:29:39.256 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3f28fac3
+15:29:39.257 [http-nio-8080-exec-8] TRACE - login ==> admin
+15:29:39.262 [http-nio-8080-exec-8] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:29:39.262 [http-nio-8080-exec-8] TRACE - Current user ==>User{login='admin', password='E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:29:39.263 [http-nio-8080-exec-8] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:29:39.263 [http-nio-8080-exec-8] TRACE - Login stored in session
+15:29:44.832 [http-nio-8080-exec-10] TRACE - commandName ==> login
+15:29:44.833 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3f28fac3
+15:29:44.834 [http-nio-8080-exec-10] TRACE - login ==> admin
+15:29:44.837 [http-nio-8080-exec-10] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:29:44.837 [http-nio-8080-exec-10] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:29:44.838 [http-nio-8080-exec-10] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:29:44.838 [http-nio-8080-exec-10] TRACE - Logged successfully as admin
+15:29:44.839 [http-nio-8080-exec-10] TRACE - Login stored in session
+15:29:44.839 [http-nio-8080-exec-10] TRACE - User role ==> ADMIN
+15:39:09.941 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+15:39:18.725 [http-nio-8080-exec-6] TRACE - commandName ==> login
+15:39:18.731 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@50d92310
+15:39:18.740 [http-nio-8080-exec-6] TRACE - login ==> admin
+15:39:19.386 [http-nio-8080-exec-6] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:39:19.387 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:39:19.387 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:39:19.387 [http-nio-8080-exec-6] TRACE - Logged successfully as admin
+15:39:19.388 [http-nio-8080-exec-6] TRACE - Login stored in session
+15:39:19.388 [http-nio-8080-exec-6] TRACE - User role ==> ADMIN
+15:49:53.537 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+15:49:59.420 [http-nio-8080-exec-7] TRACE - commandName ==> login
+15:49:59.425 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3f28fac3
+15:49:59.433 [http-nio-8080-exec-7] TRACE - login ==> khj
+15:50:00.092 [http-nio-8080-exec-7] TRACE - Current user ==>User{login='khj', password='E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:50:00.093 [http-nio-8080-exec-7] TRACE - User from DB ==>null
+15:50:00.093 [http-nio-8080-exec-7] TRACE - Login failed
+15:50:09.889 [http-nio-8080-exec-1] TRACE - commandName ==> login
+15:50:09.890 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3f28fac3
+15:50:09.891 [http-nio-8080-exec-1] TRACE - login ==> admin
+15:50:09.896 [http-nio-8080-exec-1] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:50:09.896 [http-nio-8080-exec-1] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:50:09.896 [http-nio-8080-exec-1] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:50:09.897 [http-nio-8080-exec-1] TRACE - Logged successfully as admin
+15:50:09.897 [http-nio-8080-exec-1] TRACE - Login stored in session
+15:50:09.897 [http-nio-8080-exec-1] TRACE - User role ==> ADMIN
+15:50:22.676 [http-nio-8080-exec-5] TRACE - commandName ==> login
+15:50:22.676 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3f28fac3
+15:50:22.676 [http-nio-8080-exec-5] TRACE - login ==> user1
+15:50:22.679 [http-nio-8080-exec-5] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:50:22.680 [http-nio-8080-exec-5] TRACE - Current user ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:50:22.680 [http-nio-8080-exec-5] TRACE - User from DB ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:50:22.680 [http-nio-8080-exec-5] TRACE - Logged successfully as user1
+15:50:22.680 [http-nio-8080-exec-5] TRACE - Login stored in session
+15:50:22.681 [http-nio-8080-exec-5] TRACE - User role ==> USER
+15:51:57.524 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+15:52:12.648 [http-nio-8080-exec-6] TRACE - commandName ==> login
+15:52:12.653 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@2e388ad8
+15:52:12.662 [http-nio-8080-exec-6] TRACE - login ==> jkjh
+15:52:13.295 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='jkjh', password='4C925A596A88B0A832EE943E6527B50226BEC5E87AF06E33D687E5EF8058427E', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:52:13.296 [http-nio-8080-exec-6] TRACE - User from DB ==>null
+15:52:13.296 [http-nio-8080-exec-6] TRACE - Login failed
+15:52:30.190 [http-nio-8080-exec-10] TRACE - commandName ==> login
+15:52:30.190 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@2e388ad8
+15:52:30.191 [http-nio-8080-exec-10] TRACE - login ==> admin
+15:52:30.196 [http-nio-8080-exec-10] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:52:30.196 [http-nio-8080-exec-10] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:52:30.197 [http-nio-8080-exec-10] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:52:30.197 [http-nio-8080-exec-10] TRACE - Logged successfully as admin
+15:52:30.198 [http-nio-8080-exec-10] TRACE - Login stored in session
+15:52:30.198 [http-nio-8080-exec-10] TRACE - User role ==> ADMIN
+15:53:15.827 [http-nio-8080-exec-6] TRACE - commandName ==> login
+15:53:15.827 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@2e388ad8
+15:53:15.829 [http-nio-8080-exec-6] TRACE - login ==> user1
+15:53:15.831 [http-nio-8080-exec-6] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:53:15.832 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:53:15.832 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:53:15.832 [http-nio-8080-exec-6] TRACE - Logged successfully as user1
+15:53:15.832 [http-nio-8080-exec-6] TRACE - Login stored in session
+15:53:15.833 [http-nio-8080-exec-6] TRACE - User role ==> USER
+15:53:49.110 [http-nio-8080-exec-10] TRACE - commandName ==> login
+15:53:49.111 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@2e388ad8
+15:53:49.112 [http-nio-8080-exec-10] TRACE - login ==> user1
+15:53:49.114 [http-nio-8080-exec-10] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:53:49.115 [http-nio-8080-exec-10] TRACE - Current user ==>User{login='user1', password='B7B6CE0CF64776028E5ADD917BACE6079DF2E83E073257A54883D8AD315350AA', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:53:49.115 [http-nio-8080-exec-10] TRACE - User from DB ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:53:49.115 [http-nio-8080-exec-10] TRACE - Login failed
+15:53:55.514 [http-nio-8080-exec-3] TRACE - commandName ==> login
+15:53:55.514 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@2e388ad8
+15:53:55.515 [http-nio-8080-exec-3] TRACE - login ==> admin
+15:53:55.517 [http-nio-8080-exec-3] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:53:55.518 [http-nio-8080-exec-3] TRACE - Current user ==>User{login='admin', password='B7B6CE0CF64776028E5ADD917BACE6079DF2E83E073257A54883D8AD315350AA', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+15:53:55.518 [http-nio-8080-exec-3] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+15:53:55.518 [http-nio-8080-exec-3] TRACE - Login failed
