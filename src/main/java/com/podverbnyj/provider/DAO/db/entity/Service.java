@@ -11,6 +11,7 @@ public class Service implements Serializable {
         this.titleRu = titleRu;
         this.titleEn = titleEn;
     }
+    public Service(){}
 
     public int getId() {
         return id;

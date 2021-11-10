@@ -7,13 +7,17 @@ public class Tariff implements Serializable {
     private String nameRu;
     private String nameEn;
     private double price;
-    private int group_id;
+    private int service_id;
 
     public Tariff(String nameRu, String nameEn, double price) {
         this.nameRu = nameRu;
         this.nameEn = nameEn;
         this.price = price;
     }
+
+    public Tariff (){}
+
+
 
     public int getId() {
         return id;
@@ -47,12 +51,12 @@ public class Tariff implements Serializable {
         this.price = price;
     }
 
-    public int getGroup_id() {
-        return group_id;
+    public int getService_id() {
+        return service_id;
     }
 
-    public void setGroup_id(int group_id) {
-        this.group_id = group_id;
+    public void setService_id(int service_id) {
+        this.service_id = service_id;
     }
 
 
@@ -64,7 +68,7 @@ public class Tariff implements Serializable {
                 ", nameRu='" + nameRu + '\'' +
                 ", nameEn='" + nameEn + '\'' +
                 ", price=" + price +
-                ", group_id=" + group_id +
+                ", service_id=" + service_id +
                 '}';
     }
 }

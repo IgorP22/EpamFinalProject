@@ -92,8 +92,8 @@ public class ServiceDAO implements AbstractDAO<Service>{
         try {
             return serviceDBManager.delete(con, service);
         }catch (SQLException ex) {
-            log.error("Can't delete user ==> " + service.getId(), ex);
-            throw new DBException("Can't delete user ==> " + service.getId());
+            log.error("Can't delete service ==> " + service.getId(), ex);
+            throw new DBException("Can't delete service ==> " + service.getId());
         } finally {
             serviceDBManager.close(con);
         }

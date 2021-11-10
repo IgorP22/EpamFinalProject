@@ -122,11 +122,10 @@ public class ServiceDBManager {
     }
 
     private Service getService(ResultSet rs) throws SQLException {
-        Service service = null;
+        Service service = new Service();
 
-        service.setId(rs.getInt("service_id"));
-        service.setTitleRu(rs.getString("service_id"));
-        service.setTitleEn(rs.getString("service_id"));
+        service.setTitleRu(rs.getString("title_ru"));
+        service.setTitleEn(rs.getString("title_en"));
 
         log.trace("Service created ==> " + service);
         return service;

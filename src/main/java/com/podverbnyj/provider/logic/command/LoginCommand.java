@@ -2,8 +2,12 @@ package com.podverbnyj.provider.logic.command;
 
 import javax.servlet.http.*;
 
+import com.podverbnyj.provider.DAO.ServiceDAO;
+import com.podverbnyj.provider.DAO.TariffDAO;
 import com.podverbnyj.provider.DAO.UserDAO;
 import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.DAO.db.entity.Service;
+import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import com.podverbnyj.provider.DAO.db.entity.User;
 import com.podverbnyj.provider.DAO.db.entity.constant.Language;
 import com.podverbnyj.provider.DAO.db.entity.constant.Role;
@@ -11,12 +15,16 @@ import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import com.podverbnyj.provider.utils.HashPassword;
 import org.apache.logging.log4j.*;
 
+import java.util.ArrayList;
+
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
 public class LoginCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(LoginCommand.class);
     private static final UserDAO userDAO = UserDAO.getInstance();
+    private static final ServiceDAO serviceDAO = ServiceDAO.getInstance();
+    private static final TariffDAO tariffDAO = TariffDAO.getInstance();
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
@@ -30,6 +38,41 @@ public class LoginCommand implements Command {
         User user = userDAO.getByName(login);
         log.trace("Current user ==>" + currentUser);
         log.trace("User from DB ==>" + user);
+
+//        ArrayList<Service> services = serviceDAO.findAll();
+//        log.debug("List of services ==> "+services);
+
+//        ArrayList<Tariff> tariffs = tariffDAO.findAll();
+//        log.debug("List of tariffs ==> "+tariffs);
+
+//        ArrayList<User> users = userDAO.findAll();
+//        log.debug("List of users ==> " + users);
+//
+//        Tariff tariff = tariffDAO.getById(1);
+//        Service service = serviceDAO.getById(1);
+//
+//        tariff.setId(9);
+//        tariff.setNameRu("IPTV7");
+//        tariff.setNameEn("IPTV7");
+//        tariff.setPrice(150);
+//        tariff.setService_id(2);
+//        tariffDAO.delete(tariff);
+//
+//        service.setId(5);
+//        service.setTitleRu("Новый 545");
+//        service.setTitleEn("New 5454");
+//        serviceDAO.delete(service);
+
+
+
+
+
+
+//        log.debug("Tariff by id ==> " + tariff);
+//        log.debug("Service by id ==> " + service);
+
+
+
 
 //        user.setLogin("user2");
 //        user.setPassword("user2");

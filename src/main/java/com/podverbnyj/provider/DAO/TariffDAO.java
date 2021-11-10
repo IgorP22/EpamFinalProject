@@ -2,7 +2,7 @@ package com.podverbnyj.provider.DAO;
 
 import com.podverbnyj.provider.DAO.db.DBException;
 import com.podverbnyj.provider.DAO.db.DBUtils;
-import com.podverbnyj.provider.DAO.db.TafiffDBManager;
+import com.podverbnyj.provider.DAO.db.TariffDBManager;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +16,7 @@ public class TariffDAO implements AbstractDAO<Tariff>{
 
     private static final Logger log = LogManager.getLogger(TariffDAO.class);
     private static final DBUtils dbUtils = DBUtils.getInstance();
-    private static final TafiffDBManager tafiffDBManager = TafiffDBManager.getInstance();
+    private static final TariffDBManager tariffDBManager = TariffDBManager.getInstance();
 
     static TariffDAO instance;
 
@@ -36,12 +36,12 @@ public class TariffDAO implements AbstractDAO<Tariff>{
     public ArrayList<Tariff> findAll() throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return tafiffDBManager.findAll(con);
+            return tariffDBManager.findAll(con);
         } catch (SQLException ex) {
             log.error("Can't receive list of tariffs from DB", ex);
             throw new DBException("Can't receive list of tariffs from DB");
         } finally {
-            tafiffDBManager.close(con);
+            tariffDBManager.close(con);
         }
     }
 
@@ -49,12 +49,12 @@ public class TariffDAO implements AbstractDAO<Tariff>{
     public boolean create(Tariff tariff) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return tafiffDBManager.create(con, tariff);
+            return tariffDBManager.create(con, tariff);
         } catch (SQLException ex) {
             log.error("Can't create tariff ==> " + tariff, ex);
             throw new DBException("Can't create tariff ==> " + tariff);
         } finally {
-            tafiffDBManager.close(con);
+            tariffDBManager.close(con);
         }
     }
 
@@ -63,12 +63,12 @@ public class TariffDAO implements AbstractDAO<Tariff>{
     public Tariff getById(int id) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return tafiffDBManager.getById(con, id);
+            return tariffDBManager.getById(con, id);
         } catch (SQLException ex) {
             log.error("Can't get tariff by ID ==> " + id, ex);
             throw new DBException("Can't create tariff by ID ==> " + id);
         } finally {
-            tafiffDBManager.close(con);
+            tariffDBManager.close(con);
         }
     }
 
@@ -77,12 +77,12 @@ public class TariffDAO implements AbstractDAO<Tariff>{
     public boolean update(Tariff tariff) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return tafiffDBManager.update(con, tariff);
+            return tariffDBManager.update(con, tariff);
         }catch (SQLException ex) {
-            log.error("Can't update service ==> " + tariff.getId(), ex);
-            throw new DBException("Can't update service ==> " + tariff.getId());
+            log.error("Can't update tariff ==> " + tariff.getId(), ex);
+            throw new DBException("Can't update tariff ==> " + tariff.getId());
         } finally {
-            tafiffDBManager.close(con);
+            tariffDBManager.close(con);
         }
     }
 
@@ -90,12 +90,12 @@ public class TariffDAO implements AbstractDAO<Tariff>{
     public boolean delete(Tariff tariff) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return tafiffDBManager.delete(con, tariff);
+            return tariffDBManager.delete(con, tariff);
         }catch (SQLException ex) {
-            log.error("Can't delete user ==> " + tariff.getId(), ex);
-            throw new DBException("Can't delete user ==> " + tariff.getId());
+            log.error("Can't delete tariff ==> " + tariff.getId(), ex);
+            throw new DBException("Can't delete tariff ==> " + tariff.getId());
         } finally {
-            tafiffDBManager.close(con);
+            tariffDBManager.close(con);
         }
     }
 }

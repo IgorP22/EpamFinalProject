@@ -1,6 +1,5 @@
 package com.podverbnyj.provider.DAO.db;
 
-import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,35 +13,35 @@ import java.util.ArrayList;
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.TariffConstants.*;
 
 
-public class TafiffDBManager {
+public class TariffDBManager {
 
-    private static final Logger log = LogManager.getLogger(TafiffDBManager.class);
+    private static final Logger log = LogManager.getLogger(TariffDBManager.class);
 
 
-    static TafiffDBManager instance;
+    static TariffDBManager instance;
 
-    public static synchronized TafiffDBManager getInstance() {
+    public static synchronized TariffDBManager getInstance() {
         if (instance == null) {
-            instance = new TafiffDBManager();
+            instance = new TariffDBManager();
         }
         return instance;
     }
 
-    private TafiffDBManager() {
+    private TariffDBManager() {
         // no op
     }
 
     public ArrayList<Tariff> findAll(Connection con) throws SQLException {
-        ArrayList<Tariff> services = new ArrayList<>();
+        ArrayList<Tariff> tariffs = new ArrayList<>();
         ResultSet rs = null;
         Tariff tariff;
         try {
             rs = con.createStatement().executeQuery(FIND_ALL_TARIFFS);
             while (rs.next()) {
                 tariff = getTariff(rs);
-                services.add(tariff);
+                tariffs.add(tariff);
             }
-            return services;
+            return tariffs;
         } finally {
             close(rs);
         }
@@ -120,16 +119,17 @@ public class TafiffDBManager {
         ps.setString(index++, tariff.getNameEn());
         ps.setString(index++, tariff.getNameRu());
         ps.setDouble(index++, tariff.getPrice());
-        ps.setInt(index++, tariff.getGroup_id());
+        ps.setInt(index++, tariff.getService_id());
     }
 
     private Tariff getTariff(ResultSet rs) throws SQLException {
-        Tariff tariff = null;
+        Tariff tariff = new Tariff();
 
+        tariff.setId(rs.getInt("tariff_id"));
         tariff.setNameRu(rs.getString("name_ru"));
         tariff.setNameEn(rs.getString("name_en"));
         tariff.setPrice(rs.getDouble("price"));
-        tariff.setGroup_id(rs.getInt("service"));
+        tariff.setService_id(rs.getInt("service_id"));
 
         log.trace("Tariff created ==> " + tariff);
         return tariff;
