@@ -1,4 +1,4 @@
-package com.podverbnyj.provider.urils;
+package com.podverbnyj.provider.utils;
 
 import com.podverbnyj.provider.logic.command.LoginCommand;
 import org.apache.logging.log4j.*;

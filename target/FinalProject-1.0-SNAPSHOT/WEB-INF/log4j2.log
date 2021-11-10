@@ -214,3 +214,684 @@
 15:53:55.518 [http-nio-8080-exec-3] TRACE - Current user ==>User{login='admin', password='B7B6CE0CF64776028E5ADD917BACE6079DF2E83E073257A54883D8AD315350AA', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
 15:53:55.518 [http-nio-8080-exec-3] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
 15:53:55.518 [http-nio-8080-exec-3] TRACE - Login failed
+19:59:08.635 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+19:59:18.607 [http-nio-8080-exec-6] TRACE - commandName ==> login
+19:59:18.613 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@662554fb
+19:59:18.627 [http-nio-8080-exec-6] TRACE - login ==> admin
+19:59:19.306 [http-nio-8080-exec-6] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+19:59:19.307 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+19:59:19.308 [http-nio-8080-exec-6] TRACE - User from DB ==>null
+19:59:19.308 [http-nio-8080-exec-6] TRACE - Login failed, username and password don't matches
+20:01:21.590 [http-nio-8080-exec-2] TRACE - commandName ==> login
+20:01:21.591 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@662554fb
+20:01:21.592 [http-nio-8080-exec-2] TRACE - login ==> user1
+20:01:21.596 [http-nio-8080-exec-2] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+20:01:21.597 [http-nio-8080-exec-2] TRACE - Current user ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+20:01:21.597 [http-nio-8080-exec-2] TRACE - User from DB ==>null
+20:01:21.597 [http-nio-8080-exec-2] TRACE - Login failed, username and password don't matches
+20:25:19.154 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+20:25:25.293 [http-nio-8080-exec-4] TRACE - commandName ==> login
+20:25:25.299 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@1d3bf11
+20:25:25.307 [http-nio-8080-exec-4] TRACE - login ==> hgffh
+20:25:26.112 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='hgffh', password='E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+20:25:26.112 [http-nio-8080-exec-4] TRACE - User from DB ==>null
+20:25:26.112 [http-nio-8080-exec-4] TRACE - Login failed, username and password don't matches
+20:25:37.296 [http-nio-8080-exec-9] TRACE - commandName ==> login
+20:25:37.296 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@1d3bf11
+20:25:37.297 [http-nio-8080-exec-9] TRACE - login ==> admin
+20:25:37.302 [http-nio-8080-exec-9] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+20:25:37.302 [http-nio-8080-exec-9] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+20:25:37.302 [http-nio-8080-exec-9] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+20:25:37.303 [http-nio-8080-exec-9] TRACE - Logged successfully as admin
+20:25:37.303 [http-nio-8080-exec-9] TRACE - Login stored in session
+20:25:37.303 [http-nio-8080-exec-9] TRACE - User role ==> ADMIN
+20:25:50.252 [http-nio-8080-exec-4] TRACE - commandName ==> login
+20:25:50.252 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@1d3bf11
+20:25:50.253 [http-nio-8080-exec-4] TRACE - login ==> user1
+20:25:50.255 [http-nio-8080-exec-4] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+20:25:50.255 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+20:25:50.256 [http-nio-8080-exec-4] TRACE - User from DB ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+20:25:50.256 [http-nio-8080-exec-4] TRACE - Logged successfully as user1
+20:25:50.256 [http-nio-8080-exec-4] TRACE - Login stored in session
+20:25:50.256 [http-nio-8080-exec-4] TRACE - User role ==> USER
+21:45:05.666 [http-nio-8080-exec-1] TRACE - commandName ==> login
+21:45:05.667 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@1d3bf11
+21:45:05.668 [http-nio-8080-exec-1] TRACE - login ==> user1
+21:45:05.673 [http-nio-8080-exec-1] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+21:45:05.673 [http-nio-8080-exec-1] TRACE - Current user ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+21:45:05.674 [http-nio-8080-exec-1] TRACE - User from DB ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+21:45:05.674 [http-nio-8080-exec-1] TRACE - Logged successfully as user1
+21:45:05.674 [http-nio-8080-exec-1] TRACE - Login stored in session
+21:45:05.674 [http-nio-8080-exec-1] TRACE - User role ==> USER
+22:35:55.423 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+22:35:58.887 [http-nio-8080-exec-4] TRACE - commandName ==> login
+22:35:58.900 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@68bb5962
+22:35:58.908 [http-nio-8080-exec-4] TRACE - login ==> 
+22:35:59.591 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='', password='E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+22:35:59.592 [http-nio-8080-exec-4] TRACE - User from DB ==>null
+22:35:59.595 [http-nio-8080-exec-4] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+22:35:59.596 [http-nio-8080-exec-4] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+22:35:59.596 [http-nio-8080-exec-4] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+22:35:59.597 [http-nio-8080-exec-4] TRACE - Login failed, username and password don't matches
+00:53:09.581 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+00:53:23.735 [http-nio-8080-exec-7] TRACE - commandName ==> login
+00:53:23.751 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7acffcbe
+00:53:23.761 [http-nio-8080-exec-7] TRACE - login ==> user2
+00:53:24.429 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:53:24.430 [http-nio-8080-exec-7] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:53:24.431 [http-nio-8080-exec-7] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:53:24.447 [http-nio-8080-exec-7] ERROR - Can't delete user ==> user2
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: 'admin'
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserDBManager.delete(UserDBManager.java:97) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserDAO.delete(UserDAO.java:98) [classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:34) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+00:53:24.455 [http-nio-8080-exec-7] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't delete user ==> user2
+	at com.podverbnyj.provider.DAO.UserDAO.delete(UserDAO.java:101) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:34) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+00:57:16.919 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+00:57:26.538 [http-nio-8080-exec-5] TRACE - commandName ==> login
+00:57:26.552 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@34a664d4
+00:57:26.561 [http-nio-8080-exec-5] TRACE - login ==> user2
+00:57:27.196 [http-nio-8080-exec-5] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:57:27.197 [http-nio-8080-exec-5] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:57:27.197 [http-nio-8080-exec-5] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:57:27.211 [http-nio-8080-exec-5] ERROR - Can't delete user ==> user2
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: 'admin'
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserDBManager.delete(UserDBManager.java:97) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserDAO.delete(UserDAO.java:98) [classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:35) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+00:57:27.218 [http-nio-8080-exec-5] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't delete user ==> user2
+	at com.podverbnyj.provider.DAO.UserDAO.delete(UserDAO.java:101) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:35) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:02:54.149 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:03:05.698 [http-nio-8080-exec-6] TRACE - commandName ==> login
+01:03:05.711 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@155e7a7
+01:03:05.721 [http-nio-8080-exec-6] TRACE - login ==> user2
+01:03:06.362 [http-nio-8080-exec-6] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:03:06.363 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:03:06.363 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:03:06.381 [http-nio-8080-exec-6] TRACE - Logged successfully as user2
+01:03:06.382 [http-nio-8080-exec-6] TRACE - Login stored in session
+01:03:06.382 [http-nio-8080-exec-6] TRACE - User role ==> USER
+01:06:51.269 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:07:00.764 [http-nio-8080-exec-6] TRACE - commandName ==> login
+01:07:00.777 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@155e7a7
+01:07:00.786 [http-nio-8080-exec-6] TRACE - login ==> user1
+01:07:01.433 [http-nio-8080-exec-6] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:07:01.434 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:07:01.434 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:07:01.457 [http-nio-8080-exec-6] TRACE - Login failed, username and password don't matches
+01:08:15.117 [http-nio-8080-exec-2] TRACE - commandName ==> login
+01:08:15.117 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@155e7a7
+01:08:15.118 [http-nio-8080-exec-2] TRACE - login ==> user1
+01:08:15.122 [http-nio-8080-exec-2] TRACE - User created ==> User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:08:15.123 [http-nio-8080-exec-2] TRACE - Current user ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:08:15.123 [http-nio-8080-exec-2] TRACE - User from DB ==>User{login='user1', password='0A041B9462CAA4A31BAC3567E0B6E6FD9100787DB2AB433D96F6D178CABFCE90', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:08:15.152 [http-nio-8080-exec-2] ERROR - Can't create user ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'user2' for key 'user.login_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserDBManager.create(UserDBManager.java:54) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserDAO.create(UserDAO.java:57) [classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:34) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:08:15.160 [http-nio-8080-exec-2] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't create user ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+	at com.podverbnyj.provider.DAO.UserDAO.create(UserDAO.java:60) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:34) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:12:13.960 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:12:20.519 [http-nio-8080-exec-4] TRACE - commandName ==> login
+01:12:20.535 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4ede10c9
+01:12:20.543 [http-nio-8080-exec-4] TRACE - login ==> user2
+01:12:21.189 [http-nio-8080-exec-4] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:12:21.190 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='user2', password='E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:12:21.190 [http-nio-8080-exec-4] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:12:21.196 [http-nio-8080-exec-4] ERROR - Can't update user ==> user2
+java.sql.SQLException: Parameter index out of range (12 > number of parameters, which is 11).
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1396) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1409) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.setInt(ClientPreparedStatement.java:1597) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:417) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:417) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserDBManager.update(UserDBManager.java:84) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserDAO.update(UserDAO.java:85) [classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:39) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:12:21.204 [http-nio-8080-exec-4] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't update user ==> user2
+	at com.podverbnyj.provider.DAO.UserDAO.update(UserDAO.java:88) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:39) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:15:31.400 [RMI TCP Connection(5)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:15:44.654 [http-nio-8080-exec-7] TRACE - commandName ==> login
+01:15:44.669 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7b4ca3cd
+01:15:44.678 [http-nio-8080-exec-7] TRACE - login ==> user2
+01:15:45.335 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:15:45.336 [http-nio-8080-exec-7] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:15:45.336 [http-nio-8080-exec-7] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:15:45.341 [http-nio-8080-exec-7] ERROR - Can't update user ==> user2
+java.sql.SQLException: Parameter index out of range (12 > number of parameters, which is 11).
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1396) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1409) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.setInt(ClientPreparedStatement.java:1597) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:417) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:417) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserDBManager.update(UserDBManager.java:84) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserDAO.update(UserDAO.java:85) [classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:39) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:15:45.349 [http-nio-8080-exec-7] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't update user ==> user2
+	at com.podverbnyj.provider.DAO.UserDAO.update(UserDAO.java:88) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:39) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:17:49.860 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:17:59.158 [http-nio-8080-exec-6] TRACE - commandName ==> login
+01:17:59.172 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@70ee29b9
+01:17:59.181 [http-nio-8080-exec-6] TRACE - login ==> user2
+01:17:59.814 [http-nio-8080-exec-6] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:17:59.815 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:17:59.816 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:17:59.834 [http-nio-8080-exec-6] ERROR - Can't update user ==> user2
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''login' = 'user2', 'password' = '6025D18FE48ABD45168528F18A82E265DD98D421A7084AA' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserDBManager.update(UserDBManager.java:85) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserDAO.update(UserDAO.java:85) [classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:39) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:17:59.841 [http-nio-8080-exec-6] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't update user ==> user2
+	at com.podverbnyj.provider.DAO.UserDAO.update(UserDAO.java:88) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:39) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:20:13.850 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:20:24.351 [http-nio-8080-exec-4] TRACE - commandName ==> login
+01:20:24.365 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7534d766
+01:20:24.376 [http-nio-8080-exec-4] TRACE - login ==> user2
+01:20:25.027 [http-nio-8080-exec-4] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:20:25.028 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:20:25.028 [http-nio-8080-exec-4] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:20:25.045 [http-nio-8080-exec-4] ERROR - Can't update user ==> user2
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''login' = 'user2', 'password' = '6025D18FE48ABD45168528F18A82E265DD98D421A7084AA' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserDBManager.update(UserDBManager.java:85) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserDAO.update(UserDAO.java:85) [classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:39) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:20:25.052 [http-nio-8080-exec-4] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't update user ==> user2
+	at com.podverbnyj.provider.DAO.UserDAO.update(UserDAO.java:88) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.LoginCommand.execute(LoginCommand.java:39) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+01:22:12.080 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:22:21.255 [http-nio-8080-exec-4] TRACE - commandName ==> login
+01:22:21.269 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@2af5db23
+01:22:21.278 [http-nio-8080-exec-4] TRACE - login ==> user2
+01:22:21.911 [http-nio-8080-exec-4] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:22:21.912 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:22:21.913 [http-nio-8080-exec-4] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:22:21.931 [http-nio-8080-exec-4] TRACE - Logged successfully as user2
+01:22:21.932 [http-nio-8080-exec-4] TRACE - Login stored in session
+01:22:21.932 [http-nio-8080-exec-4] TRACE - User role ==> USER
+01:30:32.621 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:30:43.180 [http-nio-8080-exec-6] TRACE - commandName ==> login
+01:30:43.194 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@16bc7ce2
+01:30:43.203 [http-nio-8080-exec-6] TRACE - login ==> user2
+01:30:43.848 [http-nio-8080-exec-6] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='Ivan', surname='Ivanov', phone='Ivanov', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+01:30:43.849 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:30:43.850 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='Ivan', surname='Ivanov', phone='Ivanov', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+01:30:43.863 [http-nio-8080-exec-6] TRACE - Login failed, username and password don't matches
+01:32:17.805 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:32:28.262 [http-nio-8080-exec-6] TRACE - commandName ==> login
+01:32:28.276 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@155e7a7
+01:32:28.286 [http-nio-8080-exec-6] TRACE - login ==> user3
+01:32:28.926 [http-nio-8080-exec-6] TRACE - User created ==> User{login='user3', password='5860FAF02B6BC6222BA5ACA523560F0E364CCD8B67BEE486FE8BF7C01D492CCB', email='email@email.email', name='Petr', surname='Petrov', phone='Petrov', balance=10.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:32:28.928 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='user3', password='5860FAF02B6BC6222BA5ACA523560F0E364CCD8B67BEE486FE8BF7C01D492CCB', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:32:28.928 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='user3', password='5860FAF02B6BC6222BA5ACA523560F0E364CCD8B67BEE486FE8BF7C01D492CCB', email='email@email.email', name='Petr', surname='Petrov', phone='Petrov', balance=10.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:32:28.944 [http-nio-8080-exec-6] TRACE - Logged successfully as user3
+01:32:28.945 [http-nio-8080-exec-6] TRACE - Login stored in session
+01:32:28.945 [http-nio-8080-exec-6] TRACE - User role ==> USER
+01:33:29.931 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:33:44.851 [http-nio-8080-exec-6] TRACE - commandName ==> login
+01:33:44.866 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@77c5342a
+01:33:44.875 [http-nio-8080-exec-6] TRACE - login ==> user3
+01:33:45.517 [http-nio-8080-exec-6] TRACE - User created ==> User{login='user3', password='5860FAF02B6BC6222BA5ACA523560F0E364CCD8B67BEE486FE8BF7C01D492CCB', email='email@email.email', name='Petr', surname='Petrov', phone='Petrov', balance=10.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:33:45.518 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='user3', password='5860FAF02B6BC6222BA5ACA523560F0E364CCD8B67BEE486FE8BF7C01D492CCB', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:33:45.518 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='user3', password='5860FAF02B6BC6222BA5ACA523560F0E364CCD8B67BEE486FE8BF7C01D492CCB', email='email@email.email', name='Petr', surname='Petrov', phone='Petrov', balance=10.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:33:45.542 [http-nio-8080-exec-6] TRACE - Login failed, username and password don't matches
+02:17:54.807 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:18:05.798 [http-nio-8080-exec-4] TRACE - commandName ==> login
+02:18:05.813 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@1393d2a9
+02:18:05.821 [http-nio-8080-exec-4] TRACE - login ==> admin
+02:18:06.446 [http-nio-8080-exec-4] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:18:06.446 [http-nio-8080-exec-4] TRACE - User from DB ==>null
+02:18:06.446 [http-nio-8080-exec-4] TRACE - Login failed, username and password don't matches
+02:20:50.448 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:21:00.018 [http-nio-8080-exec-7] TRACE - commandName ==> login
+02:21:00.031 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@2006b996
+02:21:00.040 [http-nio-8080-exec-7] TRACE - login ==> admin
+02:21:00.688 [http-nio-8080-exec-7] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:21:00.689 [http-nio-8080-exec-7] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:21:00.689 [http-nio-8080-exec-7] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:21:00.689 [http-nio-8080-exec-7] TRACE - Logged successfully as admin
+02:21:00.690 [http-nio-8080-exec-7] TRACE - Login stored in session
+02:21:00.690 [http-nio-8080-exec-7] TRACE - User role ==> ADMIN
+02:55:17.280 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:55:28.445 [http-nio-8080-exec-6] TRACE - commandName ==> login
+02:55:28.458 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3ec937b5
+02:55:28.470 [http-nio-8080-exec-6] TRACE - login ==> user2
+02:55:29.111 [http-nio-8080-exec-6] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='email@email.email', name='Ivan', surname='Ivanov', phone='Ivanov', balance=50.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:55:29.111 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:55:29.112 [http-nio-8080-exec-6] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='email@email.email', name='Ivan', surname='Ivanov', phone='Ivanov', balance=50.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:55:29.112 [http-nio-8080-exec-6] TRACE - Logged successfully as user2
+02:55:29.112 [http-nio-8080-exec-6] TRACE - Login stored in session
+02:55:29.113 [http-nio-8080-exec-6] TRACE - User role ==> USER
+03:19:36.220 [RMI TCP Connection(5)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+03:19:45.115 [http-nio-8080-exec-7] TRACE - commandName ==> login
+03:19:45.129 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7d3fa51e
+03:19:45.137 [http-nio-8080-exec-7] TRACE - login ==> admin
+03:19:45.777 [http-nio-8080-exec-7] TRACE - User created ==> User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:19:45.778 [http-nio-8080-exec-7] TRACE - Current user ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:19:45.779 [http-nio-8080-exec-7] TRACE - User from DB ==>User{login='admin', password='8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:19:45.779 [http-nio-8080-exec-7] TRACE - Logged successfully as admin
+03:19:45.780 [http-nio-8080-exec-7] TRACE - Login stored in session
+03:19:45.780 [http-nio-8080-exec-7] TRACE - User role ==> ADMIN
+03:19:59.140 [http-nio-8080-exec-9] TRACE - commandName ==> login
+03:19:59.140 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7d3fa51e
+03:19:59.141 [http-nio-8080-exec-9] TRACE - login ==> user2
+03:19:59.144 [http-nio-8080-exec-9] TRACE - User created ==> User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='email@email.email', name='Ivan', surname='Ivanov', phone='Ivanov', balance=50.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:19:59.145 [http-nio-8080-exec-9] TRACE - Current user ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:19:59.145 [http-nio-8080-exec-9] TRACE - User from DB ==>User{login='user2', password='6025D18FE48ABD45168528F18A82E265DD98D421A7084AA09F61B341703901A3', email='email@email.email', name='Ivan', surname='Ivanov', phone='Ivanov', balance=50.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:19:59.146 [http-nio-8080-exec-9] TRACE - Logged successfully as user2
+03:19:59.146 [http-nio-8080-exec-9] TRACE - Login stored in session
+03:19:59.146 [http-nio-8080-exec-9] TRACE - User role ==> USER

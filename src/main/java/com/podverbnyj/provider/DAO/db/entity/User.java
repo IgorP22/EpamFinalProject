@@ -11,6 +11,7 @@ import java.util.Objects;
 import static com.podverbnyj.provider.DAO.db.entity.constant.Language.*;
 import static com.podverbnyj.provider.DAO.db.entity.constant.Role.*;
 import static com.podverbnyj.provider.DAO.db.entity.constant.Status.*;
+import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
 
 public class User implements Serializable {
@@ -64,7 +65,7 @@ public class User implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = securePassword(password);
     }
 
     public String getEmail() {
@@ -131,7 +132,7 @@ public class User implements Serializable {
         this.notification = notification;
     }
 
-    public Status isStatus() {
+    public Status getStatus() {
         return status;
     }
 

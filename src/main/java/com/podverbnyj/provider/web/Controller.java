@@ -2,6 +2,7 @@ package com.podverbnyj.provider.web;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +26,8 @@ public class Controller extends HttpServlet {
         String address = "error.jsp";
         try {
             address = command.execute(req, resp);
-        } catch (DBException ex) {
+        } catch (DBException | SQLException ex) {
+            log.error("Error receiving address ",ex);
             req.setAttribute("ex", ex);
         }
         req.getRequestDispatcher(address).forward(req, resp);
@@ -41,7 +43,8 @@ public class Controller extends HttpServlet {
         String address = "error.jsp";
         try {
             address = command.execute(req, resp);
-        } catch (DBException ex) {
+        } catch (DBException | SQLException ex) {
+            log.error("Error receiving address ",ex);
             req.getSession().setAttribute("ex", ex);
         }
         resp.sendRedirect(address);

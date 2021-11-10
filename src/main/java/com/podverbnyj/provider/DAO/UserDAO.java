@@ -1,129 +1,120 @@
 package com.podverbnyj.provider.DAO;
 
+import com.podverbnyj.provider.DAO.db.DBException;
 import com.podverbnyj.provider.DAO.db.DBUtils;
+import com.podverbnyj.provider.DAO.db.UserDBManager;
 import com.podverbnyj.provider.DAO.db.entity.User;
-import com.podverbnyj.provider.DAO.db.entity.constant.Language;
-import com.podverbnyj.provider.DAO.db.entity.constant.Role;
-import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import org.apache.logging.log4j.*;
 
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import static com.podverbnyj.provider.DAO.db.SQLConstant.UserConstants.FIND_ALL_USERS;
-import static com.podverbnyj.provider.DAO.db.SQLConstant.UserConstants.GET_USER_BY_LOGIN;
+
+
 
 
 public class UserDAO implements AbstractDAO<User>{
 
     private static final Logger log = LogManager.getLogger(UserDAO.class);
+    private static final DBUtils dbUtils = DBUtils.getInstance();
+    private static final UserDBManager userDBManager = UserDBManager.getInstance();
+
+    static UserDAO instance;
+
+    public static synchronized UserDAO getInstance() {
+        if (instance == null) {
+            instance = new UserDAO();
+        }
+        return instance;
+    }
+
+    private UserDAO() {
+        // no op
+    }
 
 
     @Override
-    public ArrayList<User> findAll() throws SQLException {
-        ArrayList<User> users = new ArrayList<>();
-        Connection con = null;
-        ResultSet rs = null;
+    public ArrayList<User> findAll() throws DBException {
+        Connection con = dbUtils.getConnection();
         try {
-            con = DBUtils.getInstance().getConnection();
-            rs = con.createStatement().executeQuery(FIND_ALL_USERS);
-            while (rs.next()) {
-                User user = new User.UserBuilder(rs.getString(2),rs.getString(3))
-                        .setId(rs.getInt(1))
-                        .setEmail(rs.getString(4))
-                        .setName(rs.getString(5))
-                        .setSurname(rs.getString(6))
-                        .setPhone(rs.getString(7))
-                        .setBalance(rs.getDouble(8))
-                        .setLanguage(Language.valueOf(rs.getString(9)))
-                        .build();
-
-
-                users.add(user);
-            }
+            return userDBManager.findAll(con);
         } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        if (rs != null) {
-            rs.close();
-        }
-        con.close();
-        return users;
-    }
-
-    @Override
-    public boolean create(User entity) {
-        return false;
-    }
-
-    @Override
-    public User getByName(String name) {
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        User user = null;
-        con = DBUtils.getInstance().getConnection();
-        try {
-            ps = con.prepareStatement(GET_USER_BY_LOGIN);
-            ps.setString(1,name);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                user = new User.UserBuilder(
-                        rs.getString("login"),
-                        rs.getString("password"))
-                        .setId(rs.getInt("user_id"))
-                        .setEmail(rs.getString("email"))
-                        .setName(rs.getString("name"))
-                        .setSurname(rs.getString("surname"))
-                        .setPhone(rs.getString("phone"))
-                        .setBalance(rs.getDouble("balance"))
-                        .setLanguage(Language.valueOf(rs.getString("language")))
-                        .setRole(Role.valueOf(rs.getString("role")))
-                        .setNotification(rs.getInt("notification"))
-                        .setStatus(Status.valueOf(rs.getString("status")))
-                        .build();
-                log.trace("User created ==> "+user);
-            }
-            return user;
-        } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("Can't receive list of users from DB", ex);
+            throw new DBException("Can't receive list of users from DB");
         } finally {
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (ps != null) {
-                try {
-                    ps.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (con != null) {
-                try {
-                    con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            userDBManager.close(con);
         }
-        return null;
     }
 
     @Override
-    public boolean update(User entity) {
-        return false;
+    public boolean create(User user) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userDBManager.create(con, user);
+        } catch (SQLException ex) {
+            log.error("Can't create user ==> " + user, ex);
+            throw new DBException("Can't create user ==> " + user);
+        } finally {
+            userDBManager.close(con);
+        }
     }
 
     @Override
-    public boolean delete(User entity) {
-        return false;
+    public User getById(int id) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userDBManager.getById(con, id);
+        } catch (SQLException ex) {
+            log.error("Can't get user by ID ==> " + id, ex);
+            throw new DBException("Can't create user by ID ==> " + id);
+        } finally {
+            userDBManager.close(con);
+        }
+    }
+
+
+
+    public User getByName(String name) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userDBManager.getByName(con, name);
+        } catch (SQLException ex) {
+            log.error("Can't get user by name ==> " + name, ex);
+            throw new DBException("Can't create user by name ==> " + name);
+        } finally {
+            userDBManager.close(con);
+        }
+    }
+
+
+
+    @Override
+    public boolean update(User user) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userDBManager.update(con, user);
+        }catch (SQLException ex) {
+            log.error("Can't update user ==> " + user.getLogin(), ex);
+            throw new DBException("Can't update user ==> " + user.getLogin());
+        } finally {
+            userDBManager.close(con);
+        }
+    }
+
+    @Override
+    public boolean delete(User user) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userDBManager.delete(con, user);
+        }catch (SQLException ex) {
+            log.error("Can't delete user ==> " + user.getLogin(), ex);
+            throw new DBException("Can't delete user ==> " + user.getLogin());
+        } finally {
+            userDBManager.close(con);
+        }
     }
 }

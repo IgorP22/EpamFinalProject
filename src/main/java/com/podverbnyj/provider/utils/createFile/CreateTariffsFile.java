@@ -1,11 +1,9 @@
-package com.podverbnyj.provider.urils.createFile;
+package com.podverbnyj.provider.utils.createFile;
 
-import com.podverbnyj.provider.urils.createFile.fileCreator.FileCreator;
-import com.podverbnyj.provider.urils.createFile.factories.FileFactory;
-import com.podverbnyj.provider.urils.createFile.factories.PdfFileFactory;
-import com.podverbnyj.provider.urils.createFile.factories.TxtFileFactory;
-
-import javax.servlet.http.HttpSession;
+import com.podverbnyj.provider.utils.createFile.fileCreator.FileCreator;
+import com.podverbnyj.provider.utils.createFile.factories.FileFactory;
+import com.podverbnyj.provider.utils.createFile.factories.PdfFileFactory;
+import com.podverbnyj.provider.utils.createFile.factories.TxtFileFactory;
 
 public class CreateTariffsFile {
 

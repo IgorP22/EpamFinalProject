@@ -1,7 +1,7 @@
-package com.podverbnyj.provider.urils.createFile.fileCreator;
+package com.podverbnyj.provider.utils.createFile.fileCreator;
 
-import com.podverbnyj.provider.urils.createFile.factories.FileFactory;
-import com.podverbnyj.provider.urils.createFile.files.File;
+import com.podverbnyj.provider.utils.createFile.factories.FileFactory;
+import com.podverbnyj.provider.utils.createFile.files.File;
 
 public class FileCreator {
     private File file;
