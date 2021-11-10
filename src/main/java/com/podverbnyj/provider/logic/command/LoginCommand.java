@@ -13,6 +13,7 @@ import com.podverbnyj.provider.DAO.db.entity.constant.Language;
 import com.podverbnyj.provider.DAO.db.entity.constant.Role;
 import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import com.podverbnyj.provider.utils.HashPassword;
+import com.podverbnyj.provider.utils.Sorter;
 import org.apache.logging.log4j.*;
 
 import java.util.ArrayList;
@@ -39,7 +40,8 @@ public class LoginCommand implements Command {
         log.trace("Current user ==>" + currentUser);
         log.trace("User from DB ==>" + user);
 
-//        ArrayList<Service> services = serviceDAO.findAll();
+        ArrayList<Service> services = serviceDAO.findAll();
+        Sorter.sortServicesByName(services);
 //        log.debug("List of services ==> "+services);
 
 //        ArrayList<Tariff> tariffs = tariffDAO.findAll();
