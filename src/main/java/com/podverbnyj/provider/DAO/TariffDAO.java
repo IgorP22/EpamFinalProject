@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class TariffDAO implements AbstractDAO<Tariff>{
@@ -33,7 +34,7 @@ public class TariffDAO implements AbstractDAO<Tariff>{
 
 
     @Override
-    public ArrayList<Tariff> findAll() throws DBException {
+    public List<Tariff> findAll() throws DBException {
         Connection con = dbUtils.getConnection();
         try {
             return tariffDBManager.findAll(con);

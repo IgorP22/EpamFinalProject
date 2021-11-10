@@ -17,6 +17,7 @@ import com.podverbnyj.provider.utils.Sorter;
 import org.apache.logging.log4j.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
@@ -40,7 +41,7 @@ public class LoginCommand implements Command {
         log.trace("Current user ==>" + currentUser);
         log.trace("User from DB ==>" + user);
 
-        ArrayList<Service> services = serviceDAO.findAll();
+        List<Service> services = serviceDAO.findAll();
         Sorter.sortServicesByName(services);
 //        log.debug("List of services ==> "+services);
 
@@ -97,9 +98,8 @@ public class LoginCommand implements Command {
             log.trace("User role ==> " + user.getRole());
             if (user.getRole().equals(Role.ADMIN)) {
                 return "admin.jsp";
-            } else {
-                return "user.jsp";
             }
+                return "user.jsp";
         }
         log.trace("Login failed, username and password don't matches");
         return "error.jsp";

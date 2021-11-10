@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.TariffConstants.*;
 
@@ -31,8 +32,8 @@ public class TariffDBManager {
         // no op
     }
 
-    public ArrayList<Tariff> findAll(Connection con) throws SQLException {
-        ArrayList<Tariff> tariffs = new ArrayList<>();
+    public List<Tariff> findAll(Connection con) throws SQLException {
+        List<Tariff> tariffs = new ArrayList<>();
         ResultSet rs = null;
         Tariff tariff;
         try {

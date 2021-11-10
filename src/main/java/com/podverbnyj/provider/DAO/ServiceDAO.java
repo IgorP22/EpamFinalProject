@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ServiceDAO implements AbstractDAO<Service>{
@@ -33,7 +34,7 @@ public class ServiceDAO implements AbstractDAO<Service>{
 
 
     @Override
-    public ArrayList<Service> findAll() throws DBException {
+    public List<Service> findAll() throws DBException {
         Connection con = dbUtils.getConnection();
         try {
             return serviceDBManager.findAll(con);

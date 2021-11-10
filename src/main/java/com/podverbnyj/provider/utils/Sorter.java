@@ -4,10 +4,7 @@ import com.podverbnyj.provider.DAO.ServiceDAO;
 import com.podverbnyj.provider.DAO.TariffDAO;
 import com.podverbnyj.provider.DAO.db.entity.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class Sorter {
 
@@ -17,7 +14,7 @@ public class Sorter {
     private static final TariffDAO tariffDAO = TariffDAO.getInstance();
 
 
-    public static void sortServicesByName(ArrayList<Service> services) {
+    public static void sortServicesByName(List<Service> services) {
         services.sort(Comparator.comparing(Service::getTitleEn));
     }
 

@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.ServiceConstants.*;
 
@@ -31,8 +32,8 @@ public class ServiceDBManager {
         // no op
     }
 
-    public ArrayList<Service> findAll(Connection con) throws SQLException {
-        ArrayList<Service> services = new ArrayList<>();
+    public List<Service> findAll(Connection con) throws SQLException {
+        List<Service> services = new ArrayList<>();
         ResultSet rs = null;
         Service service;
         try {

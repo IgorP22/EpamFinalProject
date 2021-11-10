@@ -11,10 +11,7 @@ import java.sql.Connection;
 
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-
-
-
+import java.util.List;
 
 
 public class UserDAO implements AbstractDAO<User>{
@@ -38,7 +35,7 @@ public class UserDAO implements AbstractDAO<User>{
 
 
     @Override
-    public ArrayList<User> findAll() throws DBException {
+    public List<User> findAll() throws DBException {
         Connection con = dbUtils.getConnection();
         try {
             return userDBManager.findAll(con);

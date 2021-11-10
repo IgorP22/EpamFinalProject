@@ -9,6 +9,7 @@ import org.apache.logging.log4j.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserConstants.*;
 
@@ -30,8 +31,8 @@ public class UserDBManager {
         // no op
     }
 
-    public ArrayList<User> findAll(Connection con) throws SQLException {
-        ArrayList<User> users = new ArrayList<>();
+    public List<User> findAll(Connection con) throws SQLException {
+        List<User> users = new ArrayList<>();
         ResultSet rs = null;
         User user;
         try {
