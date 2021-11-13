@@ -7,7 +7,9 @@ public class Tariff implements Serializable {
     private String nameRu;
     private String nameEn;
     private double price;
-    private int service_id;
+    private int serviceId;
+    private String descriptionRu;
+    private String descriptionEn;
 
     public Tariff(String nameRu, String nameEn, double price) {
         this.nameRu = nameRu;
@@ -51,15 +53,29 @@ public class Tariff implements Serializable {
         this.price = price;
     }
 
-    public int getService_id() {
-        return service_id;
+    public int getServiceId() {
+        return serviceId;
     }
 
-    public void setService_id(int service_id) {
-        this.service_id = service_id;
+    public void setServiceId(int serviceId) {
+        this.serviceId = serviceId;
     }
 
+    public String getDescriptionRu() {
+        return descriptionRu;
+    }
 
+    public void setDescriptionRu(String descriptionRu) {
+        this.descriptionRu = descriptionRu;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
+    }
 
     @Override
     public String toString() {
@@ -68,7 +84,9 @@ public class Tariff implements Serializable {
                 ", nameRu='" + nameRu + '\'' +
                 ", nameEn='" + nameEn + '\'' +
                 ", price=" + price +
-                ", service_id=" + service_id +
+                ", serviceId=" + serviceId +
+                ", descriptionRu='" + descriptionRu + '\'' +
+                ", descriptionEn='" + descriptionEn + '\'' +
                 '}';
     }
 }

@@ -7,10 +7,13 @@ public class Service implements Serializable {
     private String titleRu;
     private String titleEn;
 
+
     public Service(String titleRu, String titleEn) {
         this.titleRu = titleRu;
         this.titleEn = titleEn;
     }
+
+
     public Service(){}
 
     public int getId() {
@@ -36,6 +39,7 @@ public class Service implements Serializable {
     public void setTitleEn(String titleEn) {
         this.titleEn = titleEn;
     }
+
 
     @Override
     public String toString() {

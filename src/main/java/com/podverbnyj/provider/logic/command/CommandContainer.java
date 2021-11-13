@@ -10,6 +10,7 @@ public class CommandContainer {
 		commands = new HashMap<>();
 		
 		commands.put("login", new LoginCommand());
+		commands.put("sort", new SortCommand());
 //		commands.put("insertUsers", new InsertUsers());
 		}
 

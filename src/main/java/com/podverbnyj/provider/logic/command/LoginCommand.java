@@ -42,10 +42,12 @@ public class LoginCommand implements Command {
         log.trace("User from DB ==>" + user);
 
         List<Service> services = serviceDAO.findAll();
-        Sorter.sortServicesByName(services);
+        System.out.println(services);
+//        Sorter.sortServicesByName(services);
 //        log.debug("List of services ==> "+services);
 
-//        ArrayList<Tariff> tariffs = tariffDAO.findAll();
+        List<Tariff> tariffs = tariffDAO.findAll();
+        System.out.println(tariffs);
 //        log.debug("List of tariffs ==> "+tariffs);
 
 //        ArrayList<User> users = userDAO.findAll();
@@ -96,6 +98,7 @@ public class LoginCommand implements Command {
             req.getSession().setAttribute("login", login);
             log.trace("Login stored in session");
             log.trace("User role ==> " + user.getRole());
+            req.getSession().setAttribute("role", user.getRole());
             if (user.getRole().equals(Role.ADMIN)) {
                 return "admin.jsp";
             }

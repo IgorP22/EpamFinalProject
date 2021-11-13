@@ -20,5 +20,7 @@ public class ContextListener implements ServletContextListener {
 
         final Logger log = LogManager.getLogger(ContextListener.class);
         log.debug("path = " + path);
+
+
     }
 }

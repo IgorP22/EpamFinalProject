@@ -125,6 +125,7 @@ public class ServiceDBManager {
     private Service getService(ResultSet rs) throws SQLException {
         Service service = new Service();
 
+        service.setId(rs.getInt(1));
         service.setTitleRu(rs.getString("title_ru"));
         service.setTitleEn(rs.getString("title_en"));
 

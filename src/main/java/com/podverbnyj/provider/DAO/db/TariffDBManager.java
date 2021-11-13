@@ -85,7 +85,7 @@ public class TariffDBManager {
         try {
             ps = con.prepareStatement(UPDATE_TARIFF);
             setTariffStatement(tariff, ps);
-            ps.setInt(5, tariff.getId());
+            ps.setInt(7, tariff.getId());
             ps.executeUpdate();
             return true;
         } finally {
@@ -120,7 +120,9 @@ public class TariffDBManager {
         ps.setString(index++, tariff.getNameEn());
         ps.setString(index++, tariff.getNameRu());
         ps.setDouble(index++, tariff.getPrice());
-        ps.setInt(index++, tariff.getService_id());
+        ps.setInt(index++, tariff.getServiceId());
+        ps.setString(index++, tariff.getDescriptionRu());
+        ps.setString(index++, tariff.getDescriptionEn());
     }
 
     private Tariff getTariff(ResultSet rs) throws SQLException {
@@ -130,7 +132,9 @@ public class TariffDBManager {
         tariff.setNameRu(rs.getString("name_ru"));
         tariff.setNameEn(rs.getString("name_en"));
         tariff.setPrice(rs.getDouble("price"));
-        tariff.setService_id(rs.getInt("service_id"));
+        tariff.setServiceId(rs.getInt("service_id"));
+        tariff.setDescriptionRu(rs.getString("description_ru"));
+        tariff.setDescriptionEn(rs.getString("description_en"));
 
         log.trace("Tariff created ==> " + tariff);
         return tariff;
