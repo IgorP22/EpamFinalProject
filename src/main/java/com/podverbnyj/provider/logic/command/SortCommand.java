@@ -30,70 +30,48 @@ public class SortCommand implements Command {
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
 
         String sort = req.getParameter("sort");
-        System.out.println(sort);
+        String language = (String) req.getSession().getAttribute("language");
+        boolean servicesIsSorted = (boolean)req.getSession().getAttribute("servicesIsSorted");
+        boolean tariffsIsSortedByName = (boolean)req.getSession().getAttribute("tariffsIsSortedByName");
+        boolean sortedByPrice = (boolean)req.getSession().getAttribute("sortedByPrice");
 
-
-        req.getSession().getAttribute("ListOfTariffs");
 
 
         if (sort.equals("Sort services")) {
-            List<Service> services = new ArrayList<>();
-            services = (List<Service>) req.getSession().getAttribute("ListOfServices");
-
-            Sorter.sortServicesByName(services);
+            List<Service> services = (List<Service>) req.getSession().getAttribute("ListOfServices");
+            if (servicesIsSorted) {
+                Sorter.sortServicesByNameReverseOrder(services,language);
+                req.getSession().setAttribute("servicesIsSorted", false);
+            } else {
+                Sorter.sortServicesByName(services,language);
+                req.getSession().setAttribute("servicesIsSorted", true);
+            }
+            return req.getHeader("referer");
         }
 
         if (sort.equals("Sort tariffs by name")) {
-            List<Tariff> tariffs = new ArrayList<>();
-            tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
-
-            Sorter.sortTariffsByName(tariffs);
+            List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
+            if (tariffsIsSortedByName) {
+                Sorter.sortTariffsByNameReverseOrder(tariffs,language);
+                req.getSession().setAttribute("tariffsIsSortedByName", false);
+            } else {
+                Sorter.sortTariffsByName(tariffs,language);
+                req.getSession().setAttribute("tariffsIsSortedByName", true);
+            }
+            return req.getHeader("referer");
         }
 
         if (sort.equals("Sort tariffs by price")) {
-            List<Tariff> tariffs = new ArrayList<>();
-            tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
-
-            Sorter.sortTariffsByPrice(tariffs);
+            List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
+            if (sortedByPrice) {
+                Sorter.sortTariffsByPriceReverseOrder(tariffs);
+                req.getSession().setAttribute("sortedByPrice", false);
+            } else {
+                Sorter.sortTariffsByPrice(tariffs);
+                req.getSession().setAttribute("sortedByPrice", true);
+            }
         }
-//        if (sort.equals("Sort tariffs by name")) {
-//            Sorter.sortServicesByName(services);
-//        }
-//        if (sort.equals("Sort tariffs by price")) {
-//            Sorter.sortServicesByName(services);
-//        }
 
-
-//        User currentUser = new User.UserBuilder(login, securePassword(password)).build();
-//        log.trace("login ==> " + login);
-
-
-//        User user = userDAO.getByName(login);
-//        log.trace("Current user ==>" + currentUser);
-//        log.trace("User from DB ==>" + user);
-
-//        List<Service> services = serviceDAO.findAll();
-//        System.out.println(services);
-//        Sorter.sortServicesByName(services);
-//        log.debug("List of services ==> "+services);
-
-//        List<Tariff> tariffs = tariffDAO.findAll();
-//        System.out.println(tariffs);
-
-
-//        if (currentUser.equals(user)) {
-//            log.trace("Logged successfully as " + login);
-//            req.getSession().setAttribute("login", login);
-//            log.trace("Login stored in session");
-//            log.trace("User role ==> " + user.getRole());
-//            req.getSession().setAttribute("role", user.getRole());
-//            if (user.getRole().equals(Role.ADMIN)) {
-//                return "admin.jsp";
-//            }
-//                return "user.jsp";
-//        }
-//        log.trace("Login failed, username and password don't matches");
-        System.out.println(req.getHeader("referer"));
         return req.getHeader("referer");
     }
 }

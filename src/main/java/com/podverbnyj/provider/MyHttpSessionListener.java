@@ -34,6 +34,12 @@ public class MyHttpSessionListener implements HttpSessionListener {
 
         session.getSession().setAttribute("ListOfServices", listOfServices);
         session.getSession().setAttribute("ListOfTariffs", listOfTariffs);
+        session.getSession().setAttribute("language", "ru");
+        session.getSession().setAttribute("servicesIsSorted", false);
+        session.getSession().setAttribute("tariffsIsSortedByName", false);
+        session.getSession().setAttribute("sortedByPrice", false);
+
+
     }
 
 
