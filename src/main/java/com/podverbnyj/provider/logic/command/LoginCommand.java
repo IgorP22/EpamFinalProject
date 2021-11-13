@@ -105,6 +105,6 @@ public class LoginCommand implements Command {
                 return "user.jsp";
         }
         log.trace("Login failed, username and password don't matches");
-        return "error.jsp";
+        return "index.jsp";
     }
 }

@@ -1758,3 +1758,480 @@
 05:28:26.317 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@2b9f38fc
 05:28:27.104 [http-nio-8080-exec-10] TRACE - commandName ==> sort
 05:28:27.104 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@2b9f38fc
+10:03:21.194 [RMI TCP Connection(4)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+10:03:23.905 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:03:23.905 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:03:23.905 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:03:23.905 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:23.921 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:24.122 [http-nio-8080-exec-4] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:03:24.122 [http-nio-8080-exec-4] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:03:24.122 [http-nio-8080-exec-4] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:03:24.123 [http-nio-8080-exec-4] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:03:24.125 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:03:24.126 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:03:24.126 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:03:24.127 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:24.127 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:24.128 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:03:24.128 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:03:24.129 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:03:24.129 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:24.130 [http-nio-8080-exec-4] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:29.771 [http-nio-8080-exec-6] TRACE - commandName ==> login
+10:03:29.778 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7e424328
+10:03:29.786 [http-nio-8080-exec-6] TRACE - login ==> 
+10:03:29.806 [http-nio-8080-exec-6] TRACE - Current user ==>User{login='', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+10:03:29.806 [http-nio-8080-exec-6] TRACE - User from DB ==>null
+10:03:29.808 [http-nio-8080-exec-6] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:03:29.808 [http-nio-8080-exec-6] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:03:29.808 [http-nio-8080-exec-6] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:03:29.809 [http-nio-8080-exec-6] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:03:29.811 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:03:29.811 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:03:29.811 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:03:29.811 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:29.812 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:29.812 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:03:29.812 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:03:29.812 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:03:29.813 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:29.813 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:29.814 [http-nio-8080-exec-6] TRACE - Login failed, username and password don't matches
+10:03:36.208 [http-nio-8080-exec-10] TRACE - commandName ==> login
+10:03:36.209 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7e424328
+10:03:36.210 [http-nio-8080-exec-10] TRACE - login ==> kshd
+10:03:36.212 [http-nio-8080-exec-10] TRACE - Current user ==>User{login='kshd', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+10:03:36.212 [http-nio-8080-exec-10] TRACE - User from DB ==>null
+10:03:36.214 [http-nio-8080-exec-10] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:03:36.214 [http-nio-8080-exec-10] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:03:36.215 [http-nio-8080-exec-10] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:03:36.215 [http-nio-8080-exec-10] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:03:36.217 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:03:36.217 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:03:36.217 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:03:36.218 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:36.218 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:36.218 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:03:36.219 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:03:36.219 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:03:36.219 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:36.219 [http-nio-8080-exec-10] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:03:36.220 [http-nio-8080-exec-10] TRACE - Login failed, username and password don't matches
+10:03:42.213 [http-nio-8080-exec-2] TRACE - commandName ==> sort
+10:03:42.213 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@1951577b
+10:03:43.830 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+10:03:43.831 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@1951577b
+10:03:45.555 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+10:03:45.555 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@1951577b
+10:03:46.835 [http-nio-8080-exec-10] TRACE - commandName ==> sort
+10:03:46.835 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@1951577b
+10:03:54.308 [http-nio-8080-exec-4] TRACE - commandName ==> null
+10:03:54.309 [http-nio-8080-exec-4] TRACE - command ==> null
+10:09:22.422 [http-nio-8080-exec-7] TRACE - commandName ==> null
+10:09:22.423 [http-nio-8080-exec-7] TRACE - command ==> null
+10:21:59.907 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+10:22:01.984 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:22:01.984 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:22:01.985 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:22:01.985 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:22:01.993 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:22:01.994 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:22:01.994 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:22:01.994 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:22:01.995 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:22:01.995 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:22:01.995 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:22:01.996 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:22:01.996 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:22:01.996 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:22:02.209 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:22:02.211 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:22:02.212 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:22:02.212 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:22:02.221 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:22:02.223 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:22:02.226 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:22:02.227 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:22:02.228 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:22:02.230 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:22:02.230 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:22:02.231 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:22:02.232 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:22:02.232 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:22:08.511 [http-nio-8080-exec-4] TRACE - commandName ==> null
+10:22:08.521 [http-nio-8080-exec-4] TRACE - command ==> null
+10:24:43.434 [http-nio-8080-exec-6] TRACE - commandName ==> null
+10:24:43.434 [http-nio-8080-exec-6] TRACE - command ==> null
+10:24:57.957 [http-nio-8080-exec-8] TRACE - commandName ==> null
+10:24:57.957 [http-nio-8080-exec-8] TRACE - command ==> null
+10:25:16.354 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+10:25:18.831 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:25:18.831 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:25:18.831 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:25:18.831 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:25:18.839 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:25:18.839 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:25:18.839 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:25:18.839 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:25:18.843 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:25:18.843 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:25:18.843 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:25:18.843 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:25:18.843 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:25:18.843 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:25:19.031 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:25:19.032 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:25:19.032 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:25:19.033 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:25:19.035 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:25:19.036 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:25:19.036 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:25:19.036 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:25:19.037 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:25:19.037 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:25:19.038 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:25:19.038 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:25:19.039 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:25:19.039 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:25:23.895 [http-nio-8080-exec-6] TRACE - commandName ==> null
+10:25:23.904 [http-nio-8080-exec-6] TRACE - command ==> null
+10:26:10.259 [RMI TCP Connection(5)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+10:26:12.433 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:26:12.433 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:26:12.433 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:26:12.434 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:26:12.441 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:26:12.442 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:26:12.442 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:26:12.443 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:26:12.443 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:26:12.443 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:26:12.444 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:26:12.444 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:26:12.445 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:26:12.445 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:26:12.621 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:26:12.623 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:26:12.623 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:26:12.624 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:26:12.628 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:26:12.628 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:26:12.629 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:26:12.629 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:26:12.630 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:26:12.630 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:26:12.631 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:26:12.631 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:26:12.632 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:26:12.632 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:26:15.317 [http-nio-8080-exec-4] TRACE - commandName ==> Download
+10:26:15.325 [http-nio-8080-exec-4] TRACE - command ==> null
+10:27:28.474 [http-nio-8080-exec-7] TRACE - commandName ==> download
+10:27:28.474 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.DownloadCommand@2abd4fa
+10:27:30.949 [http-nio-8080-exec-9] TRACE - commandName ==> download
+10:27:30.950 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.DownloadCommand@2abd4fa
+10:27:31.936 [http-nio-8080-exec-1] TRACE - commandName ==> download
+10:27:31.936 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.DownloadCommand@2abd4fa
+10:29:43.207 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+10:29:45.461 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:29:45.461 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:29:45.461 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:29:45.461 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:29:45.469 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:29:45.469 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:29:45.473 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:29:45.473 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:29:45.473 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:29:45.473 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:29:45.473 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:29:45.473 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:29:45.473 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:29:45.473 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:29:45.647 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+10:29:45.648 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+10:29:45.648 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+10:29:45.649 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+10:29:45.653 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:29:45.654 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+10:29:45.654 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+10:29:45.655 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:29:45.655 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:29:45.656 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:29:45.656 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+10:29:45.656 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+10:29:45.657 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:29:45.657 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+10:29:48.061 [http-nio-8080-exec-4] TRACE - commandName ==> email
+10:29:48.070 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@6a4c1242
+10:29:51.351 [http-nio-8080-exec-8] TRACE - commandName ==> email
+10:29:51.351 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@6a4c1242
+11:33:47.736 [RMI TCP Connection(5)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+11:33:50.030 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+11:33:50.030 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+11:33:50.030 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+11:33:50.030 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+11:33:50.038 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+11:33:50.038 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+11:33:50.038 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+11:33:50.038 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:33:50.038 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:33:50.038 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+11:33:50.038 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+11:33:50.038 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+11:33:50.042 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:33:50.042 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:33:50.228 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+11:33:50.229 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+11:33:50.229 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+11:33:50.230 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+11:33:50.232 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+11:33:50.232 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+11:33:50.233 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+11:33:50.233 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:33:50.234 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:33:50.234 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+11:33:50.234 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+11:33:50.235 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+11:33:50.236 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:33:50.236 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:33:56.554 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+11:33:56.564 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@69961be9
+11:33:57.541 [http-nio-8080-exec-7] TRACE - commandName ==> sort
+11:33:57.541 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@69961be9
+11:33:58.454 [http-nio-8080-exec-9] TRACE - commandName ==> sort
+11:33:58.454 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@69961be9
+11:33:59.905 [http-nio-8080-exec-1] TRACE - commandName ==> sort
+11:33:59.906 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@69961be9
+11:34:00.636 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+11:34:00.636 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@69961be9
+11:34:04.078 [http-nio-8080-exec-7] TRACE - commandName ==> email
+11:34:04.078 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@1fef8f5b
+11:34:06.239 [http-nio-8080-exec-9] TRACE - commandName ==> email
+11:34:06.240 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@1fef8f5b
+11:36:55.577 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+11:36:57.805 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+11:36:57.806 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+11:36:57.806 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+11:36:57.806 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+11:36:57.814 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+11:36:57.815 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+11:36:57.815 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+11:36:57.816 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:36:57.816 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:36:57.816 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+11:36:57.817 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+11:36:57.817 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+11:36:57.818 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:36:57.818 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:36:57.993 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+11:36:57.993 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+11:36:57.994 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+11:36:57.994 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+11:36:57.997 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+11:36:57.998 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='null', descriptionEn='null'}
+11:36:57.998 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='null', descriptionEn='NULL'}
+11:36:57.999 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:36:57.999 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:36:57.999 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+11:36:58.000 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='null', descriptionEn='null'}
+11:36:58.000 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='null', descriptionEn='null'}
+11:36:58.001 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:36:58.001 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='null', descriptionEn='null'}
+11:58:32.910 [RMI TCP Connection(3)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+11:58:35.265 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+11:58:35.265 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+11:58:35.265 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+11:58:35.266 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+11:58:35.275 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Пакет связь номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 1, the composition of the package and its description, a rather long description for verification'}
+11:58:35.276 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет связь номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 2, the composition of the package and its description, a rather long description for verification'}
+11:58:35.276 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='Интернет пакет номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 1, the composition of the package and its description, a rather long description to check'}
+11:58:35.276 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='Интернет пакет номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 2, the composition of the package and its description, a rather long description to check'}
+11:58:35.277 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='Интернет пакет номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 3, the composition of the package and its description, a rather long description to check'}
+11:58:35.277 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='Телевидение 50 каналов', descriptionEn='Television 50 channels'}
+11:58:35.277 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='Телевидение 100 каналов', descriptionEn='Television 100 channels'}
+11:58:35.278 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+11:58:35.278 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='Интернет пакет номер 5, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 5, the composition of the package and its description, a rather long description to check'}
+11:58:35.279 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='Интернет пакет номер 4, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 4, the composition of the package and its description, a rather long description to check'}
+11:58:35.487 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+11:58:35.488 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+11:58:35.488 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+11:58:35.488 [http-nio-8080-exec-3] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+11:58:35.492 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Пакет связь номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 1, the composition of the package and its description, a rather long description for verification'}
+11:58:35.493 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет связь номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 2, the composition of the package and its description, a rather long description for verification'}
+11:58:35.493 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='Интернет пакет номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 1, the composition of the package and its description, a rather long description to check'}
+11:58:35.494 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='Интернет пакет номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 2, the composition of the package and its description, a rather long description to check'}
+11:58:35.494 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='Интернет пакет номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 3, the composition of the package and its description, a rather long description to check'}
+11:58:35.495 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='Телевидение 50 каналов', descriptionEn='Television 50 channels'}
+11:58:35.495 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='Телевидение 100 каналов', descriptionEn='Television 100 channels'}
+11:58:35.495 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+11:58:35.496 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='Интернет пакет номер 5, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 5, the composition of the package and its description, a rather long description to check'}
+11:58:35.496 [http-nio-8080-exec-3] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='Интернет пакет номер 4, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 4, the composition of the package and its description, a rather long description to check'}
+11:59:03.561 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+11:59:03.571 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+11:59:05.225 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+11:59:05.225 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+11:59:06.225 [http-nio-8080-exec-2] TRACE - commandName ==> sort
+11:59:06.226 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+11:59:08.193 [http-nio-8080-exec-3] TRACE - commandName ==> sort
+11:59:08.193 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+11:59:09.893 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+11:59:09.893 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+11:59:11.964 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+11:59:11.964 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+11:59:20.294 [http-nio-8080-exec-2] TRACE - commandName ==> sort
+11:59:20.294 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+11:59:29.826 [http-nio-8080-exec-6] TRACE - commandName ==> email
+11:59:29.826 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@563f46e3
+11:59:34.549 [http-nio-8080-exec-8] TRACE - commandName ==> email
+11:59:34.549 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@563f46e3
+11:59:38.131 [http-nio-8080-exec-2] TRACE - commandName ==> email
+11:59:38.131 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@563f46e3
+12:00:31.245 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+12:00:31.245 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:00:31.980 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+12:00:31.980 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:00:33.268 [http-nio-8080-exec-1] TRACE - commandName ==> email
+12:00:33.269 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@563f46e3
+12:00:38.647 [http-nio-8080-exec-5] TRACE - commandName ==> email
+12:00:38.647 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.EmailCommand@563f46e3
+12:01:28.407 [http-nio-8080-exec-10] TRACE - commandName ==> download
+12:01:28.407 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.DownloadCommand@539f82de
+12:29:05.328 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+12:29:05.332 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:29:06.760 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+12:29:06.761 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:29:07.596 [http-nio-8080-exec-9] TRACE - commandName ==> sort
+12:29:07.597 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:29:08.402 [http-nio-8080-exec-10] TRACE - commandName ==> sort
+12:29:08.402 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:29:09.271 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+12:29:09.271 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:29:09.777 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+12:29:09.777 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:29:10.374 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+12:29:10.374 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:29:12.228 [http-nio-8080-exec-9] TRACE - commandName ==> sort
+12:29:12.229 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:43:36.719 [http-nio-8080-exec-9] TRACE - commandName ==> sort
+12:43:36.720 [http-nio-8080-exec-9] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:43:37.385 [http-nio-8080-exec-4] TRACE - commandName ==> sort
+12:43:37.385 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:43:38.553 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+12:43:38.553 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:43:39.130 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+12:43:39.131 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:43:39.731 [http-nio-8080-exec-7] TRACE - commandName ==> sort
+12:43:39.732 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@48b1d608
+12:47:57.065 [RMI TCP Connection(5)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+12:47:59.261 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+12:47:59.261 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+12:47:59.261 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+12:47:59.262 [http-nio-8080-exec-1] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+12:47:59.270 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Пакет связь номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 1, the composition of the package and its description, a rather long description for verification'}
+12:47:59.271 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет связь номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 2, the composition of the package and its description, a rather long description for verification'}
+12:47:59.271 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='Интернет пакет номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 1, the composition of the package and its description, a rather long description to check'}
+12:47:59.271 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='Интернет пакет номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 2, the composition of the package and its description, a rather long description to check'}
+12:47:59.272 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='Интернет пакет номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 3, the composition of the package and its description, a rather long description to check'}
+12:47:59.272 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='Телевидение 50 каналов', descriptionEn='Television 50 channels'}
+12:47:59.272 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='Телевидение 100 каналов', descriptionEn='Television 100 channels'}
+12:47:59.273 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+12:47:59.273 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='Интернет пакет номер 5, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 5, the composition of the package and its description, a rather long description to check'}
+12:47:59.273 [http-nio-8080-exec-1] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='Интернет пакет номер 4, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 4, the composition of the package and its description, a rather long description to check'}
+12:47:59.477 [http-nio-8080-exec-5] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+12:47:59.477 [http-nio-8080-exec-5] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+12:47:59.477 [http-nio-8080-exec-5] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+12:47:59.478 [http-nio-8080-exec-5] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+12:47:59.481 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Пакет связь номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 1, the composition of the package and its description, a rather long description for verification'}
+12:47:59.482 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет связь номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 2, the composition of the package and its description, a rather long description for verification'}
+12:47:59.482 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='Интернет пакет номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 1, the composition of the package and its description, a rather long description to check'}
+12:47:59.483 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='Интернет пакет номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 2, the composition of the package and its description, a rather long description to check'}
+12:47:59.484 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='Интернет пакет номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 3, the composition of the package and its description, a rather long description to check'}
+12:47:59.484 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='Телевидение 50 каналов', descriptionEn='Television 50 channels'}
+12:47:59.485 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='Телевидение 100 каналов', descriptionEn='Television 100 channels'}
+12:47:59.485 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+12:47:59.485 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='Интернет пакет номер 5, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 5, the composition of the package and its description, a rather long description to check'}
+12:47:59.486 [http-nio-8080-exec-5] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='Интернет пакет номер 4, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 4, the composition of the package and its description, a rather long description to check'}
+12:51:25.798 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+12:51:25.807 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:51:28.168 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+12:51:28.168 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:51:30.827 [http-nio-8080-exec-1] TRACE - commandName ==> sort
+12:51:30.827 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:51:32.769 [http-nio-8080-exec-2] TRACE - commandName ==> sort
+12:51:32.770 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:51:36.280 [http-nio-8080-exec-4] TRACE - commandName ==> sort
+12:51:36.281 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:51:38.178 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+12:51:38.178 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:51:40.259 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+12:51:40.260 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:55:25.419 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+12:55:25.419 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:55:28.995 [http-nio-8080-exec-1] TRACE - commandName ==> sort
+12:55:28.995 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:55:36.098 [http-nio-8080-exec-3] TRACE - commandName ==> sort
+12:55:36.099 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:57:17.149 [http-nio-8080-exec-8] TRACE - commandName ==> sort
+12:57:17.149 [http-nio-8080-exec-8] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:57:19.998 [http-nio-8080-exec-1] TRACE - commandName ==> sort
+12:57:19.999 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+12:57:20.976 [http-nio-8080-exec-2] TRACE - commandName ==> sort
+12:57:20.977 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:06.091 [http-nio-8080-exec-1] TRACE - commandName ==> sort
+13:00:06.091 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:07.687 [http-nio-8080-exec-3] TRACE - commandName ==> sort
+13:00:07.687 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:08.736 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+13:00:08.737 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:09.606 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+13:00:09.606 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:10.622 [http-nio-8080-exec-1] TRACE - commandName ==> sort
+13:00:10.623 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:11.567 [http-nio-8080-exec-2] TRACE - commandName ==> sort
+13:00:11.567 [http-nio-8080-exec-2] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:12.598 [http-nio-8080-exec-3] TRACE - commandName ==> sort
+13:00:12.598 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:13.928 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+13:00:13.928 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:14.403 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+13:00:14.404 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:16.515 [http-nio-8080-exec-1] TRACE - commandName ==> sort
+13:00:16.516 [http-nio-8080-exec-1] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:18.982 [http-nio-8080-exec-3] TRACE - commandName ==> sort
+13:00:18.982 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:19.876 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+13:00:19.877 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:00:20.404 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+13:00:20.405 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:42:19.334 [http-nio-8080-exec-6] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+13:42:19.334 [http-nio-8080-exec-6] TRACE - Service created ==> Service{id=2, titleRu='Интернет', titleEn='Internet'}
+13:42:19.334 [http-nio-8080-exec-6] TRACE - Service created ==> Service{id=3, titleRu='Телевидение', titleEn='TV'}
+13:42:19.335 [http-nio-8080-exec-6] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+13:42:19.338 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Пакет связь номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 1, the composition of the package and its description, a rather long description for verification'}
+13:42:19.338 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=2, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет связь номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 2, the composition of the package and its description, a rather long description for verification'}
+13:42:19.339 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=3, nameRu='Интернет1', nameEn='Internet 1', price=90.0, serviceId=2, descriptionRu='Интернет пакет номер 1, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 1, the composition of the package and its description, a rather long description to check'}
+13:42:19.339 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=4, nameRu='Интернет 2', nameEn='Internet 2', price=40.0, serviceId=2, descriptionRu='Интернет пакет номер 2, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 2, the composition of the package and its description, a rather long description to check'}
+13:42:19.340 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=5, nameRu='Интернет 3', nameEn='Internet 3', price=180.0, serviceId=2, descriptionRu='Интернет пакет номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 3, the composition of the package and its description, a rather long description to check'}
+13:42:19.340 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=6, nameRu='ТВ 1', nameEn='TV 1', price=30.0, serviceId=3, descriptionRu='Телевидение 50 каналов', descriptionEn='Television 50 channels'}
+13:42:19.341 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=7, nameRu='ТВ 2', nameEn='TV 2', price=60.0, serviceId=3, descriptionRu='Телевидение 100 каналов', descriptionEn='Television 100 channels'}
+13:42:19.341 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=350.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+13:42:19.341 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=12, nameRu='Интернет 5', nameEn='Internet 5', price=75.0, serviceId=2, descriptionRu='Интернет пакет номер 5, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 5, the composition of the package and its description, a rather long description to check'}
+13:42:19.342 [http-nio-8080-exec-6] TRACE - Tariff created ==> Tariff{id=13, nameRu='Интернет 4', nameEn='Internet 4', price=176.0, serviceId=2, descriptionRu='Интернет пакет номер 4, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Internet package number 4, the composition of the package and its description, a rather long description to check'}
+13:59:17.700 [http-nio-8080-exec-3] TRACE - commandName ==> sort
+13:59:17.702 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:59:20.087 [http-nio-8080-exec-4] TRACE - commandName ==> sort
+13:59:20.088 [http-nio-8080-exec-4] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:59:20.998 [http-nio-8080-exec-5] TRACE - commandName ==> sort
+13:59:20.999 [http-nio-8080-exec-5] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
+13:59:21.933 [http-nio-8080-exec-7] TRACE - commandName ==> sort
+13:59:21.938 [http-nio-8080-exec-7] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@f16eba1
