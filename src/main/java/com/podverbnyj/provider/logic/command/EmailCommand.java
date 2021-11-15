@@ -19,9 +19,13 @@ public class EmailCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
+        String file = req.getParameter("file");
+        String emailAddress = req.getParameter("email");
+        System.out.println(file);
+        System.out.println(emailAddress);
 
 
 
-        return "error.jsp";
+        return req.getHeader("referer");
     }
 }

@@ -35,9 +35,14 @@ public class SortCommand implements Command {
         boolean tariffsIsSortedByName = (boolean)req.getSession().getAttribute("tariffsIsSortedByName");
         boolean sortedByPrice = (boolean)req.getSession().getAttribute("sortedByPrice");
 
+        System.out.println(sort);
+        System.out.println(language);
+        String s1= "Sort services";
+        String s2= "Sort tariffs by name";
+        String s3= "Sort tariffs by price";
 
 
-        if (sort.equals("Sort services")) {
+        if (s1.equals(sort)) {
             List<Service> services = (List<Service>) req.getSession().getAttribute("ListOfServices");
             if (servicesIsSorted) {
                 Sorter.sortServicesByNameReverseOrder(services,language);
@@ -49,7 +54,7 @@ public class SortCommand implements Command {
             return req.getHeader("referer");
         }
 
-        if (sort.equals("Sort tariffs by name")) {
+        if (s2.equals(sort)) {
             List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
             if (tariffsIsSortedByName) {
                 Sorter.sortTariffsByNameReverseOrder(tariffs,language);
@@ -61,7 +66,8 @@ public class SortCommand implements Command {
             return req.getHeader("referer");
         }
 
-        if (sort.equals("Sort tariffs by price")) {
+        if (s3.equals(sort)) {
+            System.out.println("~~~~~~~~~");
             List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
             if (sortedByPrice) {
                 Sorter.sortTariffsByPriceReverseOrder(tariffs);

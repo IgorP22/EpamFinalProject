@@ -13,6 +13,7 @@ public class CommandContainer {
 		commands.put("sort", new SortCommand());
 		commands.put("download", new DownloadCommand());
 		commands.put("email", new EmailCommand());
+		commands.put("adminRequest", new AdminRequestCommand());
 //		commands.put("insertUsers", new InsertUsers());
 		}
 

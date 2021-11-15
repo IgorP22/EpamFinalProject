@@ -41,57 +41,6 @@ public class LoginCommand implements Command {
         log.trace("Current user ==>" + currentUser);
         log.trace("User from DB ==>" + user);
 
-        List<Service> services = serviceDAO.findAll();
-        System.out.println(services);
-//        Sorter.sortServicesByName(services);
-//        log.debug("List of services ==> "+services);
-
-        List<Tariff> tariffs = tariffDAO.findAll();
-        System.out.println(tariffs);
-//        log.debug("List of tariffs ==> "+tariffs);
-
-//        ArrayList<User> users = userDAO.findAll();
-//        log.debug("List of users ==> " + users);
-//
-//        Tariff tariff = tariffDAO.getById(1);
-//        Service service = serviceDAO.getById(1);
-//
-//        tariff.setId(9);
-//        tariff.setNameRu("IPTV7");
-//        tariff.setNameEn("IPTV7");
-//        tariff.setPrice(150);
-//        tariff.setService_id(2);
-//        tariffDAO.delete(tariff);
-//
-//        service.setId(5);
-//        service.setTitleRu("Новый 545");
-//        service.setTitleEn("New 5454");
-//        serviceDAO.delete(service);
-
-
-
-
-
-
-//        log.debug("Tariff by id ==> " + tariff);
-//        log.debug("Service by id ==> " + service);
-
-
-
-
-//        user.setLogin("user2");
-//        user.setPassword("user2");
-//        user.setEmail("email@email.email");
-//        user.setName("Ivan");
-//        user.setSurname("Ivanov");
-//        user.setBalance(50);
-//        user.setLanguage(Language.RU);
-//        user.setNotification(false);
-//        user.setPhone("+3805076543210");
-//        user.setRole(Role.USER);
-//        user.setStatus(Status.BLOCKED);
-//        userDAO.update(user);
-
 
         if (currentUser.equals(user)) {
             log.trace("Logged successfully as " + login);
@@ -100,9 +49,11 @@ public class LoginCommand implements Command {
             log.trace("User role ==> " + user.getRole());
             req.getSession().setAttribute("role", user.getRole());
             if (user.getRole().equals(Role.ADMIN)) {
+                req.getSession().setAttribute("user", user);
                 return "admin.jsp";
             }
-                return "user.jsp";
+            req.getSession().setAttribute("currentUser", user);
+            return "user.jsp";
         }
         log.trace("Login failed, username and password don't matches");
         return "index.jsp";

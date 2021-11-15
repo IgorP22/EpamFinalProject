@@ -27,8 +27,9 @@ public class DownloadCommand implements Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
 
-        String login = req.getParameter("download");
+        String file = req.getParameter("file");
+        System.out.println(file);
 
-        return "index.jsp";
+        return req.getHeader("referer");
     }
 }
