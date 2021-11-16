@@ -55,7 +55,14 @@ public class LoginCommand implements Command {
             req.getSession().setAttribute("currentUser", user);
             return "user.jsp";
         }
-        log.trace("Login failed, username and password don't matches");
-        return "index.jsp";
+
+        if (user!=null && user.getLogin().equals(currentUser.getLogin())) {
+            log.trace("Login failed, username and password don't match");
+            return "index.jsp#wrongPassword";
+        }
+
+        log.trace("Login failed, no such username in db");
+        return "index.jsp#userNotExist";
+
     }
 }

@@ -19,29 +19,28 @@
 
 <header>
 
-<div class="page-header">
-    <div class="row">
-        <div class="col-md-10">
-            <h1>Добро пожаловать</h1>
-            <h2>Наши улуги и цены</h2>
-        </div>
-        <div class="col-md-2">
-            <div class="row align-items-center">
-            <form action="controller" method="post" class="form-inline form-search pull-right">
-                <input type="hidden" name="command" value="login">
-                <input name="login"><br>
-                <input type="password" name="password"><br>
-                <input type="submit" class="btn btn-primary" value="Login">
-            </form>
-            </div>
 
+        <div class="page-header">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1>Добро пожаловать</h1>
+                    <h2>Наши улуги и цены</h2>
+                </div>
+                <div class="col-md-2">
+                    <div class="row align-items-center">
+                        <form action="controller" method="post" class="form-inline form-search pull-right">
+                            <input type="hidden" name="command" value="login">
+                            <input name="login"><br>
+                            <input type="password" name="password"><br>
+                            <input type="submit" class="btn btn-primary" value="Login">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 </header>
-
-
 
 
 <hr>
@@ -109,8 +108,9 @@
 
                     <div class="mb-3">
                         <label for="email" class="col-form-label">Enter e-mail here:</label>
-                        <input type="text" name="email" class="form-control" id="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" minlength="1" placeholder="email@example.com">
-
+                        <input type="text" name="email" class="form-control" id="email"
+                               pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                               minlength="5" placeholder="email@example.com" required>
 
 
                     </div>
@@ -154,6 +154,63 @@
         </div>
     </div>
 </div>
+
+
+<!-- Модальное окно -->
+<div class="modal fade" id="userNotExist" tabindex="-1" aria-labelledby="userNotExist" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">User does not exist</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+
+<!-- Скрипт, вызывающий модальное окно после загрузки страницы -->
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#userNotExist') {
+            $("#userNotExist").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="wrongPassword" tabindex="-1" aria-labelledby="wrongPassword" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Username and password don't match</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#wrongPassword') {
+            $("#wrongPassword").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
 
 
 </body>

@@ -24,19 +24,23 @@ public class AdminRequestCommand implements Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
         String adminRequest = req.getParameter("adminRequest");
+        System.out.println(adminRequest);
         String getListOfServicesAndTariff = "List of services and tariffs";
         String addNewService = "Add new service";
         String addNewTariff = "Add new tariff";
         String getUsersList = "List of users";
         String addUser =  "Add new user";
+        String editService="Edit service";
+        String deleteService="Delete service";
+        String editTariff ="Edit tariff";
+        String deleteTariff = "Delete tariff";
+
         String adminFlag;
 
 
+
         if (getListOfServicesAndTariff.equals(adminRequest)) {
-            List<Service> listOfServices = serviceDAO.findAll();
-            List<Tariff> listOfTariffs = tariffDAO.findAll();
-            req.getSession().setAttribute("ListOfServices", listOfServices);
-            req.getSession().setAttribute("ListOfTariffs", listOfTariffs);
+            getPriceList(req);
             adminFlag = "price";
             req.getSession().setAttribute("adminFlag", adminFlag);
             System.out.println(adminFlag);
@@ -52,9 +56,55 @@ public class AdminRequestCommand implements Command {
             return req.getHeader("referer");
         }
 
+        if (editService.equals(adminRequest)) {
+            System.out.println(req.getParameter("serviceId"));
+            System.out.println(req.getAttribute("serviceId"));
+            System.out.println(req.getSession().getAttribute("serviceId"));
+            return req.getHeader("referer");
+        }
 
+        if (deleteService.equals(adminRequest)) {
 
+            String confirmation = req.getParameter("confirmation");
+
+            if (confirmation == null) {
+                req.getSession().setAttribute("serviceIdToDelete",req.getParameter("serviceId"));
+                return "admin.jsp#deleteConfirmation";
+            }
+            if (req.getParameter("confirmation").equals("true")) {
+
+                int idToDelete = Integer.parseInt((String) req.getSession().getAttribute("serviceIdToDelete"));
+                serviceDAO.delete(serviceDAO.getById(idToDelete));
+                System.out.println("Service " +idToDelete+  " deleted" );
+                getPriceList(req);
+                return "admin.jsp#success";
+            }
+            return req.getHeader("referer");
+        }
+
+        if (editTariff.equals(adminRequest)) {
+            System.out.println(req.getParameter("tariffId"));
+            System.out.println(req.getParameter("confirmationFlag"));
+            System.out.println(req.getAttribute("tariffId"));
+            System.out.println(req.getSession().getAttribute("tariffId"));
+            return req.getHeader("referer");
+        }
+
+        if (deleteTariff.equals(adminRequest)) {
+            System.out.println(req.getParameter("tariffId"));
+            System.out.println(req.getParameter("confirmationFlag"));
+            System.out.println(req.getAttribute("tariffId"));
+            System.out.println(req.getSession().getAttribute("v=tariffId"));
+            return req.getHeader("referer");
+        }
 
         return req.getHeader("referer");
+    }
+
+    private void getPriceList(HttpServletRequest req) throws DBException {
+        List<Service> listOfServices = serviceDAO.findAll();
+        List<Tariff> listOfTariffs = tariffDAO.findAll();
+        req.getSession().setAttribute("ListOfServices", listOfServices);
+        req.getSession().setAttribute("ListOfTariffs", listOfTariffs);
     }
 }
