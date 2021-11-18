@@ -1,7 +1,5 @@
 package com.podverbnyj.provider.utils;
 
-import com.podverbnyj.provider.DAO.ServiceDAO;
-import com.podverbnyj.provider.DAO.TariffDAO;
 import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
 

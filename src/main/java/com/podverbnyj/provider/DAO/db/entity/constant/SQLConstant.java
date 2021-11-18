@@ -31,7 +31,7 @@ public class SQLConstant {
         public static final String CREATE_TARIFF = "INSERT INTO tariff (name_ru, name_en, "
                 + "price, service_id,description_ru, description_en) VALUES (?,?,?,?,?,?)";
         public static final String UPDATE_TARIFF = "UPDATE tariff SET name_ru = ?, name_en = ?, "
-                + "price = ?, service_id = ? description_ru = ? description_en = ? WHERE (tariff_id = ?)";
+                + "price = ?, service_id = ?, description_ru = ?, description_en = ? WHERE (tariff_id = ?)";
         public static final String DELETE_TARIFF_BY_ID = "DELETE FROM tariff WHERE tariff_id = ?";
     }
 

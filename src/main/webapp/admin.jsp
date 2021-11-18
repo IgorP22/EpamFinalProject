@@ -42,14 +42,9 @@
 
                     <c:if test="${user.name != null}">
                         <h4>
-                            <td>${user.name}</td>
+                            ${user.name} ${user.surname}
                         </h4>
-                        <h4>
-                            <td>" "</td>
-                        </h4>
-                        <h4>
-                            <td>${user.surname}</td>
-                        </h4>
+
                     </c:if>
 
                 </div>
@@ -91,12 +86,27 @@
 
     <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
     <input type="submit" name="adminRequest" class="btn btn-primary" value="List of services and tariffs"/>
-    <input type="submit" name="adminRequest" class="btn btn-primary" value="Add new service"/>
-    <input type="submit" name="adminRequest" class="btn btn-primary" value="Add new tariff"/>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#addOrEditService" >
+        Add new service
+    </button>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#addOrEditTariff" >
+        Add new tariff
+    </button>
+
+<%--    <a class="btn btn-primary" href="admin.jsp#editOrDeleteService" onClick="window.location.reload();" role="button">Add new service</a>--%>
+<%--    <input type="submit" name="adminRequest" class="btn btn-primary" value="Add new tariff"/>--%>
     <input type="submit" name="adminRequest" class="btn btn-success" value="List of users"/>
     <input type="submit" name="adminRequest" class="btn btn-success" value="Add new user"/>
 </form>
 <hr>
+
+
+
+
 <c:set var="confirmationFlag" scope="session" value="false"/>
 <c:set var="adminFlag" value="${sessionScope.adminFlag}"/>
 <c:if test="${adminFlag == 'price'}">
@@ -133,10 +143,11 @@
                 <form action="controller" method="post">
                     <input type="hidden" name="serviceId" value="${service.id}">
                     <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-                    <td><input type="submit" name="adminRequest" class="btn btn-secondary btn-sm" value="Edit service"/>
+                    <td><button type="submit" name="adminRequest" class="btn btn-secondary btn-sm" value="Add or edit service">Edit service</button>
                     </td>
-                    <td><input type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                               value="Delete service"/></td>
+                    <td><button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
+                               value="Delete service">Delete service</button>
+                    </td>
                 </form>
             </tr>
 
@@ -153,10 +164,12 @@
                             <input type="hidden" name="tariffId" value="${tariff.id}">
 
                             <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-                            <td><input type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
-                                       value="Edit tariff"/></td>
-                            <td><input type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                       value="Delete tariff"/></td>
+                            <td><button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
+                                       value="Add or edit tariff">Edit tariff</button>
+                            </td>
+                            <td><button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
+                                       value="Delete tariff">Delete tariff</button>
+                            </td>
 
                         </form>
 
@@ -171,7 +184,7 @@
 
 
 <!-- Модальное окно -->
-<div class="modal fade" id="deleteConfirmation" tabindex="-1" aria-labelledby="deleteConfirmation" aria-hidden="true">
+<div class="modal fade" id="deleteServiceConfirmation" tabindex="-1" aria-labelledby="deleteServiceConfirmation" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -179,7 +192,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure?
+                Are you sure you want to delete service?<br>
+                Data can't be restored!!!
             </div>
 
             <div class="modal-footer">
@@ -197,13 +211,59 @@
 <script>
     $(document).ready(function () {
         var hash = window.location.hash;
-        if (hash == '#deleteConfirmation') {
-            $("#deleteConfirmation").modal('show');
+        if (hash == '#deleteServiceConfirmation') {
+            $("#deleteServiceConfirmation").modal('show');
             history.pushState("", document.title, window.location.pathname
                 + window.location.search);
         }
     })
 </script>
+
+
+
+<!-- Модальное окно -->
+<div class="modal fade" id="deleteTariffConfirmation" tabindex="-1" aria-labelledby="deleteTariffConfirmation" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" >Delete confirmation window</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete tariff?<br>
+                Data can't be restored!!!
+            </div>
+
+            <div class="modal-footer">
+                <form action="controller" method="post">
+                    <input type="hidden" name="command" value="adminRequest">
+                    <input type="hidden" name="confirmation" value="true">
+                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete tariff">Delete</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#deleteTariffConfirmation') {
+            $("#deleteTariffConfirmation").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
+
+
+
+
+
+
+
 
 <!-- Модальное окно -->
 <div class="modal fade" id="success" tabindex="-1" aria-labelledby="success" aria-hidden="true">
@@ -235,6 +295,25 @@
 
 
 
+<%--<script>--%>
+<%--    $(document).ready(function () {--%>
+<%--        var hash = window.location.hash;--%>
+<%--        if (hash == '#editOrDeleteService') {--%>
+<%--            $("#editOrDeleteService").modal('show');--%>
+<%--            history.pushState("", document.title, window.location.pathname--%>
+<%--                + window.location.search);--%>
+<%--        }--%>
+<%--    })--%>
+<%--</script>--%>
+
+
+
+
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>--%>
 
@@ -256,6 +335,150 @@
 <%--        }--%>
 <%--    })--%>
 <%--</script>--%>
+
+
+<!-- Модальное окно -->
+<div class="modal fade" id="addOrEditService" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addOrEditService"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" >Данные сервиса</h5>
+
+            </div>
+            <form action="controller" method="post">
+
+                <div class="modal-body">
+                    <c:set var="serviceToEdit" value="${serviceToEdit}"/>
+                    <c:if test="${serviceToEdit.id != null}">
+
+                    <input type="hidden" name="serviceId" value="${serviceToEdit.id}">
+                    </c:if>
+
+                    <div class="mb-3">
+                        <label for="serviceNameRu" class="col-form-label">Название сервиса на русском языке:</label>
+                        <input type="text" name="serviceNameRu" class="form-control" id="serviceNameRu"
+                               value="${serviceToEdit.titleRu}"
+
+                               minlength="5" maxlength="150" placeholder="Допустимы любые символы" required>
+                        <label for="serviceNameEn" class="col-form-label">Название сервиса на английском языке:</label>
+                        <input type="text" name="serviceNameEn" class="form-control" id="serviceNameEn"
+                               pattern="^[^а-яА-ЯЁё]+" value="${serviceToEdit.titleEn}"
+                               minlength="5" maxlength="150" placeholder="Любые символы кроме кирилицы" required>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="command" value="adminRequest">
+                    <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit service">Submit</button>
+
+                    <button type="submit" class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                            name="adminRequest" value="Remove data"
+                    >Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#addOrEditService') {
+            $("#addOrEditService").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
+
+<div class="modal fade" id="addOrEditTariff" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addOrEditTariff"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" >Данные тарифа</h5>
+
+            </div>
+            <form action="controller" method="post">
+
+                <div class="modal-body">
+                    <c:set var="tariffToEdit" value="${tariffToEdit}"/>
+
+                    <c:if test="${tariffToEdit.id != null}">
+                        <c:set var="serviceName" value="${serviceListForTariff.titleRu}"/>
+                        <input type="hidden" name="tariffId" value="${tariffToEdit.id}">
+                        <input type="hidden" name="serviceId" value="${tariffToEdit.serviceId}">
+                    </c:if>
+
+                    <div class="mb-3">
+                        <label for="tariffNameRu" class="col-form-label">Название тарифа на русском языке:</label>
+                        <input type="text" name="tariffNameRu" class="form-control" id="tariffNameRu"
+                               value="${tariffToEdit.nameRu}"
+                               minlength="5" maxlength="150" placeholder="Допустимы любые символы" required>
+
+                        <label for="tariffNameEn" class="col-form-label">Название тарифа на английском языке:</label>
+                        <input type="text" name="tariffNameEn" class="form-control" id="tariffNameEn"
+                               pattern="^[^а-яА-ЯЁё]+" value="${tariffToEdit.nameEn}"
+                               minlength="5" maxlength="150" placeholder="Любые символы кроме кирилицы" required>
+
+                        <label for="tariffPrice" class="col-form-label">Цена тарифа:</label>
+                        <input type="text" name="tariffPrice" class="form-control" id="tariffPrice"
+<%--                               pattern="^[^а-яА-ЯЁё]+"--%>
+                               value="${tariffToEdit.price}"
+                               minlength="1" maxlength="10" placeholder="Любые символы кроме кирилицы" required>
+
+                        <label for="tariffDescriptionRu" class="col-form-label">Описание тарифа на русском языке:</label>
+                        <input type="text" name="tariffDescriptionRu" class="form-control" id="tariffDescriptionRu"
+                               value="${tariffToEdit.descriptionRu}"
+                               minlength="5" maxlength="3000" placeholder="Допустимы любые символы" required>
+
+                        <label for="tariffDescriptionEn" class="col-form-label">Описание тарифа на английском языке:</label>
+                        <input type="text" name="tariffDescriptionEn" class="form-control" id="tariffDescriptionEn"
+                               pattern="^[^а-яА-ЯЁё]+" value="${tariffToEdit.descriptionEn}"
+                               minlength="5" maxlength="3000" placeholder="Любые символы кроме кирилицы" required>
+
+                        <div class="form-group">
+                            <label for="disabledSelect">Сервис</label>
+                            <select id="disabledSelect" class="form-control" >
+
+                                <option>${serviceName}</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="command" value="adminRequest">
+                    <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit tariff">Submit</button>
+
+                    <button type="submit" class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                            name="adminRequest" value="Remove data"
+                    >Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#addOrEditTariff') {
+            $("#addOrEditTariff").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
+
+
+
 
 </body>
 

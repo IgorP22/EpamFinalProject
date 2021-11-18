@@ -67,7 +67,6 @@ public class SortCommand implements Command {
         }
 
         if (s3.equals(sort)) {
-            System.out.println("~~~~~~~~~");
             List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
             if (sortedByPrice) {
                 Sorter.sortTariffsByPriceReverseOrder(tariffs);

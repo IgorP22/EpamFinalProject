@@ -117,8 +117,8 @@ public class TariffDBManager {
 
     private void setTariffStatement(Tariff tariff, PreparedStatement ps) throws SQLException {
         int index = 1;
-        ps.setString(index++, tariff.getNameEn());
         ps.setString(index++, tariff.getNameRu());
+        ps.setString(index++, tariff.getNameEn());
         ps.setDouble(index++, tariff.getPrice());
         ps.setInt(index++, tariff.getServiceId());
         ps.setString(index++, tariff.getDescriptionRu());
