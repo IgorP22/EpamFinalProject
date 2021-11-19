@@ -2,6 +2,7 @@ package com.podverbnyj.provider.utils;
 
 import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
+import com.podverbnyj.provider.DAO.db.entity.User;
 
 import java.util.*;
 
@@ -48,6 +49,14 @@ public class Sorter {
 
     public static void sortTariffsByPriceReverseOrder(List<Tariff> tariffs) {
         tariffs.sort(Comparator.comparing(Tariff::getPrice).reversed());
+    }
+
+    public static void sortUsersByLogin(List<User> users) {
+        users.sort(Comparator.comparing(User::getLogin));
+    }
+
+    public static void sortUsersByLoginReverseOrder(List<User> users) {
+        users.sort(Comparator.comparing(User::getLogin).reversed());
     }
 
 

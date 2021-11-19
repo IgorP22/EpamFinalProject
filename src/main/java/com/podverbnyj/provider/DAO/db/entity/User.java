@@ -211,7 +211,7 @@ public class User implements Serializable {
         }
 
         public UserBuilder setPhone(String phone) {
-            this.phone = surname;
+            this.phone = phone;
             return this;
         }
 

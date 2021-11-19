@@ -7,7 +7,9 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<link rel="stylesheet" href="css/boo">
+<link rel="stylesheet" href="css">
+
+<%@ include file="success.jspf" %>
 
 
 <!DOCTYPE html>
@@ -42,7 +44,7 @@
 
                     <c:if test="${user.name != null}">
                         <h4>
-                            ${user.name} ${user.surname}
+                                ${user.name} ${user.surname}
                         </h4>
 
                     </c:if>
@@ -60,64 +62,54 @@
 
 </header>
 <body>
-<%--<hr>--%>
-<%--<form action="controller" method="post">--%>
-<%--<div class="dropdown">--%>
-<%--    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">--%>
-<%--       Получить списки--%>
-<%--    </button>--%>
-<%--    <ul class="dropdown-menu">--%>
 
-<%--    <input type="hidden" name="command" value="getList">--%>
-<%--        <li><input type="submit" name="getList" value="List of services and tariffs"/></li>--%>
-<%--        <li><input type="submit" name="getList" value="Add new service"/></li>--%>
-<%--        <li><input type="submit" name="getList" value="Add new tariff"/></li>--%>
-<%--        <li><input type="submit" name="getList" value="List of users"/></li>--%>
-<%--        <li><input type="submit" name="getList" value="Add new user"/></li>--%>
-<%--    </ul>--%>
-
-<%--</div>--%>
-<%--</form>--%>
-<%--<hr>--%>
 
 <hr>
 <form action="controller" method="post">
 
 
     <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-    <input type="submit" name="adminRequest" class="btn btn-primary" value="List of services and tariffs"/>
+    <button type="submit" name="adminRequest" class="btn btn-primary" value="List of services and tariffs">List of
+        services and tariffs
+    </button>
 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#addOrEditService" >
+            data-bs-target="#addOrEditService">
         Add new service
     </button>
 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#addOrEditTariff" >
+            data-bs-target="#addOrEditTariff">
         Add new tariff
     </button>
 
-<%--    <a class="btn btn-primary" href="admin.jsp#editOrDeleteService" onClick="window.location.reload();" role="button">Add new service</a>--%>
-<%--    <input type="submit" name="adminRequest" class="btn btn-primary" value="Add new tariff"/>--%>
-    <input type="submit" name="adminRequest" class="btn btn-success" value="List of users"/>
-    <input type="submit" name="adminRequest" class="btn btn-success" value="Add new user"/>
-</form>
-<hr>
+    <%--    <a class="btn btn-primary" href="admin.jsp#editOrDeleteService" onClick="window.location.reload();" role="button">Add new service</a>--%>
+    <%--    <input type="submit" name="adminRequest" class="btn btn-primary" value="Add new tariff"/>--%>
 
+    <a href="admin_users.jsp" class="btn btn-success" role="button">List of users</a>
+
+<%--    <button type="submit" name="adminRequest" class="btn btn-success" value="List of users">List of users</button>--%>
+<%--    <button type="submit" name="adminRequest" class="btn btn-success" value="Add new user">Add new user</button>--%>
+
+</form>
 
 
 
 <c:set var="confirmationFlag" scope="session" value="false"/>
 <c:set var="adminFlag" value="${sessionScope.adminFlag}"/>
-<c:if test="${adminFlag == 'price'}">
+<%--<c:if test="${adminFlag == 'price'}">--%>
 
 
     <hr>
     <form action="controller" method="post">
         <input type="hidden" name="command" value="sort">
-        <input type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort services"/>
-        <input type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by name"/>
-        <input type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by price"/>
+        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort services">Sort services</button>
+        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by name">Sort tariffs by
+            name
+        </button>
+        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by price">Sort tariffs by
+            price
+        </button>
 
     </form>
     <hr>
@@ -143,10 +135,15 @@
                 <form action="controller" method="post">
                     <input type="hidden" name="serviceId" value="${service.id}">
                     <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-                    <td><button type="submit" name="adminRequest" class="btn btn-secondary btn-sm" value="Add or edit service">Edit service</button>
+                    <td>
+                        <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
+                                value="Add or edit service">Edit service
+                        </button>
                     </td>
-                    <td><button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                               value="Delete service">Delete service</button>
+                    <td>
+                        <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
+                                value="Delete service">Delete service
+                        </button>
                     </td>
                 </form>
             </tr>
@@ -164,11 +161,15 @@
                             <input type="hidden" name="tariffId" value="${tariff.id}">
 
                             <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-                            <td><button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
-                                       value="Add or edit tariff">Edit tariff</button>
+                            <td>
+                                <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
+                                        value="Add or edit tariff">Edit tariff
+                                </button>
                             </td>
-                            <td><button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                       value="Delete tariff">Delete tariff</button>
+                            <td>
+                                <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
+                                        value="Delete tariff">Delete tariff
+                                </button>
                             </td>
 
                         </form>
@@ -180,15 +181,16 @@
 
         </tbody>
     </table>
-</c:if>
+<%--</c:if>--%>
 
 
 <!-- Модальное окно -->
-<div class="modal fade" id="deleteServiceConfirmation" tabindex="-1" aria-labelledby="deleteServiceConfirmation" aria-hidden="true">
+<div class="modal fade" id="deleteServiceConfirmation" tabindex="-1" aria-labelledby="deleteServiceConfirmation"
+     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Delete confirmation window</h5>
+                <h5 class="modal-title">Delete confirmation window</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -200,7 +202,8 @@
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="adminRequest">
                     <input type="hidden" name="confirmation" value="true">
-                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete service">Delete</button>
+                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete service">Delete
+                    </button>
                 </form>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>
@@ -220,13 +223,13 @@
 </script>
 
 
-
 <!-- Модальное окно -->
-<div class="modal fade" id="deleteTariffConfirmation" tabindex="-1" aria-labelledby="deleteTariffConfirmation" aria-hidden="true">
+<div class="modal fade" id="deleteTariffConfirmation" tabindex="-1" aria-labelledby="deleteTariffConfirmation"
+     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Delete confirmation window</h5>
+                <h5 class="modal-title">Delete confirmation window</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -238,7 +241,8 @@
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="adminRequest">
                     <input type="hidden" name="confirmation" value="true">
-                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete tariff">Delete</button>
+                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete tariff">Delete
+                    </button>
                 </form>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div>
@@ -259,90 +263,15 @@
 
 
 
-
-
-
-
-
-
-<!-- Модальное окно -->
-<div class="modal fade" id="success" tabindex="-1" aria-labelledby="success" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Сhanges saved in the database</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    $(document).ready(function () {
-        var hash = window.location.hash;
-        if (hash == '#success') {
-            $("#success").modal('show');
-            history.pushState("", document.title, window.location.pathname
-                + window.location.search);
-        }
-    })
-</script>
-
-
-
-
-<%--<script>--%>
-<%--    $(document).ready(function () {--%>
-<%--        var hash = window.location.hash;--%>
-<%--        if (hash == '#editOrDeleteService') {--%>
-<%--            $("#editOrDeleteService").modal('show');--%>
-<%--            history.pushState("", document.title, window.location.pathname--%>
-<%--                + window.location.search);--%>
-<%--        }--%>
-<%--    })--%>
-<%--</script>--%>
-
-
-
-
-
-
-
-
-
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>--%>
-
-<%--<script>--%>
-<%--    $(document).ready(function(){--%>
-<%--        $(".launch-modal").click(function(){--%>
-<%--            $("#myModal").modal("show");--%>
-<%--        });--%>
-<%--    });--%>
-<%--</script>--%>
-<!-- Скрипт, вызывающий модальное окно после загрузки страницы -->
-<%--<script>--%>
-<%--    $(document).ready(function() {--%>
-<%--        var hash = window.location.hash;--%>
-<%--        if(hash == '#modal') {--%>
-<%--            $("#myModal").modal('show');--%>
-<%--            history.pushState("", document.title, window.location.pathname--%>
-<%--                + window.location.search);--%>
-<%--        }--%>
-<%--    })--%>
-<%--</script>--%>
-
 
 <!-- Модальное окно -->
-<div class="modal fade" id="addOrEditService" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addOrEditService"  aria-hidden="true">
+<div class="modal fade" id="addOrEditService" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="addOrEditService" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Данные сервиса</h5>
+                <h5 class="modal-title">Данные сервиса</h5>
 
             </div>
             <form action="controller" method="post">
@@ -351,7 +280,7 @@
                     <c:set var="serviceToEdit" value="${serviceToEdit}"/>
                     <c:if test="${serviceToEdit.id != null}">
 
-                    <input type="hidden" name="serviceId" value="${serviceToEdit.id}">
+                        <input type="hidden" name="serviceId" value="${serviceToEdit.id}">
                     </c:if>
 
                     <div class="mb-3">
@@ -369,12 +298,15 @@
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="command" value="adminRequest">
-                    <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit service">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit service">
+                        Submit
+                    </button>
 
                     <button type="submit" class="btn btn-secondary"
                             data-bs-dismiss="modal"
                             name="adminRequest" value="Remove data"
-                    >Cancel</button>
+                    >Cancel
+                    </button>
                 </div>
             </form>
         </div>
@@ -394,11 +326,12 @@
 </script>
 
 
-<div class="modal fade" id="addOrEditTariff" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addOrEditTariff"  aria-hidden="true">
+<div class="modal fade" id="addOrEditTariff" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="addOrEditTariff" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Данные тарифа</h5>
+                <h5 class="modal-title">Данные тарифа</h5>
 
             </div>
             <form action="controller" method="post">
@@ -411,6 +344,7 @@
                         <input type="hidden" name="tariffId" value="${tariffToEdit.id}">
                         <input type="hidden" name="serviceId" value="${tariffToEdit.serviceId}">
                     </c:if>
+
 
                     <div class="mb-3">
                         <label for="tariffNameRu" class="col-form-label">Название тарифа на русском языке:</label>
@@ -425,39 +359,58 @@
 
                         <label for="tariffPrice" class="col-form-label">Цена тарифа:</label>
                         <input type="text" name="tariffPrice" class="form-control" id="tariffPrice"
-<%--                               pattern="^[^а-яА-ЯЁё]+"--%>
+                        <%--                               pattern="^[^а-яА-ЯЁё]+"--%>
                                value="${tariffToEdit.price}"
                                minlength="1" maxlength="10" placeholder="Любые символы кроме кирилицы" required>
 
-                        <label for="tariffDescriptionRu" class="col-form-label">Описание тарифа на русском языке:</label>
+                        <label for="tariffDescriptionRu" class="col-form-label">Описание тарифа на русском
+                            языке:</label>
                         <input type="text" name="tariffDescriptionRu" class="form-control" id="tariffDescriptionRu"
                                value="${tariffToEdit.descriptionRu}"
                                minlength="5" maxlength="3000" placeholder="Допустимы любые символы" required>
 
-                        <label for="tariffDescriptionEn" class="col-form-label">Описание тарифа на английском языке:</label>
+                        <label for="tariffDescriptionEn" class="col-form-label">Описание тарифа на английском
+                            языке:</label>
                         <input type="text" name="tariffDescriptionEn" class="form-control" id="tariffDescriptionEn"
                                pattern="^[^а-яА-ЯЁё]+" value="${tariffToEdit.descriptionEn}"
                                minlength="5" maxlength="3000" placeholder="Любые символы кроме кирилицы" required>
+                        <c:if test="${tariffToEdit.id != null}">
+                            <div class="form-group">
+                                <label for="disabledSelect">Сервис</label>
+                                <select id="disabledSelect" class="form-control" disabled>
 
-                        <div class="form-group">
-                            <label for="disabledSelect">Сервис</label>
-                            <select id="disabledSelect" class="form-control" >
+                                    <option>${serviceName}</option>
+                                </select>
+                            </div>
+                        </c:if>
 
-                                <option>${serviceName}</option>
-                            </select>
-                        </div>
+                        <c:if test="${tariffToEdit.id == null}">
+                            <div class="form-group">
+                                <label for="serviceIdForTariff">Сервис</label>
+                                <select name="serviceIdForTariff" id="serviceIdForTariff" class="form-control">
+
+                                    <c:forEach var="serviceList" items="${ListOfServices}">
+                                        <option value="${serviceList.id}">${serviceList.titleRu}</option>
+
+                                    </c:forEach>
+                                </select>
+                            </div>
+                        </c:if>
 
 
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="command" value="adminRequest">
-                    <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit tariff">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit tariff">
+                        Submit
+                    </button>
 
                     <button type="submit" class="btn btn-secondary"
                             data-bs-dismiss="modal"
                             name="adminRequest" value="Remove data"
-                    >Cancel</button>
+                    >Cancel
+                    </button>
                 </div>
             </form>
         </div>
@@ -475,9 +428,6 @@
         }
     })
 </script>
-
-
-
 
 
 </body>

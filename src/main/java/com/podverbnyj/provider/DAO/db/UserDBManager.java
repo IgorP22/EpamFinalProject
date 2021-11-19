@@ -120,6 +120,21 @@ public class UserDBManager {
         }
     }
 
+    public int countAdmins(Connection con) throws SQLException {
+        ResultSet rs = null;
+        int counter = 1;
+        try {
+            rs = con.createStatement().executeQuery(COUNT_ADMINS);
+            if (rs.next()) {
+                counter = rs.getInt(1);
+            }
+            return counter;
+        } finally {
+            close(rs);
+        }
+    }
+
+
     public void close(AutoCloseable resource) {
         if (resource != null) {
             try {

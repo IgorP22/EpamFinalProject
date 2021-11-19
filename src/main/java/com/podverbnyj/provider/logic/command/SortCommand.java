@@ -34,12 +34,14 @@ public class SortCommand implements Command {
         boolean servicesIsSorted = (boolean)req.getSession().getAttribute("servicesIsSorted");
         boolean tariffsIsSortedByName = (boolean)req.getSession().getAttribute("tariffsIsSortedByName");
         boolean sortedByPrice = (boolean)req.getSession().getAttribute("sortedByPrice");
+        boolean sortedByLogin = (boolean)req.getSession().getAttribute("sortedByLogin");
 
         System.out.println(sort);
         System.out.println(language);
         String s1= "Sort services";
         String s2= "Sort tariffs by name";
         String s3= "Sort tariffs by price";
+        String s4= "Sort users by login";
 
 
         if (s1.equals(sort)) {
@@ -76,6 +78,21 @@ public class SortCommand implements Command {
                 req.getSession().setAttribute("sortedByPrice", true);
             }
         }
+
+        if (s4.equals(sort)) {
+            List<User> users = (List<User>) req.getSession().getAttribute("ListOfUsers");
+            if (sortedByLogin) {
+                Sorter.sortUsersByLoginReverseOrder(users);
+                req.getSession().setAttribute("sortedByLogin", false);
+            } else {
+                Sorter.sortUsersByLogin(users);
+                req.getSession().setAttribute("sortedByLogin", true);
+            }
+        }
+
+
+
+
 
         return req.getHeader("referer");
     }

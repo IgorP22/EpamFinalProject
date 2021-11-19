@@ -7,6 +7,8 @@ import com.podverbnyj.provider.DAO.db.DBException;
 import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import com.podverbnyj.provider.DAO.db.entity.User;
+import com.podverbnyj.provider.DAO.db.entity.constant.Role;
+import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import com.podverbnyj.provider.utils.Sorter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,32 +28,53 @@ public class AdminRequestCommand implements Command {
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
         String adminRequest = req.getParameter("adminRequest");
         System.out.println(adminRequest);
-        String getListOfServicesAndTariff = "List of services and tariffs";
 
+        String getListOfServicesAndTariff = "List of services and tariffs";
         String getUsersList = "List of users";
-        String addUser = "Add new user";
+
+        String addUser = "Add or edit user";
+        String blockUser = "Block user";
+        String unblockUser = "Unblock user";
+        String deleteUser = "Delete user";
+
         String editService = "Add or edit service";
         String deleteService = "Delete service";
         String editTariff = "Add or edit tariff";
         String deleteTariff = "Delete tariff";
         String removeDataFromSession = "Remove data";
 
-        String adminFlag;
+
+        if (blockUser.equals(adminRequest)) {
+            int userID = Integer.parseInt(req.getParameter("userId"));
+            User user = userDAO.getById(userID);
+            user.setStatus(Status.BLOCKED);
+            userDAO.update(user);
+            getUsersList(req);
+            return "admin_users.jsp#success";
+        }
+
+        if (unblockUser.equals(adminRequest)) {
+            int userID = Integer.parseInt(req.getParameter("userId"));
+            User user = userDAO.getById(userID);
+            user.setStatus(Status.ACTIVE);
+            userDAO.update(user);
+            getUsersList(req);
+            return "admin_users.jsp#success";
+        }
+
+        if (deleteUser.equals(adminRequest)) {
+            return deleteUser(req);
+        }
+
+
 
         if (getListOfServicesAndTariff.equals(adminRequest)) {
             getPriceList(req);
-            adminFlag = "price";
-            req.getSession().setAttribute("adminFlag", adminFlag);
-            System.out.println(adminFlag);
             return req.getHeader("referer");
         }
 
         if (getUsersList.equals(adminRequest)) {
-            List<User> listOfUsers = userDAO.findAll();
-            req.getSession().setAttribute("ListOfUsers", listOfUsers);
-            adminFlag = "users";
-            req.getSession().setAttribute("adminFlag", adminFlag);
-            req.getSession().setAttribute("usersIsSorted", false);
+            getUsersList(req);
             return req.getHeader("referer");
         }
 
@@ -71,8 +94,6 @@ public class AdminRequestCommand implements Command {
             return deleteService(req);
         }
 
-
-
         if (editTariff.equals(adminRequest)) {
             String address = addOrEditTariff(req);
             if (address != null) return address;
@@ -82,6 +103,47 @@ public class AdminRequestCommand implements Command {
             return deleteTariff(req);
         }
 
+
+        return req.getHeader("referer");
+    }
+
+    private void getUsersList(HttpServletRequest req) throws DBException {
+        List<User> listOfUsers = userDAO.findAll();
+        boolean sortedByLogin = (boolean) req.getSession().getAttribute("sortedByPrice");
+        if (sortedByLogin) {
+            Sorter.sortUsersByLogin(listOfUsers);
+        } else {
+            Sorter.sortUsersByLoginReverseOrder(listOfUsers);
+        }
+        req.getSession().setAttribute("ListOfUsers", listOfUsers);
+    }
+
+    private String deleteUser(HttpServletRequest req) throws DBException {
+
+
+
+
+        String confirmation = req.getParameter("confirmation");
+        if (confirmation == null) {
+            req.getSession().setAttribute("userIdToDelete", req.getParameter("userId"));
+            return "admin_users.jsp#deleteSUserConfirmation";
+        }
+
+        int idToDelete = Integer.parseInt((String) req.getSession().getAttribute("userIdToDelete"));
+        User user = userDAO.getById(idToDelete);
+        if (user.getRole() == Role.ADMIN && userDAO.countAdmins() == 1) {
+            req.setAttribute("confirmation", null);
+            return "admin_users.jsp#lastAdminDeleteError";
+        }
+
+        if (req.getParameter("confirmation").equals("true")) {
+            idToDelete = Integer.parseInt((String) req.getSession().getAttribute("userIdToDelete"));
+            userDAO.delete(userDAO.getById(idToDelete));
+            getUsersList(req);
+            req.setAttribute("confirmation", null);
+
+            return "admin_users.jsp#success";
+        }
         return req.getHeader("referer");
     }
 
@@ -96,7 +158,7 @@ public class AdminRequestCommand implements Command {
             serviceDAO.delete(serviceDAO.getById(idToDelete));
             System.out.println("Service " + idToDelete + " deleted");
             getPriceList(req);
-            req.setAttribute("confirmation",null);
+            req.setAttribute("confirmation", null);
 
             return "admin.jsp#success";
         }
@@ -122,7 +184,6 @@ public class AdminRequestCommand implements Command {
             req.getSession().setAttribute("serviceToEdit", service);
             return "admin.jsp#addOrEditService";
         }
-
 
         if (req.getParameter("serviceId") != null && req.getParameter("serviceNameRu") != null) {
             int idToEdit = Integer.parseInt((String) req.getParameter("serviceId"));
@@ -150,7 +211,7 @@ public class AdminRequestCommand implements Command {
             tariffDAO.delete(tariffDAO.getById(idToDelete));
             System.out.println("Tariff " + idToDelete + " deleted");
             getPriceList(req);
-            req.setAttribute("confirmation",null);
+            req.setAttribute("confirmation", null);
 
             return "admin.jsp#success";
         }
@@ -172,17 +233,10 @@ public class AdminRequestCommand implements Command {
             Tariff tariff = tariffDAO.getById(idToEdit);
             Service service = serviceDAO.getById(tariff.getServiceId());
             req.setAttribute("tariffId", idToEdit);
-//            req.setAttribute("serviceId", tariff.getServiceId());
-//            req.setAttribute("serviceNameRu", idToEdit);
-//            System.out.println(tariff.getServiceId());
-//            System.out.printf("serviceI-"+req.getParameter("serviceId"));
-//            System.out.printf("serviceI-"+req.getAttribute("serviceId"));
-//            System.out.printf("serviceI-"+req.getSession().getAttribute("serviceId"));
             req.getSession().setAttribute("serviceListForTariff", service);
             req.getSession().setAttribute("tariffToEdit", tariff);
             return "admin.jsp#addOrEditTariff";
         }
-
 
         if (req.getParameter("tariffId") != null && req.getParameter("tariffNameRu") != null) {
             int idToEdit = Integer.parseInt((String) req.getParameter("tariffId"));
@@ -199,25 +253,34 @@ public class AdminRequestCommand implements Command {
     }
 
 
-
     private Tariff getTariff(HttpServletRequest req) {
         Tariff tariff = new Tariff();
+
+        System.out.println(req.getParameter("serviceIdForTariff"));
+        System.out.println(req.getAttribute("serviceIdForTariff"));
+        System.out.println(req.getSession().getAttribute("serviceIdForTariff"));
+
+
         tariff.setNameRu(req.getParameter("tariffNameRu"));
         tariff.setNameEn(req.getParameter("tariffNameEn"));
         tariff.setPrice(Double.parseDouble(req.getParameter("tariffPrice")));
-        tariff.setServiceId(Integer.parseInt((String) req.getParameter("serviceId")));
+        if (req.getParameter("serviceId") == null) {
+            tariff.setServiceId(Integer.parseInt(req.getParameter("serviceIdForTariff")));
+        } else {
+            tariff.setServiceId(Integer.parseInt(req.getParameter("serviceId")));
+        }
+
         tariff.setDescriptionRu(req.getParameter("tariffDescriptionRu"));
         tariff.setDescriptionEn(req.getParameter("tariffDescriptionEn"));
         return tariff;
     }
+
 
     private void getPriceList(HttpServletRequest req) throws DBException {
 
         boolean servicesIsSorted = (boolean) req.getSession().getAttribute("servicesIsSorted");
         boolean tariffsIsSortedByName = (boolean) req.getSession().getAttribute("tariffsIsSortedByName");
         boolean sortedByPrice = (boolean) req.getSession().getAttribute("sortedByPrice");
-
-        System.out.println("n1 " + servicesIsSorted + " " + tariffsIsSortedByName + " " + sortedByPrice);
 
         List<Service> listOfServices = serviceDAO.findAll();
         List<Tariff> listOfTariffs = tariffDAO.findAll();

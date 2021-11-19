@@ -114,4 +114,16 @@ public class UserDAO implements AbstractDAO<User>{
             userDBManager.close(con);
         }
     }
+
+    public int countAdmins() throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userDBManager.countAdmins(con);
+        }catch (SQLException ex) {
+            log.error("Can't count admins amount ==> ", ex);
+            throw new DBException("Can't count admins amount");
+        } finally {
+            userDBManager.close(con);
+        }
+    }
 }

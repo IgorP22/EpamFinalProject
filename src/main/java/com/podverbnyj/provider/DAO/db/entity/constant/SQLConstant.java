@@ -13,6 +13,8 @@ public class SQLConstant {
                 + "email = ?, name = ?, surname = ?, phone = ?, balance = ?, "
                 + "language = ?, role= ?, notification = ?, status = ? WHERE (user_id = ?)";
         public static final String DELETE_USER_BY_LOGIN = "DELETE FROM user WHERE login = ?";
+        public static final String COUNT_ADMINS = "SELECT COUNT(*) FROM user WHERE role = 'ADMIN'";
+
     }
 
     public static class ServiceConstants {
