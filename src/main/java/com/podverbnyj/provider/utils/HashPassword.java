@@ -25,6 +25,7 @@ public class HashPassword {
         for (byte b : hash) {
             sb.append(String.format("%02X", b));
         }
+        log.debug("Password secured");
         return sb.toString();
     }
 }

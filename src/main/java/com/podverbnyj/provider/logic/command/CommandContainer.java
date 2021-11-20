@@ -14,6 +14,10 @@ public class CommandContainer {
 		commands.put("download", new DownloadCommand());
 		commands.put("email", new EmailCommand());
 		commands.put("adminRequest", new AdminRequestCommand());
+		commands.put("userRequest", new UserRequestCommand());
+
+
+
 //		commands.put("insertUsers", new InsertUsers());
 		}
 

@@ -50,6 +50,7 @@ public class LoginCommand implements Command {
             req.getSession().setAttribute("role", user.getRole());
             if (user.getRole().equals(Role.ADMIN)) {
                 req.getSession().setAttribute("user", user);
+                req.getSession().setAttribute("currentUser", user);
                 return "admin.jsp";
             }
             req.getSession().setAttribute("currentUser", user);

@@ -14,7 +14,6 @@ import com.podverbnyj.provider.utils.Sorter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -49,7 +48,7 @@ public class AdminRequestCommand implements Command {
 
 
         if (blockUser.equals(adminRequest)) {
-            int userID = Integer.parseInt(req.getParameter("userId"));
+            int userID = Integer.parseInt(req.getParameter("userToEditId"));
             User user = userDAO.getById(userID);
             user.setStatus(Status.BLOCKED);
             userDAO.update(user);
@@ -58,7 +57,7 @@ public class AdminRequestCommand implements Command {
         }
 
         if (unblockUser.equals(adminRequest)) {
-            int userID = Integer.parseInt(req.getParameter("userId"));
+            int userID = Integer.parseInt(req.getParameter("userToEditId"));
             User user = userDAO.getById(userID);
             user.setStatus(Status.ACTIVE);
             userDAO.update(user);
@@ -133,7 +132,7 @@ public class AdminRequestCommand implements Command {
     private String deleteUser(HttpServletRequest req) throws DBException {
         String confirmation = req.getParameter("confirmation");
         if (confirmation == null) {
-            req.getSession().setAttribute("userIdToDelete", req.getParameter("userId"));
+            req.getSession().setAttribute("userIdToDelete", req.getParameter("userToEditId"));
             return "admin_users.jsp#deleteSUserConfirmation";
         }
 
