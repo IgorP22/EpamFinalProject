@@ -86,7 +86,7 @@
     <%--    <a class="btn btn-primary" href="admin.jsp#editOrDeleteService" onClick="window.location.reload();" role="button">Add new service</a>--%>
     <%--    <input type="submit" name="adminRequest" class="btn btn-primary" value="Add new tariff"/>--%>
 
-    <a href="admin_users.jsp" class="btn btn-success" role="button">List of users</a>
+    <a href="admin_users.jsp" class="btn btn-success" role="button">Users page</a>
 
 <%--    <button type="submit" name="adminRequest" class="btn btn-success" value="List of users">List of users</button>--%>
 <%--    <button type="submit" name="adminRequest" class="btn btn-success" value="Add new user">Add new user</button>--%>

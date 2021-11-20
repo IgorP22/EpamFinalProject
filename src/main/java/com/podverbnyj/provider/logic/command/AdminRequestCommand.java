@@ -7,15 +7,19 @@ import com.podverbnyj.provider.DAO.db.DBException;
 import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import com.podverbnyj.provider.DAO.db.entity.User;
+import com.podverbnyj.provider.DAO.db.entity.constant.Language;
 import com.podverbnyj.provider.DAO.db.entity.constant.Role;
 import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import com.podverbnyj.provider.utils.Sorter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+
+import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
 public class AdminRequestCommand implements Command {
 
@@ -32,7 +36,7 @@ public class AdminRequestCommand implements Command {
         String getListOfServicesAndTariff = "List of services and tariffs";
         String getUsersList = "List of users";
 
-        String addUser = "Add or edit user";
+        String addOrEditUser = "Add or edit user";
         String blockUser = "Block user";
         String unblockUser = "Unblock user";
         String deleteUser = "Delete user";
@@ -66,6 +70,13 @@ public class AdminRequestCommand implements Command {
             return deleteUser(req);
         }
 
+        if (addOrEditUser.equals(adminRequest)) {
+            System.out.println("~~~~~");
+            String address = addOrEditUser(req);
+            if (address != null) return address;
+        }
+
+
 
 
         if (getListOfServicesAndTariff.equals(adminRequest)) {
@@ -81,6 +92,7 @@ public class AdminRequestCommand implements Command {
         if (removeDataFromSession.equals(adminRequest)) {
             req.getSession().setAttribute("serviceToEdit", null);
             req.getSession().setAttribute("tariffToEdit", null);
+            req.getSession().setAttribute("userToEdit", null);
             return req.getHeader("referer");
         }
 
@@ -119,10 +131,6 @@ public class AdminRequestCommand implements Command {
     }
 
     private String deleteUser(HttpServletRequest req) throws DBException {
-
-
-
-
         String confirmation = req.getParameter("confirmation");
         if (confirmation == null) {
             req.getSession().setAttribute("userIdToDelete", req.getParameter("userId"));
@@ -145,6 +153,66 @@ public class AdminRequestCommand implements Command {
             return "admin_users.jsp#success";
         }
         return req.getHeader("referer");
+    }
+
+    private String addOrEditUser(HttpServletRequest req) throws DBException {
+        System.out.println(req.getSession().getAttribute("userToEditId"));
+        System.out.println(req.getAttribute("userToEditId"));
+        System.out.println(req.getParameter("userToEditId"));
+        System.out.println(req.getSession().getAttribute("userToEdit"));
+        System.out.println(req.getAttribute("userToEdit"));
+        System.out.println(req.getParameter("userToEdit"));
+
+        if (req.getParameter("userToEditId") == null && req.getParameter("userLogin") != null) {
+            System.out.println("~~~~1");
+            User user;
+            user = getUser(req);
+            userDAO.create(user);
+            System.out.println("User added");
+            getUsersList(req);
+            req.getSession().setAttribute("userToEdit", null);
+            return "admin_users.jsp#success";
+        }
+
+        if (req.getParameter("userToEditId") != null && req.getParameter("userLogin") == null) {
+            System.out.println("~~~~2");
+            int idToEdit = Integer.parseInt(req.getParameter("userToEditId"));
+            User user = userDAO.getById(idToEdit);
+            req.setAttribute("userToEditId", idToEdit);
+            req.getSession().setAttribute("userToEdit", user);
+            System.out.println(idToEdit);
+            return "admin_users.jsp#addOrEditUser";
+        }
+
+        if (req.getParameter("userToEditId") != null && req.getParameter("userLogin") != null) {
+            System.out.println("~~~~3");
+            int idToEdit = Integer.parseInt( req.getParameter("userToEditId"));
+            User user;
+            user = getUser(req);
+            user.setId(idToEdit);
+            userDAO.update(user);
+            getUsersList(req);
+            req.getSession().setAttribute("userToEdit", null);
+            return "admin_users.jsp#success";
+        }
+        return null;
+    }
+
+    private User getUser(HttpServletRequest req) {
+        User user;
+        user = new User.UserBuilder(
+                req.getParameter("userLogin"),
+                securePassword(req.getParameter("userPassword")))
+                .setEmail(req.getParameter("userEmail"))
+                .setName(req.getParameter("userName"))
+                .setSurname(req.getParameter("userSurname"))
+                .setPhone(req.getParameter("userPhone"))
+                .setLanguage(Language.valueOf(req.getParameter("userLanguage")))
+                .setRole(Role.valueOf(req.getParameter("userRole")))
+                .setNotification(Boolean.parseBoolean(req.getParameter("userNotification")))
+                .setStatus(Status.valueOf(req.getParameter("userStatus")))
+                .build();
+        return user;
     }
 
     private String deleteService(HttpServletRequest req) throws DBException {
