@@ -8,7 +8,7 @@ public class Service implements Serializable {
     private String titleEn;
 
 
-    public Service(String titleRu, String titleEn) {
+    private Service(String titleRu, String titleEn) {
         this.titleRu = titleRu;
         this.titleEn = titleEn;
     }

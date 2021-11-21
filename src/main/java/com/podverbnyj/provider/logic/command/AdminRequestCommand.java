@@ -70,7 +70,6 @@ public class AdminRequestCommand implements Command {
         }
 
         if (addOrEditUser.equals(adminRequest)) {
-            System.out.println("~~~~~");
             String address = addOrEditUser(req);
             if (address != null) return address;
         }
@@ -113,7 +112,6 @@ public class AdminRequestCommand implements Command {
         if (deleteTariff.equals(adminRequest)) {
             return deleteTariff(req);
         }
-
 
         return req.getHeader("referer");
     }
@@ -189,6 +187,10 @@ public class AdminRequestCommand implements Command {
             User user;
             user = getUser(req);
             user.setId(idToEdit);
+            String password = userDAO.getById(idToEdit).getPassword();
+            if (password.equals(req.getParameter("userPassword"))) {
+                user.setPassword(password);
+            }
             userDAO.update(user);
             getUsersList(req);
             req.getSession().setAttribute("userToEdit", null);
@@ -198,7 +200,9 @@ public class AdminRequestCommand implements Command {
     }
 
     private User getUser(HttpServletRequest req) {
+
         User user;
+
         user = new User.UserBuilder(
                 req.getParameter("userLogin"),
                 securePassword(req.getParameter("userPassword")))

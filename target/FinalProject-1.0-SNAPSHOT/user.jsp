@@ -73,7 +73,7 @@
             </button>
 
             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#">
+                    data-bs-target="#addOrEditUser">
                 Edit profile
             </button>
 
@@ -109,17 +109,21 @@
         </h4>
     </div>
     <div class="col-md-3">
-        <form>
+        <form action="controller" method="post">
             <div class="row">
                 <div class="col-auto">
 
                     <input type="number" class="form-control"
-                           pattern="^\d?\d\.\d\d$"
-                           min="0.01" step="0.01" id="sum" placeholder="Сумма пополнения">
+                           pattern="^\d?\d\.\d\d$" name="sum"
+                           min="1" step="0.01" id="sum" placeholder="Сумма пополнения">
                 </div>
                 <div class="col-auto">
-                    <button type="button" value="Logout" class="btn btn-success" data-bs-target="#">Пополнить
+                    <input type="hidden" name="command" value="userRequest">
+                    <input type="hidden" name="userToEditId" value="${currentUser.id}">
+                    <button type="submit" value="Edit balance" class="btn btn-success" name="userRequest">Пополнить
                     </button>
+
+
                 </div>
             </div>
         </form>
@@ -130,6 +134,7 @@
 </div>
 <hr>
 
+<%@ include file="add_or_edit_user.jspf" %>
 
 </body>
 </html>
