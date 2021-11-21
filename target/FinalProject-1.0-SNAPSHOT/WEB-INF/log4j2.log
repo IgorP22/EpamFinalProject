@@ -7311,3 +7311,216 @@ com.podverbnyj.provider.DAO.db.DBException: Can't create user ==> User{login='пр
 17:54:47.040 [http-nio-8080-exec-157] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1ee207a4
 17:56:25.156 [http-nio-8080-exec-166] TRACE - commandName ==> userRequest
 17:56:25.157 [http-nio-8080-exec-166] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1ee207a4
+03:00:00.336 [http-nio-8080-exec-169] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:00:00.355 [http-nio-8080-exec-169] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:00:00.356 [http-nio-8080-exec-169] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:00:00.364 [http-nio-8080-exec-169] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:00:00.365 [http-nio-8080-exec-169] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:00:00.366 [http-nio-8080-exec-169] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:00:00.367 [http-nio-8080-exec-169] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:00:00.373 [http-nio-8080-exec-169] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:00:00.374 [http-nio-8080-exec-169] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:00:00.374 [http-nio-8080-exec-169] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=ACTIVE}
+03:00:00.375 [http-nio-8080-exec-169] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:00:00.375 [http-nio-8080-exec-169] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:00:00.376 [http-nio-8080-exec-169] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+03:00:19.687 [http-nio-8080-exec-162] TRACE - commandName ==> login
+03:00:19.690 [http-nio-8080-exec-162] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@360baaf0
+03:00:19.702 [http-nio-8080-exec-162] DEBUG - Password secured
+03:00:19.704 [http-nio-8080-exec-162] TRACE - login ==> user1
+03:00:19.715 [http-nio-8080-exec-162] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:00:19.716 [http-nio-8080-exec-162] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:00:19.716 [http-nio-8080-exec-162] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:00:19.716 [http-nio-8080-exec-162] TRACE - Logged successfully as user1
+03:00:19.717 [http-nio-8080-exec-162] TRACE - Login stored in session
+03:00:19.717 [http-nio-8080-exec-162] TRACE - User role ==> USER
+03:00:25.393 [http-nio-8080-exec-171] TRACE - commandName ==> userRequest
+03:00:25.406 [http-nio-8080-exec-171] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1ee207a4
+03:00:57.599 [RMI TCP Connection(69)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+03:03:08.288 [http-nio-8080-exec-172] TRACE - commandName ==> userRequest
+03:03:08.371 [http-nio-8080-exec-172] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:09.997 [http-nio-8080-exec-167] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:03:09.998 [http-nio-8080-exec-167] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:03:09.998 [http-nio-8080-exec-167] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:03:10.003 [http-nio-8080-exec-167] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:03:10.004 [http-nio-8080-exec-167] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:03:10.005 [http-nio-8080-exec-167] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:03:10.005 [http-nio-8080-exec-167] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:03:10.018 [http-nio-8080-exec-167] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:03:10.019 [http-nio-8080-exec-167] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:03:10.019 [http-nio-8080-exec-167] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=ACTIVE}
+03:03:10.020 [http-nio-8080-exec-167] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:03:10.020 [http-nio-8080-exec-167] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:03:10.021 [http-nio-8080-exec-167] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+03:03:23.190 [http-nio-8080-exec-166] TRACE - commandName ==> login
+03:03:23.197 [http-nio-8080-exec-166] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4bcd44b9
+03:03:23.202 [http-nio-8080-exec-166] DEBUG - Password secured
+03:03:23.203 [http-nio-8080-exec-166] TRACE - login ==> user1
+03:03:23.234 [http-nio-8080-exec-166] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:03:23.235 [http-nio-8080-exec-166] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:03:23.236 [http-nio-8080-exec-166] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:03:23.236 [http-nio-8080-exec-166] TRACE - Logged successfully as user1
+03:03:23.236 [http-nio-8080-exec-166] TRACE - Login stored in session
+03:03:23.236 [http-nio-8080-exec-166] TRACE - User role ==> USER
+03:03:30.400 [http-nio-8080-exec-167] TRACE - commandName ==> userRequest
+03:03:30.400 [http-nio-8080-exec-167] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:44.587 [http-nio-8080-exec-176] TRACE - commandName ==> userRequest
+03:03:44.587 [http-nio-8080-exec-176] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:45.380 [http-nio-8080-exec-172] TRACE - commandName ==> userRequest
+03:03:45.393 [http-nio-8080-exec-172] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:46.134 [http-nio-8080-exec-171] TRACE - commandName ==> userRequest
+03:03:46.134 [http-nio-8080-exec-171] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:46.816 [http-nio-8080-exec-173] TRACE - commandName ==> userRequest
+03:03:46.817 [http-nio-8080-exec-173] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:47.347 [http-nio-8080-exec-170] TRACE - commandName ==> userRequest
+03:03:47.349 [http-nio-8080-exec-170] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:47.824 [http-nio-8080-exec-177] TRACE - commandName ==> userRequest
+03:03:47.825 [http-nio-8080-exec-177] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:48.251 [http-nio-8080-exec-175] TRACE - commandName ==> userRequest
+03:03:48.252 [http-nio-8080-exec-175] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:03:48.809 [http-nio-8080-exec-178] TRACE - commandName ==> userRequest
+03:03:48.890 [http-nio-8080-exec-178] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3
+03:07:07.720 [http-nio-8080-exec-173] TRACE - commandName ==> login
+03:07:07.720 [http-nio-8080-exec-173] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4bcd44b9
+03:07:07.809 [http-nio-8080-exec-173] DEBUG - Password secured
+03:07:07.839 [http-nio-8080-exec-173] TRACE - login ==> admin
+03:07:07.899 [http-nio-8080-exec-173] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:07:07.900 [http-nio-8080-exec-173] TRACE - Current user ==>User{login='admin', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:07:07.900 [http-nio-8080-exec-173] TRACE - User from DB ==>User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:07:07.929 [http-nio-8080-exec-173] TRACE - Logged successfully as admin
+03:07:07.929 [http-nio-8080-exec-173] TRACE - Login stored in session
+03:07:07.929 [http-nio-8080-exec-173] TRACE - User role ==> ADMIN
+03:08:21.127 [http-nio-8080-exec-177] TRACE - commandName ==> adminRequest
+03:08:21.128 [http-nio-8080-exec-177] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:08:21.734 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:08:21.860 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:08:21.860 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:08:21.907 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+03:08:22.130 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:08:22.130 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:08:22.135 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:08:22.136 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:09:35.848 [http-nio-8080-exec-173] TRACE - commandName ==> adminRequest
+03:09:35.848 [http-nio-8080-exec-173] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:09:36.142 [http-nio-8080-exec-173] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:09:36.142 [http-nio-8080-exec-173] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:09:36.143 [http-nio-8080-exec-173] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:09:36.171 [http-nio-8080-exec-173] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+03:09:36.231 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:09:36.260 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:09:36.260 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:09:36.261 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:09:36.292 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+03:10:25.497 [http-nio-8080-exec-177] TRACE - commandName ==> adminRequest
+03:10:25.498 [http-nio-8080-exec-177] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:10:25.526 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:10:25.532 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:10:25.532 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:10:25.535 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+03:10:25.544 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:10:25.544 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:10:25.544 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:10:25.544 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:10:25.546 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+03:10:25.547 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+03:11:01.099 [http-nio-8080-exec-173] TRACE - commandName ==> adminRequest
+03:11:01.100 [http-nio-8080-exec-173] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:11:01.254 [http-nio-8080-exec-173] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:11:01.254 [http-nio-8080-exec-173] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:11:01.281 [http-nio-8080-exec-173] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:11:01.282 [http-nio-8080-exec-173] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+03:11:01.285 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:11:01.285 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:11:01.286 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:11:01.286 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:11:01.287 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+03:11:01.288 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+03:11:01.288 [http-nio-8080-exec-173] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+03:11:56.206 [http-nio-8080-exec-177] TRACE - commandName ==> adminRequest
+03:11:56.207 [http-nio-8080-exec-177] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:11:56.236 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:11:56.237 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:11:56.237 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:11:56.243 [http-nio-8080-exec-177] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+03:11:56.247 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:11:56.248 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:11:56.249 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:11:56.250 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:11:56.251 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+03:11:56.252 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+03:11:56.252 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+03:11:56.253 [http-nio-8080-exec-177] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+03:12:36.140 [http-nio-8080-exec-176] TRACE - commandName ==> adminRequest
+03:12:36.141 [http-nio-8080-exec-176] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:12:36.146 [http-nio-8080-exec-176] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:12:36.146 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:36.146 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=ACTIVE}
+03:12:36.147 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:36.148 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:12:36.149 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+03:12:39.193 [http-nio-8080-exec-177] TRACE - commandName ==> adminRequest
+03:12:39.193 [http-nio-8080-exec-177] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:12:39.196 [http-nio-8080-exec-177] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+03:12:39.216 [http-nio-8080-exec-177] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:12:39.217 [http-nio-8080-exec-177] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:39.217 [http-nio-8080-exec-177] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=ACTIVE}
+03:12:39.218 [http-nio-8080-exec-177] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:39.219 [http-nio-8080-exec-177] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:12:39.220 [http-nio-8080-exec-177] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:41.284 [http-nio-8080-exec-175] TRACE - commandName ==> adminRequest
+03:12:41.285 [http-nio-8080-exec-175] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:12:41.287 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:41.307 [http-nio-8080-exec-175] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:12:41.307 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:41.307 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=ACTIVE}
+03:12:41.309 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:41.309 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:12:41.309 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+03:12:42.816 [http-nio-8080-exec-178] TRACE - commandName ==> adminRequest
+03:12:42.816 [http-nio-8080-exec-178] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:12:42.820 [http-nio-8080-exec-178] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+03:12:46.796 [http-nio-8080-exec-180] TRACE - commandName ==> adminRequest
+03:12:46.797 [http-nio-8080-exec-180] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:12:46.798 [http-nio-8080-exec-180] DEBUG - Password secured
+03:12:46.820 [http-nio-8080-exec-180] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:12:46.820 [http-nio-8080-exec-180] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:46.820 [http-nio-8080-exec-180] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=ACTIVE}
+03:12:46.821 [http-nio-8080-exec-180] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:12:46.821 [http-nio-8080-exec-180] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:12:46.821 [http-nio-8080-exec-180] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='en', role='user', notification=false, status=ACTIVE}
+03:13:06.966 [http-nio-8080-exec-179] TRACE - commandName ==> adminRequest
+03:13:06.968 [http-nio-8080-exec-179] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:13:06.970 [http-nio-8080-exec-179] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:13:14.314 [http-nio-8080-exec-176] TRACE - commandName ==> adminRequest
+03:13:14.314 [http-nio-8080-exec-176] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:13:14.316 [http-nio-8080-exec-176] DEBUG - Password secured
+03:13:14.333 [http-nio-8080-exec-176] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:13:14.333 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:13:14.333 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=ACTIVE}
+03:13:14.334 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:13:14.337 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:13:14.337 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='en', role='user', notification=false, status=ACTIVE}
+03:13:16.915 [http-nio-8080-exec-177] TRACE - commandName ==> adminRequest
+03:13:16.915 [http-nio-8080-exec-177] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:13:16.917 [http-nio-8080-exec-177] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 2289008', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:13:20.987 [http-nio-8080-exec-175] TRACE - commandName ==> adminRequest
+03:13:20.988 [http-nio-8080-exec-175] TRACE - command ==> com.podverbnyj.provider.logic.command.AdminRequestCommand@491dfc60
+03:13:20.989 [http-nio-8080-exec-175] DEBUG - Password secured
+03:13:21.006 [http-nio-8080-exec-175] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:13:21.007 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:13:21.007 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=ACTIVE}
+03:13:21.007 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:13:21.008 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:13:21.010 [http-nio-8080-exec-175] TRACE - User created ==> User{login='user55', password='********', email='', name='', surname='', phone='', balance=0.0, language='en', role='user', notification=false, status=ACTIVE}
+03:13:36.204 [http-nio-8080-exec-180] TRACE - commandName ==> login
+03:13:36.205 [http-nio-8080-exec-180] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4bcd44b9
+03:13:36.213 [http-nio-8080-exec-180] DEBUG - Password secured
+03:13:36.213 [http-nio-8080-exec-180] TRACE - login ==> user1
+03:13:36.216 [http-nio-8080-exec-180] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:13:36.216 [http-nio-8080-exec-180] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:13:36.216 [http-nio-8080-exec-180] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:13:36.216 [http-nio-8080-exec-180] TRACE - Logged successfully as user1
+03:13:36.217 [http-nio-8080-exec-180] TRACE - Login stored in session
+03:13:36.217 [http-nio-8080-exec-180] TRACE - User role ==> USER
+03:29:07.450 [http-nio-8080-exec-179] TRACE - commandName ==> userRequest
+03:29:07.451 [http-nio-8080-exec-179] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@7f83e9b3

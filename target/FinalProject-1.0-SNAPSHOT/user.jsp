@@ -20,19 +20,14 @@
 
 
 <header>
-    <%--    <c:set var="currentUser" value="${sessionScope.user}"/>--%>
-
-
     <c:if test="${currentUser.role.value() != 'user'}">
         <c:redirect url="index.jsp"/>
     </c:if>
-
 
     <div class="page-header">
         <div class="row">
             <div class="col-md-8">
                 <h1>Страница пользователя</h1>
-
             </div>
             <div class="col-md-3">
                 <div class="row align-items-center">
@@ -65,25 +60,76 @@
 <body>
 
 <hr>
-<form action="controller" method="post">
+
+<div class="row">
+    <div class="col-md-5">
+
+        <form action="controller" method="post">
 
 
-    <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
-    <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services">Choice of services
-    </button>
+            <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
+            <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services">Choice of
+                services
+            </button>
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#">
-        Edit profile
-    </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#">
+                Edit profile
+            </button>
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#">
-        Payment history
-    </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#">
+                Payment history
+            </button>
 
 
-</form>
+        </form>
+    </div>
+    <div class="col-md-2">
+        <h4>
+
+
+            <c:set var="color" value="color:darkred"/>
+            <c:if test="${currentUser.status == 'ACTIVE'}">
+                <c:set var="color" value="color:green"/>
+            </c:if>
+
+
+            <span style="${color}">Status: ${currentUser.status}</span>
+        </h4>
+    </div>
+    <div class="col-md-2">
+        <h4>
+            <c:set var="color" value="color:red"/>
+            <c:if test="${currentUser.balance > 0}">
+                <c:set var="color" value="color:green"/>
+            </c:if>
+            <span style="${color}">Your balance: ${currentUser.balance}</span>
+
+        </h4>
+    </div>
+    <div class="col-md-3">
+        <form>
+            <div class="row">
+                <div class="col-auto">
+
+                    <input type="number" class="form-control"
+                           pattern="^\d?\d\.\d\d$"
+                           min="0.01" step="0.01" id="sum" placeholder="Сумма пополнения">
+                </div>
+                <div class="col-auto">
+                    <button type="button" value="Logout" class="btn btn-success" data-bs-target="#">Пополнить
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</div>
 <hr>
+
+
 </body>
 </html>
