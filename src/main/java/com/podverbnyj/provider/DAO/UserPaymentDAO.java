@@ -16,7 +16,7 @@ public class UserPaymentDAO {
 
     private static final Logger log = LogManager.getLogger(UserPaymentDAO.class);
     private static final DBUtils dbUtils = DBUtils.getInstance();
-    private static final UserPaymentDBManager USER_PAYMENT_DB_MANAGER = UserPaymentDBManager.getInstance();
+    private static final UserPaymentDBManager userPaymentDBManager = UserPaymentDBManager.getInstance();
 
     static UserPaymentDAO instance;
 
@@ -34,24 +34,24 @@ public class UserPaymentDAO {
     public List<UserPayment> findAll(int userId) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return USER_PAYMENT_DB_MANAGER.findAllByUserId(con, userId);
+            return userPaymentDBManager.findAllByUserId(con, userId);
         } catch (SQLException ex) {
             log.error("Can't receive payment history from DB", ex);
             throw new DBException("Can't receive payment history from DB");
         } finally {
-            USER_PAYMENT_DB_MANAGER.close(con);
+            userPaymentDBManager.close(con);
         }
     }
 
     public boolean create(UserPayment userPayment) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return USER_PAYMENT_DB_MANAGER.create(con, userPayment);
+            return userPaymentDBManager.create(con, userPayment);
         } catch (SQLException ex) {
             log.error("Can't add payment ==> " + userPayment, ex);
             throw new DBException("Can't add payment ==> " + userPayment);
         } finally {
-            USER_PAYMENT_DB_MANAGER.close(con);
+            userPaymentDBManager.close(con);
         }
     }
 

@@ -77,8 +77,8 @@
                 Edit profile
             </button>
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#">
+            <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
+            <button type="submit" class="btn btn-primary" name="userRequest" value="Payment history">
                 Payment history
             </button>
 
@@ -135,6 +135,13 @@
 <hr>
 
 <%@ include file="add_or_edit_user.jspf" %>
+
+<c:set var="flag" value="${userFlag}"/>
+<c:set var="paymentsList" value="${userPaymentsList}"/>
+${flag}
+${paymentsList}
+
+
 
 </body>
 </html>

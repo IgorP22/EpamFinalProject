@@ -14,6 +14,11 @@ public class UserPayment implements Serializable {
         this.sum = sum;
     }
 
+    public UserPayment(int userId, double sum) {
+        this.userId = userId;
+        this.sum = sum;
+    }
+
     public UserPayment(){}
 
     public int getUserId() {

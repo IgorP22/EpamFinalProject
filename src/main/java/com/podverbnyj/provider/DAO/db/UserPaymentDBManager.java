@@ -1,18 +1,15 @@
 package com.podverbnyj.provider.DAO.db;
 
 import com.podverbnyj.provider.DAO.db.entity.UserPayment;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserPaymentsConstants.*;
-
 
 
 public class UserPaymentDBManager {
@@ -36,10 +33,13 @@ public class UserPaymentDBManager {
 
     public List<UserPayment> findAllByUserId(Connection con, int userId) throws SQLException {
         List<UserPayment> userPayments = new ArrayList<>();
+        PreparedStatement ps = null;
         ResultSet rs = null;
         UserPayment userPayment;
         try {
-            rs = con.createStatement().executeQuery(FIND_ALL_PAYMENTS_BY_USER_ID);
+            ps = con.prepareStatement(FIND_ALL_PAYMENTS_BY_USER_ID);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
             while (rs.next()) {
                 userPayment = getUserPayments(rs);
                 userPayments.add(userPayment);
@@ -65,19 +65,23 @@ public class UserPaymentDBManager {
     private UserPayment getUserPayments(ResultSet rs) throws SQLException {
         UserPayment userPayment = new UserPayment();
 
-        userPayment.setUserId(rs.getInt(1));
-        userPayment.setDate(rs.getDate(2));
-        userPayment.setSum(rs.getDouble(3));
+        userPayment.setUserId(rs.getInt(2));
+        System.out.println();
+
+//        System.out.println(rs.getDate(2));
+
+        userPayment.setDate(rs.getTimestamp(3));
+
+        userPayment.setSum(rs.getDouble(4));
 
         log.trace("User payment created ==> " + userPayment);
         return userPayment;
     }
 
     private void setUserPaymentsStatement(UserPayment userPayment, PreparedStatement ps) throws SQLException {
-        java.util.Date dt = userPayment.getDate();
-        java.text.SimpleDateFormat sdf =
-                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String currentTime = sdf.format(dt);
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentTime = sdf.format(date);
 
         int index = 1;
         ps.setInt(index++, userPayment.getUserId());

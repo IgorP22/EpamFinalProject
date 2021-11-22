@@ -22,7 +22,7 @@
 
 
                     <c:if test="${userToEdit != null}">
-                    <input type="hidden" name="userToEditId" value="${userToEdit.id}">
+                        <input type="hidden" name="userToEditId" value="${userToEdit.id}">
                     </c:if>
 
 
@@ -102,42 +102,53 @@
 
                             <div class="form-group col-md-6">
 
-                                <label for="userRole">Роль:</label>
-                                <select name="userRole" id="userRole" class="form-control">
+                                <c:if test="${currentUser.role == 'ADMIN'}">
+                                    <label for="userRole">Роль:</label>
+                                    <select name="userRole" id="userRole" class="form-control">
 
                                         <option value="USER"> Пользователь</option>
 
-                                    <c:if test="${userToEdit.role == 'ADMIN'}">
-                                        <option value="ADMIN" selected>Администратор</option>
-                                    </c:if>
-                                    <c:if test="${userToEdit.role != 'ADMIN'}">
-                                        <option value="ADMIN">Администратор</option>
-                                    </c:if>
+                                        <c:if test="${userToEdit.role == 'ADMIN'}">
+                                            <option value="ADMIN" selected>Администратор</option>
+                                        </c:if>
+                                        <c:if test="${userToEdit.role != 'ADMIN'}">
+                                            <option value="ADMIN">Администратор</option>
+                                        </c:if>
+                                    </select>
 
+                                </c:if>
+
+                                <c:if test="${currentUser.role == 'USER'}">
+
+                                    <input type="hidden" name="userRole" class="form-control" id="userRole"
+                                           value="${currentUser.role}">
+                                </c:if>
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+
+                                <label for="userNotification">Уведомления:</label>
+                                <select name="userNotification" id="userNotification" class="form-control">
+
+                                    <option value="false">Выключено</option>
+
+                                    <c:if test="${userToEdit.notification == 'true'}">
+                                        <option value="true" selected>Включено</option>
+                                    </c:if>
+                                    <c:if test="${userToEdit.notification != 'true'}">
+                                        <option value="true">Включено</option>
+                                    </c:if>
 
                                 </select>
 
                             </div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
 
-                                    <label for="userNotification">Уведомления:</label>
-                                    <select name="userNotification" id="userNotification" class="form-control">
+                            <div class="form-group col-md-6">
 
-                                        <option value="false">Выключено</option>
-
-                                        <c:if test="${userToEdit.notification == 'true'}">
-                                            <option value="true" selected>Включено</option>
-                                        </c:if>
-                                        <c:if test="${userToEdit.notification != 'true'}">
-                                            <option value="true">Включено</option>
-                                        </c:if>
-
-                                    </select>
-
-                                </div>
-
-                                <div class="form-group col-md-6">
+                                <c:if test="${currentUser.role == 'ADMIN'}">
                                     <label for="userStatus">Статус:</label>
                                     <select name="userStatus" id="userStatus" class="form-control">
 
@@ -152,36 +163,43 @@
 
 
                                     </select>
-                                </div>
+                                </c:if>
+                                <c:if test="${currentUser.role == 'USER'}">
+                                    <input type="hidden" name="userStatus" class="form-control" id="userStatus"
+                                           value="${currentUser.status}">
+                                </c:if>
+
 
                             </div>
 
-
                         </div>
+
+
                     </div>
-                    <div class="modal-footer">
+                </div>
+                <div class="modal-footer">
 
-                        <c:if test="${currentUser.role == 'ADMIN'}">
-                            <input type="hidden" name="command" value="adminRequest">
-                            <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit user">
-                                Submit
-                            </button>
-                        </c:if>
-                        <c:if test="${currentUser.role == 'USER'}">
-                            <input type="hidden" name="command" value="userRequest">
-                            <button type="submit" class="btn btn-primary" name="userRequest" value="Edit profile">
-                                Submit
-                            </button>
-                        </c:if>
-
-                        <button type="submit" class="btn btn-secondary"
-                                data-bs-dismiss="modal"
-                                name="adminRequest" value="Remove data"
-                        >Cancel
+                    <c:if test="${currentUser.role == 'ADMIN'}">
+                        <input type="hidden" name="command" value="adminRequest">
+                        <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit user">
+                            Submit
                         </button>
+                    </c:if>
+                    <c:if test="${currentUser.role == 'USER'}">
+                        <input type="hidden" name="command" value="userRequest">
+                        <button type="submit" class="btn btn-primary" name="userRequest" value="Edit profile">
+                            Submit
+                        </button>
+                    </c:if>
+
+                    <button type="submit" class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                            name="adminRequest" value="Remove data"
+                    >Cancel
+                    </button>
 
 
-                    </div>
+                </div>
             </form>
         </div>
     </div>

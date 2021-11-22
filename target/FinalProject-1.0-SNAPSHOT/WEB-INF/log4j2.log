@@ -8710,3 +8710,1414 @@ com.podverbnyj.provider.DAO.db.DBException: Can't create user ==> User{login='пр
 17:52:13.153 [http-nio-8080-exec-92] TRACE - commandName ==> userRequest
 17:52:13.153 [http-nio-8080-exec-92] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1c2fa50b
 17:52:13.155 [http-nio-8080-exec-92] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=205.55, language='en', role='user', notification=true, status=BLOCKED}
+00:47:41.695 [RMI TCP Connection(36)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+00:47:48.932 [http-nio-8080-exec-98] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+00:47:48.933 [http-nio-8080-exec-98] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+00:47:48.933 [http-nio-8080-exec-98] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+00:47:48.933 [http-nio-8080-exec-98] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+00:47:48.945 [http-nio-8080-exec-98] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+00:47:48.945 [http-nio-8080-exec-98] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+00:47:48.945 [http-nio-8080-exec-98] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+00:47:48.946 [http-nio-8080-exec-98] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+00:47:48.947 [http-nio-8080-exec-98] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+00:47:48.948 [http-nio-8080-exec-98] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+00:47:48.948 [http-nio-8080-exec-98] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+00:47:48.948 [http-nio-8080-exec-98] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+00:47:48.966 [http-nio-8080-exec-98] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+00:47:48.967 [http-nio-8080-exec-98] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=211.0, language='en', role='user', notification=true, status=BLOCKED}
+00:47:48.968 [http-nio-8080-exec-98] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='en', role='user', notification=true, status=BLOCKED}
+00:47:48.968 [http-nio-8080-exec-98] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:47:48.969 [http-nio-8080-exec-98] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+00:47:48.969 [http-nio-8080-exec-98] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+00:47:55.799 [http-nio-8080-exec-99] TRACE - commandName ==> login
+00:47:55.815 [http-nio-8080-exec-99] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7026e7a0
+00:47:55.819 [http-nio-8080-exec-99] DEBUG - Password secured
+00:47:55.819 [http-nio-8080-exec-99] TRACE - login ==> user1
+00:47:55.844 [http-nio-8080-exec-99] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=211.0, language='en', role='user', notification=true, status=BLOCKED}
+00:47:55.844 [http-nio-8080-exec-99] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:47:55.845 [http-nio-8080-exec-99] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=211.0, language='en', role='user', notification=true, status=BLOCKED}
+00:47:55.845 [http-nio-8080-exec-99] TRACE - Logged successfully as user1
+00:47:55.845 [http-nio-8080-exec-99] TRACE - Login stored in session
+00:47:55.845 [http-nio-8080-exec-99] TRACE - User role ==> USER
+00:48:01.806 [http-nio-8080-exec-91] TRACE - commandName ==> userRequest
+00:48:01.807 [http-nio-8080-exec-91] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@49ec5a61
+00:48:01.811 [http-nio-8080-exec-91] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=211.0, language='en', role='user', notification=true, status=BLOCKED}
+00:53:34.266 [RMI TCP Connection(39)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+00:54:05.463 [http-nio-8080-exec-107] TRACE - commandName ==> userRequest
+00:54:05.494 [http-nio-8080-exec-107] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+00:54:05.825 [http-nio-8080-exec-107] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=216.0, language='en', role='user', notification=true, status=BLOCKED}
+00:54:05.859 [http-nio-8080-exec-107] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+00:54:05.859 [http-nio-8080-exec-107] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+00:54:05.860 [http-nio-8080-exec-107] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+00:54:05.860 [http-nio-8080-exec-107] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+00:54:05.863 [http-nio-8080-exec-107] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+00:54:05.863 [http-nio-8080-exec-107] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+00:54:05.863 [http-nio-8080-exec-107] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+00:54:05.863 [http-nio-8080-exec-107] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+00:54:05.864 [http-nio-8080-exec-107] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+00:54:05.864 [http-nio-8080-exec-107] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+00:54:05.864 [http-nio-8080-exec-107] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+00:54:05.864 [http-nio-8080-exec-107] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+00:54:05.866 [http-nio-8080-exec-107] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+00:54:05.866 [http-nio-8080-exec-107] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=221.0, language='en', role='user', notification=true, status=BLOCKED}
+00:54:05.866 [http-nio-8080-exec-107] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='en', role='user', notification=true, status=BLOCKED}
+00:54:05.866 [http-nio-8080-exec-107] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+00:54:05.867 [http-nio-8080-exec-107] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+00:54:05.867 [http-nio-8080-exec-107] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+00:54:14.784 [http-nio-8080-exec-105] TRACE - commandName ==> userRequest
+00:54:14.784 [http-nio-8080-exec-105] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+00:54:14.787 [http-nio-8080-exec-105] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=221.0, language='en', role='user', notification=true, status=BLOCKED}
+00:54:14.830 [http-nio-8080-exec-105] ERROR - Can't add payment ==> UserPayments{userId=2, date='null', sum=5.0}
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '2' for key 'user_payments.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:135) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.create(UserPaymentDBManager.java:59) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.create(UserPaymentDAO.java:49) [classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:47) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+00:54:14.840 [http-nio-8080-exec-105] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't add payment ==> UserPayments{userId=2, date='null', sum=5.0}
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.create(UserPaymentDAO.java:52) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:47) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+00:59:24.683 [http-nio-8080-exec-113] TRACE - commandName ==> userRequest
+00:59:24.683 [http-nio-8080-exec-113] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+00:59:24.687 [http-nio-8080-exec-113] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=226.0, language='en', role='user', notification=true, status=BLOCKED}
+00:59:32.566 [http-nio-8080-exec-118] TRACE - commandName ==> userRequest
+00:59:32.566 [http-nio-8080-exec-118] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+00:59:32.568 [http-nio-8080-exec-118] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=231.0, language='en', role='user', notification=true, status=BLOCKED}
+01:00:18.691 [http-nio-8080-exec-118] TRACE - commandName ==> login
+01:00:18.691 [http-nio-8080-exec-118] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4a0a86eb
+01:00:18.693 [http-nio-8080-exec-118] DEBUG - Password secured
+01:00:18.694 [http-nio-8080-exec-118] TRACE - login ==> user2
+01:00:18.699 [http-nio-8080-exec-118] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='en', role='user', notification=true, status=BLOCKED}
+01:00:18.699 [http-nio-8080-exec-118] TRACE - Current user ==>User{login='user2', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:00:18.699 [http-nio-8080-exec-118] TRACE - User from DB ==>User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='en', role='user', notification=true, status=BLOCKED}
+01:00:18.699 [http-nio-8080-exec-118] TRACE - Logged successfully as user2
+01:00:18.699 [http-nio-8080-exec-118] TRACE - Login stored in session
+01:00:18.700 [http-nio-8080-exec-118] TRACE - User role ==> USER
+01:00:22.877 [http-nio-8080-exec-116] TRACE - commandName ==> userRequest
+01:00:22.877 [http-nio-8080-exec-116] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:00:22.879 [http-nio-8080-exec-116] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='en', role='user', notification=true, status=BLOCKED}
+01:00:26.489 [http-nio-8080-exec-117] TRACE - commandName ==> userRequest
+01:00:26.489 [http-nio-8080-exec-117] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:00:26.491 [http-nio-8080-exec-117] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=10.0, language='en', role='user', notification=true, status=BLOCKED}
+01:00:31.044 [http-nio-8080-exec-113] TRACE - commandName ==> userRequest
+01:00:31.044 [http-nio-8080-exec-113] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:00:31.046 [http-nio-8080-exec-113] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=25.0, language='en', role='user', notification=true, status=BLOCKED}
+01:21:21.067 [http-nio-8080-exec-117] TRACE - commandName ==> userRequest
+01:21:21.068 [http-nio-8080-exec-117] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:21:53.711 [http-nio-8080-exec-113] TRACE - commandName ==> userRequest
+01:21:53.712 [http-nio-8080-exec-113] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:22:57.824 [http-nio-8080-exec-117] TRACE - commandName ==> userRequest
+01:22:57.824 [http-nio-8080-exec-117] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:25:49.096 [http-nio-8080-exec-110] TRACE - commandName ==> userRequest
+01:25:49.097 [http-nio-8080-exec-110] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:27:14.770 [http-nio-8080-exec-114] TRACE - commandName ==> userRequest
+01:27:14.771 [http-nio-8080-exec-114] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:29:18.097 [http-nio-8080-exec-113] TRACE - commandName ==> userRequest
+01:29:18.098 [http-nio-8080-exec-113] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:29:44.205 [http-nio-8080-exec-119] TRACE - commandName ==> userRequest
+01:29:44.205 [http-nio-8080-exec-119] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:30:01.567 [http-nio-8080-exec-118] TRACE - commandName ==> userRequest
+01:30:01.568 [http-nio-8080-exec-118] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:30:32.981 [http-nio-8080-exec-117] TRACE - commandName ==> userRequest
+01:30:32.982 [http-nio-8080-exec-117] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:37:29.153 [http-nio-8080-exec-117] TRACE - commandName ==> userRequest
+01:37:29.155 [http-nio-8080-exec-117] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:38:24.152 [http-nio-8080-exec-116] TRACE - commandName ==> userRequest
+01:38:24.152 [http-nio-8080-exec-116] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:39:38.967 [http-nio-8080-exec-116] TRACE - commandName ==> userRequest
+01:39:38.967 [http-nio-8080-exec-116] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:39:47.107 [http-nio-8080-exec-111] TRACE - commandName ==> userRequest
+01:39:47.107 [http-nio-8080-exec-111] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:40:10.950 [http-nio-8080-exec-119] TRACE - commandName ==> userRequest
+01:40:10.950 [http-nio-8080-exec-119] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:41:33.356 [http-nio-8080-exec-117] TRACE - commandName ==> userRequest
+01:41:33.356 [http-nio-8080-exec-117] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:41:46.205 [http-nio-8080-exec-118] TRACE - commandName ==> userRequest
+01:41:46.208 [http-nio-8080-exec-118] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:41:46.210 [http-nio-8080-exec-118] DEBUG - Password secured
+01:41:46.238 [http-nio-8080-exec-118] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=26.0, language='en', role='user', notification=true, status=BLOCKED}
+01:42:20.909 [http-nio-8080-exec-112] TRACE - commandName ==> userRequest
+01:42:20.910 [http-nio-8080-exec-112] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:42:20.912 [http-nio-8080-exec-112] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:42:35.159 [http-nio-8080-exec-118] TRACE - commandName ==> userRequest
+01:42:35.160 [http-nio-8080-exec-118] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:42:35.162 [http-nio-8080-exec-118] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=10.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:43:15.263 [http-nio-8080-exec-114] TRACE - commandName ==> login
+01:43:15.263 [http-nio-8080-exec-114] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4a0a86eb
+01:43:15.269 [http-nio-8080-exec-114] DEBUG - Password secured
+01:43:15.269 [http-nio-8080-exec-114] TRACE - login ==> user2
+01:43:15.274 [http-nio-8080-exec-114] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:43:15.274 [http-nio-8080-exec-114] TRACE - Current user ==>User{login='user2', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:43:15.274 [http-nio-8080-exec-114] TRACE - User from DB ==>User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:43:15.274 [http-nio-8080-exec-114] TRACE - Logged successfully as user2
+01:43:15.274 [http-nio-8080-exec-114] TRACE - Login stored in session
+01:43:15.275 [http-nio-8080-exec-114] TRACE - User role ==> USER
+01:44:18.501 [http-nio-8080-exec-113] TRACE - commandName ==> userRequest
+01:44:18.501 [http-nio-8080-exec-113] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:44:27.675 [http-nio-8080-exec-117] TRACE - commandName ==> login
+01:44:27.676 [http-nio-8080-exec-117] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4a0a86eb
+01:44:27.676 [http-nio-8080-exec-117] DEBUG - Password secured
+01:44:27.676 [http-nio-8080-exec-117] TRACE - login ==> user1
+01:44:27.686 [http-nio-8080-exec-117] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='en', role='user', notification=true, status=BLOCKED}
+01:44:27.686 [http-nio-8080-exec-117] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:44:27.686 [http-nio-8080-exec-117] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='en', role='user', notification=true, status=BLOCKED}
+01:44:27.687 [http-nio-8080-exec-117] TRACE - Logged successfully as user1
+01:44:27.687 [http-nio-8080-exec-117] TRACE - Login stored in session
+01:44:27.687 [http-nio-8080-exec-117] TRACE - User role ==> USER
+01:44:32.627 [http-nio-8080-exec-110] TRACE - commandName ==> userRequest
+01:44:32.627 [http-nio-8080-exec-110] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:44:32.629 [http-nio-8080-exec-110] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='en', role='user', notification=true, status=BLOCKED}
+01:44:36.611 [http-nio-8080-exec-116] TRACE - commandName ==> userRequest
+01:44:36.611 [http-nio-8080-exec-116] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:44:36.616 [http-nio-8080-exec-116] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=10.0, language='en', role='user', notification=true, status=BLOCKED}
+01:44:38.706 [http-nio-8080-exec-119] TRACE - commandName ==> userRequest
+01:44:38.706 [http-nio-8080-exec-119] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:44:38.709 [http-nio-8080-exec-119] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='en', role='user', notification=true, status=BLOCKED}
+01:44:42.553 [http-nio-8080-exec-114] TRACE - commandName ==> userRequest
+01:44:42.553 [http-nio-8080-exec-114] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:44:42.555 [http-nio-8080-exec-114] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=45.0, language='en', role='user', notification=true, status=BLOCKED}
+01:44:45.133 [http-nio-8080-exec-118] TRACE - commandName ==> userRequest
+01:44:45.134 [http-nio-8080-exec-118] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:44:45.136 [http-nio-8080-exec-118] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=93.0, language='en', role='user', notification=true, status=BLOCKED}
+01:44:48.780 [http-nio-8080-exec-112] TRACE - commandName ==> userRequest
+01:44:48.780 [http-nio-8080-exec-112] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:44:48.782 [http-nio-8080-exec-112] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=100.0, language='en', role='user', notification=true, status=BLOCKED}
+01:45:15.012 [http-nio-8080-exec-116] TRACE - commandName ==> userRequest
+01:45:15.012 [http-nio-8080-exec-116] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:48:01.667 [http-nio-8080-exec-111] TRACE - commandName ==> userRequest
+01:48:01.667 [http-nio-8080-exec-111] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@50b72be6
+01:48:01.669 [http-nio-8080-exec-111] DEBUG - Password secured
+01:48:01.671 [http-nio-8080-exec-111] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=120.0, language='en', role='user', notification=true, status=BLOCKED}
+01:52:26.344 [RMI TCP Connection(43)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:52:27.217 [http-nio-8080-exec-116] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+01:52:27.217 [http-nio-8080-exec-116] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+01:52:27.217 [http-nio-8080-exec-116] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+01:52:27.217 [http-nio-8080-exec-116] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+01:52:27.224 [http-nio-8080-exec-116] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+01:52:27.224 [http-nio-8080-exec-116] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+01:52:27.224 [http-nio-8080-exec-116] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+01:52:27.224 [http-nio-8080-exec-116] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+01:52:27.225 [http-nio-8080-exec-116] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+01:52:27.225 [http-nio-8080-exec-116] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+01:52:27.225 [http-nio-8080-exec-116] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+01:52:27.226 [http-nio-8080-exec-116] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+01:52:27.236 [http-nio-8080-exec-116] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+01:52:27.237 [http-nio-8080-exec-116] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:52:27.237 [http-nio-8080-exec-116] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:52:27.237 [http-nio-8080-exec-116] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:52:27.237 [http-nio-8080-exec-116] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+01:52:27.238 [http-nio-8080-exec-116] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+01:52:33.445 [http-nio-8080-exec-119] TRACE - commandName ==> login
+01:52:33.459 [http-nio-8080-exec-119] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@3149de41
+01:52:33.461 [http-nio-8080-exec-119] DEBUG - Password secured
+01:52:33.461 [http-nio-8080-exec-119] TRACE - login ==> user1
+01:52:33.480 [http-nio-8080-exec-119] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:52:33.480 [http-nio-8080-exec-119] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:52:33.481 [http-nio-8080-exec-119] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:52:33.481 [http-nio-8080-exec-119] TRACE - Logged successfully as user1
+01:52:33.481 [http-nio-8080-exec-119] TRACE - Login stored in session
+01:52:33.481 [http-nio-8080-exec-119] TRACE - User role ==> USER
+01:52:37.328 [http-nio-8080-exec-112] TRACE - commandName ==> userRequest
+01:52:37.328 [http-nio-8080-exec-112] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@2af0f71e
+01:52:37.331 [http-nio-8080-exec-112] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:52:39.837 [http-nio-8080-exec-111] TRACE - commandName ==> userRequest
+01:52:39.837 [http-nio-8080-exec-111] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@2af0f71e
+01:52:39.840 [http-nio-8080-exec-111] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=10.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:52:44.192 [http-nio-8080-exec-117] TRACE - commandName ==> userRequest
+01:52:44.192 [http-nio-8080-exec-117] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@2af0f71e
+01:52:44.193 [http-nio-8080-exec-117] DEBUG - Password secured
+01:52:44.194 [http-nio-8080-exec-117] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+01:52:50.797 [http-nio-8080-exec-113] TRACE - commandName ==> userRequest
+01:52:50.797 [http-nio-8080-exec-113] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@2af0f71e
+01:52:50.798 [http-nio-8080-exec-113] DEBUG - Password secured
+01:52:50.799 [http-nio-8080-exec-113] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='en', role='user', notification=true, status=BLOCKED}
+01:55:25.011 [http-nio-8080-exec-120] TRACE - commandName ==> userRequest
+01:55:25.011 [http-nio-8080-exec-120] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@2af0f71e
+02:01:29.730 [RMI TCP Connection(46)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:01:42.061 [http-nio-8080-exec-129] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:01:42.062 [http-nio-8080-exec-129] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:01:42.062 [http-nio-8080-exec-129] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:01:42.062 [http-nio-8080-exec-129] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:01:42.067 [http-nio-8080-exec-129] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:01:42.068 [http-nio-8080-exec-129] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:01:42.068 [http-nio-8080-exec-129] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:01:42.068 [http-nio-8080-exec-129] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:01:42.068 [http-nio-8080-exec-129] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:01:42.069 [http-nio-8080-exec-129] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:01:42.069 [http-nio-8080-exec-129] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:01:42.069 [http-nio-8080-exec-129] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:01:42.078 [http-nio-8080-exec-129] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:01:42.078 [http-nio-8080-exec-129] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:01:42.079 [http-nio-8080-exec-129] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:01:42.079 [http-nio-8080-exec-129] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:01:42.079 [http-nio-8080-exec-129] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:01:42.079 [http-nio-8080-exec-129] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:01:48.766 [http-nio-8080-exec-123] TRACE - commandName ==> login
+02:01:48.779 [http-nio-8080-exec-123] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@16f85278
+02:01:48.781 [http-nio-8080-exec-123] DEBUG - Password secured
+02:01:48.781 [http-nio-8080-exec-123] TRACE - login ==> user1
+02:01:48.799 [http-nio-8080-exec-123] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:01:48.799 [http-nio-8080-exec-123] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:01:48.799 [http-nio-8080-exec-123] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:01:48.799 [http-nio-8080-exec-123] TRACE - Logged successfully as user1
+02:01:48.800 [http-nio-8080-exec-123] TRACE - Login stored in session
+02:01:48.800 [http-nio-8080-exec-123] TRACE - User role ==> USER
+02:01:52.043 [http-nio-8080-exec-122] TRACE - commandName ==> userRequest
+02:01:52.043 [http-nio-8080-exec-122] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@20371170
+02:06:14.614 [RMI TCP Connection(51)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:06:32.815 [http-nio-8080-exec-132] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:06:32.816 [http-nio-8080-exec-132] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:06:32.816 [http-nio-8080-exec-132] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:06:32.816 [http-nio-8080-exec-132] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:06:32.820 [http-nio-8080-exec-132] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:06:32.820 [http-nio-8080-exec-132] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:06:32.821 [http-nio-8080-exec-132] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:06:32.821 [http-nio-8080-exec-132] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:06:32.821 [http-nio-8080-exec-132] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:06:32.821 [http-nio-8080-exec-132] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:06:32.822 [http-nio-8080-exec-132] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:06:32.822 [http-nio-8080-exec-132] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:06:32.831 [http-nio-8080-exec-132] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:06:32.831 [http-nio-8080-exec-132] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:06:32.831 [http-nio-8080-exec-132] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:06:32.832 [http-nio-8080-exec-132] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:06:32.832 [http-nio-8080-exec-132] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:06:32.832 [http-nio-8080-exec-132] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:06:38.462 [http-nio-8080-exec-135] TRACE - commandName ==> login
+02:06:38.475 [http-nio-8080-exec-135] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@181310f7
+02:06:38.476 [http-nio-8080-exec-135] DEBUG - Password secured
+02:06:38.477 [http-nio-8080-exec-135] TRACE - login ==> user1
+02:06:38.495 [http-nio-8080-exec-135] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:06:38.496 [http-nio-8080-exec-135] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:06:38.496 [http-nio-8080-exec-135] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:06:38.496 [http-nio-8080-exec-135] TRACE - Logged successfully as user1
+02:06:38.497 [http-nio-8080-exec-135] TRACE - Login stored in session
+02:06:38.497 [http-nio-8080-exec-135] TRACE - User role ==> USER
+02:06:41.787 [http-nio-8080-exec-133] TRACE - commandName ==> userRequest
+02:06:41.787 [http-nio-8080-exec-133] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@43a242f0
+02:06:41.805 [http-nio-8080-exec-133] ERROR - Can't receive payment history from DB
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1206) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeQuery(DelegatingStatement.java:328) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeQuery(DelegatingStatement.java:328) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.findAllByUserId(UserPaymentDBManager.java:43) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:37) [classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+02:06:41.814 [http-nio-8080-exec-133] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't receive payment history from DB
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:40) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+02:16:12.609 [RMI TCP Connection(54)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:16:14.908 [http-nio-8080-exec-143] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:16:14.909 [http-nio-8080-exec-143] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:16:14.909 [http-nio-8080-exec-143] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:16:14.909 [http-nio-8080-exec-143] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:16:14.914 [http-nio-8080-exec-143] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:16:14.914 [http-nio-8080-exec-143] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:16:14.915 [http-nio-8080-exec-143] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:16:14.915 [http-nio-8080-exec-143] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:16:14.915 [http-nio-8080-exec-143] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:16:14.915 [http-nio-8080-exec-143] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:16:14.916 [http-nio-8080-exec-143] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:16:14.916 [http-nio-8080-exec-143] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:16:14.926 [http-nio-8080-exec-143] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:16:14.926 [http-nio-8080-exec-143] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:16:14.926 [http-nio-8080-exec-143] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:16:14.927 [http-nio-8080-exec-143] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:16:14.927 [http-nio-8080-exec-143] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:16:14.927 [http-nio-8080-exec-143] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:16:20.134 [http-nio-8080-exec-142] TRACE - commandName ==> login
+02:16:20.147 [http-nio-8080-exec-142] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@7e0cbf3b
+02:16:20.149 [http-nio-8080-exec-142] DEBUG - Password secured
+02:16:20.149 [http-nio-8080-exec-142] TRACE - login ==> user1
+02:16:20.165 [http-nio-8080-exec-142] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:16:20.165 [http-nio-8080-exec-142] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:16:20.166 [http-nio-8080-exec-142] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:16:20.166 [http-nio-8080-exec-142] TRACE - Logged successfully as user1
+02:16:20.166 [http-nio-8080-exec-142] TRACE - Login stored in session
+02:16:20.166 [http-nio-8080-exec-142] TRACE - User role ==> USER
+02:16:24.402 [http-nio-8080-exec-141] TRACE - commandName ==> userRequest
+02:16:24.402 [http-nio-8080-exec-141] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@72e47039
+02:16:24.422 [http-nio-8080-exec-141] ERROR - Can't receive payment history from DB
+java.sql.SQLDataException: Unsupported conversion from LONG to java.sql.Date
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getDate(ResultSetImpl.java:776) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getDate(DelegatingResultSet.java:477) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getDate(DelegatingResultSet.java:477) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.getUserPayments(UserPaymentDBManager.java:73) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.findAllByUserId(UserPaymentDBManager.java:48) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:37) [classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: com.mysql.cj.exceptions.DataConversionException: Unsupported conversion from LONG to java.sql.Date
+	at com.mysql.cj.result.DefaultValueFactory.unsupported(DefaultValueFactory.java:70) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.result.DefaultValueFactory.createFromLong(DefaultValueFactory.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeInt4(MysqlTextValueDecoder.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:107) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:243) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 35 more
+02:16:24.430 [http-nio-8080-exec-141] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't receive payment history from DB
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:40) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+02:33:16.358 [RMI TCP Connection(57)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:33:24.011 [http-nio-8080-exec-153] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:33:24.011 [http-nio-8080-exec-153] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:33:24.012 [http-nio-8080-exec-153] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:33:24.012 [http-nio-8080-exec-153] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:33:24.020 [http-nio-8080-exec-153] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:33:24.020 [http-nio-8080-exec-153] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:33:24.021 [http-nio-8080-exec-153] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:33:24.021 [http-nio-8080-exec-153] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:33:24.021 [http-nio-8080-exec-153] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:33:24.021 [http-nio-8080-exec-153] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:33:24.022 [http-nio-8080-exec-153] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:33:24.022 [http-nio-8080-exec-153] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:33:24.031 [http-nio-8080-exec-153] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:33:24.031 [http-nio-8080-exec-153] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:33:24.032 [http-nio-8080-exec-153] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:33:24.032 [http-nio-8080-exec-153] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:33:24.032 [http-nio-8080-exec-153] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:33:24.032 [http-nio-8080-exec-153] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:33:31.941 [http-nio-8080-exec-150] TRACE - commandName ==> login
+02:33:31.954 [http-nio-8080-exec-150] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@1ab939a2
+02:33:31.957 [http-nio-8080-exec-150] DEBUG - Password secured
+02:33:31.957 [http-nio-8080-exec-150] TRACE - login ==> user1
+02:33:31.985 [http-nio-8080-exec-150] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:33:31.985 [http-nio-8080-exec-150] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:33:31.986 [http-nio-8080-exec-150] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:33:31.986 [http-nio-8080-exec-150] TRACE - Logged successfully as user1
+02:33:31.986 [http-nio-8080-exec-150] TRACE - Login stored in session
+02:33:31.986 [http-nio-8080-exec-150] TRACE - User role ==> USER
+02:33:35.114 [http-nio-8080-exec-156] TRACE - commandName ==> userRequest
+02:33:35.115 [http-nio-8080-exec-156] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@41cfdb8c
+02:33:35.135 [http-nio-8080-exec-156] ERROR - Can't receive payment history from DB
+java.sql.SQLDataException: Unsupported conversion from LONG to java.sql.Timestamp
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:939) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getTimestamp(DelegatingResultSet.java:946) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getTimestamp(DelegatingResultSet.java:946) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.getUserPayments(UserPaymentDBManager.java:73) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.findAllByUserId(UserPaymentDBManager.java:48) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:37) [classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: com.mysql.cj.exceptions.DataConversionException: Unsupported conversion from LONG to java.sql.Timestamp
+	at com.mysql.cj.result.DefaultValueFactory.unsupported(DefaultValueFactory.java:70) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.result.DefaultValueFactory.createFromLong(DefaultValueFactory.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeInt4(MysqlTextValueDecoder.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:107) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:243) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 35 more
+02:33:35.155 [http-nio-8080-exec-156] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't receive payment history from DB
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:40) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+02:39:55.134 [RMI TCP Connection(60)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:41:02.840 [RMI TCP Connection(63)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:41:05.371 [http-nio-8080-exec-165] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:41:05.372 [http-nio-8080-exec-165] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:41:05.372 [http-nio-8080-exec-165] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:41:05.372 [http-nio-8080-exec-165] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:41:05.379 [http-nio-8080-exec-165] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:41:05.379 [http-nio-8080-exec-165] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:41:05.379 [http-nio-8080-exec-165] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:41:05.380 [http-nio-8080-exec-165] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:41:05.380 [http-nio-8080-exec-165] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:41:05.380 [http-nio-8080-exec-165] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:41:05.380 [http-nio-8080-exec-165] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:41:05.381 [http-nio-8080-exec-165] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:41:05.390 [http-nio-8080-exec-165] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:41:05.390 [http-nio-8080-exec-165] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:41:05.390 [http-nio-8080-exec-165] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:41:05.391 [http-nio-8080-exec-165] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:41:05.391 [http-nio-8080-exec-165] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:41:05.391 [http-nio-8080-exec-165] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:41:12.416 [http-nio-8080-exec-166] TRACE - commandName ==> login
+02:41:12.430 [http-nio-8080-exec-166] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@4fc6bb59
+02:41:12.433 [http-nio-8080-exec-166] DEBUG - Password secured
+02:41:12.433 [http-nio-8080-exec-166] TRACE - login ==> user1
+02:41:12.454 [http-nio-8080-exec-166] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:41:12.455 [http-nio-8080-exec-166] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:41:12.455 [http-nio-8080-exec-166] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:41:12.455 [http-nio-8080-exec-166] TRACE - Logged successfully as user1
+02:41:12.455 [http-nio-8080-exec-166] TRACE - Login stored in session
+02:41:12.455 [http-nio-8080-exec-166] TRACE - User role ==> USER
+02:41:16.616 [http-nio-8080-exec-171] TRACE - commandName ==> userRequest
+02:41:16.617 [http-nio-8080-exec-171] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@5e1fca01
+02:41:16.636 [http-nio-8080-exec-171] ERROR - Can't receive payment history from DB
+java.sql.SQLDataException: Unsupported conversion from LONG to java.sql.Timestamp
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:939) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getTimestamp(DelegatingResultSet.java:946) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getTimestamp(DelegatingResultSet.java:946) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.getUserPayments(UserPaymentDBManager.java:70) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.findAllByUserId(UserPaymentDBManager.java:44) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:37) [classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: com.mysql.cj.exceptions.DataConversionException: Unsupported conversion from LONG to java.sql.Timestamp
+	at com.mysql.cj.result.DefaultValueFactory.unsupported(DefaultValueFactory.java:70) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.result.DefaultValueFactory.createFromLong(DefaultValueFactory.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeInt4(MysqlTextValueDecoder.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:107) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:243) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 35 more
+02:41:16.647 [http-nio-8080-exec-171] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't receive payment history from DB
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:40) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+02:44:51.260 [RMI TCP Connection(66)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:44:53.012 [http-nio-8080-exec-176] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:44:53.012 [http-nio-8080-exec-176] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:44:53.012 [http-nio-8080-exec-176] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:44:53.013 [http-nio-8080-exec-176] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:44:53.017 [http-nio-8080-exec-176] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:44:53.017 [http-nio-8080-exec-176] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:44:53.017 [http-nio-8080-exec-176] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:44:53.017 [http-nio-8080-exec-176] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:44:53.018 [http-nio-8080-exec-176] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:44:53.018 [http-nio-8080-exec-176] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:44:53.019 [http-nio-8080-exec-176] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:44:53.019 [http-nio-8080-exec-176] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:44:53.030 [http-nio-8080-exec-176] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:44:53.030 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:44:53.030 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:44:53.030 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:44:53.031 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:44:53.031 [http-nio-8080-exec-176] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:45:01.343 [http-nio-8080-exec-173] TRACE - commandName ==> login
+02:45:01.357 [http-nio-8080-exec-173] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@1ec6df77
+02:45:01.358 [http-nio-8080-exec-173] DEBUG - Password secured
+02:45:01.358 [http-nio-8080-exec-173] TRACE - login ==> user1
+02:45:01.377 [http-nio-8080-exec-173] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:45:01.377 [http-nio-8080-exec-173] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:45:01.378 [http-nio-8080-exec-173] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:45:01.378 [http-nio-8080-exec-173] TRACE - Logged successfully as user1
+02:45:01.378 [http-nio-8080-exec-173] TRACE - Login stored in session
+02:45:01.378 [http-nio-8080-exec-173] TRACE - User role ==> USER
+02:45:05.321 [http-nio-8080-exec-178] TRACE - commandName ==> userRequest
+02:45:05.321 [http-nio-8080-exec-178] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@56c37b53
+02:45:05.334 [http-nio-8080-exec-178] ERROR - Can't receive payment history from DB
+java.sql.SQLDataException: Unsupported conversion from DATETIME to java.lang.Double
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1423) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getDouble(ResultSetImpl.java:800) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getDouble(DelegatingResultSet.java:526) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getDouble(DelegatingResultSet.java:526) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.getUserPayments(UserPaymentDBManager.java:73) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.findAllByUserId(UserPaymentDBManager.java:44) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:37) [classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: com.mysql.cj.exceptions.DataConversionException: Unsupported conversion from DATETIME to java.lang.Double
+	at com.mysql.cj.result.DefaultValueFactory.unsupported(DefaultValueFactory.java:70) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.result.DefaultValueFactory.createFromDatetime(DefaultValueFactory.java:87) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeDatetime(MysqlTextValueDecoder.java:90) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:86) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:243) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1331) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 35 more
+02:45:05.342 [http-nio-8080-exec-178] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't receive payment history from DB
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:40) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+02:46:19.636 [RMI TCP Connection(69)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:46:20.815 [http-nio-8080-exec-181] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:46:20.815 [http-nio-8080-exec-181] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:46:20.816 [http-nio-8080-exec-181] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:46:20.816 [http-nio-8080-exec-181] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:46:20.821 [http-nio-8080-exec-181] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:46:20.821 [http-nio-8080-exec-181] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:46:20.821 [http-nio-8080-exec-181] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:46:20.821 [http-nio-8080-exec-181] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:46:20.822 [http-nio-8080-exec-181] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:46:20.822 [http-nio-8080-exec-181] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:46:20.822 [http-nio-8080-exec-181] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:46:20.822 [http-nio-8080-exec-181] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:46:20.830 [http-nio-8080-exec-181] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:46:20.830 [http-nio-8080-exec-181] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:46:20.830 [http-nio-8080-exec-181] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:46:20.831 [http-nio-8080-exec-181] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:46:20.831 [http-nio-8080-exec-181] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:46:20.831 [http-nio-8080-exec-181] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:46:31.701 [http-nio-8080-exec-172] TRACE - commandName ==> login
+02:46:31.714 [http-nio-8080-exec-172] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@65cd126d
+02:46:31.715 [http-nio-8080-exec-172] DEBUG - Password secured
+02:46:31.716 [http-nio-8080-exec-172] TRACE - login ==> user1
+02:46:31.734 [http-nio-8080-exec-172] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:46:31.735 [http-nio-8080-exec-172] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:46:31.735 [http-nio-8080-exec-172] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:46:31.735 [http-nio-8080-exec-172] TRACE - Login failed, username and password don't match
+02:46:40.268 [http-nio-8080-exec-190] TRACE - commandName ==> login
+02:46:40.269 [http-nio-8080-exec-190] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@65cd126d
+02:46:40.269 [http-nio-8080-exec-190] DEBUG - Password secured
+02:46:40.269 [http-nio-8080-exec-190] TRACE - login ==> user1
+02:46:40.272 [http-nio-8080-exec-190] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:46:40.272 [http-nio-8080-exec-190] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:46:40.272 [http-nio-8080-exec-190] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:46:40.272 [http-nio-8080-exec-190] TRACE - Logged successfully as user1
+02:46:40.273 [http-nio-8080-exec-190] TRACE - Login stored in session
+02:46:40.273 [http-nio-8080-exec-190] TRACE - User role ==> USER
+02:46:43.814 [http-nio-8080-exec-191] TRACE - commandName ==> userRequest
+02:46:43.814 [http-nio-8080-exec-191] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@6e96fd67
+02:46:43.826 [http-nio-8080-exec-191] ERROR - Can't receive payment history from DB
+java.sql.SQLDataException: Unsupported conversion from LONG to java.sql.Date
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getDate(ResultSetImpl.java:776) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getDate(DelegatingResultSet.java:477) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getDate(DelegatingResultSet.java:477) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.getUserPayments(UserPaymentDBManager.java:71) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.findAllByUserId(UserPaymentDBManager.java:44) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:37) [classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: com.mysql.cj.exceptions.DataConversionException: Unsupported conversion from LONG to java.sql.Date
+	at com.mysql.cj.result.DefaultValueFactory.unsupported(DefaultValueFactory.java:70) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.result.DefaultValueFactory.createFromLong(DefaultValueFactory.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeInt4(MysqlTextValueDecoder.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:107) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:243) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 35 more
+02:46:43.832 [http-nio-8080-exec-191] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't receive payment history from DB
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:40) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+02:48:34.258 [RMI TCP Connection(72)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:48:38.505 [http-nio-8080-exec-191] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:48:38.506 [http-nio-8080-exec-191] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:48:38.506 [http-nio-8080-exec-191] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:48:38.506 [http-nio-8080-exec-191] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:48:38.511 [http-nio-8080-exec-191] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:48:38.511 [http-nio-8080-exec-191] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:48:38.511 [http-nio-8080-exec-191] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:48:38.511 [http-nio-8080-exec-191] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:48:38.512 [http-nio-8080-exec-191] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:48:38.512 [http-nio-8080-exec-191] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:48:38.512 [http-nio-8080-exec-191] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:48:38.512 [http-nio-8080-exec-191] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:48:38.521 [http-nio-8080-exec-191] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:48:38.521 [http-nio-8080-exec-191] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:48:38.522 [http-nio-8080-exec-191] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:48:38.522 [http-nio-8080-exec-191] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:48:38.522 [http-nio-8080-exec-191] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:48:38.523 [http-nio-8080-exec-191] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:48:44.485 [http-nio-8080-exec-189] TRACE - commandName ==> login
+02:48:44.497 [http-nio-8080-exec-189] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@1ef46611
+02:48:44.499 [http-nio-8080-exec-189] DEBUG - Password secured
+02:48:44.499 [http-nio-8080-exec-189] TRACE - login ==> user1
+02:48:44.519 [http-nio-8080-exec-189] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:48:44.520 [http-nio-8080-exec-189] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:48:44.520 [http-nio-8080-exec-189] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:48:44.520 [http-nio-8080-exec-189] TRACE - Logged successfully as user1
+02:48:44.520 [http-nio-8080-exec-189] TRACE - Login stored in session
+02:48:44.520 [http-nio-8080-exec-189] TRACE - User role ==> USER
+02:48:47.929 [http-nio-8080-exec-196] TRACE - commandName ==> userRequest
+02:48:47.929 [http-nio-8080-exec-196] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@67fbf989
+02:48:47.948 [http-nio-8080-exec-196] ERROR - Can't receive payment history from DB
+java.sql.SQLDataException: Unsupported conversion from DATETIME to java.lang.Double
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1423) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getDouble(ResultSetImpl.java:800) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getDouble(DelegatingResultSet.java:526) ~[tomcat-dbcp.jar:9.0.54]
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingResultSet.getDouble(DelegatingResultSet.java:526) ~[tomcat-dbcp.jar:9.0.54]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.getUserPayments(UserPaymentDBManager.java:73) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.db.UserPaymentDBManager.findAllByUserId(UserPaymentDBManager.java:44) ~[classes/:?]
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:37) [classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) [classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: com.mysql.cj.exceptions.DataConversionException: Unsupported conversion from DATETIME to java.lang.Double
+	at com.mysql.cj.result.DefaultValueFactory.unsupported(DefaultValueFactory.java:70) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.result.DefaultValueFactory.createFromDatetime(DefaultValueFactory.java:87) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeDatetime(MysqlTextValueDecoder.java:90) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:86) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:243) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1331) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	... 35 more
+02:48:47.956 [http-nio-8080-exec-196] ERROR - Error receiving address 
+com.podverbnyj.provider.DAO.db.DBException: Can't receive payment history from DB
+	at com.podverbnyj.provider.DAO.UserPaymentDAO.findAll(UserPaymentDAO.java:40) ~[classes/:?]
+	at com.podverbnyj.provider.logic.command.UserRequestCommand.execute(UserRequestCommand.java:59) ~[classes/:?]
+	at com.podverbnyj.provider.web.Controller.doPost(Controller.java:45) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at com.podverbnyj.provider.web.CharsetFilter.doFilter(CharsetFilter.java:27) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.54]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-util.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+02:50:49.711 [RMI TCP Connection(75)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:50:56.236 [http-nio-8080-exec-200] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:50:56.237 [http-nio-8080-exec-200] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:50:56.237 [http-nio-8080-exec-200] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:50:56.237 [http-nio-8080-exec-200] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:50:56.242 [http-nio-8080-exec-200] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:50:56.242 [http-nio-8080-exec-200] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:50:56.243 [http-nio-8080-exec-200] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:50:56.243 [http-nio-8080-exec-200] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:50:56.243 [http-nio-8080-exec-200] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:50:56.243 [http-nio-8080-exec-200] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:50:56.244 [http-nio-8080-exec-200] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:50:56.244 [http-nio-8080-exec-200] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:50:56.253 [http-nio-8080-exec-200] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:50:56.253 [http-nio-8080-exec-200] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:50:56.253 [http-nio-8080-exec-200] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:50:56.254 [http-nio-8080-exec-200] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:50:56.254 [http-nio-8080-exec-200] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:50:56.254 [http-nio-8080-exec-200] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:51:01.829 [http-nio-8080-exec-205] TRACE - commandName ==> login
+02:51:01.842 [http-nio-8080-exec-205] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@22f471ea
+02:51:01.844 [http-nio-8080-exec-205] DEBUG - Password secured
+02:51:01.844 [http-nio-8080-exec-205] TRACE - login ==> user1
+02:51:01.860 [http-nio-8080-exec-205] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:51:01.860 [http-nio-8080-exec-205] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:51:01.860 [http-nio-8080-exec-205] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:51:01.861 [http-nio-8080-exec-205] TRACE - Logged successfully as user1
+02:51:01.861 [http-nio-8080-exec-205] TRACE - Login stored in session
+02:51:01.861 [http-nio-8080-exec-205] TRACE - User role ==> USER
+02:51:05.843 [http-nio-8080-exec-194] TRACE - commandName ==> userRequest
+02:51:05.843 [http-nio-8080-exec-194] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@6ccf9a6
+02:51:05.851 [http-nio-8080-exec-194] TRACE - User payment created ==> UserPayments{userId=2, date='null', sum=10.0}
+02:51:05.852 [http-nio-8080-exec-194] TRACE - User payment created ==> UserPayments{userId=2, date='null', sum=20.0}
+02:51:05.852 [http-nio-8080-exec-194] TRACE - User payment created ==> UserPayments{userId=2, date='null', sum=10.0}
+02:51:05.852 [http-nio-8080-exec-194] TRACE - User payment created ==> UserPayments{userId=2, date='null', sum=20.0}
+02:51:51.033 [RMI TCP Connection(78)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:51:54.968 [http-nio-8080-exec-203] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:51:54.968 [http-nio-8080-exec-203] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:51:54.969 [http-nio-8080-exec-203] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:51:54.969 [http-nio-8080-exec-203] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:51:54.974 [http-nio-8080-exec-203] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:51:54.974 [http-nio-8080-exec-203] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:51:54.974 [http-nio-8080-exec-203] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:51:54.974 [http-nio-8080-exec-203] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:51:54.975 [http-nio-8080-exec-203] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:51:54.975 [http-nio-8080-exec-203] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:51:54.975 [http-nio-8080-exec-203] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:51:54.975 [http-nio-8080-exec-203] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:51:54.985 [http-nio-8080-exec-203] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:51:54.985 [http-nio-8080-exec-203] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:51:54.985 [http-nio-8080-exec-203] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:51:54.986 [http-nio-8080-exec-203] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:51:54.986 [http-nio-8080-exec-203] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:51:54.986 [http-nio-8080-exec-203] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:52:00.966 [http-nio-8080-exec-206] TRACE - commandName ==> login
+02:52:00.978 [http-nio-8080-exec-206] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@165bf7a8
+02:52:00.980 [http-nio-8080-exec-206] DEBUG - Password secured
+02:52:00.980 [http-nio-8080-exec-206] TRACE - login ==> user1
+02:52:00.998 [http-nio-8080-exec-206] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:52:00.999 [http-nio-8080-exec-206] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:52:00.999 [http-nio-8080-exec-206] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:52:00.999 [http-nio-8080-exec-206] TRACE - Logged successfully as user1
+02:52:00.999 [http-nio-8080-exec-206] TRACE - Login stored in session
+02:52:00.999 [http-nio-8080-exec-206] TRACE - User role ==> USER
+02:52:04.597 [http-nio-8080-exec-201] TRACE - commandName ==> userRequest
+02:52:04.597 [http-nio-8080-exec-201] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@51f809fb
+02:52:04.603 [http-nio-8080-exec-201] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22', sum=10.0}
+02:52:04.603 [http-nio-8080-exec-201] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22', sum=20.0}
+02:52:04.603 [http-nio-8080-exec-201] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22', sum=10.0}
+02:52:04.604 [http-nio-8080-exec-201] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22', sum=20.0}
+02:53:00.823 [RMI TCP Connection(81)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:53:01.332 [http-nio-8080-exec-215] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:53:01.333 [http-nio-8080-exec-215] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:53:01.333 [http-nio-8080-exec-215] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:53:01.333 [http-nio-8080-exec-215] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:53:01.338 [http-nio-8080-exec-215] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:53:01.338 [http-nio-8080-exec-215] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:53:01.339 [http-nio-8080-exec-215] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:53:01.340 [http-nio-8080-exec-215] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:53:01.340 [http-nio-8080-exec-215] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:53:01.341 [http-nio-8080-exec-215] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:53:01.341 [http-nio-8080-exec-215] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:53:01.341 [http-nio-8080-exec-215] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:53:01.352 [http-nio-8080-exec-215] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:53:01.352 [http-nio-8080-exec-215] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:53:01.353 [http-nio-8080-exec-215] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:53:01.353 [http-nio-8080-exec-215] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:53:01.353 [http-nio-8080-exec-215] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:53:01.354 [http-nio-8080-exec-215] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:53:08.403 [http-nio-8080-exec-213] TRACE - commandName ==> login
+02:53:08.415 [http-nio-8080-exec-213] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6d97eb00
+02:53:08.417 [http-nio-8080-exec-213] DEBUG - Password secured
+02:53:08.417 [http-nio-8080-exec-213] TRACE - login ==> user1
+02:53:08.435 [http-nio-8080-exec-213] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:53:08.435 [http-nio-8080-exec-213] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:53:08.436 [http-nio-8080-exec-213] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:53:08.436 [http-nio-8080-exec-213] TRACE - Logged successfully as user1
+02:53:08.436 [http-nio-8080-exec-213] TRACE - Login stored in session
+02:53:08.436 [http-nio-8080-exec-213] TRACE - User role ==> USER
+02:53:12.253 [http-nio-8080-exec-211] TRACE - commandName ==> userRequest
+02:53:12.254 [http-nio-8080-exec-211] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@626d0af
+02:53:12.257 [http-nio-8080-exec-211] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:32.0', sum=10.0}
+02:53:12.257 [http-nio-8080-exec-211] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:36.0', sum=20.0}
+02:53:12.257 [http-nio-8080-exec-211] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:37.0', sum=10.0}
+02:53:12.257 [http-nio-8080-exec-211] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:39.0', sum=20.0}
+02:56:01.804 [RMI TCP Connection(84)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+02:56:22.347 [http-nio-8080-exec-224] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+02:56:22.348 [http-nio-8080-exec-224] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+02:56:22.348 [http-nio-8080-exec-224] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+02:56:22.348 [http-nio-8080-exec-224] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+02:56:22.353 [http-nio-8080-exec-224] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+02:56:22.353 [http-nio-8080-exec-224] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+02:56:22.353 [http-nio-8080-exec-224] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+02:56:22.353 [http-nio-8080-exec-224] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+02:56:22.354 [http-nio-8080-exec-224] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+02:56:22.354 [http-nio-8080-exec-224] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+02:56:22.354 [http-nio-8080-exec-224] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+02:56:22.355 [http-nio-8080-exec-224] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+02:56:22.364 [http-nio-8080-exec-224] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+02:56:22.364 [http-nio-8080-exec-224] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:56:22.364 [http-nio-8080-exec-224] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:56:22.364 [http-nio-8080-exec-224] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:56:22.365 [http-nio-8080-exec-224] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+02:56:22.365 [http-nio-8080-exec-224] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+02:56:27.835 [http-nio-8080-exec-217] TRACE - commandName ==> login
+02:56:27.850 [http-nio-8080-exec-217] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@61869c0d
+02:56:27.852 [http-nio-8080-exec-217] DEBUG - Password secured
+02:56:27.853 [http-nio-8080-exec-217] TRACE - login ==> user1
+02:56:27.872 [http-nio-8080-exec-217] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:56:27.872 [http-nio-8080-exec-217] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+02:56:27.872 [http-nio-8080-exec-217] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+02:56:27.872 [http-nio-8080-exec-217] TRACE - Logged successfully as user1
+02:56:27.873 [http-nio-8080-exec-217] TRACE - Login stored in session
+02:56:27.873 [http-nio-8080-exec-217] TRACE - User role ==> USER
+02:56:30.922 [http-nio-8080-exec-219] TRACE - commandName ==> userRequest
+02:56:30.922 [http-nio-8080-exec-219] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1691867d
+02:56:30.927 [http-nio-8080-exec-219] TRACE - User payment created ==> UserPayments{userId=2, date='Mon Nov 22 01:44:32 EET 2021', sum=10.0}
+02:56:30.928 [http-nio-8080-exec-219] TRACE - User payment created ==> UserPayments{userId=2, date='Mon Nov 22 01:44:36 EET 2021', sum=20.0}
+02:56:30.928 [http-nio-8080-exec-219] TRACE - User payment created ==> UserPayments{userId=2, date='Mon Nov 22 01:52:37 EET 2021', sum=10.0}
+02:56:30.928 [http-nio-8080-exec-219] TRACE - User payment created ==> UserPayments{userId=2, date='Mon Nov 22 01:52:39 EET 2021', sum=20.0}
+02:57:31.807 [http-nio-8080-exec-227] TRACE - commandName ==> userRequest
+02:57:31.807 [http-nio-8080-exec-227] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1691867d
+02:57:31.811 [http-nio-8080-exec-227] TRACE - User payment created ==> UserPayments{userId=2, date='Mon Nov 22 01:44:32 EET 2021', sum=10.0}
+02:57:31.811 [http-nio-8080-exec-227] TRACE - User payment created ==> UserPayments{userId=2, date='Mon Nov 22 01:44:36 EET 2021', sum=20.0}
+02:57:31.811 [http-nio-8080-exec-227] TRACE - User payment created ==> UserPayments{userId=2, date='Mon Nov 22 01:52:37 EET 2021', sum=10.0}
+02:57:31.812 [http-nio-8080-exec-227] TRACE - User payment created ==> UserPayments{userId=2, date='Mon Nov 22 01:52:39 EET 2021', sum=20.0}
+03:00:27.247 [RMI TCP Connection(87)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+03:00:29.684 [http-nio-8080-exec-229] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:00:29.685 [http-nio-8080-exec-229] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:00:29.685 [http-nio-8080-exec-229] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:00:29.686 [http-nio-8080-exec-229] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+03:00:29.691 [http-nio-8080-exec-229] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:00:29.692 [http-nio-8080-exec-229] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:00:29.692 [http-nio-8080-exec-229] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:00:29.693 [http-nio-8080-exec-229] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:00:29.693 [http-nio-8080-exec-229] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+03:00:29.693 [http-nio-8080-exec-229] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+03:00:29.693 [http-nio-8080-exec-229] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+03:00:29.694 [http-nio-8080-exec-229] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+03:00:29.704 [http-nio-8080-exec-229] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:00:29.704 [http-nio-8080-exec-229] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+03:00:29.704 [http-nio-8080-exec-229] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+03:00:29.705 [http-nio-8080-exec-229] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:00:29.705 [http-nio-8080-exec-229] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:00:29.706 [http-nio-8080-exec-229] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+03:00:39.523 [http-nio-8080-exec-228] TRACE - commandName ==> login
+03:00:39.545 [http-nio-8080-exec-228] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6fbb64ca
+03:00:39.547 [http-nio-8080-exec-228] DEBUG - Password secured
+03:00:39.547 [http-nio-8080-exec-228] TRACE - login ==> user1
+03:00:39.571 [http-nio-8080-exec-228] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+03:00:39.572 [http-nio-8080-exec-228] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:00:39.572 [http-nio-8080-exec-228] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+03:00:39.572 [http-nio-8080-exec-228] TRACE - Logged successfully as user1
+03:00:39.572 [http-nio-8080-exec-228] TRACE - Login stored in session
+03:00:39.572 [http-nio-8080-exec-228] TRACE - User role ==> USER
+03:00:42.960 [http-nio-8080-exec-236] TRACE - commandName ==> userRequest
+03:00:42.961 [http-nio-8080-exec-236] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@12291b2d
+03:00:42.966 [http-nio-8080-exec-236] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:32.0', sum=10.0}
+03:00:42.967 [http-nio-8080-exec-236] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:36.0', sum=20.0}
+03:00:42.968 [http-nio-8080-exec-236] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:37.0', sum=10.0}
+03:00:42.968 [http-nio-8080-exec-236] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:39.0', sum=20.0}
+03:54:21.877 [http-nio-8080-exec-238] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+03:54:21.913 [http-nio-8080-exec-238] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+03:54:21.913 [http-nio-8080-exec-238] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+03:54:21.914 [http-nio-8080-exec-238] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+03:54:21.964 [http-nio-8080-exec-238] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+03:54:21.965 [http-nio-8080-exec-238] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+03:54:21.966 [http-nio-8080-exec-238] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+03:54:21.967 [http-nio-8080-exec-238] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+03:54:21.968 [http-nio-8080-exec-238] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+03:54:21.968 [http-nio-8080-exec-238] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+03:54:21.968 [http-nio-8080-exec-238] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+03:54:21.969 [http-nio-8080-exec-238] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+03:54:21.980 [http-nio-8080-exec-238] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+03:54:21.981 [http-nio-8080-exec-238] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+03:54:21.982 [http-nio-8080-exec-238] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+03:54:21.982 [http-nio-8080-exec-238] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:54:21.983 [http-nio-8080-exec-238] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+03:54:21.984 [http-nio-8080-exec-238] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+03:54:40.633 [http-nio-8080-exec-240] TRACE - commandName ==> login
+03:54:40.635 [http-nio-8080-exec-240] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6fbb64ca
+03:54:40.664 [http-nio-8080-exec-240] DEBUG - Password secured
+03:54:40.665 [http-nio-8080-exec-240] TRACE - login ==> user1
+03:54:40.677 [http-nio-8080-exec-240] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+03:54:40.678 [http-nio-8080-exec-240] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+03:54:40.678 [http-nio-8080-exec-240] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+03:54:40.678 [http-nio-8080-exec-240] TRACE - Logged successfully as user1
+03:54:40.678 [http-nio-8080-exec-240] TRACE - Login stored in session
+03:54:40.679 [http-nio-8080-exec-240] TRACE - User role ==> USER
+03:54:44.250 [http-nio-8080-exec-244] TRACE - commandName ==> userRequest
+03:54:44.253 [http-nio-8080-exec-244] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@12291b2d
+03:54:44.267 [http-nio-8080-exec-244] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:32.0', sum=10.0}
+03:54:44.268 [http-nio-8080-exec-244] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:36.0', sum=20.0}
+03:54:44.268 [http-nio-8080-exec-244] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:37.0', sum=10.0}
+03:54:44.269 [http-nio-8080-exec-244] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:39.0', sum=20.0}
+04:00:51.153 [RMI TCP Connection(90)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+04:00:54.664 [http-nio-8080-exec-237] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+04:00:54.665 [http-nio-8080-exec-237] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+04:00:54.665 [http-nio-8080-exec-237] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+04:00:54.666 [http-nio-8080-exec-237] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+04:00:54.673 [http-nio-8080-exec-237] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+04:00:54.674 [http-nio-8080-exec-237] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+04:00:54.674 [http-nio-8080-exec-237] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+04:00:54.675 [http-nio-8080-exec-237] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+04:00:54.675 [http-nio-8080-exec-237] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+04:00:54.675 [http-nio-8080-exec-237] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+04:00:54.676 [http-nio-8080-exec-237] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+04:00:54.676 [http-nio-8080-exec-237] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+04:00:54.688 [http-nio-8080-exec-237] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+04:00:54.689 [http-nio-8080-exec-237] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:00:54.689 [http-nio-8080-exec-237] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:00:54.689 [http-nio-8080-exec-237] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+04:00:54.690 [http-nio-8080-exec-237] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+04:00:54.690 [http-nio-8080-exec-237] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+04:01:02.950 [http-nio-8080-exec-242] TRACE - commandName ==> login
+04:01:02.968 [http-nio-8080-exec-242] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@52f93751
+04:01:02.973 [http-nio-8080-exec-242] DEBUG - Password secured
+04:01:02.973 [http-nio-8080-exec-242] TRACE - login ==> user1
+04:01:03.018 [http-nio-8080-exec-242] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:01:03.019 [http-nio-8080-exec-242] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+04:01:03.019 [http-nio-8080-exec-242] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:01:03.020 [http-nio-8080-exec-242] TRACE - Logged successfully as user1
+04:01:03.020 [http-nio-8080-exec-242] TRACE - Login stored in session
+04:01:03.020 [http-nio-8080-exec-242] TRACE - User role ==> USER
+04:01:06.740 [http-nio-8080-exec-248] TRACE - commandName ==> userRequest
+04:01:06.741 [http-nio-8080-exec-248] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@28b518ab
+04:01:06.748 [http-nio-8080-exec-248] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:32.0', sum=10.0}
+04:01:06.748 [http-nio-8080-exec-248] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:36.0', sum=20.0}
+04:01:06.749 [http-nio-8080-exec-248] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:37.0', sum=10.0}
+04:01:06.749 [http-nio-8080-exec-248] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:39.0', sum=20.0}
+04:02:28.272 [RMI TCP Connection(93)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+04:02:33.548 [http-nio-8080-exec-248] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+04:02:33.549 [http-nio-8080-exec-248] TRACE - Service created ==> Service{id=4, titleRu='IP-TV2', titleEn='IP-TV2'}
+04:02:33.549 [http-nio-8080-exec-248] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+04:02:33.549 [http-nio-8080-exec-248] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+04:02:33.554 [http-nio-8080-exec-248] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+04:02:33.554 [http-nio-8080-exec-248] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+04:02:33.555 [http-nio-8080-exec-248] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP каналы', nameEn='Different IP-TV', price=132.0, serviceId=4, descriptionRu='рлрлорлордрлордлродрдлро', descriptionEn='lkjhlkjhlkjhlkjh'}
+04:02:33.555 [http-nio-8080-exec-248] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+04:02:33.555 [http-nio-8080-exec-248] TRACE - Tariff created ==> Tariff{id=26, nameRu='50 каналов', nameEn='50 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+04:02:33.556 [http-nio-8080-exec-248] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+04:02:33.556 [http-nio-8080-exec-248] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+04:02:33.556 [http-nio-8080-exec-248] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=450.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+04:02:33.565 [http-nio-8080-exec-248] TRACE - User created ==> User{login='admin', password='********', email='null', name='Сергей', surname='Сергеевич', phone='null', balance=0.0, language='ru', role='admin', notification=false, status=BLOCKED}
+04:02:33.566 [http-nio-8080-exec-248] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:02:33.566 [http-nio-8080-exec-248] TRACE - User created ==> User{login='user2', password='********', email='email@email.email', name='Ivan', surname='Ivanov', phone='+3805076543210', balance=0.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:02:33.566 [http-nio-8080-exec-248] TRACE - User created ==> User{login='user6', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+04:02:33.567 [http-nio-8080-exec-248] TRACE - User created ==> User{login='user7', password='********', email='user7@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='50 222 22 22', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+04:02:33.567 [http-nio-8080-exec-248] TRACE - User created ==> User{login='user55', password='********', email='', name='Hjkjk', surname='Hyyhjdf', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+04:02:38.517 [http-nio-8080-exec-247] TRACE - commandName ==> login
+04:02:38.529 [http-nio-8080-exec-247] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@74d314f
+04:02:38.531 [http-nio-8080-exec-247] DEBUG - Password secured
+04:02:38.531 [http-nio-8080-exec-247] TRACE - login ==> user1
+04:02:38.548 [http-nio-8080-exec-247] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:02:38.549 [http-nio-8080-exec-247] TRACE - Current user ==>User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+04:02:38.549 [http-nio-8080-exec-247] TRACE - User from DB ==>User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:02:38.549 [http-nio-8080-exec-247] TRACE - Logged successfully as user1
+04:02:38.550 [http-nio-8080-exec-247] TRACE - Login stored in session
+04:02:38.550 [http-nio-8080-exec-247] TRACE - User role ==> USER
+04:02:46.060 [http-nio-8080-exec-250] TRACE - commandName ==> userRequest
+04:02:46.060 [http-nio-8080-exec-250] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1b4dd3c5
+04:02:46.066 [http-nio-8080-exec-250] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:32.0', sum=10.0}
+04:02:46.066 [http-nio-8080-exec-250] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:36.0', sum=20.0}
+04:02:46.066 [http-nio-8080-exec-250] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:37.0', sum=10.0}
+04:02:46.067 [http-nio-8080-exec-250] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:39.0', sum=20.0}
+04:18:22.113 [http-nio-8080-exec-257] TRACE - commandName ==> userRequest
+04:18:22.113 [http-nio-8080-exec-257] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1b4dd3c5
+04:18:22.116 [http-nio-8080-exec-257] TRACE - User created ==> User{login='user1', password='********', email='', name='Andrey', surname='Андреевич', phone='', balance=30.0, language='ru', role='user', notification=true, status=BLOCKED}
+04:18:26.127 [http-nio-8080-exec-262] TRACE - commandName ==> userRequest
+04:18:26.128 [http-nio-8080-exec-262] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@1b4dd3c5
+04:18:26.130 [http-nio-8080-exec-262] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:32.0', sum=10.0}
+04:18:26.130 [http-nio-8080-exec-262] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:44:36.0', sum=20.0}
+04:18:26.131 [http-nio-8080-exec-262] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:37.0', sum=10.0}
+04:18:26.131 [http-nio-8080-exec-262] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 01:52:39.0', sum=20.0}
+04:18:26.131 [http-nio-8080-exec-262] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-22 04:18:22.0', sum=30.0}
