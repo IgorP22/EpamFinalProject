@@ -39,10 +39,11 @@ public class SQLConstant {
 
     public static class UserTariffConstants {
         public static final String GET_ALL_TARIFFS_BY_USER_ID = "SELECT * FROM user_tariffs WHERE user_id = ?";
-
         public static final String CREATE_USER_ID_TARIFF = "INSERT INTO user_tariffs (user_id, tariff_id) "
                 + "VALUES (?,?)";
         public static final String DELETE_TARIFFS_BY_USER_ID = "DELETE FROM user_tariffs WHERE user_id = ?";
+        public static final String GET_TOTAL_COST_BY_USER_ID = "SELECT SUM(price) FROM user_tariffs JOIN tariff "
+                + "ON user_tariffs.tariff_id = tariff.tariff_id WHERE user_id = ?";
     }
 
     public static class UserPaymentsConstants {

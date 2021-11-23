@@ -1,5 +1,6 @@
 package com.podverbnyj.provider.DAO.db;
 
+import com.podverbnyj.provider.DAO.db.entity.UserPayment;
 import com.podverbnyj.provider.DAO.db.entity.UserTariff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserPaymentsConstants.FIND_ALL_PAYMENTS_BY_USER_ID;
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserTariffConstants.*;
 
 
@@ -34,10 +36,13 @@ public class UserTariffDBManager {
 
     public List<UserTariff> findAllByUserId(Connection con, int userId) throws SQLException {
         List<UserTariff> userTariffs = new ArrayList<>();
+        PreparedStatement ps = null;
         ResultSet rs = null;
         UserTariff userTariff;
         try {
-            rs = con.createStatement().executeQuery(GET_ALL_TARIFFS_BY_USER_ID);
+            ps = con.prepareStatement(GET_ALL_TARIFFS_BY_USER_ID);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
             while (rs.next()) {
                 userTariff = getUserTariffs(rs);
                 userTariffs.add(userTariff);
@@ -45,8 +50,31 @@ public class UserTariffDBManager {
             return userTariffs;
         } finally {
             close(rs);
+            close(ps);
         }
     }
+
+    public double getTotalCost(Connection con, int userId) throws SQLException {
+        double totalSum=0;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        UserTariff userTariff;
+        try {
+            ps = con.prepareStatement(GET_TOTAL_COST_BY_USER_ID);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                totalSum = rs.getDouble(1);
+            }
+            return totalSum;
+        } finally {
+            close(rs);
+            close(ps);
+        }
+    }
+
+
+
 
     private UserTariff getUserTariffs(ResultSet rs) throws SQLException {
         UserTariff userTariff = new UserTariff();
@@ -58,9 +86,11 @@ public class UserTariffDBManager {
         return userTariff;
     }
 
+
     public boolean update(Connection con, List<UserTariff> userTariffs, int userId) throws SQLException {
         PreparedStatement ps = null;
         con.setAutoCommit(false);
+        System.out.println("update"+userTariffs + "id " + userId);
         try {
             ps = con.prepareStatement(DELETE_TARIFFS_BY_USER_ID);
             ps.setInt(1, userId);
@@ -78,7 +108,7 @@ public class UserTariffDBManager {
                 close(ps);
             }
         }
-
+        System.out.println("update"+userTariffs + "id " + userId);
         con.commit();
         return true;
     }

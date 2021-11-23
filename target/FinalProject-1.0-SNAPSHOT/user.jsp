@@ -7,6 +7,9 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"></script>
 <link rel="stylesheet" href="css">
 <%@ include file="success.jspf" %>
 
@@ -15,7 +18,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin page for editing and creating users</title>
+    <title>User page</title>
 </head>
 
 
@@ -26,9 +29,10 @@
 
     <div class="page-header">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <h1>Страница пользователя</h1>
             </div>
+
             <div class="col-md-3">
                 <div class="row align-items-center">
                     <h5>Добро пожаловать</h5><br>
@@ -47,6 +51,10 @@
 
                 </div>
 
+            </div>
+            <div class="col-md-4">
+                <h5>Общая стоимость подключенных услуг:</h5>
+                <h3>${totalCost} грн</h3><h5>(за период 30 дней)</h5>
             </div>
             <div class="col-md-1">
                 <form>
@@ -134,14 +142,132 @@
 </div>
 <hr>
 
-<%@ include file="add_or_edit_user.jspf" %>
 
-<c:set var="flag" value="${userFlag}"/>
 <c:set var="paymentsList" value="${userPaymentsList}"/>
-${flag}
-${paymentsList}
+<c:set var="flag" value="${userFlag}"/>
+
+<c:if test="${flag == 'History'}">
+
+    <h3>История пополнения и списаний со счета</h3>
+    <%--    <nav aria-label="Page navigation example">--%>
+    <%--        <ul class="pagination">--%>
+    <%--            <li class="page-item"><a class="page-link" href="#">Previous</a></li>--%>
+    <%--            <li class="page-item"><a class="page-link" href="#">1</a></li>--%>
+    <%--            <li class="page-item"><a class="page-link" href="#">2</a></li>--%>
+    <%--            <li class="page-item"><a class="page-link" href="#">3</a></li>--%>
+    <%--            <li class="page-item"><a class="page-link" href="#">Next</a></li>--%>
+    <%--        </ul>--%>
+    <%--    </nav>--%>
+
+    <table class="table table-bordered" id="paymentHistory">
+        <thead>
+        <tr class="table-active">
+            <th>Дата и время</th>
+            <th>Сумма</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <c:forEach var="history" items="${userPaymentsList}">
+
+            <tr>
+                <td>${history.date}</td>
+                <td>${history.sum}</td>
+
+            </tr>
+
+        </c:forEach>
+
+        </tbody>
+    </table>
+
+</c:if>
+
+<script>
+    $(document).ready(function () {
+        $('#paymentHistory').DataTable({
+            "pagingType": "full_numbers"
+        });
+    });
+
+</script>
+
+<c:if test="${flag == 'Choice'}">
+    <form action="controller" method="post">
+        <table class="table table-bordered">
+            <thead>
+            <tr class="table-active">
+
+                <th>Наименование пакета</th>
+                <th>Описание</th>
+                <th>Цена</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <c:forEach var="service" items="${ListOfServices}">
+                <tr class="table-primary" style="font-size: 1.2em">
+                    <td>${service.titleRu}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                    <c:forEach var="tariff" items="${ListOfTariffs}">
+                        <c:if test="${service.id == tariff.serviceId}">
+                            <tr>
+                                <td>
+                                    <div class="form-check">
+                                        <c:set var="flag" value=""/>
+
+                                        <c:forEach var="userTariff" items="${userTariffList}">
+                                            <c:if test="${tariff.id == userTariff.tariffId}">
+                                                <c:set var="flag" value="checked"/>
+
+                                            </c:if>
+
+                                        </c:forEach>
+
+                                        <input class="form-check-input" type="checkbox" name="${service.id}"
+                                               id="${service.id}" value="${tariff.id}" onclick="onlyOne(this)" ${flag}>
+
+                                        <label class="form-check-label" for="${service.id}">
+
+                                        </label>
+
+                                    </div>
+                                </td>
+                                <td>${tariff.nameRu}</td>
+                                <td>${tariff.descriptionRu}</td>
+                                <td>${tariff.price}</td>
+
+                            </tr>
+                        </c:if>
+                    </c:forEach>
+
+            </c:forEach>
+
+            </tbody>
+        </table>
+
+        <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
+        <button type="submit" name="userRequest" class="btn btn-primary" value="Update services">Update services
+        </button>
+    </form>
+</c:if>
+
+<script>
+    function onlyOne(checkbox) {
+        document.getElementsByName(checkbox.name).forEach(n => {
+            n.checked = n === checkbox ? n.checked : false;
+        });
+    }
+
+</script>
 
 
+<%@ include file="add_or_edit_user.jspf" %>
 
 </body>
 </html>

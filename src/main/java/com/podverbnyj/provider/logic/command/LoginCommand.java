@@ -5,6 +5,7 @@ import javax.servlet.http.*;
 import com.podverbnyj.provider.DAO.ServiceDAO;
 import com.podverbnyj.provider.DAO.TariffDAO;
 import com.podverbnyj.provider.DAO.UserDAO;
+import com.podverbnyj.provider.DAO.UserTariffDAO;
 import com.podverbnyj.provider.DAO.db.DBException;
 import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
@@ -27,6 +28,7 @@ public class LoginCommand implements Command {
     private static final UserDAO userDAO = UserDAO.getInstance();
     private static final ServiceDAO serviceDAO = ServiceDAO.getInstance();
     private static final TariffDAO tariffDAO = TariffDAO.getInstance();
+    private static final UserTariffDAO userTariffDAO = UserTariffDAO.getInstance();
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
@@ -54,6 +56,9 @@ public class LoginCommand implements Command {
                 return "admin.jsp";
             }
             req.getSession().setAttribute("currentUser", user);
+            req.getSession().setAttribute("userFlag", null);
+            double totalCost = userTariffDAO.getTotalCost(user.getId());
+            req.getSession().setAttribute("totalCost", totalCost);
             return "user.jsp";
         }
 

@@ -45,6 +45,9 @@ public class AdminRequestCommand implements Command {
         String editTariff = "Add or edit tariff";
         String deleteTariff = "Delete tariff";
         String removeDataFromSession = "Remove data";
+        if (req.getSession().getAttribute("currentUser") == null) {
+            return req.getHeader("index.jsp");
+        }
 
 
         if (blockUser.equals(adminRequest)) {
