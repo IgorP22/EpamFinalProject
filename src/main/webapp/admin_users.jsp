@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -9,6 +10,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css">
 <%@ include file="success.jspf" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${language}" />
 
 
 
@@ -34,7 +37,7 @@
                 <h1>Административная страница</h1>
 
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="row align-items-center">
                     <h5>Добро пожаловать</h5><br>
                     <c:if test="${currentUser.name == null}">
@@ -51,6 +54,16 @@
                     </c:if>
 
                 </div>
+
+            </div>
+
+            <div class="col-md-1">
+                <form>
+                    <select class="form-select" id="language" name="language" onchange="submit()">
+                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
+                        <option value="ru" ${language == 'ru' ? 'selected' : ''}>Русский</option>
+                    </select>
+                </form>
 
             </div>
             <div class="col-md-1">

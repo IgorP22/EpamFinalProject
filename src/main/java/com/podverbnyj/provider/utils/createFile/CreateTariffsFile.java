@@ -13,13 +13,13 @@ public class CreateTariffsFile {
 
         if (fileFormat.contains("txt")) {
             factory = new TxtFileFactory();
-            app = new FileCreator(factory);
         } else {
             factory = new PdfFileFactory();
-            app = new FileCreator(factory);
         }
+        app = new FileCreator(factory);
         return app;
     }
+
     public static void GetFile(String format){
         FileCreator ff = configureFileCreator(format);
         ff.createFile();

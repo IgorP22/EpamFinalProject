@@ -4,6 +4,7 @@ import com.podverbnyj.provider.DAO.db.DBException;
 import com.podverbnyj.provider.DAO.db.DBUtils;
 import com.podverbnyj.provider.DAO.db.UserDBManager;
 import com.podverbnyj.provider.DAO.db.entity.User;
+import com.podverbnyj.provider.DAO.db.entity.UserPayment;
 import org.apache.logging.log4j.*;
 
 
@@ -14,7 +15,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 
-public class UserDAO implements AbstractDAO<User>{
+public class UserDAO implements AbstractDAO<User> {
 
     private static final Logger log = LogManager.getLogger(UserDAO.class);
     private static final DBUtils dbUtils = DBUtils.getInstance();
@@ -74,7 +75,6 @@ public class UserDAO implements AbstractDAO<User>{
     }
 
 
-
     public User getByName(String name) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
@@ -88,13 +88,12 @@ public class UserDAO implements AbstractDAO<User>{
     }
 
 
-
     @Override
     public boolean update(User user) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
             return userDBManager.update(con, user);
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             log.error("Can't update user ==> " + user.getLogin(), ex);
             throw new DBException("Can't update user ==> " + user.getLogin());
         } finally {
@@ -107,7 +106,7 @@ public class UserDAO implements AbstractDAO<User>{
         Connection con = dbUtils.getConnection();
         try {
             return userDBManager.delete(con, user);
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             log.error("Can't delete user ==> " + user.getLogin(), ex);
             throw new DBException("Can't delete user ==> " + user.getLogin());
         } finally {
@@ -119,9 +118,33 @@ public class UserDAO implements AbstractDAO<User>{
         Connection con = dbUtils.getConnection();
         try {
             return userDBManager.countAdmins(con);
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             log.error("Can't count admins amount ==> ", ex);
             throw new DBException("Can't count admins amount");
+        } finally {
+            userDBManager.close(con);
+        }
+    }
+
+    public void debitAllUsers(List<User> listOfUsers, List<UserPayment> userPaymentList) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            userDBManager.debitAllUsers(con, listOfUsers, userPaymentList);
+            con.commit();
+            log.info("Users funds debited successfully " + System.lineSeparator()
+                    + listOfUsers + System.lineSeparator() + userPaymentList);
+
+        } catch (SQLException ex) {
+            try {
+                con.rollback();
+            } catch (SQLException e) {
+                log.error("Rollback error, funds are not debited "
+                        + listOfUsers + System.lineSeparator() + userPaymentList, ex);
+                throw new DBException("Rollback error, funds are not debited");
+            }
+            log.error("Funds are not debited " + listOfUsers
+                    + System.lineSeparator() + userPaymentList, ex);
+            throw new DBException("Funds are not debited");
         } finally {
             userDBManager.close(con);
         }

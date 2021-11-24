@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -12,6 +13,8 @@
 <script src="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"></script>
 <link rel="stylesheet" href="css">
 <%@ include file="success.jspf" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${language}" />
 
 
 <!DOCTYPE html>
@@ -52,10 +55,21 @@
                 </div>
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <h5>Общая стоимость подключенных услуг:</h5>
                 <h3>${totalCost} грн</h3><h5>(за период 30 дней)</h5>
             </div>
+
+            <div class="col-md-1">
+                <form>
+                    <select class="form-select" id="language" name="language" onchange="submit()">
+                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
+                        <option value="ru" ${language == 'ru' ? 'selected' : ''}>Русский</option>
+                    </select>
+                </form>
+
+            </div>
+
             <div class="col-md-1">
                 <form>
                     <input type="button" value="Logout" class="btn btn-primary" onClick='location.href="index.jsp"'>
@@ -149,15 +163,6 @@
 <c:if test="${flag == 'History'}">
 
     <h3>История пополнения и списаний со счета</h3>
-    <%--    <nav aria-label="Page navigation example">--%>
-    <%--        <ul class="pagination">--%>
-    <%--            <li class="page-item"><a class="page-link" href="#">Previous</a></li>--%>
-    <%--            <li class="page-item"><a class="page-link" href="#">1</a></li>--%>
-    <%--            <li class="page-item"><a class="page-link" href="#">2</a></li>--%>
-    <%--            <li class="page-item"><a class="page-link" href="#">3</a></li>--%>
-    <%--            <li class="page-item"><a class="page-link" href="#">Next</a></li>--%>
-    <%--        </ul>--%>
-    <%--    </nav>--%>
 
     <table class="table table-bordered" id="paymentHistory">
         <thead>
@@ -208,7 +213,13 @@
 
             <c:forEach var="service" items="${ListOfServices}">
                 <tr class="table-primary" style="font-size: 1.2em">
-                    <td>${service.titleRu}</td>
+                    <c:if test="${language=='ru'}">
+                        <td>${service.titleRu}</td>
+                    </c:if>
+
+                    <c:if test="${language=='en'}">
+                        <td>${service.titleEn}</td>
+                    </c:if>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -238,8 +249,14 @@
 
                                     </div>
                                 </td>
-                                <td>${tariff.nameRu}</td>
-                                <td>${tariff.descriptionRu}</td>
+                                <c:if test="${language=='ru'}">
+                                    <td>${tariff.nameRu}</td>
+                                    <td>${tariff.descriptionRu}</td>
+                                </c:if>
+                                <c:if test="${language=='en'}">
+                                    <td>${tariff.nameEn}</td>
+                                    <td>${tariff.descriptionEn}</td>
+                                </c:if>
                                 <td>${tariff.price}</td>
 
                             </tr>

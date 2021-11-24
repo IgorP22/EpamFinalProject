@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -10,9 +11,12 @@
 <link rel="stylesheet" href="css">
 
 <%@ include file="success.jspf" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${language}" />
 
 
 <!DOCTYPE html>
+<html lang="${language}">
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +37,7 @@
                 <h1>Административная страница</h1>
 
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="row align-items-center">
                     <h5>Добро пожаловать</h5><br>
                     <c:if test="${user.name == null}">
@@ -52,6 +56,16 @@
                 </div>
 
             </div>
+            <div class="col-md-1">
+                <form>
+                    <select class="form-select" id="language" name="language" onchange="submit()">
+                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
+                        <option value="ru" ${language == 'ru' ? 'selected' : ''}>Русский</option>
+                    </select>
+                </form>
+
+            </div>
+
             <div class="col-md-1">
                 <form>
                     <input type="button" value="Logout" class="btn btn-primary" onClick='location.href="index.jsp"'>
@@ -129,7 +143,13 @@
 
         <c:forEach var="service" items="${ListOfServices}">
             <tr class="table-primary" style="font-size: 1.2em">
-                <td>${service.titleRu}</td>
+                <c:if test="${language=='ru'}">
+                    <td>${service.titleRu}</td>
+                </c:if>
+
+                <c:if test="${language=='en'}">
+                    <td>${service.titleEn}</td>
+                </c:if>
                 <td></td>
                 <td></td>
                 <form action="controller" method="post">
@@ -151,8 +171,14 @@
             <c:forEach var="tariff" items="${ListOfTariffs}">
                 <c:if test="${service.id == tariff.serviceId}">
                     <tr>
-                        <td>${tariff.nameRu}</td>
-                        <td>${tariff.descriptionRu}</td>
+                        <c:if test="${language=='ru'}">
+                            <td>${tariff.nameRu}</td>
+                            <td>${tariff.descriptionRu}</td>
+                        </c:if>
+                        <c:if test="${language=='en'}">
+                            <td>${tariff.nameEn}</td>
+                            <td>${tariff.descriptionEn}</td>
+                        </c:if>
                         <td>${tariff.price}</td>
 
 

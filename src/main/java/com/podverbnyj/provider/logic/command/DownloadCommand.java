@@ -30,6 +30,14 @@ public class DownloadCommand implements Command {
         String file = req.getParameter("file");
         System.out.println(file);
 
+
+
+        List<Tariff> tariffList = (List<Tariff>) req.getSession().getAttribute("ListOfServices");
+        List<Service> serviceList = (List<Service>) req.getSession().getAttribute("ListOfTariffs");
+        System.out.println(tariffList);
+        System.out.println(serviceList);
+
+
         return req.getHeader("referer");
     }
 }

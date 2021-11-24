@@ -194,6 +194,7 @@ public class AdminRequestCommand implements Command {
             if (password.equals(req.getParameter("userPassword"))) {
                 user.setPassword(password);
             }
+            user.setBalance(userDAO.getById(idToEdit).getBalance());
             userDAO.update(user);
             getUsersList(req);
             req.getSession().setAttribute("userToEdit", null);

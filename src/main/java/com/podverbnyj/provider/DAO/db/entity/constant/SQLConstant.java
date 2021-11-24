@@ -47,7 +47,8 @@ public class SQLConstant {
     }
 
     public static class UserPaymentsConstants {
-        public static final String FIND_ALL_PAYMENTS_BY_USER_ID = "SELECT * FROM user_payments WHERE user_id = ?";
+        public static final String FIND_ALL_PAYMENTS_BY_USER_ID = "SELECT * FROM user_payments WHERE user_id = ? " +
+                "ORDER BY date DESC";
         public static final String CREATE_PAYMENT = "INSERT INTO user_payments (user_id, date, "
                 + "sum) VALUES (?,?,?)";
     }

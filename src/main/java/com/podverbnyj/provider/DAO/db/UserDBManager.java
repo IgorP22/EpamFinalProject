@@ -1,6 +1,7 @@
 package com.podverbnyj.provider.DAO.db;
 
 import com.podverbnyj.provider.DAO.db.entity.User;
+import com.podverbnyj.provider.DAO.db.entity.UserPayment;
 import com.podverbnyj.provider.DAO.db.entity.constant.Language;
 import com.podverbnyj.provider.DAO.db.entity.constant.Role;
 import com.podverbnyj.provider.DAO.db.entity.constant.Status;
@@ -131,6 +132,16 @@ public class UserDBManager {
             return counter;
         } finally {
             close(rs);
+        }
+    }
+
+    public void debitAllUsers(Connection con, List<User> listOfUsers, List<UserPayment> userPaymentList) throws SQLException {
+        con.setAutoCommit(false);
+        for (User user : listOfUsers) {
+            update(con,user);
+        }
+        for (UserPayment userPayment: userPaymentList){
+            UserPaymentDBManager.getInstance().create(con,userPayment);
         }
     }
 

@@ -50,7 +50,7 @@ public class UserRequestCommand implements Command {
             System.out.println(req.getParameter("sum"));
             double sum = Double.parseDouble(req.getParameter("sum"));
             user.setBalance((user.getBalance() + sum));
-
+            user.setStatus(Status.ACTIVE);
             userDAO.update(user);
             UserPayment userPayment = new UserPayment(userID, sum);
             userPaymentDAO.create(userPayment);
@@ -61,7 +61,7 @@ public class UserRequestCommand implements Command {
         }
 
         if (paymentHistory.equals(userRequest)) {
-            List<UserPayment> userPaymentsList = new ArrayList<>();
+            List<UserPayment> userPaymentsList;
             userPaymentsList = userPaymentDAO.findAll(userID);
             System.out.println(userPaymentsList);
             req.getSession().setAttribute("userPaymentsList", userPaymentsList);
@@ -76,7 +76,7 @@ public class UserRequestCommand implements Command {
 
         if (getServices.equals(userRequest)) {
             String userFlag = "Choice";
-            List<UserTariff> userTariffList = new ArrayList<>();
+            List<UserTariff> userTariffList;
             userTariffList = userTariffDAO.findAll(userID);
             System.out.println(userTariffList);
             req.getSession().setAttribute("userTariffList", userTariffList);
@@ -85,7 +85,7 @@ public class UserRequestCommand implements Command {
 
         if (updateServices.equals(userRequest)) {
             List<UserTariff> userTariffList = new ArrayList<>();
-            List<Service> serviceList = new ArrayList<>();
+            List<Service> serviceList;
             serviceList = serviceDAO.findAll();
             for (Service service : serviceList) {
                 String serviceId = String.valueOf(service.getId());
@@ -101,7 +101,6 @@ public class UserRequestCommand implements Command {
             System.out.println(userTariffList);
             return "user.jsp#success";
         }
-
 
         return req.getHeader("referer");
     }
