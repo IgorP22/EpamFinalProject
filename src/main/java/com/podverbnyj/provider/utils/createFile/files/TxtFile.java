@@ -1,16 +1,19 @@
 package com.podverbnyj.provider.utils.createFile.files;
 
-import com.itextpdf.text.Chunk;
 import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
 public class TxtFile implements File {
+    private static final Logger log = LogManager.getLogger(TxtFile.class);
+
+    @SuppressWarnings("unchecked")
     @Override
     public void create(HttpServletRequest req) throws IOException {
         List<Service> serviceList = (List<Service>) req.getSession().getAttribute("ListOfServices");
@@ -19,7 +22,7 @@ public class TxtFile implements File {
 
         System.out.println(serviceList);
         System.out.println(tariffList);
-        FileWriter file = new FileWriter(req.getServletContext().getRealPath("/")+"price_list.txt");
+        FileWriter file = new FileWriter(req.getServletContext().getRealPath("/") + "price_list.txt");
 
         if (language.equals("ru")) {
             file.write("Прайс-лист" + System.lineSeparator());
@@ -32,9 +35,6 @@ public class TxtFile implements File {
         } else {
             file.write("Name                Description             Price" + System.lineSeparator());
         }
-
-
-
 
         file.write("------------------------------" + System.lineSeparator());
 
@@ -59,26 +59,6 @@ public class TxtFile implements File {
 
         file.close();
 
-
-        System.out.println("Text file with price_list created there");
-
-        try(FileReader reader = new FileReader(req.getServletContext().getRealPath("/")+"price_list.txt"))
-        {
-            // читаем посимвольно
-            int c;
-            while((c=reader.read())!=-1){
-
-                System.out.print((char)c);
-            }
-        }
-        catch(IOException ex){
-
-            System.out.println(ex.getMessage());
-        }
-
-        String filePath = req.getServletContext().getRealPath("/");
-        System.out.println(filePath);
-
-
+        log.info("Price list created: " + req.getServletContext().getRealPath("/") + "price_list.txt");
     }
 }
