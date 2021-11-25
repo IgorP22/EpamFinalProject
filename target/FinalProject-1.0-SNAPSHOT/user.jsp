@@ -1,3 +1,4 @@
+<%--suppress ELValidationInJSP --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -13,8 +14,10 @@
 <script src="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"></script>
 <link rel="stylesheet" href="css">
 <%@ include file="success.jspf" %>
-<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
-<fmt:setLocale value="${language}" />
+<c:set var="language"
+       value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
+       scope="session"/>
+<fmt:setLocale value="${language}"/>
 
 
 <!DOCTYPE html>
@@ -41,7 +44,7 @@
                     <h5>Добро пожаловать</h5><br>
                     <c:if test="${currentUser.name == null}">
                         <h4>
-                            <td>${currentUser.login}</td>
+                            ${currentUser.login}
                         </h4>
                     </c:if>
 
@@ -153,7 +156,7 @@
 
 </div>
 
-</div>
+
 <hr>
 
 
@@ -225,43 +228,43 @@
                     <td></td>
                 </tr>
 
-                    <c:forEach var="tariff" items="${ListOfTariffs}">
-                        <c:if test="${service.id == tariff.serviceId}">
-                            <tr>
-                                <td>
-                                    <div class="form-check">
-                                        <c:set var="flag" value=""/>
+                <c:forEach var="tariff" items="${ListOfTariffs}">
+                    <c:if test="${service.id == tariff.serviceId}">
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <c:set var="flag" value=""/>
 
-                                        <c:forEach var="userTariff" items="${userTariffList}">
-                                            <c:if test="${tariff.id == userTariff.tariffId}">
-                                                <c:set var="flag" value="checked"/>
+                                    <c:forEach var="userTariff" items="${userTariffList}">
+                                        <c:if test="${tariff.id == userTariff.tariffId}">
+                                            <c:set var="flag" value="checked"/>
 
-                                            </c:if>
+                                        </c:if>
 
-                                        </c:forEach>
+                                    </c:forEach>
 
-                                        <input class="form-check-input" type="checkbox" name="${service.id}"
-                                               id="${service.id}" value="${tariff.id}" onclick="onlyOne(this)" ${flag}>
+                                    <input class="form-check-input" type="checkbox" name="${service.id}"
+                                           id="${service.id}" value="${tariff.id}" onclick="onlyOne(this)" ${flag}>
 
-                                        <label class="form-check-label" for="${service.id}">
+                                    <label class="form-check-label" for="${service.id}">
 
-                                        </label>
+                                    </label>
 
-                                    </div>
-                                </td>
-                                <c:if test="${language=='ru'}">
-                                    <td>${tariff.nameRu}</td>
-                                    <td>${tariff.descriptionRu}</td>
-                                </c:if>
-                                <c:if test="${language=='en'}">
-                                    <td>${tariff.nameEn}</td>
-                                    <td>${tariff.descriptionEn}</td>
-                                </c:if>
-                                <td>${tariff.price}</td>
+                                </div>
+                            </td>
+                            <c:if test="${language=='ru'}">
+                                <td>${tariff.nameRu}</td>
+                                <td>${tariff.descriptionRu}</td>
+                            </c:if>
+                            <c:if test="${language=='en'}">
+                                <td>${tariff.nameEn}</td>
+                                <td>${tariff.descriptionEn}</td>
+                            </c:if>
+                            <td>${tariff.price}</td>
 
-                            </tr>
-                        </c:if>
-                    </c:forEach>
+                        </tr>
+                    </c:if>
+                </c:forEach>
 
             </c:forEach>
 

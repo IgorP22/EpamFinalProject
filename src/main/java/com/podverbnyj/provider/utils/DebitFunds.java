@@ -7,6 +7,7 @@ import com.podverbnyj.provider.DAO.db.entity.User;
 import com.podverbnyj.provider.DAO.db.entity.UserPayment;
 import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import org.apache.logging.log4j.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,14 @@ public class DebitFunds {
 
         for (User user : listOfUsers) {
             double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
+            if (sumToDebit <= 0) {
+                listOfUsers.remove(user);
+            }
+        }
+
+        for (User user : listOfUsers) {
+            double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
+
             if (user.getBalance() < sumToDebit) {
                 user.setStatus(Status.BLOCKED);
             } else {

@@ -1,5 +1,6 @@
 package com.podverbnyj.provider.logic.command;
 
+import com.itextpdf.text.DocumentException;
 import com.podverbnyj.provider.DAO.ServiceDAO;
 import com.podverbnyj.provider.DAO.TariffDAO;
 import com.podverbnyj.provider.DAO.UserDAO;
@@ -13,9 +14,11 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
+import static com.podverbnyj.provider.utils.createFile.CreateTariffsFile.GetFile;
 
 public class DownloadCommand implements Command {
 
@@ -30,14 +33,13 @@ public class DownloadCommand implements Command {
         String file = req.getParameter("file");
         System.out.println(file);
 
+        try {
+            GetFile(file,req);
+        } catch (IOException | DocumentException e) {
+            e.printStackTrace();
+        }
 
-
-        List<Tariff> tariffList = (List<Tariff>) req.getSession().getAttribute("ListOfServices");
-        List<Service> serviceList = (List<Service>) req.getSession().getAttribute("ListOfTariffs");
-        System.out.println(tariffList);
-        System.out.println(serviceList);
-
-
-        return req.getHeader("referer");
+        System.out.println(req.getHeader("referer"));
+        return "index.jsp?download=price_list.txt";
     }
 }

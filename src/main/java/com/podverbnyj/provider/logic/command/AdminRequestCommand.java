@@ -29,6 +29,10 @@ public class AdminRequestCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
+        if (req.getSession().getAttribute("currentUser") == null) {
+            return req.getHeader("index.jsp");
+        }
+
         String adminRequest = req.getParameter("adminRequest");
         System.out.println(adminRequest);
 
@@ -45,10 +49,6 @@ public class AdminRequestCommand implements Command {
         String editTariff = "Add or edit tariff";
         String deleteTariff = "Delete tariff";
         String removeDataFromSession = "Remove data";
-        if (req.getSession().getAttribute("currentUser") == null) {
-            return req.getHeader("index.jsp");
-        }
-
 
         if (blockUser.equals(adminRequest)) {
             int userID = Integer.parseInt(req.getParameter("userToEditId"));
@@ -156,15 +156,8 @@ public class AdminRequestCommand implements Command {
     }
 
     private String addOrEditUser(HttpServletRequest req) throws DBException {
-        System.out.println(req.getSession().getAttribute("userToEditId"));
-        System.out.println(req.getAttribute("userToEditId"));
-        System.out.println(req.getParameter("userToEditId"));
-        System.out.println(req.getSession().getAttribute("userToEdit"));
-        System.out.println(req.getAttribute("userToEdit"));
-        System.out.println(req.getParameter("userToEdit"));
 
         if (req.getParameter("userToEditId") == null && req.getParameter("userLogin") != null) {
-            System.out.println("~~~~1");
             User user;
             user = getUser(req);
             userDAO.create(user);
@@ -175,7 +168,6 @@ public class AdminRequestCommand implements Command {
         }
 
         if (req.getParameter("userToEditId") != null && req.getParameter("userLogin") == null) {
-            System.out.println("~~~~2");
             int idToEdit = Integer.parseInt(req.getParameter("userToEditId"));
             User user = userDAO.getById(idToEdit);
             req.setAttribute("userToEditId", idToEdit);
@@ -185,7 +177,6 @@ public class AdminRequestCommand implements Command {
         }
 
         if (req.getParameter("userToEditId") != null && req.getParameter("userLogin") != null) {
-            System.out.println("~~~~3");
             int idToEdit = Integer.parseInt( req.getParameter("userToEditId"));
             User user;
             user = getUser(req);
@@ -317,8 +308,6 @@ public class AdminRequestCommand implements Command {
             int idToEdit = Integer.parseInt((String) req.getParameter("tariffId"));
             Tariff tariff = getTariff(req);
             tariff.setId(idToEdit);
-            System.out.println(tariff);
-
             tariffDAO.update(tariff);
             getPriceList(req);
             req.getSession().setAttribute("tariffToEdit", null);
@@ -330,11 +319,6 @@ public class AdminRequestCommand implements Command {
 
     private Tariff getTariff(HttpServletRequest req) {
         Tariff tariff = new Tariff();
-
-        System.out.println(req.getParameter("serviceIdForTariff"));
-        System.out.println(req.getAttribute("serviceIdForTariff"));
-        System.out.println(req.getSession().getAttribute("serviceIdForTariff"));
-
 
         tariff.setNameRu(req.getParameter("tariffNameRu"));
         tariff.setNameEn(req.getParameter("tariffNameEn"));
@@ -359,22 +343,20 @@ public class AdminRequestCommand implements Command {
 
         List<Service> listOfServices = serviceDAO.findAll();
         List<Tariff> listOfTariffs = tariffDAO.findAll();
+        String language = req.getSession().getAttribute("language").toString();
+
+
         if (servicesIsSorted) {
-            Sorter.sortServicesByName(listOfServices, "ru");
+            Sorter.sortServicesByName(listOfServices, language);
         }
         if (tariffsIsSortedByName) {
-            Sorter.sortTariffsByName(listOfTariffs, "ru");
+            Sorter.sortTariffsByName(listOfTariffs, language);
         }
         if (sortedByPrice) {
             Sorter.sortTariffsByPrice(listOfTariffs);
         }
 
-
         req.getSession().setAttribute("ListOfServices", listOfServices);
         req.getSession().setAttribute("ListOfTariffs", listOfTariffs);
-
-
-        System.out.println("n2" + servicesIsSorted + " " + tariffsIsSortedByName + " " + sortedByPrice);
-
     }
 }

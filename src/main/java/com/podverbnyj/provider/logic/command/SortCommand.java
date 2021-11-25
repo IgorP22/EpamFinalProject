@@ -22,35 +22,32 @@ import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 public class SortCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(SortCommand.class);
-    private static final UserDAO userDAO = UserDAO.getInstance();
-    private static final ServiceDAO serviceDAO = ServiceDAO.getInstance();
-    private static final TariffDAO tariffDAO = TariffDAO.getInstance();
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
 
         String sort = req.getParameter("sort");
         String language = (String) req.getSession().getAttribute("language");
-        boolean servicesIsSorted = (boolean)req.getSession().getAttribute("servicesIsSorted");
-        boolean tariffsIsSortedByName = (boolean)req.getSession().getAttribute("tariffsIsSortedByName");
-        boolean sortedByPrice = (boolean)req.getSession().getAttribute("sortedByPrice");
-        boolean sortedByLogin = (boolean)req.getSession().getAttribute("sortedByLogin");
+        boolean servicesIsSorted = (boolean) req.getSession().getAttribute("servicesIsSorted");
+        boolean tariffsIsSortedByName = (boolean) req.getSession().getAttribute("tariffsIsSortedByName");
+        boolean sortedByPrice = (boolean) req.getSession().getAttribute("sortedByPrice");
+        boolean sortedByLogin = (boolean) req.getSession().getAttribute("sortedByLogin");
 
         System.out.println(sort);
         System.out.println(language);
-        String s1= "Sort services";
-        String s2= "Sort tariffs by name";
-        String s3= "Sort tariffs by price";
-        String s4= "Sort users by login";
+        String s1 = "Sort services";
+        String s2 = "Sort tariffs by name";
+        String s3 = "Sort tariffs by price";
+        String s4 = "Sort users by login";
 
 
         if (s1.equals(sort)) {
             List<Service> services = (List<Service>) req.getSession().getAttribute("ListOfServices");
             if (servicesIsSorted) {
-                Sorter.sortServicesByNameReverseOrder(services,language);
+                Sorter.sortServicesByNameReverseOrder(services, language);
                 req.getSession().setAttribute("servicesIsSorted", false);
             } else {
-                Sorter.sortServicesByName(services,language);
+                Sorter.sortServicesByName(services, language);
                 req.getSession().setAttribute("servicesIsSorted", true);
             }
             return req.getHeader("referer");
@@ -59,10 +56,10 @@ public class SortCommand implements Command {
         if (s2.equals(sort)) {
             List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
             if (tariffsIsSortedByName) {
-                Sorter.sortTariffsByNameReverseOrder(tariffs,language);
+                Sorter.sortTariffsByNameReverseOrder(tariffs, language);
                 req.getSession().setAttribute("tariffsIsSortedByName", false);
             } else {
-                Sorter.sortTariffsByName(tariffs,language);
+                Sorter.sortTariffsByName(tariffs, language);
                 req.getSession().setAttribute("tariffsIsSortedByName", true);
             }
             return req.getHeader("referer");
@@ -89,11 +86,6 @@ public class SortCommand implements Command {
                 req.getSession().setAttribute("sortedByLogin", true);
             }
         }
-
-
-
-
-
         return req.getHeader("referer");
     }
 }

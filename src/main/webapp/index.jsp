@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to provider main page</title>
 </head>
-<body>
+
 
 <header>
 
@@ -29,9 +29,10 @@
             <div class="row">
 
                 <div class="col-md-8">
-                    <h1>Добро пожаловать</h1>
-                    <h2>Наши улуги и цены</h2>
+                    <h1><fmt:message key="index_jsp.link.welcome"/></h1>
+                    <h2><fmt:message key="index_jsp.link.our_services_and_prices"/></h2>
                 </div>
+
 
 
                 <div class="col-md-1">
@@ -54,7 +55,7 @@
                             <input type="hidden" name="command" value="login">
                             <input name="login"><br>
                             <input type="password" name="password"><br>
-                            <button type="submit" class="btn btn-primary" value="Login">Login</button>
+                            <button type="submit" class="btn btn-primary" value="Login"><fmt:message key="index_jsp.link.login"/></button>
                         </form>
                     </div>
 
@@ -64,18 +65,16 @@
 
 </header>
 
+<body>
 
-<fmt:message key="index_jsp.link.settings"/>
-${language}
-
-
-
+<a href="http://localhost:8080/Final/price_list.txt" download="price_list.txt">Скачать txt</a>
+<a href="http://localhost:8080/Final/price_list.pdf" download="price_list.pdf">Скачать pdf</a>
 <hr>
 <form action="controller" method="post">
     <input type="hidden" name="command" value="sort">
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort services">Sort services</button>
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by name">Sort tariffs by name</button>
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by price">Sort tariffs by price</button>
+    <button type="submit" name="sort" class="btn btn-primary" value="Sort services"><fmt:message key="index_jsp.link.sort_services"/></button>
+    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by name"><fmt:message key="index_jsp.link.sort_tariffs_by_name"/></button>
+    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by price"><fmt:message key="index_jsp.link.sort_tariffs_by_price"/></button>
 
 </form>
 <hr>
@@ -84,9 +83,9 @@ ${language}
 <table class="table table-bordered">
     <thead>
     <tr class="table-active">
-        <th>Наименование пакета</th>
-        <th>Описание</th>
-        <th>Цена</th>
+        <th><fmt:message key="index_jsp.link.name"/></th>
+        <th><fmt:message key="index_jsp.link.description"/></th>
+        <th><fmt:message key="index_jsp.link.price"/></th>
     </tr>
     </thead>
     <tbody>
@@ -117,8 +116,6 @@ ${language}
                         <td>${tariff.descriptionEn}</td>
                     </c:if>
 
-
-
                     <td>${tariff.price}</td>
                 </tr>
             </c:if>
@@ -129,12 +126,11 @@ ${language}
 </table>
 
 
-<!--<a href="hello-servlet">Hello Servlet</a> -->
 
 
 <!-- Кнопка-триггер модального окна -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal">
-    Get price list by email
+    <fmt:message key="index_jsp.link.get_price_to_email"/>
 </button>
 
 <!-- Модальное окно -->
@@ -142,15 +138,15 @@ ${language}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="emailModalLabel">Enter email and chose file format</h5>
+                <h5 class="modal-title" id="emailModalLabel"><fmt:message key="index_jsp.link.enter_email_and_format"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="controller" method="post">
+            <form action="controller" method="get">
 
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <label for="email" class="col-form-label">Enter e-mail here:</label>
+                        <label for="email" class="col-form-label"><fmt:message key="index_jsp.link.enter_email_here"/></label>
                         <input type="text" name="email" class="form-control" id="email"
                                pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
                                minlength="5" placeholder="email@example.com" required>
@@ -161,10 +157,10 @@ ${language}
 
                 <div class="modal-footer">
                     <input type="hidden" name="command" value="email">
-                    <button type="submit" class="btn btn-primary" name="file" value="txt">Download as .txt</button>
-                    <button type="submit" class="btn btn-primary" name="file" value="pdf">Download as .pdf</button>
+                    <button type="submit" class="btn btn-primary" name="file" value="txt"><fmt:message key="index_jsp.link.send_as"/>.txt</button>
+                    <button type="submit" class="btn btn-primary" name="file" value="pdf"><fmt:message key="index_jsp.link.send_as"/>.pdf</button>
 
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.cancel"/></button>
                 </div>
             </form>
         </div>
@@ -174,7 +170,7 @@ ${language}
 
 <!-- Кнопка-триггер модального окна -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal">
-    Download prise list
+    <fmt:message key="index_jsp.link.download_price"/>
 </button>
 
 <!-- Модальное окно -->
@@ -182,17 +178,17 @@ ${language}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="downloadModalLabel">Chose file format</h5>
+                <h5 class="modal-title" id="downloadModalLabel"><fmt:message key="index_jsp.link.chose_file_format"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="modal-footer">
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="download">
-                    <button type="submit" class="btn btn-primary" name="file" value="txt">Download as .txt</button>
-                    <button type="submit" class="btn btn-primary" name="file" value="pdf">Download as .pdf</button>
+                    <button type="submit" class="btn btn-primary" name="file" value="txt"><fmt:message key="index_jsp.link.download_as"/>.txt</button>
+                    <button type="submit" class="btn btn-primary" name="file" value="pdf"><fmt:message key="index_jsp.link.download_as"/>.pdf</button>
                 </form>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.cancel"/></button>
             </div>
         </div>
     </div>
@@ -204,11 +200,11 @@ ${language}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">User does not exist</h5>
+                <h5 class="modal-title"><fmt:message key="index_jsp.link.user_does_not_exist"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.close"/></button>
             </div>
         </div>
     </div>
@@ -233,11 +229,11 @@ ${language}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Username and password don't match</h5>
+                <h5 class="modal-title"><fmt:message key="index_jsp.link.username_and_password_dont_match"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.close"/></button>
             </div>
         </div>
     </div>
