@@ -122,7 +122,7 @@ public class TariffDBManager {
         ps.setDouble(index++, tariff.getPrice());
         ps.setInt(index++, tariff.getServiceId());
         ps.setString(index++, tariff.getDescriptionRu());
-        ps.setString(index++, tariff.getDescriptionEn());
+        ps.setString(index, tariff.getDescriptionEn());
     }
 
     private Tariff getTariff(ResultSet rs) throws SQLException {

@@ -1,6 +1,5 @@
 package com.podverbnyj.provider.DAO.db;
 
-import com.podverbnyj.provider.DAO.db.entity.UserPayment;
 import com.podverbnyj.provider.DAO.db.entity.UserTariff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +11,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserPaymentsConstants.FIND_ALL_PAYMENTS_BY_USER_ID;
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserTariffConstants.*;
 
 
@@ -58,7 +56,6 @@ public class UserTariffDBManager {
         double totalSum=0;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        UserTariff userTariff;
         try {
             ps = con.prepareStatement(GET_TOTAL_COST_BY_USER_ID);
             ps.setInt(1, userId);

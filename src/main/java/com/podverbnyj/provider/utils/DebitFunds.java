@@ -5,11 +5,14 @@ import com.podverbnyj.provider.DAO.UserTariffDAO;
 import com.podverbnyj.provider.DAO.db.DBException;
 import com.podverbnyj.provider.DAO.db.entity.User;
 import com.podverbnyj.provider.DAO.db.entity.UserPayment;
+import com.podverbnyj.provider.DAO.db.entity.constant.Language;
 import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import org.apache.logging.log4j.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.podverbnyj.provider.utils.EmailSender.emailSender;
 
 public class DebitFunds {
     private static final Logger log = LogManager.getLogger(DebitFunds.class);
@@ -28,7 +31,7 @@ public class DebitFunds {
 
         for (User user : listOfUsers) {
             double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
-            if (sumToDebit <= 0) {
+            if (sumToDebit < 0.009) {
                 listOfUsers.remove(user);
             }
         }
@@ -37,6 +40,26 @@ public class DebitFunds {
             double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
 
             if (user.getBalance() < sumToDebit) {
+                if (user.getStatus() == Status.ACTIVE) {
+                    if (user.getEmail() != null) {
+                        String subject;
+                        String body;
+                        if (user.getLanguage() == Language.RU) {
+                            subject = "Ваш аккаунт заблокирован.";
+                            body = "Уважаемый пользователь, " + user.getLogin() + "." + System.lineSeparator() +
+                                    "Ваш аккаунт заблокирован в связи с недостатком средств." + System.lineSeparator() +
+                                    "Пополните пожалуйста счет для возобновления услуг." + System.lineSeparator() +
+                                    "С наилучшими пожеланиями, Ваш провайдер.) ";
+                        } else {
+                            subject = "Your account has been blocked.";
+                            body = "Dear user, " + user.getLogin() + "." + System.lineSeparator() +
+                                    "Your account has been blocked due to insufficient funds." + System.lineSeparator() +
+                                    "Please top up your account to resume services.." + System.lineSeparator() +
+                                    "Best wishes, your provider.) ";
+                        }
+                        emailSender(user.getEmail(), subject, body, null);
+                    }
+                }
                 user.setStatus(Status.BLOCKED);
             } else {
                 user.setBalance(user.getBalance() - sumToDebit);

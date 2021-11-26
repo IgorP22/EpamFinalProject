@@ -59,6 +59,7 @@ public class LoginCommand implements Command {
             req.getSession().setAttribute("userFlag", null);
             double totalCost = userTariffDAO.getTotalCost(user.getId());
             req.getSession().setAttribute("totalCost", totalCost);
+            System.out.println(totalCost+"   "+user);
             return "user.jsp";
         }
 

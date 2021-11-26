@@ -31,6 +31,9 @@ public class UserRequestCommand implements Command {
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException, SQLException {
         String userRequest = req.getParameter("userRequest");
         System.out.println(userRequest);
+        if (userRequest == null) {
+            return "index.jsp";
+        }
 
         String getServices = "Choice of services";
         String editProfile = "Edit profile";
@@ -39,7 +42,7 @@ public class UserRequestCommand implements Command {
         String updateServices = "Update services";
 
         if (req.getSession().getAttribute("currentUser") == null) {
-            return req.getHeader("index.jsp");
+            return "index.jsp";
         }
         req.getSession().setAttribute("userFlag", null);
         int userID = ((User) (req.getSession().getAttribute("currentUser"))).getId();

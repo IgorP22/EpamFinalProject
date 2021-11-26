@@ -11,7 +11,6 @@ import java.util.Objects;
 import static com.podverbnyj.provider.DAO.db.entity.constant.Language.*;
 import static com.podverbnyj.provider.DAO.db.entity.constant.Role.*;
 import static com.podverbnyj.provider.DAO.db.entity.constant.Status.*;
-import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
 
 public class User implements Serializable {
@@ -236,11 +235,7 @@ public class User implements Serializable {
         }
 
         public UserBuilder setNotification(int notification) {
-            if (notification == 0) {
-                this.notification = false;
-            } else {
-                this.notification = true;
-            }
+            this.notification = notification != 0;
             return this;
         }
 

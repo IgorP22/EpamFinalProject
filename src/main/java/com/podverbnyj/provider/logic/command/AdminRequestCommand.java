@@ -29,6 +29,7 @@ public class AdminRequestCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
+        resp.setCharacterEncoding("UTF-8");
         if (req.getSession().getAttribute("currentUser") == null) {
             return req.getHeader("index.jsp");
         }
@@ -76,8 +77,6 @@ public class AdminRequestCommand implements Command {
             String address = addOrEditUser(req);
             if (address != null) return address;
         }
-
-
 
 
         if (getListOfServicesAndTariff.equals(adminRequest)) {
@@ -177,7 +176,7 @@ public class AdminRequestCommand implements Command {
         }
 
         if (req.getParameter("userToEditId") != null && req.getParameter("userLogin") != null) {
-            int idToEdit = Integer.parseInt( req.getParameter("userToEditId"));
+            int idToEdit = Integer.parseInt(req.getParameter("userToEditId"));
             User user;
             user = getUser(req);
             user.setId(idToEdit);
@@ -244,7 +243,7 @@ public class AdminRequestCommand implements Command {
         }
 
         if (req.getParameter("serviceId") != null && req.getParameter("serviceNameRu") == null) {
-            int idToEdit = Integer.parseInt((String) req.getParameter("serviceId"));
+            int idToEdit = Integer.parseInt(req.getParameter("serviceId"));
             Service service = serviceDAO.getById(idToEdit);
             req.setAttribute("serviceId", idToEdit);
             req.getSession().setAttribute("serviceToEdit", service);
@@ -252,7 +251,7 @@ public class AdminRequestCommand implements Command {
         }
 
         if (req.getParameter("serviceId") != null && req.getParameter("serviceNameRu") != null) {
-            int idToEdit = Integer.parseInt((String) req.getParameter("serviceId"));
+            int idToEdit = Integer.parseInt(req.getParameter("serviceId"));
             Service service = new Service();
             service.setId(idToEdit);
             service.setTitleRu(req.getParameter("serviceNameRu"));
@@ -295,7 +294,7 @@ public class AdminRequestCommand implements Command {
         }
 
         if (req.getParameter("tariffId") != null && req.getParameter("tariffNameRu") == null) {
-            int idToEdit = Integer.parseInt((String) req.getParameter("tariffId"));
+            int idToEdit = Integer.parseInt((req.getParameter("tariffId")));
             Tariff tariff = tariffDAO.getById(idToEdit);
             Service service = serviceDAO.getById(tariff.getServiceId());
             req.setAttribute("tariffId", idToEdit);
@@ -305,7 +304,7 @@ public class AdminRequestCommand implements Command {
         }
 
         if (req.getParameter("tariffId") != null && req.getParameter("tariffNameRu") != null) {
-            int idToEdit = Integer.parseInt((String) req.getParameter("tariffId"));
+            int idToEdit = Integer.parseInt(req.getParameter("tariffId"));
             Tariff tariff = getTariff(req);
             tariff.setId(idToEdit);
             tariffDAO.update(tariff);

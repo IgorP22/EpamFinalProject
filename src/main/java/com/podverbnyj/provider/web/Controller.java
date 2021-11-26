@@ -49,5 +49,4 @@ public class Controller extends HttpServlet {
         }
         resp.sendRedirect(address);
     }
-
 }

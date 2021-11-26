@@ -14,6 +14,7 @@ import java.util.List;
 
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserConstants.*;
 
+@SuppressWarnings("UnusedAssignment")
 public class UserDBManager {
 
     private static final Logger log = LogManager.getLogger(UserDBManager.class);
@@ -168,7 +169,7 @@ public class UserDBManager {
         ps.setString(index++, user.getLanguage().value());
         ps.setString(index++, user.getRole().value());
         ps.setBoolean(index++, user.isNotification());
-        ps.setString(index++, user.getStatus().value());
+        ps.setString(index, user.getStatus().value());
     }
 
     private User getUser(ResultSet rs) throws SQLException {

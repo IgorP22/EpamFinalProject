@@ -33,7 +33,7 @@ public class UserPaymentDBManager {
 
     public List<UserPayment> findAllByUserId(Connection con, int userId) throws SQLException {
         List<UserPayment> userPayments = new ArrayList<>();
-        PreparedStatement ps = null;
+        PreparedStatement ps;
         ResultSet rs = null;
         UserPayment userPayment;
         try {
@@ -86,7 +86,7 @@ public class UserPaymentDBManager {
         int index = 1;
         ps.setInt(index++, userPayment.getUserId());
         ps.setString(index++, currentTime);
-        ps.setDouble(index++, userPayment.getSum());
+        ps.setDouble(index, userPayment.getSum());
     }
 
     public void close(AutoCloseable resource) {

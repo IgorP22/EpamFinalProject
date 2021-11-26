@@ -141,7 +141,7 @@
                 <h5 class="modal-title" id="emailModalLabel"><fmt:message key="index_jsp.link.enter_email_and_format"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="controller" method="get">
+            <form action="controller" method="post">
 
                 <div class="modal-body">
 
@@ -251,6 +251,31 @@
     })
 </script>
 
+<div class="modal fade" id="success" tabindex="-1" aria-labelledby="success" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Email sent.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#success') {
+            $("#success").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
 
 </body>
 </html>

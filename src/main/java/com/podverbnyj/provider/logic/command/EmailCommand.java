@@ -1,8 +1,6 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.DAO.ServiceDAO;
-import com.podverbnyj.provider.DAO.TariffDAO;
-import com.podverbnyj.provider.DAO.UserDAO;
+import com.itextpdf.text.DocumentException;
 import com.podverbnyj.provider.DAO.db.DBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,22 +8,50 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
+
+import static com.podverbnyj.provider.utils.EmailSender.emailSender;
+import static com.podverbnyj.provider.utils.createFile.CreateTariffsFile.GetFile;
+
 public class EmailCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(EmailCommand.class);
-    private static final UserDAO userDAO = UserDAO.getInstance();
-    private static final ServiceDAO serviceDAO = ServiceDAO.getInstance();
-    private static final TariffDAO tariffDAO = TariffDAO.getInstance();
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
-        String file = req.getParameter("file");
+        String fileType = req.getParameter("file");
         String emailAddress = req.getParameter("email");
-        System.out.println(file);
+        System.out.println(fileType);
         System.out.println(emailAddress);
+        String language = req.getSession().getAttribute("language").toString();
+        System.out.println(language);
+
+        try {
+            GetFile(req);
+        } catch (IOException | DocumentException e) {
+            //TODO catch
+            e.printStackTrace();
+        }
 
 
+        String body;
+        String subject;
+        if ("ru".equals(language)) {
+            subject = "Прайс-лист на услуги от Вашего будущего провайдера!";
+            body = "Здравствуйте!" +System.lineSeparator()+
+                    "Во вложенном файле, находится прайс-лист на услуги от провайдера," +System.lineSeparator()+
+                    "который вы запросили на нашем сайте." +System.lineSeparator()+
+                    "С наилучшими пожеланиями, Ваш будущий провайдер!) ";
+        } else {
+            subject = "Price list for services from your future provider!";
+            body = "Dear Future Client!" +System.lineSeparator()+
+                    "In the attached file, there is a price list for services from provider," +System.lineSeparator()+
+                    "which you requested on our site." +System.lineSeparator()+
+                    "Best wishes, your future provider!) ";
+        }
 
-        return req.getHeader("referer");
+        emailSender(emailAddress, subject, body, req);
+
+        return "index.jsp#success";
     }
 }
