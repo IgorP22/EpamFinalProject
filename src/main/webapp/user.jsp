@@ -13,6 +13,7 @@
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"></script>
 <link rel="stylesheet" href="css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/tables.css" />
 <%@ include file="success.jspf" %>
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
@@ -167,10 +168,10 @@
 
     <h3>История пополнения и списаний со счета</h3>
 
-    <table class="table table-bordered" id="paymentHistory">
+    <table class="table table-bordered table_sort" id="paymentHistory">
         <thead>
         <tr class="table-active">
-            <th>Дата и время</th>
+             <th data-order="-1" class="sorted">Дата и время</th>
             <th>Сумма</th>
         </tr>
         </thead>
@@ -191,14 +192,17 @@
 
 </c:if>
 
-<script>
-    $(document).ready(function () {
-        $('#paymentHistory').DataTable({
-            "pagingType": "full_numbers"
-        });
-    });
 
-</script>
+<%@ include file="sorter_table.jspf" %>
+
+<%--<script>--%>
+<%--    $(document).ready(function () {--%>
+<%--        $('#paymentHistory').DataTable({--%>
+<%--            "pagingType": "full_numbers"--%>
+<%--        });--%>
+<%--    });--%>
+
+<%--</script>--%>
 
 <c:if test="${flag == 'Choice'}">
     <form action="controller" method="post">

@@ -9,8 +9,10 @@
         crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/boo">
 
-<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
-<fmt:setLocale value="${language}" />
+<c:set var="language"
+       value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
+       scope="session"/>
+<fmt:setLocale value="${language}"/>
 
 
 <!DOCTYPE html>
@@ -25,43 +27,50 @@
 <header>
 
 
-        <div class="page-header">
-            <div class="row">
+    <div class="page-header">
+        <div class="row">
 
-                <div class="col-md-8">
-                    <h1><fmt:message key="index_jsp.link.welcome"/></h1>
-                    <h2><fmt:message key="index_jsp.link.our_services_and_prices"/></h2>
-                </div>
+            <div class="col-md-8">
+                <h1><fmt:message key="index_jsp.link.welcome"/></h1>
+                <h2><fmt:message key="index_jsp.link.our_services_and_prices"/></h2>
+            </div>
 
 
+            <div class="col-md-1">
+                <form>
+                    <select class="form-select" id="language" name="language" onchange="submit()">
+                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
+                        <option value="ru" ${language == 'ru' ? 'selected' : ''}>Русский</option>
+                    </select>
+                </form>
 
-                <div class="col-md-1">
-                    <form>
-                        <select class="form-select" id="language" name="language" onchange="submit()">
-                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
-                            <option value="ru" ${language == 'ru' ? 'selected' : ''}>Русский</option>
-                        </select>
-                    </form>
+            </div>
 
-                </div>
+            <div class="col-md-2">
 
-                <div class="col-md-1">
+            </div>
 
-                </div>
+            <div class="col-md-1">
 
-                <div class="col-md-2">
-                    <div class="row align-items-center">
-                        <form action="controller" method="post" class="form-inline form-search pull-right">
-                            <input type="hidden" name="command" value="login">
-                            <input name="login"><br>
-                            <input type="password" name="password"><br>
-                            <button type="submit" class="btn btn-primary" value="Login"><fmt:message key="index_jsp.link.login"/></button>
-                        </form>
-                    </div>
 
-                </div>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#userLogin">
+                    <fmt:message key="index_jsp.link.login"/>
+                </button>
+
+
+                <%--                    <div class="row align-items-center">--%>
+                <%--                        <form action="controller" method="post" class="form-inline form-search pull-right">--%>
+                <%--                            <input type="hidden" name="command" value="login">--%>
+                <%--                            <input name="login"><br>--%>
+                <%--                            <input type="password" name="password"><br>--%>
+                <%--                            <button type="submit" class="btn btn-primary" value="Login"><fmt:message key="index_jsp.link.login"/></button>--%>
+                <%--                        </form>--%>
+                <%--                    </div>--%>
+
             </div>
         </div>
+    </div>
 
 </header>
 
@@ -72,11 +81,15 @@
 <hr>
 <form action="controller" method="post">
     <input type="hidden" name="command" value="sort">
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort services"><fmt:message key="index_jsp.link.sort_services"/></button>
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by name"><fmt:message key="index_jsp.link.sort_tariffs_by_name"/></button>
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by price"><fmt:message key="index_jsp.link.sort_tariffs_by_price"/></button>
+    <button type="submit" name="sort" class="btn btn-primary" value="Sort services"><fmt:message
+            key="index_jsp.link.sort_services"/></button>
+    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by name"><fmt:message
+            key="index_jsp.link.sort_tariffs_by_name"/></button>
+    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by price"><fmt:message
+            key="index_jsp.link.sort_tariffs_by_price"/></button>
 
 </form>
+
 <hr>
 
 <!-- Start of Table -->
@@ -93,7 +106,7 @@
     <c:forEach var="service" items="${ListOfServices}">
         <tr class="table-primary" style="font-size: 1.2em">
             <c:if test="${language=='ru'}">
-            <td>${service.titleRu}</td>
+                <td>${service.titleRu}</td>
             </c:if>
 
             <c:if test="${language=='en'}">
@@ -126,8 +139,6 @@
 </table>
 
 
-
-
 <!-- Кнопка-триггер модального окна -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal">
     <fmt:message key="index_jsp.link.get_price_to_email"/>
@@ -138,7 +149,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="emailModalLabel"><fmt:message key="index_jsp.link.enter_email_and_format"/></h5>
+                <h5 class="modal-title" id="emailModalLabel"><fmt:message
+                        key="index_jsp.link.enter_email_and_format"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="controller" method="post">
@@ -146,7 +158,8 @@
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <label for="email" class="col-form-label"><fmt:message key="index_jsp.link.enter_email_here"/></label>
+                        <label for="email" class="col-form-label"><fmt:message
+                                key="index_jsp.link.enter_email_here"/></label>
                         <input type="text" name="email" class="form-control" id="email"
                                pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
                                minlength="5" placeholder="email@example.com" required>
@@ -155,13 +168,33 @@
                     </div>
                 </div>
 
+                <%--                <center><div class="g-recaptcha" data-sitekey="6Leyol4dAAAAAOU5_NFGfBK1X65cqjKR85mbXkHD"></div></center>--%>
+
                 <div class="modal-footer">
                     <input type="hidden" name="command" value="email">
-                    <button type="submit" class="btn btn-primary" name="file" value="txt"><fmt:message key="index_jsp.link.send_as"/>.txt</button>
-                    <button type="submit" class="btn btn-primary" name="file" value="pdf"><fmt:message key="index_jsp.link.send_as"/>.pdf</button>
+                    <button type="submit" class="btn btn-primary" name="file" value="txt"><fmt:message
+                            key="index_jsp.link.send_as"/>.txt
+                    </button>
+                    <button type="submit" class="btn btn-primary" name="file" value="pdf"><fmt:message
+                            key="index_jsp.link.send_as"/>.pdf
+                    </button>
 
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.cancel"/></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                            key="index_jsp.link.cancel"/></button>
                 </div>
+
+                <%--                <form method="post">--%>
+                <%--                    <input type="text" name="email">--%>
+                <%--                    <input type="text" name="url">--%>
+
+
+
+                <%--                    <input type="submint" name="sub_but">--%>
+                <%--                </form>--%>
+
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+
+
             </form>
         </div>
     </div>
@@ -178,17 +211,23 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="downloadModalLabel"><fmt:message key="index_jsp.link.chose_file_format"/></h5>
+                <h5 class="modal-title" id="downloadModalLabel"><fmt:message
+                        key="index_jsp.link.chose_file_format"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="modal-footer">
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="download">
-                    <button type="submit" class="btn btn-primary" name="file" value="txt"><fmt:message key="index_jsp.link.download_as"/>.txt</button>
-                    <button type="submit" class="btn btn-primary" name="file" value="pdf"><fmt:message key="index_jsp.link.download_as"/>.pdf</button>
+                    <button type="submit" class="btn btn-primary" name="file" value="txt"><fmt:message
+                            key="index_jsp.link.download_as"/>.txt
+                    </button>
+                    <button type="submit" class="btn btn-primary" name="file" value="pdf"><fmt:message
+                            key="index_jsp.link.download_as"/>.pdf
+                    </button>
                 </form>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.cancel"/></button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                        key="index_jsp.link.cancel"/></button>
             </div>
         </div>
     </div>
@@ -204,7 +243,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.close"/></button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                        key="index_jsp.link.close"/></button>
             </div>
         </div>
     </div>
@@ -233,7 +273,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.close"/></button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                        key="index_jsp.link.close"/></button>
             </div>
         </div>
     </div>
@@ -245,6 +286,34 @@
         var hash = window.location.hash;
         if (hash == '#wrongPassword') {
             $("#wrongPassword").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="wrongCaptcha" tabindex="-1" aria-labelledby="wrongCaptcha" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">You missed CAPTCHA.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                        key="index_jsp.link.close"/></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#wrongCaptcha') {
+            $("#wrongCaptcha").modal('show');
             history.pushState("", document.title, window.location.pathname
                 + window.location.search);
         }
@@ -271,6 +340,54 @@
         var hash = window.location.hash;
         if (hash == '#success') {
             $("#success").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
+
+<div class="modal fade" id="userLogin" tabindex="-1" aria-labelledby="success" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+            </div>
+            <form action="controller" method="post" class="form-inline form-search pull-right">
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="login" class="col-form-label">Имя пользователя:</label>
+                    <input type="text" name="login" class="form-control" id="login"
+                           minlength="5" required>
+                    <label for="password" class="col-form-label">Введите пароль:</label>
+                    <input type="password" name="password" class="form-control" id="password"
+                           minlength="5" required>
+                    <br>
+                    <center><div class="g-recaptcha" data-sitekey="6Leyol4dAAAAAOU5_NFGfBK1X65cqjKR85mbXkHD"></div></center>
+                </div>
+            </div>
+
+
+            <div class="modal-footer">
+
+                    <input type="hidden" name="command" value="login">
+
+                    <button type="submit" class="btn btn-primary" value="login"><fmt:message
+                            key="index_jsp.link.login"/></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#userLogin') {
+            $("#userLogin").modal('show');
             history.pushState("", document.title, window.location.pathname
                 + window.location.search);
         }

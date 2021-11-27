@@ -31,9 +31,6 @@ public class UserRequestCommand implements Command {
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException, SQLException {
         String userRequest = req.getParameter("userRequest");
         System.out.println(userRequest);
-        if (userRequest == null) {
-            return "index.jsp";
-        }
 
         String getServices = "Choice of services";
         String editProfile = "Edit profile";

@@ -27,7 +27,8 @@ public class DebitFunds {
 
         listOfUsers = userDAO.findAll();
 
-        listOfUsers.removeIf(user -> ("admin").equals(user.getRole().value()));
+        listOfUsers.removeIf(user -> (("admin").equals(user.getRole().value()) || ("blocked").equals(user.getStatus().value())));
+//        listOfUsers.removeIf(user -> ("blocked").equals(user.getStatus().value()));
 
         for (User user : listOfUsers) {
             double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
@@ -40,7 +41,7 @@ public class DebitFunds {
             double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
 
             if (user.getBalance() < sumToDebit) {
-                if (user.getStatus() == Status.ACTIVE) {
+                if (user.isNotification()) {
                     if (user.getEmail() != null) {
                         String subject;
                         String body;
@@ -63,7 +64,6 @@ public class DebitFunds {
                 user.setStatus(Status.BLOCKED);
             } else {
                 user.setBalance(user.getBalance() - sumToDebit);
-                user.setStatus(Status.ACTIVE);
                 UserPayment userPayment = new UserPayment(user.getId(), -sumToDebit);
                 userPaymentList.add(userPayment);
             }

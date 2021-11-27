@@ -15,8 +15,10 @@ import com.podverbnyj.provider.DAO.db.entity.constant.Role;
 import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import com.podverbnyj.provider.utils.HashPassword;
 import com.podverbnyj.provider.utils.Sorter;
+import com.podverbnyj.provider.utils.VerifyRecaptcha;
 import org.apache.logging.log4j.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +34,24 @@ public class LoginCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
+        System.out.println(req.getParameter("login"));
+        System.out.println(req.getSession().getAttribute("login"));
+        System.out.println(req.getAttribute("login"));
+
 
         String login = req.getParameter("login");
         String password = req.getParameter("password");
+        System.out.println(login +" "+password);
+        String gRecaptchaResponse = req
+                .getParameter("g-recaptcha-response");
+//        System.out.println(gRecaptchaResponse);
+        boolean verify = false;
+        try {
+            verify = VerifyRecaptcha.verify(gRecaptchaResponse);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(verify);
         User currentUser = new User.UserBuilder(login, securePassword(password)).build();
         log.trace("login ==> " + login);
 
@@ -53,6 +70,9 @@ public class LoginCommand implements Command {
             if (user.getRole().equals(Role.ADMIN)) {
                 req.getSession().setAttribute("user", user);
                 req.getSession().setAttribute("currentUser", user);
+                if (!verify) {
+                    return "index.jsp#wrongCaptcha";
+                }
                 return "admin.jsp";
             }
             req.getSession().setAttribute("currentUser", user);
@@ -60,6 +80,9 @@ public class LoginCommand implements Command {
             double totalCost = userTariffDAO.getTotalCost(user.getId());
             req.getSession().setAttribute("totalCost", totalCost);
             System.out.println(totalCost+"   "+user);
+            if (!verify) {
+                return "index.jsp#wrongCaptcha";
+            }
             return "user.jsp";
         }
 
@@ -70,6 +93,5 @@ public class LoginCommand implements Command {
 
         log.trace("Login failed, no such username in db");
         return "index.jsp#userNotExist";
-
     }
 }
