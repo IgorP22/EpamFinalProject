@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 public class EmailSender {
     private static final Logger log = LogManager.getLogger(EmailSender.class);
 
-    private static final String USER_NAME = "testfinalproject2";  // GMail user name (just the part before "@gmail.com")
-    private static final String PASSWORD = "******"; // GMail password
+    private static final String USER_NAME = "*****";  // GMail user name (just the part before "@gmail.com")
+    private static final String PASSWORD = "*****"; // GMail password
 
 
     public static void emailSender(String address, String subject, String body, HttpServletRequest req) {
