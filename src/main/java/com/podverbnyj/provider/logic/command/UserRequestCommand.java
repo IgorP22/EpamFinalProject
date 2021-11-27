@@ -44,7 +44,6 @@ public class UserRequestCommand implements Command {
         req.getSession().setAttribute("userFlag", null);
         int userID = ((User) (req.getSession().getAttribute("currentUser"))).getId();
 
-
         if (editBalance.equals(userRequest)) {
             User user = userDAO.getById(userID);
             System.out.println(req.getParameter("sum"));
