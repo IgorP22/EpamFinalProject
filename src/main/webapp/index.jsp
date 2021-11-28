@@ -1,18 +1,22 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="mylib" tagdir="/WEB-INF/tags" %>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/boo">
+<link rel="stylesheet" href="css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css" />
 
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
        scope="session"/>
 <fmt:setLocale value="${language}"/>
+
+<%--<c:set var --%>
 
 
 <!DOCTYPE html>
@@ -26,7 +30,6 @@
 
 <header>
 
-
     <div class="page-header">
         <div class="row">
 
@@ -35,6 +38,8 @@
                 <h2><fmt:message key="index_jsp.link.our_services_and_prices"/></h2>
             </div>
 
+            <div class="col-md-2">
+            </div>
 
             <div class="col-md-1">
                 <form>
@@ -46,9 +51,9 @@
 
             </div>
 
-            <div class="col-md-2">
 
-            </div>
+
+
 
             <div class="col-md-1">
 
@@ -59,38 +64,39 @@
                 </button>
 
 
-                <%--                    <div class="row align-items-center">--%>
-                <%--                        <form action="controller" method="post" class="form-inline form-search pull-right">--%>
-                <%--                            <input type="hidden" name="command" value="login">--%>
-                <%--                            <input name="login"><br>--%>
-                <%--                            <input type="password" name="password"><br>--%>
-                <%--                            <button type="submit" class="btn btn-primary" value="Login"><fmt:message key="index_jsp.link.login"/></button>--%>
-                <%--                        </form>--%>
-                <%--                    </div>--%>
-
             </div>
         </div>
     </div>
-
+<hr>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal">
+        <fmt:message key="index_jsp.link.get_price_to_email"/>
+    </button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal">
+        <fmt:message key="index_jsp.link.download_price"/>
+    </button>
+<hr>
 </header>
 
 <body>
 
-<a href="http://localhost:8080/Final/price_list.txt" download="price_list.txt">Скачать txt</a>
-<a href="http://localhost:8080/Final/price_list.pdf" download="price_list.pdf">Скачать pdf</a>
-<hr>
-<form action="controller" method="post">
-    <input type="hidden" name="command" value="sort">
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort services"><fmt:message
-            key="index_jsp.link.sort_services"/></button>
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by name"><fmt:message
-            key="index_jsp.link.sort_tariffs_by_name"/></button>
-    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by price"><fmt:message
-            key="index_jsp.link.sort_tariffs_by_price"/></button>
 
-</form>
 
-<hr>
+
+<%--<a href="http://localhost:8080/Final/price_list.txt" download="price_list.txt">Скачать txt</a>--%>
+<%--<a href="http://localhost:8080/Final/price_list.pdf" download="price_list.pdf">Скачать pdf</a>--%>
+
+<mylib:sort_buttons/>
+<%--<form action="controller" method="post">--%>
+<%--    <input type="hidden" name="command" value="sort">--%>
+<%--    <button type="submit" name="sort" class="btn btn-primary" value="Sort services"><fmt:message--%>
+<%--            key="index_jsp.link.sort_services"/></button>--%>
+<%--    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by name"><fmt:message--%>
+<%--            key="index_jsp.link.sort_tariffs_by_name"/></button>--%>
+<%--    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by price"><fmt:message--%>
+<%--            key="index_jsp.link.sort_tariffs_by_price"/></button>--%>
+
+<%--</form>--%>
+
 
 <!-- Start of Table -->
 <table class="table table-bordered">
@@ -140,9 +146,9 @@
 
 
 <!-- Кнопка-триггер модального окна -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal">
-    <fmt:message key="index_jsp.link.get_price_to_email"/>
-</button>
+<%--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal">--%>
+<%--    <fmt:message key="index_jsp.link.get_price_to_email"/>--%>
+<%--</button>--%>
 
 <!-- Модальное окно -->
 <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
@@ -168,8 +174,6 @@
                     </div>
                 </div>
 
-                <%--                <center><div class="g-recaptcha" data-sitekey="6Leyol4dAAAAAOU5_NFGfBK1X65cqjKR85mbXkHD"></div></center>--%>
-
                 <div class="modal-footer">
                     <input type="hidden" name="command" value="email">
                     <button type="submit" class="btn btn-primary" name="file" value="txt"><fmt:message
@@ -183,14 +187,6 @@
                             key="index_jsp.link.cancel"/></button>
                 </div>
 
-                <%--                <form method="post">--%>
-                <%--                    <input type="text" name="email">--%>
-                <%--                    <input type="text" name="url">--%>
-
-
-
-                <%--                    <input type="submint" name="sub_but">--%>
-                <%--                </form>--%>
 
                 <script src='https://www.google.com/recaptcha/api.js'></script>
 
@@ -202,9 +198,10 @@
 
 
 <!-- Кнопка-триггер модального окна -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal">
-    <fmt:message key="index_jsp.link.download_price"/>
-</button>
+
+<%--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal">--%>
+<%--    <fmt:message key="index_jsp.link.download_price"/>--%>
+<%--</button>--%>
 
 <!-- Модальное окно -->
 <div class="modal fade" id="downloadModal" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
@@ -354,21 +351,23 @@
                 <h5 class="modal-title">Login</h5>
             </div>
             <form action="controller" method="post" class="form-inline form-search pull-right">
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="login" class="col-form-label">Имя пользователя:</label>
-                    <input type="text" name="login" class="form-control" id="login"
-                           minlength="5" required>
-                    <label for="password" class="col-form-label">Введите пароль:</label>
-                    <input type="password" name="password" class="form-control" id="password"
-                           minlength="5" required>
-                    <br>
-                    <center><div class="g-recaptcha" data-sitekey="6Leyol4dAAAAAOU5_NFGfBK1X65cqjKR85mbXkHD"></div></center>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="login" class="col-form-label">Имя пользователя:</label>
+                        <input type="text" name="login" class="form-control" id="login"
+                               minlength="5" required>
+                        <label for="password" class="col-form-label">Введите пароль:</label>
+                        <input type="password" name="password" class="form-control" id="password"
+                               minlength="5" required>
+                        <br>
+                        <center>
+                            <div class="g-recaptcha" data-sitekey="6Leyol4dAAAAAOU5_NFGfBK1X65cqjKR85mbXkHD"></div>
+                        </center>
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="modal-footer">
+                <div class="modal-footer">
 
                     <input type="hidden" name="command" value="login">
 
@@ -376,7 +375,7 @@
                             key="index_jsp.link.login"/></button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-            </div>
+                </div>
             </form>
         </div>
     </div>

@@ -1,4 +1,4 @@
-package com.podverbnyj.provider;
+package com.podverbnyj.provider.web;
 
 import com.podverbnyj.provider.DAO.ServiceDAO;
 import com.podverbnyj.provider.DAO.TariffDAO;
@@ -22,7 +22,8 @@ public class MyHttpSessionListener implements HttpSessionListener {
     @Override
     public void sessionCreated(HttpSessionEvent session) {
 
-//        log.info("Session started" + session.getSession().getId());
+        System.out.println("Session started" + session.getSession().getId());
+
         List<Service> listOfServices;
         List<Tariff> listOfTariffs;
         List <User> listOfUsers;
@@ -41,6 +42,7 @@ public class MyHttpSessionListener implements HttpSessionListener {
 
         session.getSession().setAttribute("ListOfServices", listOfServices);
         session.getSession().setAttribute("ListOfTariffs", listOfTariffs);
+        session.getSession().setAttribute("ListOfUsers", listOfUsers);
         session.getSession().setAttribute("language", "ru");
         session.getSession().setAttribute("servicesIsSorted", true);
         session.getSession().setAttribute("tariffsIsSortedByName", false);
@@ -52,7 +54,6 @@ public class MyHttpSessionListener implements HttpSessionListener {
 
     @Override
     public void sessionDestroyed(HttpSessionEvent session) {
-
 
     }
 

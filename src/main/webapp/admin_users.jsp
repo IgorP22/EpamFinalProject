@@ -10,6 +10,8 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css" />
+
 <%@ include file="success.jspf" %>
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
 <fmt:setLocale value="${language}" />
@@ -75,30 +77,31 @@
         </div>
     </div>
 
+    <hr>
+    <form action="controller" method="post">
+
+
+        <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
+
+        <a href="admin.jsp" class="btn btn-primary" role="button">List of
+            services and tariffs</a>
+
+        <button type="submit" name="adminRequest" class="btn btn-success" value="List of users">List of users</button>
+
+        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                data-bs-target="#addOrEditUser">
+            Add new user
+        </button>
+
+
+    </form>
+    <hr>
+
 </header>
 <body>
 
-<hr>
-<form action="controller" method="post">
 
 
-    <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-
-    <a href="admin.jsp" class="btn btn-primary" role="button">List of
-        services and tariffs</a>
-
-    <%--    <a class="btn btn-primary" href="admin.jsp#editOrDeleteService" onClick="window.location.reload();" role="button">Add new service</a>--%>
-    <%--    <input type="submit" name="adminRequest" class="btn btn-primary" value="Add new tariff"/>--%>
-    <button type="submit" name="adminRequest" class="btn btn-success" value="List of users">List of users</button>
-
-    <button type="button" class="btn btn-success" data-bs-toggle="modal"
-            data-bs-target="#addOrEditUser">
-        Add new user
-    </button>
-
-
-</form>
-<hr>
 
 <table class="table table-bordered table_sort">
     <thead>

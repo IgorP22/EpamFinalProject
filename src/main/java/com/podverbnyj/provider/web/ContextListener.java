@@ -1,4 +1,4 @@
-package com.podverbnyj.provider;
+package com.podverbnyj.provider.web;
 
 
 import com.podverbnyj.provider.DAO.db.DBException;

@@ -1,0 +1,42 @@
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <tlib-version>1.1</tlib-version>
+    <short-name>javaLib</short-name>
+    <uri>http://com.podverbnyj.provider.web</uri>
+
+    <tag>
+        <name>add</name>
+        <tag-class>com.podverbnyj.provider.web.ValidationTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>x</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>y</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+<!--    <tag>-->
+<!--        <name>sub</name>-->
+<!--        <tag-class>com.my.TagDemo2</tag-class>-->
+<!--        <body-content>empty</body-content>-->
+<!--        <attribute>-->
+<!--            <name>x</name>-->
+<!--            <required>true</required>-->
+<!--            <rtexprvalue>true</rtexprvalue>-->
+<!--        </attribute>-->
+<!--        <attribute>-->
+<!--            <name>y</name>-->
+<!--            <required>true</required>-->
+<!--            <rtexprvalue>true</rtexprvalue>-->
+<!--        </attribute>-->
+<!--    </tag>-->
+
+</taglib>

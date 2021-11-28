@@ -27,15 +27,17 @@ public class DebitFunds {
 
         listOfUsers = userDAO.findAll();
 
-        listOfUsers.removeIf(user -> (("admin").equals(user.getRole().value()) || ("blocked").equals(user.getStatus().value())));
-//        listOfUsers.removeIf(user -> ("blocked").equals(user.getStatus().value()));
+        listOfUsers.removeIf(user -> ("admin").equals(user.getRole().value()));
+        listOfUsers.removeIf(user -> ("blocked").equals(user.getStatus().value()));
 
-        for (User user : listOfUsers) {
-            double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
-            if (sumToDebit < 0.009) {
-                listOfUsers.remove(user);
-            }
-        }
+        System.out.println(listOfUsers);
+//
+//        for (User user : listOfUsers) {
+//            double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
+//            if (sumToDebit < 0.009) {
+//                listOfUsers.remove(user);
+//            }
+//        }
 
         for (User user : listOfUsers) {
             double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
@@ -63,9 +65,11 @@ public class DebitFunds {
                 }
                 user.setStatus(Status.BLOCKED);
             } else {
-                user.setBalance(user.getBalance() - sumToDebit);
-                UserPayment userPayment = new UserPayment(user.getId(), -sumToDebit);
-                userPaymentList.add(userPayment);
+                if (sumToDebit > 0.009) {
+                    user.setBalance(user.getBalance() - sumToDebit);
+                    UserPayment userPayment = new UserPayment(user.getId(), -sumToDebit);
+                    userPaymentList.add(userPayment);
+                }
             }
         }
         userDAO.debitAllUsers(listOfUsers, userPaymentList);

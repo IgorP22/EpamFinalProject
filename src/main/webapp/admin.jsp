@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="mylib" tagdir="/WEB-INF/tags" %>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -9,10 +10,13 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
 
 <%@ include file="success.jspf" %>
-<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
-<fmt:setLocale value="${language}" />
+<c:set var="language"
+       value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
+       scope="session"/>
+<fmt:setLocale value="${language}"/>
 
 
 <!DOCTYPE html>
@@ -30,6 +34,8 @@
     <c:if test="${user.role.value() != 'admin'}">
         <c:redirect url="index.jsp"/>
     </c:if>
+
+    <%--    <mylib:ch_admin/>--%>
 
     <div class="page-header">
         <div class="row">
@@ -73,140 +79,135 @@
             </div>
         </div>
     </div>
+    <hr>
+    <form action="controller" method="post">
+
+
+        <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
+        <button type="submit" name="adminRequest" class="btn btn-primary" value="List of services and tariffs">List of
+            services and tariffs
+        </button>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#addOrEditService">
+            Add new service
+        </button>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#addOrEditTariff">
+            Add new tariff
+        </button>
+
+
+        <a href="admin_users.jsp" class="btn btn-success" role="button">Users page</a>
+
+
+    </form>
+
+    <hr>
 
 </header>
 <body>
 
 
-<hr>
-<form action="controller" method="post">
-
-
-    <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-    <button type="submit" name="adminRequest" class="btn btn-primary" value="List of services and tariffs">List of
-        services and tariffs
-    </button>
-
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#addOrEditService">
-        Add new service
-    </button>
-
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#addOrEditTariff">
-        Add new tariff
-    </button>
-
-    <%--    <a class="btn btn-primary" href="admin.jsp#editOrDeleteService" onClick="window.location.reload();" role="button">Add new service</a>--%>
-    <%--    <input type="submit" name="adminRequest" class="btn btn-primary" value="Add new tariff"/>--%>
-
-    <a href="admin_users.jsp" class="btn btn-success" role="button">Users page</a>
-
-<%--    <button type="submit" name="adminRequest" class="btn btn-success" value="List of users">List of users</button>--%>
-<%--    <button type="submit" name="adminRequest" class="btn btn-success" value="Add new user">Add new user</button>--%>
-
-</form>
-
 
 
 <c:set var="confirmationFlag" scope="session" value="false"/>
 <c:set var="adminFlag" value="${sessionScope.adminFlag}"/>
-<%--<c:if test="${adminFlag == 'price'}">--%>
 
+<mylib:sort_buttons/>
+<%--    <hr>--%>
+<%--    <form action="controller" method="post">--%>
+<%--        <input type="hidden" name="command" value="sort">--%>
+<%--        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort services">Sort services</button>--%>
+<%--        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by name">Sort tariffs by--%>
+<%--            name--%>
+<%--        </button>--%>
+<%--        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by price">Sort tariffs by--%>
+<%--            price--%>
+<%--        </button>--%>
+<%--    </form>--%>
+<%--    <hr>--%>
 
-    <hr>
-    <form action="controller" method="post">
-        <input type="hidden" name="command" value="sort">
-        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort services">Sort services</button>
-        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by name">Sort tariffs by
-            name
-        </button>
-        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by price">Sort tariffs by
-            price
-        </button>
+<!-- Start of Table -->
+<table class="table table-bordered">
+    <thead>
+    <tr class="table-active">
+        <th>Наименование пакета</th>
+        <th>Описание</th>
+        <th>Цена</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
 
-    </form>
-    <hr>
+    <c:forEach var="service" items="${ListOfServices}">
+        <tr class="table-primary" style="font-size: 1.2em">
+            <c:if test="${language=='ru'}">
+                <td>${service.titleRu}</td>
+            </c:if>
 
-    <!-- Start of Table -->
-    <table class="table table-bordered">
-        <thead>
-        <tr class="table-active">
-            <th>Наименование пакета</th>
-            <th>Описание</th>
-            <th>Цена</th>
-            <th></th>
-            <th></th>
+            <c:if test="${language=='en'}">
+                <td>${service.titleEn}</td>
+            </c:if>
+            <td></td>
+            <td></td>
+            <form action="controller" method="post">
+                <input type="hidden" name="serviceId" value="${service.id}">
+                <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
+                <td>
+                    <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
+                            value="Add or edit service">Edit service
+                    </button>
+                </td>
+                <td>
+                    <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
+                            value="Delete service">Delete service
+                    </button>
+                </td>
+            </form>
         </tr>
-        </thead>
-        <tbody>
 
-        <c:forEach var="service" items="${ListOfServices}">
-            <tr class="table-primary" style="font-size: 1.2em">
-                <c:if test="${language=='ru'}">
-                    <td>${service.titleRu}</td>
-                </c:if>
-
-                <c:if test="${language=='en'}">
-                    <td>${service.titleEn}</td>
-                </c:if>
-                <td></td>
-                <td></td>
-                <form action="controller" method="post">
-                    <input type="hidden" name="serviceId" value="${service.id}">
-                    <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-                    <td>
-                        <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
-                                value="Add or edit service">Edit service
-                        </button>
-                    </td>
-                    <td>
-                        <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                value="Delete service">Delete service
-                        </button>
-                    </td>
-                </form>
-            </tr>
-
-            <c:forEach var="tariff" items="${ListOfTariffs}">
-                <c:if test="${service.id == tariff.serviceId}">
-                    <tr>
-                        <c:if test="${language=='ru'}">
-                            <td>${tariff.nameRu}</td>
-                            <td>${tariff.descriptionRu}</td>
-                        </c:if>
-                        <c:if test="${language=='en'}">
-                            <td>${tariff.nameEn}</td>
-                            <td>${tariff.descriptionEn}</td>
-                        </c:if>
-                        <td>${tariff.price}</td>
+        <c:forEach var="tariff" items="${ListOfTariffs}">
+            <c:if test="${service.id == tariff.serviceId}">
+                <tr>
+                    <c:if test="${language=='ru'}">
+                        <td>${tariff.nameRu}</td>
+                        <td>${tariff.descriptionRu}</td>
+                    </c:if>
+                    <c:if test="${language=='en'}">
+                        <td>${tariff.nameEn}</td>
+                        <td>${tariff.descriptionEn}</td>
+                    </c:if>
+                    <td>${tariff.price}</td>
 
 
-                        <form action="controller" method="post">
+                    <form action="controller" method="post">
 
-                            <input type="hidden" name="tariffId" value="${tariff.id}">
+                        <input type="hidden" name="tariffId" value="${tariff.id}">
 
-                            <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-                            <td>
-                                <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
-                                        value="Add or edit tariff">Edit tariff
-                                </button>
-                            </td>
-                            <td>
-                                <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                        value="Delete tariff">Delete tariff
-                                </button>
-                            </td>
+                        <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
+                        <td>
+                            <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
+                                    value="Add or edit tariff">Edit tariff
+                            </button>
+                        </td>
+                        <td>
+                            <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
+                                    value="Delete tariff">Delete tariff
+                            </button>
+                        </td>
 
-                        </form>
+                    </form>
 
-                    </tr>
-                </c:if>
-            </c:forEach>
+                </tr>
+            </c:if>
         </c:forEach>
+    </c:forEach>
 
-        </tbody>
-    </table>
+    </tbody>
+</table>
 <%--</c:if>--%>
 
 
@@ -286,7 +287,6 @@
         }
     })
 </script>
-
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>

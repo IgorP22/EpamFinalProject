@@ -2,6 +2,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="javaTag" uri="http://com.podverbnyj.provider.web" %>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -13,7 +14,9 @@
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"></script>
 <link rel="stylesheet" href="css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/tables.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/tables.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
+
 <%@ include file="success.jspf" %>
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
@@ -30,6 +33,8 @@
 
 
 <header>
+
+
     <c:if test="${currentUser.role.value() != 'user'}">
         <c:redirect url="index.jsp"/>
     </c:if>
@@ -45,7 +50,7 @@
                     <h5>Добро пожаловать</h5><br>
                     <c:if test="${currentUser.name == null}">
                         <h4>
-                            ${currentUser.login}
+                                ${currentUser.login}
                         </h4>
                     </c:if>
 
@@ -82,45 +87,32 @@
         </div>
     </div>
 
-</header>
-<body>
 
 <hr>
 
 <div class="row">
     <div class="col-md-5">
-
         <form action="controller" method="post">
-
-
             <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
             <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services">Choice of
                 services
             </button>
-
             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#addOrEditUser">
                 Edit profile
             </button>
-
             <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
             <button type="submit" class="btn btn-primary" name="userRequest" value="Payment history">
                 Payment history
             </button>
-
-
         </form>
     </div>
     <div class="col-md-2">
         <h4>
-
-
             <c:set var="color" value="color:darkred"/>
             <c:if test="${currentUser.status == 'ACTIVE'}">
                 <c:set var="color" value="color:green"/>
             </c:if>
-
-
             <span style="${color}">Status: ${currentUser.status}</span>
         </h4>
     </div>
@@ -131,14 +123,12 @@
                 <c:set var="color" value="color:green"/>
             </c:if>
             <span style="${color}">Your balance: ${currentUser.balance}</span>
-
         </h4>
     </div>
     <div class="col-md-3">
         <form action="controller" method="post">
             <div class="row">
                 <div class="col-auto">
-
                     <input type="number" class="form-control"
                            pattern="^\d?\d\.\d\d$" name="sum"
                            min="1" step="0.01" id="sum" placeholder="Сумма пополнения">
@@ -148,17 +138,22 @@
                     <input type="hidden" name="userToEditId" value="${currentUser.id}">
                     <button type="submit" value="Edit balance" class="btn btn-success" name="userRequest">Пополнить
                     </button>
-
-
                 </div>
             </div>
         </form>
     </div>
-
 </div>
 
 
 <hr>
+
+</header>
+
+<%--<javaTag:add x="2" y="5"/>--%>
+
+
+<body>
+
 
 
 <c:set var="paymentsList" value="${userPaymentsList}"/>
@@ -168,10 +163,12 @@
 
     <h3>История пополнения и списаний со счета</h3>
 
+
+
     <table class="table table-bordered table_sort" id="paymentHistory">
         <thead>
         <tr class="table-active">
-             <th data-order="-1" class="sorted">Дата и время</th>
+            <th data-order="-1" class="sorted">Дата и время</th>
             <th>Сумма</th>
         </tr>
         </thead>
