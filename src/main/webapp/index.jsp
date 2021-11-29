@@ -188,13 +188,15 @@
                 </div>
 
 
-                <script src='https://www.google.com/recaptcha/api.js'></script>
+
 
 
             </form>
         </div>
     </div>
 </div>
+
+<script src='https://www.google.com/recaptcha/api.js?hl=${language}'></script>
 
 
 <!-- Кнопка-триггер модального окна -->

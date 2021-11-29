@@ -8,16 +8,11 @@
     <uri>http://com.podverbnyj.provider.web</uri>
 
     <tag>
-        <name>add</name>
-        <tag-class>com.podverbnyj.provider.web.ValidationTag</tag-class>
+        <name>getTotalCost</name>
+        <tag-class>com.podverbnyj.provider.web.GetCostTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
-            <name>x</name>
-            <required>true</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        <attribute>
-            <name>y</name>
+            <name>userID</name>
             <required>true</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>

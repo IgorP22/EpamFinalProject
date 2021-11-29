@@ -36,8 +36,20 @@ public class UserPaymentDAO {
         try {
             return userPaymentDBManager.findAllByUserId(con, userId);
         } catch (SQLException ex) {
-            log.error("Can't receive payment history from DB", ex);
-            throw new DBException("Can't receive payment history from DB");
+            log.error("Can't receive payment history from DB for user "+userId, ex);
+            throw new DBException("Can't receive payment history from DB for user "+userId);
+        } finally {
+            userPaymentDBManager.close(con);
+        }
+    }
+
+    public List<UserPayment> findGroup(int userId, int limit, int offset ) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userPaymentDBManager.findGroupByUserId(con, userId,limit,offset);
+        } catch (SQLException ex) {
+            log.error("Can't receive payment history from DB for user "+userId, ex);
+            throw new DBException("Can't receive payment history from DB for user "+userId);
         } finally {
             userPaymentDBManager.close(con);
         }
@@ -54,5 +66,18 @@ public class UserPaymentDAO {
             userPaymentDBManager.close(con);
         }
     }
+
+    public int getUsersPaymentsSize(int userId) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userPaymentDBManager.getUsersPaymentsSize(con, userId);
+        } catch (SQLException ex) {
+            log.error("Can't receive payment size from DB for user "+userId, ex);
+            throw new DBException("Can't receive payment size from DB for user "+userId);
+        } finally {
+            userPaymentDBManager.close(con);
+        }
+    }
+
 
 }

@@ -51,5 +51,8 @@ public class SQLConstant {
                 "ORDER BY date DESC";
         public static final String CREATE_PAYMENT = "INSERT INTO user_payments (user_id, date, "
                 + "sum) VALUES (?,?,?)";
+        public static final String GET_COUNT_USERS_PAYMENT_SIZE = "SELECT COUNT(*) FROM user_payments WHERE user_id = ?";
+        public static final String FIND_GROUP_PAYMENTS_BY_USER_ID = "SELECT * FROM user_payments WHERE user_id = ? " +
+                "ORDER BY date DESC LIMIT ? OFFSET ?";
     }
 }

@@ -11,8 +11,10 @@ import com.podverbnyj.provider.DAO.db.entity.constant.Role;
 import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import org.apache.logging.log4j.*;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,7 @@ public class UserRequestCommand implements Command {
     private static final UserPaymentDAO userPaymentDAO = UserPaymentDAO.getInstance();
     private static final UserTariffDAO userTariffDAO = UserTariffDAO.getInstance();
     private static final ServiceDAO serviceDAO = ServiceDAO.getInstance();
+    private static final int shift = 0;
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException, SQLException {
@@ -60,13 +63,62 @@ public class UserRequestCommand implements Command {
         }
 
         if (paymentHistory.equals(userRequest)) {
-            List<UserPayment> userPaymentsList;
-            userPaymentsList = userPaymentDAO.findAll(userID);
+//            List<UserPayment> userPaymentsList;
+//            userPaymentsList = userPaymentDAO.findAll(userID);
+//            System.out.println(userPaymentsList);
+//            req.getSession().setAttribute("userPaymentsList", userPaymentsList);
+
+            int page;
+            if (req.getParameter("page") == null || req.getParameter("page").equals("")) {
+                page = 1;
+            } else {
+                String paramPage = req.getParameter("page");
+                page = Integer.parseInt(paramPage);
+            }
+
+            int pageSize;
+            if (req.getParameter("pageSize") == null || req.getParameter("pageSize").equals("")) {
+                pageSize = 10;
+            } else {
+                String paramPageSize = req.getParameter("pageSize");
+                pageSize = Integer.parseInt(paramPageSize);
+            }
+
+            System.out.println(page);
+            System.out.println(pageSize);
+
+
+            int size = userPaymentDAO.getUsersPaymentsSize(userID);
+            System.out.println(size);
+
+
+            List<UserPayment> userPaymentsList = userPaymentDAO.findGroup(userID, pageSize, pageSize * (page - 1));
             System.out.println(userPaymentsList);
+
+            int minPagePossible = Math.max(page - shift, 1);
+
+            int pageCount = (int) Math.ceil((double) size / pageSize);
+            System.out.println(pageCount);
+            int maxPagePossible = Math.min(page + shift, pageCount);
+
             req.getSession().setAttribute("userPaymentsList", userPaymentsList);
+            req.getSession().setAttribute("pageCount", pageCount);
+            req.getSession().setAttribute("page", page);
+            req.getSession().setAttribute("pageSize", pageSize);
+            req.getSession().setAttribute("minPossiblePage", minPagePossible);
+            req.getSession().setAttribute("maxPossiblePage", maxPagePossible);
+
             String userFlag = "History";
             req.getSession().setAttribute("userFlag", userFlag);
-            return req.getHeader("referer");
+            return "user.jsp";
+//            try {
+//                req.getRequestDispatcher("WEB-INF/jsp/user.jsp").forward(req, resp);
+//            } catch (ServletException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+
         }
 
         if (editProfile.equals(userRequest)) {
@@ -94,7 +146,7 @@ public class UserRequestCommand implements Command {
                     userTariffList.add(userTariff);
                 }
             }
-            userTariffDAO.update(userTariffList,userID);
+            userTariffDAO.update(userTariffList, userID);
             double totalCost = userTariffDAO.getTotalCost(userID);
             req.getSession().setAttribute("totalCost", totalCost);
             System.out.println(userTariffList);

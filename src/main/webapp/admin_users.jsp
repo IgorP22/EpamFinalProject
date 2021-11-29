@@ -1,7 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="javaTag" uri="http://com.podverbnyj.provider.web" %>
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/tables.css" />
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -107,7 +110,7 @@
     <thead>
     <tr class="table-active">
         <th>Логин</th>
-        <th>Пароль</th>
+        <th>Общая стоимость услуг</th>
         <th>Email</th>
         <th>Имя</th>
         <th>Фамилия</th>
@@ -125,7 +128,7 @@
     <c:forEach var="user" items="${ListOfUsers}">
         <tr>
             <td>${user.login}</td>
-            <td>*****</td>
+            <td><javaTag:getTotalCost userID="${user.id}"/></td>
             <td>${user.email}</td>
             <td>${user.name}</td>
             <td>${user.surname}</td>

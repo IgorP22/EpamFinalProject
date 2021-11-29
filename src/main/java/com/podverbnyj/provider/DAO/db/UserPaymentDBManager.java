@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserConstants.COUNT_ADMINS;
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserPaymentsConstants.*;
 
 
@@ -33,7 +34,7 @@ public class UserPaymentDBManager {
 
     public List<UserPayment> findAllByUserId(Connection con, int userId) throws SQLException {
         List<UserPayment> userPayments = new ArrayList<>();
-        PreparedStatement ps;
+        PreparedStatement ps = null;
         ResultSet rs = null;
         UserPayment userPayment;
         try {
@@ -47,8 +48,52 @@ public class UserPaymentDBManager {
             return userPayments;
         } finally {
             close(rs);
+            close(ps);
         }
     }
+
+    public List<UserPayment> findGroupByUserId(Connection con, int userId, int limit, int offset) throws SQLException {
+        List<UserPayment> userPayments = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        UserPayment userPayment;
+        try {
+            ps = con.prepareStatement(FIND_GROUP_PAYMENTS_BY_USER_ID);
+            ps.setInt(1, userId);
+            ps.setInt(2, limit);
+            ps.setInt(3, offset);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                userPayment = getUserPayments(rs);
+                userPayments.add(userPayment);
+            }
+            return userPayments;
+        } finally {
+            close(rs);
+            close(ps);
+        }
+    }
+
+
+    public int getUsersPaymentsSize(Connection con, int userId) throws SQLException {
+        int result = 0;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            ps = con.prepareStatement(GET_COUNT_USERS_PAYMENT_SIZE);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                result = rs.getInt(1);
+            }
+            return result;
+        } finally {
+            close(rs);
+            close(ps);
+        }
+    }
+
+
 
     public boolean create(Connection con, UserPayment userPayment) throws SQLException {
         PreparedStatement ps = null;
@@ -88,6 +133,7 @@ public class UserPaymentDBManager {
         ps.setString(index++, currentTime);
         ps.setDouble(index, userPayment.getSum());
     }
+
 
     public void close(AutoCloseable resource) {
         if (resource != null) {

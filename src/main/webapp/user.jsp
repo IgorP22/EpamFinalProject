@@ -66,7 +66,7 @@
             </div>
             <div class="col-md-3">
                 <h5>Общая стоимость подключенных услуг:</h5>
-                <h3>${totalCost} грн</h3><h5>(за период 30 дней)</h5>
+                <h3><javaTag:getTotalCost userID="${currentUser.id}"/> грн</h3><h5>(за период 30 дней)</h5>
             </div>
 
             <div class="col-md-1">
@@ -88,72 +88,71 @@
     </div>
 
 
-<hr>
+    <hr>
 
-<div class="row">
-    <div class="col-md-5">
-        <form action="controller" method="post">
-            <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
-            <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services">Choice of
-                services
-            </button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#addOrEditUser">
-                Edit profile
-            </button>
-            <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
-            <button type="submit" class="btn btn-primary" name="userRequest" value="Payment history">
-                Payment history
-            </button>
-        </form>
-    </div>
-    <div class="col-md-2">
-        <h4>
-            <c:set var="color" value="color:darkred"/>
-            <c:if test="${currentUser.status == 'ACTIVE'}">
-                <c:set var="color" value="color:green"/>
-            </c:if>
-            <span style="${color}">Status: ${currentUser.status}</span>
-        </h4>
-    </div>
-    <div class="col-md-2">
-        <h4>
-            <c:set var="color" value="color:red"/>
-            <c:if test="${currentUser.balance > 0}">
-                <c:set var="color" value="color:green"/>
-            </c:if>
-            <span style="${color}">Your balance: ${currentUser.balance}</span>
-        </h4>
-    </div>
-    <div class="col-md-3">
-        <form action="controller" method="post">
-            <div class="row">
-                <div class="col-auto">
-                    <input type="number" class="form-control"
-                           pattern="^\d?\d\.\d\d$" name="sum"
-                           min="1" step="0.01" id="sum" placeholder="Сумма пополнения">
+    <div class="row">
+        <div class="col-md-5">
+            <form action="controller" method="post">
+                <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
+                <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services">Choice of
+                    services
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#addOrEditUser">
+                    Edit profile
+                </button>
+                <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
+                <button type="submit" class="btn btn-primary" name="userRequest" value="Payment history">
+                    Payment history
+                </button>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <h4>
+                <c:set var="color" value="color:darkred"/>
+                <c:if test="${currentUser.status == 'ACTIVE'}">
+                    <c:set var="color" value="color:green"/>
+                </c:if>
+                <span style="${color}">Status: ${currentUser.status}</span>
+            </h4>
+        </div>
+        <div class="col-md-2">
+            <h4>
+                <c:set var="color" value="color:red"/>
+                <c:if test="${currentUser.balance > 0}">
+                    <c:set var="color" value="color:green"/>
+                </c:if>
+                <span style="${color}">Your balance: ${currentUser.balance}</span>
+            </h4>
+        </div>
+        <div class="col-md-3">
+            <form action="controller" method="post">
+                <div class="row">
+                    <div class="col-auto">
+                        <input type="number" class="form-control"
+                               pattern="^\d?\d\.\d\d$" name="sum"
+                               min="1" step="0.01" id="sum" placeholder="Сумма пополнения">
+                    </div>
+                    <div class="col-auto">
+                        <input type="hidden" name="command" value="userRequest">
+                        <input type="hidden" name="userToEditId" value="${currentUser.id}">
+                        <button type="submit" value="Edit balance" class="btn btn-success" name="userRequest">Пополнить
+                        </button>
+                    </div>
                 </div>
-                <div class="col-auto">
-                    <input type="hidden" name="command" value="userRequest">
-                    <input type="hidden" name="userToEditId" value="${currentUser.id}">
-                    <button type="submit" value="Edit balance" class="btn btn-success" name="userRequest">Пополнить
-                    </button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
 
-<hr>
+    <hr>
 
 </header>
 
-<%--<javaTag:add x="2" y="5"/>--%>
+<%--<javaTag:getTotalCost userID="${currentUser.id}"/>--%>
 
 
 <body>
-
 
 
 <c:set var="paymentsList" value="${userPaymentsList}"/>
@@ -162,7 +161,108 @@
 <c:if test="${flag == 'History'}">
 
     <h3>История пополнения и списаний со счета</h3>
+    <hr>
 
+
+    <%--    <nav aria-label="Page navigation example">--%>
+    <%--        <ul class="pagination justify-content-center">--%>
+    <%--            <li class="page-item disabled">--%>
+    <%--                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>--%>
+    <%--            </li>--%>
+    <%--            <li class="page-item"><a class="page-link" href="#">1</a></li>--%>
+    <%--            <li class="page-item"><a class="page-link" href="#">2</a></li>--%>
+    <%--            <li class="page-item"><a class="page-link" href="#">3</a></li>--%>
+    <%--            <li class="page-item">--%>
+    <%--                <a class="page-link" href="#">Next</a>--%>
+    <%--            </li>--%>
+    <%--        </ul>--%>
+    <%--    </nav>--%>
+
+
+    <div class="row">
+
+
+        <div class="col-md-1">
+
+
+            <c:choose>
+                <c:when test="${page - 1 > 0}">
+                    <%--            <a href="page?page=${page-1}&pageSize=${pageSize}">Previous</a>--%>
+                    <form action="controller" method="get">
+                        <input type="hidden" name="page" value="${page-1}">
+                        <input type="hidden" name="pageSize" value="${pageSize}">
+                        <input type="hidden" name="command" value="userRequest">
+                        <button type="submit" name="userRequest" value="Payment history">
+                            Previous
+                        </button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    Previous
+                </c:otherwise>
+            </c:choose>
+        </div>
+
+        <div class="col-md-1">
+            Page ${page} of ${pageCount}
+                <%--            <c:forEach var="p" begin="${minPossiblePage}" end="${maxPossiblePage}">--%>
+                <%--                <c:choose>--%>
+                <%--                    <c:when test="${page == p}">${p}</c:when>--%>
+                <%--                    <c:otherwise>--%>
+                <%--                        &lt;%&ndash;                <a href="page?page=${p}&pageSize=${pageSize}">${p}</a>&ndash;%&gt;--%>
+                <%--                        ${p}--%>
+                <%--                    </c:otherwise>--%>
+                <%--                </c:choose>--%>
+                <%--            </c:forEach>--%>
+        </div>
+
+        <div class="col-md-1">
+            <c:choose>
+                <c:when test="${page + 1 <= pageCount}">
+                    <%--                <a href="page?page=${page+1}&pageSize=${pageSize}">Next</a>--%>
+                    <form action="controller" method="get">
+                        <input type="hidden" name="page" value="${page+1}">
+                        <input type="hidden" name="pageSize" value="${pageSize}">
+                        <input type="hidden" name="command" value="userRequest">
+                        <button type="submit" name="userRequest" value="Payment history">
+                            Next
+                        </button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    Next
+                </c:otherwise>
+            </c:choose>
+
+        </div>
+        <div class="col-md-2">
+
+
+            <form action="controller" method="get">
+                <select name="page">
+                    <c:forEach begin="1" end="${pageCount}" var="p">
+                        <option value="${p}" ${p == param.page ? 'selected' : ''}>${p}</option>
+                    </c:forEach>
+                </select>
+
+                <input type="text"
+                       pattern="^\d+$" name="pageSize"
+                       min="1" id="pageSize" placeholder="${pageSize}/page" value="${pageSize}">
+
+
+
+                <input type="hidden" name="page" value="${p}">
+                <input type="hidden" name="pageSize" value="${pageSize}">
+                <input type="hidden" name="command" value="userRequest">
+                <button type="submit" name="userRequest" value="Payment history">
+                    Go
+                </button>
+            </form>
+        </div>
+        <div class="col-md-8">
+        </div>
+
+    </div>
 
 
     <table class="table table-bordered table_sort" id="paymentHistory">
@@ -172,20 +272,19 @@
             <th>Сумма</th>
         </tr>
         </thead>
+
         <tbody>
-
         <c:forEach var="history" items="${userPaymentsList}">
-
             <tr>
                 <td>${history.date}</td>
                 <td>${history.sum}</td>
-
             </tr>
-
         </c:forEach>
-
         </tbody>
+
+
     </table>
+
 
 </c:if>
 

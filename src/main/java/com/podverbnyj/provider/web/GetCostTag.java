@@ -1,0 +1,37 @@
+package com.podverbnyj.provider.web;
+
+import com.podverbnyj.provider.DAO.UserTariffDAO;
+import com.podverbnyj.provider.DAO.db.DBException;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.TagSupport;
+import java.io.IOException;
+
+
+
+
+public class GetCostTag extends TagSupport {
+    private static final UserTariffDAO userTariffDAO = UserTariffDAO.getInstance();
+    private int userID;
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    @Override
+    public int doStartTag(){
+        double totalCost = 0;
+        try {
+            totalCost = userTariffDAO.getTotalCost(userID);
+        } catch (DBException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            pageContext.getOut().println(totalCost);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return SKIP_BODY;
+    }
+}
