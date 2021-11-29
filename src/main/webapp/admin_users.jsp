@@ -11,7 +11,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>--%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css" />
 
@@ -100,13 +101,18 @@
     </form>
     <hr>
 
+
+
+
 </header>
 <body>
 
+<div class="form-group">
+    <input type="text" class="form-control pull-right" id="search" placeholder="Поиск по таблице">
+</div>
 
 
-
-<table class="table table-bordered table_sort">
+<table class="table table-striped table_sort" id="usersTable">
     <thead>
     <tr class="table-active">
         <th>Логин</th>
@@ -207,7 +213,24 @@
     </c:forEach>
 </table>
 
+<script>
+
+    $("#search").keyup(function() {
+        var value = this.value;
+
+        $("table").find("tr").each(function(index) {
+            if (!index) return;
+            var id = $(this).find("td").text();
+            $(this).toggle(id.indexOf(value) !== -1);
+        });
+    });
+
+
+</script>
+
 <%@ include file="sorter_table.jspf" %>
+
+
 
 
 <!-- Модальное окно -->
@@ -276,6 +299,7 @@
 </script>
 
 <%@ include file="add_or_edit_user.jspf" %>
+
 
 </body>
 </html>
