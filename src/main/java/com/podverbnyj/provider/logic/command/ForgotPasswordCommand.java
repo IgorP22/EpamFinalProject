@@ -22,18 +22,20 @@ public class ForgotPasswordCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
-        PasswordRecovery ps = new PasswordRecovery();
-        if (req.getSession().getAttribute("userToRecover") != null) {
-            ps = (PasswordRecovery) req.getSession().getAttribute("userToRecover");
-        }
-        System.out.println(ps);
+        System.out.println(req.getSession().getAttribute("userToRecover"));
         System.out.println(req.getParameter("userNewPassword"));
-        System.out.println(req.getSession().getAttribute("userNewPassword"));
 
 
-
-
-
+        if ((req.getSession().getAttribute("userToRecover") != null) &&
+                (req.getParameter("userNewPassword") != null)) {
+            PasswordRecovery ps =
+                    (PasswordRecovery) req.getSession().getAttribute("userToRecover");
+            User user = userDAO.getById(ps.getUserId());
+            user.setPassword(securePassword(req.getParameter("userNewPassword")));
+            userDAO.update(user);
+            req.getSession().setAttribute("userToRecover", null);
+            return "index.jsp#success";
+        }
 
 
         String userLoginToRestore = req.getParameter("userLoginToRestore");
@@ -42,17 +44,20 @@ public class ForgotPasswordCommand implements Command {
         System.out.println(emailToRestore);
         System.out.println(userDAO.getByLogin(userLoginToRestore));
         User user = userDAO.getByLogin(userLoginToRestore);
+        System.out.println(user);
         if (user == null) {
-            return "index.jsp#error";
+            return "index.jsp#noSuchRecordInDb";
         }
         if (!emailToRestore.equals(user.getEmail())) {
-            return "index.jsp#error";
+            return "index.jsp#noSuchRecordInDb";
         }
-        String linkToRestore = String.valueOf(System.currentTimeMillis() + 500000);
+
+
+        String linkToRestore = String.valueOf(System.currentTimeMillis() +
+                ((int) (Math.random() * 100000)));
         System.out.println(linkToRestore);
         linkToRestore = securePassword(linkToRestore);
         System.out.println(linkToRestore);
-        String url="localhost:8080/Final/index.jsp?restoreLink="+linkToRestore;
         PasswordRecovery pr = new PasswordRecovery();
         pr.setUserId(userDAO.getByLogin(userLoginToRestore).getId());
         pr.setCode(linkToRestore);
@@ -62,7 +67,7 @@ public class ForgotPasswordCommand implements Command {
         System.out.println(emailToRestore);
         String language = req.getSession().getAttribute("language").toString();
         System.out.println(language);
-        String restoreUrl="http://localhost:8080/Final/index.jsp?restoreLink="+linkToRestore;
+        String restoreUrl = "http://localhost:8080/Final/index.jsp?restoreLink=" + linkToRestore;
 
         String finalLinkToRestore = linkToRestore;
         Thread t2 = new Thread(() -> {
@@ -70,19 +75,17 @@ public class ForgotPasswordCommand implements Command {
             try {
                 Thread.sleep(300000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                log.error("Fall thread sleep");
             }
-                System.out.println(finalLinkToRestore);
+            System.out.println(finalLinkToRestore);
             try {
                 passwordRecoveryDAO.deleteByCode(finalLinkToRestore);
             } catch (DBException e) {
-                e.printStackTrace();
+                log.error("Recover password link wasn't deleted from BD" + finalLinkToRestore);
             }
             System.out.println("Поток стоп");
         });
         t2.start();
-
-
 
 
         String body;
@@ -90,17 +93,17 @@ public class ForgotPasswordCommand implements Command {
 
         if ("ru".equals(language)) {
             subject = "Ссылка на восстановление пароля";
-            body = "Здравствуйте, "+user.getLogin()+"!" + System.lineSeparator() +
+            body = "Здравствуйте, " + user.getLogin() + "!" + System.lineSeparator() +
                     "Ссылка на восстановление пароля будет активна в течении 5 минут." + System.lineSeparator() +
                     restoreUrl;
         } else {
             subject = "Password restore link.";
-            body = "Hi"+user.getLogin()+"!" + System.lineSeparator() +
+            body = "Hi" + user.getLogin() + "!" + System.lineSeparator() +
                     "The password recovery link will be active within 5 minutes." + System.lineSeparator() +
                     restoreUrl;
         }
 
-//        emailSender(emailToRestore, subject, body, null);
+        emailSender(emailToRestore, subject, body, null);
 
         return "index.jsp#success";
     }

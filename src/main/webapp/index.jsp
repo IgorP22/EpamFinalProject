@@ -87,7 +87,6 @@
 
 <body>
 
-
 <%--<a href="http://localhost:8080/Final/price_list.txt" download="price_list.txt">Скачать txt</a>--%>
 <%--<a href="http://localhost:8080/Final/price_list.pdf" download="price_list.pdf">Скачать pdf</a>--%>
 
@@ -211,10 +210,10 @@
             <div class="modal-footer">
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="download">
-                    <button type="submit" class="btn btn-primary" name="file" value="txt"><fmt:message
+                    <button type="submit" class="btn btn-primary" name="file" value="txt"  data-bs-dismiss="modal" aria-label="Close"><fmt:message
                             key="index_jsp.link.download_as"/>.txt
                     </button>
-                    <button type="submit" class="btn btn-primary" name="file" value="pdf"><fmt:message
+                    <button type="submit" class="btn btn-primary" name="file" value="pdf" data-bs-dismiss="modal" aria-label="Close"><fmt:message
                             key="index_jsp.link.download_as"/>.pdf
                     </button>
                 </form>
@@ -505,6 +504,59 @@
         }
     })
 </script>
+
+<div class="modal fade" id="invalidLink" tabindex="-1" aria-labelledby="invalidLink" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Link is not valid.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#invalidLink') {
+            $("#invalidLink").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
+<div class="modal fade" id="noSuchRecordInDb" tabindex="-1" aria-labelledby="invalidLink" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">No such user or email in DB.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#noSuchRecordInDb') {
+            $("#noSuchRecordInDb").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
 
 </body>
 </html>

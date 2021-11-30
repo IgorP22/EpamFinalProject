@@ -40,17 +40,28 @@ public class PasswordRecoveryFilter implements Filter {
                 e.printStackTrace();
             }
             String userLoginToRecover = null;
-            try {
-                userLoginToRecover = userDAO.getById(ps.getUserId()).getLogin();
-            } catch (DBException e) {
-                e.printStackTrace();
-            }
-            System.out.println(userLoginToRecover);
+//            try {
+//                userLoginToRecover = userDAO.getById(ps.getUserId()).getLogin();
+//            } catch (DBException  | NullPointerException ex) {
+//                ex.printStackTrace();
+//            }
+//            System.out.println(userLoginToRecover);
 
             req.getSession().setAttribute("userToRecover", ps);
-            req.getSession().setAttribute("userLoginToRecover", userLoginToRecover);
+//            req.getSession().setAttribute("userLoginToRecover", userLoginToRecover);
             //todo BD get code
-            resp.sendRedirect(req.getContextPath() + "/index.jsp#passwordRecovery");
+            if (code.equals(ps.getCode())) {
+                try {
+                    userLoginToRecover = userDAO.getById(ps.getUserId()).getLogin();
+                } catch (DBException e) {
+                    e.printStackTrace();
+                }
+                req.getSession().setAttribute("userLoginToRecover", userLoginToRecover);
+                resp.sendRedirect(req.getContextPath() + "/index.jsp#passwordRecovery");
+            } else {
+                resp.sendRedirect(req.getContextPath() + "/index.jsp#invalidLink");
+            }
+//            resp.sendRedirect(req.getContextPath() + "/index.jsp#passwordRecovery");
         } else {
 
             chain.doFilter(req, response);
