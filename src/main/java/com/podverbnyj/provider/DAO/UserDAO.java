@@ -75,10 +75,10 @@ public class UserDAO implements AbstractDAO<User> {
     }
 
 
-    public User getByName(String name) throws DBException {
+    public User getByLogin(String name) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return userDBManager.getByName(con, name);
+            return userDBManager.getByLogin(con, name);
         } catch (SQLException ex) {
             log.error("Can't get user by name ==> " + name, ex);
             throw new DBException("Can't create user by name ==> " + name);

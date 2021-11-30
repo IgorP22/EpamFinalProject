@@ -9,7 +9,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
 
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
@@ -29,6 +29,11 @@
 
 
 <header>
+
+
+    <c:if test="${param.restoreLink != null}">
+        ${param.restoreLink}
+    </c:if>
 
     <div class="page-header">
         <div class="row">
@@ -52,9 +57,6 @@
             </div>
 
 
-
-
-
             <div class="col-md-1">
 
 
@@ -62,40 +64,34 @@
                         data-bs-target="#userLogin">
                     <fmt:message key="index_jsp.link.login"/>
                 </button>
+                <br>
+                <a href="#forgotPassword" data-bs-toggle="modal">Забыли пароль?</a>
+                <%--                <button type="button"  data-bs-toggle="modal"--%>
+                <%--                        data-bs-target="#forgotPassword">--%>
+                <%--                    <fmt:message key="index_jsp.link.login"/>--%>
+                <%--                </button>--%>
 
 
             </div>
         </div>
     </div>
-<hr>
+    <hr>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal">
         <fmt:message key="index_jsp.link.get_price_to_email"/>
     </button>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal">
         <fmt:message key="index_jsp.link.download_price"/>
     </button>
-<hr>
+    <hr>
 </header>
 
 <body>
-
-
 
 
 <%--<a href="http://localhost:8080/Final/price_list.txt" download="price_list.txt">Скачать txt</a>--%>
 <%--<a href="http://localhost:8080/Final/price_list.pdf" download="price_list.pdf">Скачать pdf</a>--%>
 
 <mylib:sort_buttons/>
-<%--<form action="controller" method="post">--%>
-<%--    <input type="hidden" name="command" value="sort">--%>
-<%--    <button type="submit" name="sort" class="btn btn-primary" value="Sort services"><fmt:message--%>
-<%--            key="index_jsp.link.sort_services"/></button>--%>
-<%--    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by name"><fmt:message--%>
-<%--            key="index_jsp.link.sort_tariffs_by_name"/></button>--%>
-<%--    <button type="submit" name="sort" class="btn btn-primary" value="Sort tariffs by price"><fmt:message--%>
-<%--            key="index_jsp.link.sort_tariffs_by_price"/></button>--%>
-
-<%--</form>--%>
 
 
 <!-- Start of Table -->
@@ -186,9 +182,6 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
                             key="index_jsp.link.cancel"/></button>
                 </div>
-
-
-
 
 
             </form>
@@ -389,6 +382,124 @@
         var hash = window.location.hash;
         if (hash == '#userLogin') {
             $("#userLogin").modal('show');
+            history.pushState("", document.title, window.location.pathname
+                + window.location.search);
+        }
+    })
+</script>
+
+<div class="modal fade" id="forgotPassword" tabindex="-1" aria-labelledby="success" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Восстановление пароля</h5>
+            </div>
+            <form action="controller" method="post" class="form-inline form-search pull-right">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="userLoginToRestore" class="col-form-label">Имя пользователя:</label>
+                        <input type="text" name="userLoginToRestore" class="form-control" id="userLoginToRestore"
+                               minlength="5" required>
+
+                        <label for="emailToRestore" class="col-form-label"><fmt:message
+                                key="index_jsp.link.enter_email_here"/></label>
+                        <input type="text" name="emailToRestore" class="form-control" id="emailToRestore"
+                               pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                               minlength="5" placeholder="email@example.com" required>
+                        <%--                        <center>--%>
+                        <%--                            <div class="g-recaptcha" data-sitekey="6Leyol4dAAAAAOU5_NFGfBK1X65cqjKR85mbXkHD"></div>--%>
+                        <%--                        </center>--%>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+
+                    <input type="hidden" name="command" value="forgotPassword">
+
+                    <button type="submit" class="btn btn-primary" value="forgotPassword">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                            key="index_jsp.link.close"/></button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="passwordRecovery" tabindex="-1" aria-labelledby="success" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Welcome to password recovery page ${userLoginToRecover}.</h5>
+            </div>
+            <form action="controller" method="post" class="form-inline form-search pull-right">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <div class="row">
+
+                            <div class="form-group col-md-6">
+                                <label for="userNewPassword" class="col-form-label">Пароль:</label>
+                                <input type="password" name="userNewPassword" class="form-control" id="userNewPassword"
+
+                                       onkeyup='passwordValidation();'
+                                       minlength="5" maxlength="150" placeholder="Любые символы" required>
+                                <span style="font-size: smaller" id='message'></span>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="confirmPassword" class="col-form-label">Повторите ввод пароля:</label>
+                                <input type="password" name="confirmPassword" class="form-control"
+                                       id="confirmPassword" onkeyup='passwordValidation();'
+
+                                       minlength="5" maxlength="30" placeholder="Любые символы">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    ${userLoginToRecover}
+                    ${userToRecover.userId}
+                    ${userToRecover.code}
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <input type="hidden" name="command" value="forgotPassword">
+                    <input type="hidden" name="userToRecover" value="${userToRecover}">
+                    <button type="submit" class="btn btn-primary" value="forgotPassword">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    var passwordValidation = function () {
+        if (document.getElementById('userNewPassword').value.length < 5) {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Минимальная длина 5 символов';
+            return;
+        }
+        if (document.getElementById('userNewPassword').value ==
+            document.getElementById('confirmPassword').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'Ок';
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Пароли не совпадают';
+        }
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        var hash = window.location.hash;
+        if (hash == '#passwordRecovery') {
+            $("#passwordRecovery").modal('show');
             history.pushState("", document.title, window.location.pathname
                 + window.location.search);
         }

@@ -7,20 +7,12 @@ import com.podverbnyj.provider.DAO.TariffDAO;
 import com.podverbnyj.provider.DAO.UserDAO;
 import com.podverbnyj.provider.DAO.UserTariffDAO;
 import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.entity.Service;
-import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import com.podverbnyj.provider.DAO.db.entity.User;
-import com.podverbnyj.provider.DAO.db.entity.constant.Language;
 import com.podverbnyj.provider.DAO.db.entity.constant.Role;
-import com.podverbnyj.provider.DAO.db.entity.constant.Status;
-import com.podverbnyj.provider.utils.HashPassword;
-import com.podverbnyj.provider.utils.Sorter;
 import com.podverbnyj.provider.utils.VerifyRecaptcha;
 import org.apache.logging.log4j.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
@@ -56,7 +48,7 @@ public class LoginCommand implements Command {
         log.trace("login ==> " + login);
 
 
-        User user = userDAO.getByName(login);
+        User user = userDAO.getByLogin(login);
         log.trace("Current user ==>" + currentUser);
         log.trace("User from DB ==>" + user);
 

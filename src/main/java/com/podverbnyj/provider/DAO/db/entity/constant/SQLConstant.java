@@ -55,4 +55,15 @@ public class SQLConstant {
         public static final String FIND_GROUP_PAYMENTS_BY_USER_ID = "SELECT * FROM user_payments WHERE user_id = ? " +
                 "ORDER BY date DESC LIMIT ? OFFSET ?";
     }
+
+    public static class PasswordRecoveryConstants {
+        public static final String CREATE_RECOVERY_CODE = "INSERT INTO password_recovery (user_id, code) "
+                + "VALUES (?,?)";
+        public static final String GET_ENTITY_BY_USER_ID = "SELECT * FROM password_recovery WHERE user_id = ?";
+        public static final String GET_ENTITY_BY_CODE = "SELECT * FROM password_recovery WHERE code = ?";
+        public static final String DELETE_ENTRY_BY_CODE = "DELETE FROM password_recovery WHERE code = ?";
+    }
 }
+
+
+

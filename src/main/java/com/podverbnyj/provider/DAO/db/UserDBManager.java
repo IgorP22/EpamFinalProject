@@ -61,13 +61,13 @@ public class UserDBManager {
         }
     }
 
-    public User getByName(Connection con, String name) throws SQLException {
+    public User getByLogin(Connection con, String login) throws SQLException {
         PreparedStatement ps = null;
         ResultSet rs = null;
         User user = null;
         try {
             ps = con.prepareStatement(GET_USER_BY_LOGIN);
-            ps.setString(1, name);
+            ps.setString(1, login);
             rs = ps.executeQuery();
             if (rs.next()) {
                 user = getUser(rs);

@@ -15,6 +15,7 @@ public class CommandContainer {
 		commands.put("email", new EmailCommand());
 		commands.put("adminRequest", new AdminRequestCommand());
 		commands.put("userRequest", new UserRequestCommand());
+		commands.put("forgotPassword", new ForgotPasswordCommand());
 
 
 
