@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/tables.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/red_stars.css"/>
 
 <%@ include file="success.jspf" %>
 <c:set var="language"

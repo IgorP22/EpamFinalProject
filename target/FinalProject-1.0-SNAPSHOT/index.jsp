@@ -10,6 +10,7 @@
         crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/red_stars.css"/>
 
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
@@ -87,9 +88,8 @@
 
 <body>
 
-
-<a href="http://localhost:8080/Final/price_list.txt" download="price_list.txt">Скачать txt</a>
-<a href="http://localhost:8080/Final/price_list.pdf" download="price_list.pdf">Скачать pdf</a>
+<%--<a href="http://localhost:8080/Final/price_list.txt" download="price_list.txt">Скачать txt</a>--%>
+<%--<a href="http://localhost:8080/Final/price_list.pdf" download="price_list.pdf">Скачать pdf</a>--%>
 
 <mylib:sort_buttons/>
 
@@ -160,13 +160,15 @@
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <label for="email" class="col-form-label"><fmt:message
-                                key="index_jsp.link.enter_email_here"/></label>
-                        <input type="text" name="email" class="form-control" id="email"
-                               pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
-                               minlength="5" placeholder="email@example.com" required>
+                        <div class="form-group required">
+                            <label for="email" class="col-form-label"><fmt:message
+                                    key="index_jsp.link.enter_email_here"/></label>
 
+                            <input type="text" name="email" class="form-control" id="email"
+                                   pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                                   minlength="5" placeholder="email@example.com" required>
 
+                        </div>
                     </div>
                 </div>
 
@@ -211,10 +213,12 @@
             <div class="modal-footer">
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="download">
-                    <button type="submit" class="btn btn-primary" name="file" value="txt"  data-bs-dismiss="modal" aria-label="Close"><fmt:message
+                    <button type="submit" class="btn btn-primary" name="file" value="txt" data-bs-dismiss="modal"
+                            aria-label="Close"><fmt:message
                             key="index_jsp.link.download_as"/>.txt
                     </button>
-                    <button type="submit" class="btn btn-primary" name="file" value="pdf" data-bs-dismiss="modal" aria-label="Close"><fmt:message
+                    <button type="submit" class="btn btn-primary" name="file" value="pdf" data-bs-dismiss="modal"
+                            aria-label="Close"><fmt:message
                             key="index_jsp.link.download_as"/>.pdf
                     </button>
                 </form>

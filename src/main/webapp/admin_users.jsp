@@ -15,6 +15,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/red_stars.css"/>
 
 <%@ include file="success.jspf" %>
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />

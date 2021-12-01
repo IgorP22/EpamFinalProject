@@ -27,10 +27,13 @@
 
 
                     <div class="mb-3">
-                        <label for="userLogin" class="col-form-label">Логин:</label>
-                        <input type="text" name="userLogin" class="form-control" id="userLogin"
-                               value="${userToEdit.login}"
-                               minlength="5" maxlength="30" placeholder="Допустимы любые символы" required>
+<%--                        <form action="validateFare" method="post">--%>
+                            <label for="userLogin" class="col-form-label">Логин:</label>
+                            <input type="text" name="userLogin" class="form-control" id="userLogin"
+                                   value="${userToEdit.login}"
+                                   minlength="5" maxlength="30" placeholder="Допустимы любые символы" required>
+                            <span class="error" style="font-size: smaller" id='busyMessage'>${busyMessage}</span>
+<%--                        </form>--%>
 
                         <div class="row">
 
@@ -48,7 +51,7 @@
                                 <input type="password" name="confirmPassword" class="form-control"
                                        id="confirmPassword" onkeyup='passwordValidation();'
                                        value="${userToEdit.password}"
-                                       minlength="5" maxlength="30" placeholder="Допустимы любые символы">
+                                       minlength="5" maxlength="30" placeholder="Допустимы любые символы" required>
                             </div>
 
                         </div>
@@ -56,7 +59,7 @@
                         <input type="text" name="userEmail" class="form-control" id="userEmail"
                                value="${userToEdit.email}"
                                pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
-                               minlength="5" maxlength="30" placeholder="email@example.com">
+                               minlength="5" maxlength="30" placeholder="email@example.com" required>
 
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -215,13 +218,16 @@
         if (document.getElementById('userPassword').value ==
             document.getElementById('confirmPassword').value) {
             document.getElementById('message').style.color = 'green';
+            document.getElementById('confirmPassword').border.color = 'green';
             document.getElementById('message').innerHTML = 'Ок';
         } else {
             document.getElementById('message').style.color = 'red';
+            document.getElementById('confirmPassword').border.color = 'red';
             document.getElementById('message').innerHTML = 'Пароли не совпадают';
         }
     }
 </script>
+
 
 <script>
     $(document).ready(function () {

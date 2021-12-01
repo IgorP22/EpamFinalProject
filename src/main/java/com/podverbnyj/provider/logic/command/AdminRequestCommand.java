@@ -159,6 +159,13 @@ public class AdminRequestCommand implements Command {
         if (req.getParameter("userToEditId") == null && req.getParameter("userLogin") != null) {
             User user;
             user = getUser(req);
+            if (userDAO.getByLogin(user.getLogin()) != null) {
+                String busyMessage = "This username is already taken";
+                req.getSession().setAttribute("busyMessage",busyMessage);
+                return req.getHeader("referer");
+            }
+
+
             userDAO.create(user);
             System.out.println("User added");
             getUsersList(req);

@@ -11,6 +11,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/red_stars.css"/>
 
 <%@ include file="success.jspf" %>
 <c:set var="language"
