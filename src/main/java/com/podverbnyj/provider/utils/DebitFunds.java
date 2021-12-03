@@ -61,10 +61,10 @@ public class DebitFunds {
                                     "Best wishes, your provider.) ";
                         }
                         emailSender(user.getEmail(), subject, body, null);
-                        log.info("User " + user.getId()+" email about blocking account sent.");
+                        log.info("User " + user.getLogin()+" email about blocking account sent.");
                     }
                 }
-                log.info("User " + user.getId()+" blocked.");
+                log.info("User " + user.getLogin()+" blocked.");
                 user.setStatus(Status.BLOCKED);
             } else {
                 if (sumToDebit > 0.009) {

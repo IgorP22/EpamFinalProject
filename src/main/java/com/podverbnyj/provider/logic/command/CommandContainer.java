@@ -16,6 +16,7 @@ public class CommandContainer {
 		commands.put("adminRequest", new AdminRequestCommand());
 		commands.put("userRequest", new UserRequestCommand());
 		commands.put("forgotPassword", new ForgotPasswordCommand());
+		commands.put("logout", new LogoutCommand());
 
 
 

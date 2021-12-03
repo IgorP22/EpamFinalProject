@@ -30,9 +30,9 @@
 <body>
 
 <header>
-    <c:set var="user" value="${sessionScope.user}"/>
+    <c:set var="currentUser" value="${sessionScope.currentUser}"/>
 
-    <c:if test="${user.role.value() != 'admin'}">
+    <c:if test="${currentUser.role.value() != 'admin'}">
         <c:redirect url="index.jsp"/>
     </c:if>
 
@@ -47,15 +47,15 @@
             <div class="col-md-2">
                 <div class="row align-items-center">
                     <h5>Добро пожаловать</h5><br>
-                    <c:if test="${user.name == null}">
+                    <c:if test="${currentUser.name == null}">
                         <h4>
-                            <td>${user.login}</td>
+                            <td>${currentUser.login}</td>
                         </h4>
                     </c:if>
 
-                    <c:if test="${user.name != null}">
+                    <c:if test="${currentUser.name != null}">
                         <h4>
-                                ${user.name} ${user.surname}
+                                ${currentUser.name} ${currentUser.surname}
                         </h4>
 
                     </c:if>
@@ -74,9 +74,9 @@
             </div>
 
             <div class="col-md-1">
-                <form>
-                    <input type="button" value="Logout" class="btn btn-primary" onClick='location.href="index.jsp"'>
-                </form>
+
+                <%@ include file="logout.jspf" %>
+
             </div>
         </div>
     </div>
@@ -109,8 +109,6 @@
 
 </header>
 <body>
-
-
 
 
 <c:set var="confirmationFlag" scope="session" value="false"/>

@@ -9,7 +9,7 @@
                 <h5 class="modal-title">Данные пользователя</h5>
 
             </div>
-            <form action="controller" method="post">
+            <form action="controller" method="post" onsubmit="ValidateLoginServlet">
 
                 <div class="modal-body">
 
@@ -27,29 +27,32 @@
 
 
                     <div class="mb-3">
-<%--                        <form action="validateFare" method="post">--%>
-                            <label for="userLogin" class="col-form-label">Логин:</label>
-                            <input type="text" name="userLogin" class="form-control" id="userLogin"
-                                   value="${userToEdit.login}"
-                                   minlength="5" maxlength="30" placeholder="Допустимы любые символы" required>
-                            <span class="error" style="font-size: smaller" id='busyMessage'>${busyMessage}</span>
-<%--                        </form>--%>
+                        <%--                        <form action="validateFare" method="post">--%>
+                        <label for="userLogin" class="col-form-label">Логин:</label>
+                        <input type="text" name="userLogin" class="form-control" id="userLogin"
+                               onkeyup="validateLogin();"
+                               value="${userToEdit.login}"
+                               minlength="5" maxlength="30" placeholder="Допустимы любые символы" required>
+                        <span class="error" style="font-size: smaller" id='user_message'></span>
+                        <%--                        </form>--%>
 
                         <div class="row">
 
                             <div class="form-group col-md-6">
-                                <label for="userPassword" class="col-form-label">Пароль:</label>
+                                <label for="userPassword" class="sr-only">Пароль:</label>
                                 <input type="password" name="userPassword" class="form-control" id="userPassword"
                                        value="${userToEdit.password}"
                                        onkeyup='passwordValidation();'
+
                                        minlength="5" maxlength="150" placeholder="Допустимы любые символы" required>
                                 <span style="font-size: smaller" id='message'></span>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="confirmPassword" class="col-form-label">Повторите ввод пароля:</label>
+                                <label for="confirmPassword" class="sr-only">Повторите ввод пароля:</label>
                                 <input type="password" name="confirmPassword" class="form-control"
-                                       id="confirmPassword" onkeyup='passwordValidation();'
+                                       id="confirmPassword" data-match="#userPassword"
+                                       onkeyup='passwordValidation();'
                                        value="${userToEdit.password}"
                                        minlength="5" maxlength="30" placeholder="Допустимы любые символы" required>
                             </div>
@@ -105,7 +108,7 @@
 
                             <div class="form-group col-md-6">
 
-                                <c:if test="${currentUser.role == 'ADMIN'}">
+                                <c:if test="${currentUser.role == 'ADMIN' && currentUser.login != userToEdit.login}">
                                     <label for="userRole">Роль:</label>
                                     <select name="userRole" id="userRole" class="form-control">
 
@@ -121,7 +124,7 @@
 
                                 </c:if>
 
-                                <c:if test="${currentUser.role == 'USER'}">
+                                <c:if test="${currentUser.role == 'USER' || currentUser.login == userToEdit.login}">
 
                                     <input type="hidden" name="userRole" class="form-control" id="userRole"
                                            value="${currentUser.role}">
@@ -151,7 +154,7 @@
 
                             <div class="form-group col-md-6">
 
-                                <c:if test="${currentUser.role == 'ADMIN'}">
+                                <c:if test="${currentUser.role == 'ADMIN' && currentUser.login != userToEdit.login}">
                                     <label for="userStatus">Статус:</label>
                                     <select name="userStatus" id="userStatus" class="form-control">
 
@@ -167,7 +170,8 @@
 
                                     </select>
                                 </c:if>
-                                <c:if test="${currentUser.role == 'USER'}">
+
+                                <c:if test="${currentUser.role == 'USER' || currentUser.login == userToEdit.login}">
                                     <input type="hidden" name="userStatus" class="form-control" id="userStatus"
                                            value="${currentUser.status}">
                                 </c:if>
@@ -190,44 +194,27 @@
                     </c:if>
                     <c:if test="${currentUser.role == 'USER'}">
                         <input type="hidden" name="command" value="userRequest">
-                        <button type="submit" class="btn btn-primary" name="userRequest" value="Edit profile">
+                        <button type="submit" class="btn btn-primary" name="userRequest" value="Edit profile"
+                                id="validateButton">
                             Submit
                         </button>
                     </c:if>
-
+            </form>
                     <button type="submit" class="btn btn-secondary"
                             data-bs-dismiss="modal"
-                            name="adminRequest" value="Remove data"
+                            name="adminRequest" value="Remove data" formnovalidate
                     >Cancel
                     </button>
 
 
                 </div>
-            </form>
+
         </div>
     </div>
 </div>
 
-<script>
-    var passwordValidation = function () {
-        if (document.getElementById('userPassword').value.length < 5) {
-            document.getElementById('message').style.color = 'red';
-            document.getElementById('message').innerHTML = 'Минимальная длина 5 символов';
-            return;
-        }
-        if (document.getElementById('userPassword').value ==
-            document.getElementById('confirmPassword').value) {
-            document.getElementById('message').style.color = 'green';
-            document.getElementById('confirmPassword').border.color = 'green';
-            document.getElementById('message').innerHTML = 'Ок';
-        } else {
-            document.getElementById('message').style.color = 'red';
-            document.getElementById('confirmPassword').border.color = 'red';
-            document.getElementById('message').innerHTML = 'Пароли не совпадают';
-        }
-    }
-</script>
 
+<%@ include file="passwordValidation.jspf" %>
 
 <script>
     $(document).ready(function () {
@@ -239,3 +226,47 @@
         }
     })
 </script>
+
+<script>
+
+
+    function validateLogin() {
+
+
+        // 1 Получить содержимое поле ввода
+        var login = $("#userLogin").val();
+        const userLogin = document.getElementById('userLogin');
+        // alert("aaaa");
+
+        // 2. Отправить запрос
+        $.post("${pageContext.request.contextPath}/ValidateLoginServlet", {login: login}, function (data, status) {
+
+            if (document.getElementById('userLogin').value.length < 5) {
+                document.getElementById('user_message').style.color = 'red';
+                document.getElementById('user_message').innerHTML = 'Минимальная длина 5 символов';
+                userLogin.setCustomValidity(' ');
+                return false;
+            }
+            document.getElementById('user_message').style.color = 'green';
+            document.getElementById('user_message').innerHTML = 'Ок';
+            userLogin.setCustomValidity('');
+            // alert(data);
+            if (data == 1) {// Имя пользователя существует
+                // alert("Такое имя пользователя существует");
+                document.getElementById('user_message').style.color = 'red';
+                document.getElementById('user_message').innerHTML = 'Логин занят';
+                userLogin.setCustomValidity('Логин занят');
+
+                // $("#span01").html(«<font color = 'red'> имя пользователя было зарегистрировано </ font>");
+            } else {
+                // оповещение («имя пользователя»);
+                // $("#span01").html(«<font color = 'green'> имя пользователя можно использовать </ font>");
+            }
+
+
+        });
+        // 3. Выходной ответ выводится на страницу.
+    }
+
+</script>
+

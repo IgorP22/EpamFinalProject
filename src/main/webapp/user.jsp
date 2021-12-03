@@ -81,9 +81,9 @@
             </div>
 
             <div class="col-md-1">
-                <form>
-                    <input type="button" value="Logout" class="btn btn-primary" onClick='location.href="index.jsp"'>
-                </form>
+
+                    <%@ include file="logout.jspf" %>
+
             </div>
         </div>
     </div>

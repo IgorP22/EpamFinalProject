@@ -410,9 +410,10 @@
                         <input type="text" name="emailToRestore" class="form-control" id="emailToRestore"
                                pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
                                minlength="5" placeholder="email@example.com" required>
-                        <%--                        <center>--%>
-                        <%--                            <div class="g-recaptcha" data-sitekey="6Leyol4dAAAAAOU5_NFGfBK1X65cqjKR85mbXkHD"></div>--%>
-                        <%--                        </center>--%>
+                        <br>
+                        <center>
+                            <div class="g-recaptcha" data-sitekey="6Leyol4dAAAAAOU5_NFGfBK1X65cqjKR85mbXkHD"></div>
+                        </center>
                     </div>
                 </div>
 
@@ -481,23 +482,7 @@
     </div>
 </div>
 
-<script>
-    var passwordValidation = function () {
-        if (document.getElementById('userNewPassword').value.length < 5) {
-            document.getElementById('message').style.color = 'red';
-            document.getElementById('message').innerHTML = 'Минимальная длина 5 символов';
-            return;
-        }
-        if (document.getElementById('userNewPassword').value ==
-            document.getElementById('confirmPassword').value) {
-            document.getElementById('message').style.color = 'green';
-            document.getElementById('message').innerHTML = 'Ок';
-        } else {
-            document.getElementById('message').style.color = 'red';
-            document.getElementById('message').innerHTML = 'Пароли не совпадают';
-        }
-    }
-</script>
+<%@ include file="passwordValidation.jspf" %>
 
 <script>
     $(document).ready(function () {

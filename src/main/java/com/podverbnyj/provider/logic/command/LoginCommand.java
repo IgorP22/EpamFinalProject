@@ -36,7 +36,6 @@ public class LoginCommand implements Command {
         System.out.println(login +" "+password);
         String gRecaptchaResponse = req
                 .getParameter("g-recaptcha-response");
-//        System.out.println(gRecaptchaResponse);
         boolean verify = false;
         try {
             verify = VerifyRecaptcha.verify(gRecaptchaResponse);

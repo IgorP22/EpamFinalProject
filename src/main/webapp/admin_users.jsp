@@ -75,9 +75,9 @@
 
             </div>
             <div class="col-md-1">
-                <form>
-                    <input type="button" value="Logout" class="btn btn-primary" onClick='location.href="index.jsp"'>
-                </form>
+
+                <%@ include file="logout.jspf" %>
+
             </div>
         </div>
     </div>
@@ -132,17 +132,17 @@
     </tr>
     </thead>
 
-    <c:forEach var="user" items="${ListOfUsers}">
+    <c:forEach var="currentUser" items="${ListOfUsers}">
         <tr>
-            <td>${user.login}</td>
-            <td><javaTag:getTotalCost userID="${user.id}"/></td>
-            <td>${user.email}</td>
-            <td>${user.name}</td>
-            <td>${user.surname}</td>
-            <td>${user.phone}</td>
-            <td>${user.balance}</td>
+            <td>${currentUser.login}</td>
+            <td><javaTag:getTotalCost userID="${currentUser.id}"/></td>
+            <td>${currentUser.email}</td>
+            <td>${currentUser.name}</td>
+            <td>${currentUser.surname}</td>
+            <td>${currentUser.phone}</td>
+            <td>${currentUser.balance}</td>
             <c:choose>
-                <c:when test="${user.language == 'RU'}">
+                <c:when test="${currentUser.language == 'RU'}">
                     <td>Русский</td>
                 </c:when>
                 <c:otherwise>
@@ -150,7 +150,7 @@
                 </c:otherwise>
             </c:choose>
             <c:choose>
-                <c:when test="${user.role == 'ADMIN'}">
+                <c:when test="${currentUser.role == 'ADMIN'}">
                     <td>Администратор</td>
                 </c:when>
                 <c:otherwise>
@@ -158,7 +158,7 @@
                 </c:otherwise>
             </c:choose>
             <c:choose>
-                <c:when test="${user.notification == 'false'}">
+                <c:when test="${currentUser.notification == 'false'}">
                     <td>Выключено</td>
                 </c:when>
                 <c:otherwise>
@@ -166,7 +166,7 @@
                 </c:otherwise>
             </c:choose>
             <c:choose>
-                <c:when test="${user.status == 'BLOCKED'}">
+                <c:when test="${currentUser.status == 'BLOCKED'}">
                     <td>Заблокирован</td>
                 </c:when>
                 <c:otherwise>
@@ -177,7 +177,7 @@
 
             <form action="controller" method="post">
 
-                <input type="hidden" name="userToEditId" value="${user.id}">
+                <input type="hidden" name="userToEditId" value="${currentUser.id}">
 
                 <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
                 <td>
@@ -187,18 +187,18 @@
                 </td>
                 <td>
 
-                    <c:if test="${user.role == 'ADMIN'}">
+                    <c:if test="${currentUser.role == 'ADMIN'}">
                         <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
                                 value="Delete user">Delete user
                         </button>
                     </c:if>
-                    <c:if test="${user.role == 'USER'}">
-                        <c:if test="${user.status == 'BLOCKED'}">
+                    <c:if test="${currentUser.role == 'USER'}">
+                        <c:if test="${currentUser.status == 'BLOCKED'}">
                             <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
                                     value="Unblock user">Unblock user
                             </button>
                         </c:if>
-                        <c:if test="${user.status == 'ACTIVE'}">
+                        <c:if test="${currentUser.status == 'ACTIVE'}">
                             <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
                                     value="Block user">Block user
                             </button>
