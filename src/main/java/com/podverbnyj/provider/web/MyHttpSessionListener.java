@@ -8,21 +8,20 @@ import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import com.podverbnyj.provider.DAO.db.entity.User;
 import com.podverbnyj.provider.utils.Sorter;
-import org.apache.logging.log4j.*;
 
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 import java.util.List;
+import org.apache.logging.log4j.*;
 
 public class MyHttpSessionListener implements HttpSessionListener {
-//    private static final Logger log = LogManager.getLogger(MyHttpSessionListener.class);
-
+    private static final Logger log = LogManager.getLogger(MyHttpSessionListener.class);
 
 
     @Override
     public void sessionCreated(HttpSessionEvent session) {
 
-        System.out.println("Session started" + session.getSession().getId());
+        log.info("Session {} started", session.getSession().getId());
 
         List<Service> listOfServices;
         List<Tariff> listOfTariffs;
@@ -33,7 +32,7 @@ public class MyHttpSessionListener implements HttpSessionListener {
             listOfTariffs = TariffDAO.getInstance().findAll();
             listOfUsers = UserDAO.getInstance().findAll();
         } catch (DBException e) {
-//            log.error("Can't receive list of services " + session.getSession().getId());
+            log.error("Can't receive list of services for session {}", session.getSession().getId());
             return;
         }
         Sorter.sortServicesByName(listOfServices,"ru");
@@ -48,13 +47,5 @@ public class MyHttpSessionListener implements HttpSessionListener {
         session.getSession().setAttribute("tariffsIsSortedByName", false);
         session.getSession().setAttribute("sortedByPrice", true);
         session.getSession().setAttribute("sortedByLogin", true);
-
     }
-
-
-    @Override
-    public void sessionDestroyed(HttpSessionEvent session) {
-
-    }
-
 }

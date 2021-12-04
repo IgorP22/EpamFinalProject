@@ -1,24 +1,29 @@
 package com.podverbnyj.provider.utils;
 
-import com.podverbnyj.provider.logic.command.LoginCommand;
+import com.podverbnyj.provider.DAO.db.DBException;
 import org.apache.logging.log4j.*;
-
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class HashPassword {
 
-    private static final Logger log = LogManager.getLogger(LoginCommand.class);
+    private HashPassword() {
+    }
 
-    public static String securePassword(String input)  {
+    private static final Logger log = LogManager.getLogger(HashPassword.class);
+
+    public static String securePassword(String input) throws DBException {
         MessageDigest digester = null;
         try {
             digester = MessageDigest.getInstance("SHA-256");
+            digester.update(input.getBytes());
         } catch (NoSuchAlgorithmException ex) {
             log.debug("Secure password error", ex);
+            throw new DBException("Secure password error");
         }
-        digester.update(input.getBytes());
+
+
         byte[] hash = digester.digest();
 
         StringBuilder sb = new StringBuilder();

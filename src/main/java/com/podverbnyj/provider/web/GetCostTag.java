@@ -3,7 +3,6 @@ package com.podverbnyj.provider.web;
 import com.podverbnyj.provider.DAO.UserTariffDAO;
 import com.podverbnyj.provider.DAO.db.DBException;
 
-import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 

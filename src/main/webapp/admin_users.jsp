@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -24,7 +25,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="${language}">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin page for editing and creating users</title>
@@ -114,21 +115,22 @@
 
 
 <table class="table table-striped table_sort" id="usersTable">
+    <caption>Table of users</caption>
     <thead>
     <tr class="table-active">
-        <th>Логин</th>
-        <th>Общая стоимость услуг</th>
-        <th>Email</th>
-        <th>Имя</th>
-        <th>Фамилия</th>
-        <th>Телефон</th>
-        <th>Баланс</th>
-        <th>Язык</th>
-        <th>Роль</th>
-        <th>Уведомления</th>
-        <th>Статус</th>
-        <th></th>
-        <th></th>
+        <th id = "field 01">Логин</th>
+        <th id = "field 02">Общая стоимость услуг</th>
+        <th id = "field 03">Email</th>
+        <th id = "field 04">Имя</th>
+        <th id = "field 05">Фамилия</th>
+        <th id = "field 06">Телефон</th>
+        <th id = "field 07">Баланс</th>
+        <th id = "field 08">Язык</th>
+        <th id = "field 09">Роль</th>
+        <th id = "field 10">Уведомления</th>
+        <th id = "field 11">Статус</th>
+        <th id = "field 12"></th>
+        <th id = "field 13"></th>
     </tr>
     </thead>
 

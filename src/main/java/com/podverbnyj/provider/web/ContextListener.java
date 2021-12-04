@@ -10,6 +10,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Calendar;
@@ -27,7 +28,7 @@ public class ContextListener implements ServletContextListener {
         System.setProperty("logFile", path);
 
         final Logger log = LogManager.getLogger(ContextListener.class);
-        log.debug("path = " + path);
+        log.debug("path = {}", path);
 
         debitFundsThread(log);
 
@@ -36,24 +37,20 @@ public class ContextListener implements ServletContextListener {
 
         // obtain file name with locales descriptions
         String localesFileName = ctx.getInitParameter("locales");
-        System.out.println(localesFileName);
 
         // obtain real path on server
         String localesFileRealPath = ctx.getRealPath(localesFileName);
-        System.out.println(localesFileRealPath);
+
         // local descriptions
         Properties locales = new Properties();
-        try {
-            locales.load(new FileInputStream(localesFileRealPath));
+
+        try (FileInputStream fis = new FileInputStream(localesFileRealPath)) {
+            locales.load(fis);
+            ctx.setAttribute("locales", locales);
         } catch (IOException ex) {
-            log.error("Error to start I18n " + ex);
+            log.error("Error to start I18n ", ex);
         }
-
-        // save descriptions to servlet context
-        ctx.setAttribute("locales", locales);
-
-        log.debug("locales ==> " + locales);
-
+        log.debug("locales ==> {}", locales);
     }
 
     private void debitFundsThread(Logger log) {
@@ -74,20 +71,19 @@ public class ContextListener implements ServletContextListener {
                 long seconds = duration.getSeconds();
                 duration = duration.minusSeconds(seconds);
                 long milliSec = duration.toMillis();
-                String logMessage = "Time to start debiting funds:" + hours + "h " + minutes + "min "
-                        + seconds + "sec " + milliSec + "ms";
-                System.out.println(timeBeforeTaskStart);
+                String logMessage = String.format("Time to start debiting funds: %sh %smin %ssec %sms", hours, minutes, seconds, milliSec);
                 log.info(logMessage);
 
                 try {
                     Thread.sleep(timeBeforeTaskStart);
                 } catch (InterruptedException ex) {
-                    log.error("Thread fall down, funds will not be debited " + ex);
+                    log.error("Thread fall down, funds will not be debited ", ex);
+                    Thread.currentThread().interrupt();
                 }
                 try {
                     debitFunds();
                 } catch (DBException ex) {
-                    log.error("Error to debit funds" + ex);
+                    log.error("Error to debit funds ", ex);
                 }
             }
         });

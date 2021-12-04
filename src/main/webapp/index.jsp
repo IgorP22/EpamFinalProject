@@ -1,3 +1,8 @@
+<%--suppress ALL --%>
+<%--suppress HtmlFormInputWithoutLabel --%>
+<%--suppress ES6ConvertVarToLetConst --%>
+<%--suppress EqualityComparisonWithCoercionJS --%>
+<%--suppress HtmlFormInputWithoutLabel --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -22,7 +27,7 @@
 
 <!DOCTYPE html>
 <html lang="${language}">
-<html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to provider main page</title>
@@ -96,11 +101,12 @@
 
 <!-- Start of Table -->
 <table class="table table-bordered">
+    <caption>Servises and tariffs table</caption>
     <thead>
     <tr class="table-active">
-        <th><fmt:message key="index_jsp.link.name"/></th>
-        <th><fmt:message key="index_jsp.link.description"/></th>
-        <th><fmt:message key="index_jsp.link.price"/></th>
+        <th id = "field 01"><fmt:message key="index_jsp.link.name"/></th>
+        <th id = "field 02"><fmt:message key="index_jsp.link.description"/></th>
+        <th id = "field 03"><fmt:message key="index_jsp.link.price"/></th>
     </tr>
     </thead>
     <tbody>

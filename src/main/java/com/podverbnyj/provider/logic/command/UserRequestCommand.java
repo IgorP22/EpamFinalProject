@@ -174,7 +174,7 @@ public class UserRequestCommand implements Command {
         return "user.jsp#success";
     }
 
-    private User getUser(HttpServletRequest req) {
+    private User getUser(HttpServletRequest req) throws DBException {
         User user;
         user = new User.UserBuilder(
                 req.getParameter("userLogin"),

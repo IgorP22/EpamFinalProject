@@ -56,6 +56,7 @@ public class AdminRequestCommand implements Command {
             User user = userDAO.getById(userID);
             user.setStatus(Status.BLOCKED);
             userDAO.update(user);
+            //todo email to user
             getUsersList(req);
             return "admin_users.jsp#success";
         }
@@ -65,6 +66,7 @@ public class AdminRequestCommand implements Command {
             User user = userDAO.getById(userID);
             user.setStatus(Status.ACTIVE);
             userDAO.update(user);
+            //todo email to user
             getUsersList(req);
             return "admin_users.jsp#success";
         }
@@ -200,7 +202,7 @@ public class AdminRequestCommand implements Command {
         return null;
     }
 
-    private User getUser(HttpServletRequest req) {
+    private User getUser(HttpServletRequest req) throws DBException {
 
         User user;
 

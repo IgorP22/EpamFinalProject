@@ -10,11 +10,14 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import org.apache.logging.log4j.*;
 
 @WebFilter(urlPatterns = {"/index.jsp"})
 public class PasswordRecoveryFilter implements Filter {
+
     private static final PasswordRecoveryDAO passwordRecoveryDAO = PasswordRecoveryDAO.getInstance();
     private static final UserDAO userDAO = UserDAO.getInstance();
+    private static final Logger log = LogManager.getLogger(PasswordRecoveryFilter.class);
 
     @Override
     public void doFilter(ServletRequest request,
@@ -29,41 +32,30 @@ public class PasswordRecoveryFilter implements Filter {
         if (code != null) {
             PasswordRecovery ps = new PasswordRecovery();
 
-
-
-            System.out.println(code);
-
             try {
                 ps = passwordRecoveryDAO.getPasswordRecovery(code);
 
-            } catch (DBException e) {
-                e.printStackTrace();
+            } catch (DBException ex) {
+                log.error("Error to receive password recovery entry with code {}", code, ex);
             }
+
             String userLoginToRecover = null;
-//            try {
-//                userLoginToRecover = userDAO.getById(ps.getUserId()).getLogin();
-//            } catch (DBException  | NullPointerException ex) {
-//                ex.printStackTrace();
-//            }
-//            System.out.println(userLoginToRecover);
+
 
             req.getSession().setAttribute("userToRecover", ps);
-//            req.getSession().setAttribute("userLoginToRecover", userLoginToRecover);
-            //todo BD get code
+
             if (code.equals(ps.getCode())) {
                 try {
                     userLoginToRecover = userDAO.getById(ps.getUserId()).getLogin();
-                } catch (DBException e) {
-                    e.printStackTrace();
+                } catch (DBException ex) {
+                    log.error("Error to receive user login for recovery for code{}", code, ex);
                 }
                 req.getSession().setAttribute("userLoginToRecover", userLoginToRecover);
                 resp.sendRedirect(req.getContextPath() + "/index.jsp#passwordRecovery");
             } else {
                 resp.sendRedirect(req.getContextPath() + "/index.jsp#invalidLink");
             }
-//            resp.sendRedirect(req.getContextPath() + "/index.jsp#passwordRecovery");
         } else {
-
             chain.doFilter(req, response);
         }
     }

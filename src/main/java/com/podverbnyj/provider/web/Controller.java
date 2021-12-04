@@ -21,7 +21,7 @@ public class Controller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String commandName = req.getParameter("command");
-        log.trace("command ==> " + commandName);
+        log.trace("command ==> {}", commandName);
         Command command = CommandContainer.getCommand(commandName);
         String address = "error.jsp";
         try {
@@ -34,12 +34,12 @@ public class Controller extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String commandName = req.getParameter("command");
-        log.trace("commandName ==> " + commandName);
+        log.trace("commandName ==> {}", commandName);
 
         Command command = CommandContainer.getCommand(commandName);
-        log.trace("command ==> " + command);
+        log.trace("command ==> {}", command);
         String address = "error.jsp";
         try {
             address = command.execute(req, resp);

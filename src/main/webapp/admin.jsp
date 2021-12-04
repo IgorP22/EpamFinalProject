@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -22,7 +23,7 @@
 
 <!DOCTYPE html>
 <html lang="${language}">
-<html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to provider main page</title>
@@ -115,28 +116,18 @@
 <c:set var="adminFlag" value="${sessionScope.adminFlag}"/>
 
 <mylib:sort_buttons/>
-<%--    <hr>--%>
-<%--    <form action="controller" method="post">--%>
-<%--        <input type="hidden" name="command" value="sort">--%>
-<%--        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort services">Sort services</button>--%>
-<%--        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by name">Sort tariffs by--%>
-<%--            name--%>
-<%--        </button>--%>
-<%--        <button type="submit" name="sort" class="btn btn-secondary btn-sm" value="Sort tariffs by price">Sort tariffs by--%>
-<%--            price--%>
-<%--        </button>--%>
-<%--    </form>--%>
-<%--    <hr>--%>
+
 
 <!-- Start of Table -->
 <table class="table table-bordered">
+    <caption>Servises and tariffs table</caption>
     <thead>
     <tr class="table-active">
-        <th>Наименование пакета</th>
-        <th>Описание</th>
-        <th>Цена</th>
-        <th></th>
-        <th></th>
+        <th id = "field 01">Наименование пакета</th>
+        <th id = "field 02">Описание</th>
+        <th id = "field 03">Цена</th>
+        <th id = "field 04"></th>
+        <th id = "field 05"></th>
     </tr>
     </thead>
     <tbody>

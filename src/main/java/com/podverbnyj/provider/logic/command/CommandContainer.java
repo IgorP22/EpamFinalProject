@@ -17,11 +17,7 @@ public class CommandContainer {
 		commands.put("userRequest", new UserRequestCommand());
 		commands.put("forgotPassword", new ForgotPasswordCommand());
 		commands.put("logout", new LogoutCommand());
-
-
-
-//		commands.put("insertUsers", new InsertUsers());
-		}
+	}
 
 	public static Command getCommand(String commandName) {
 		return commands.get(commandName);

@@ -1,6 +1,5 @@
 package com.podverbnyj.provider.utils;
 
-import com.podverbnyj.provider.logic.command.LoginCommand;
 import org.apache.logging.log4j.*;
 
 import java.util.regex.Matcher;
@@ -9,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class PhoneFormatCorrector {
 
-    private static final Logger log = LogManager.getLogger(LoginCommand.class);
+    private static final Logger log = LogManager.getLogger(PhoneFormatCorrector.class);
 
     public static String correctPhone(String input) {
 
@@ -23,7 +22,7 @@ public class PhoneFormatCorrector {
         if (digits.length() >=9) {
             result = "+380" + digits.substring(digits.length()-9);
         }
-        log.debug("Phone number changed (" + input + ") ==> (" + result + ")");
+        log.debug("Phone number changed ({}) ==> ({})",input,input);
         return result;
     }
 }
