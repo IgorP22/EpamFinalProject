@@ -12,18 +12,21 @@ import java.net.URL;
 
 public class VerifyRecaptcha {
 
-    public static final String url = "https://www.google.com/recaptcha/api/siteverify";
-    public static final String secret = "";
-    private final static String USER_AGENT = "Mozilla/5.0";
+    public static final String URL = "https://www.google.com/recaptcha/api/siteverify";
+    public static final String SECRET = "";
+    private static final String USER_AGENT = "Mozilla/5.0";
     private static final Logger log = LogManager.getLogger(VerifyRecaptcha.class);
+
+    private VerifyRecaptcha() {
+    }
 
     public static boolean verify(String gRecaptchaResponse) throws IOException {
         if (gRecaptchaResponse == null || "".equals(gRecaptchaResponse)) {
             return false;
         }
 
-        try{
-            URL obj = new URL(url);
+        try {
+            URL obj = new URL(URL);
             HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 
             // add request header
@@ -31,7 +34,7 @@ public class VerifyRecaptcha {
             con.setRequestProperty("User-Agent", USER_AGENT);
             con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 
-            String postParams = "secret=" + secret + "&response="
+            String postParams = "secret=" + SECRET + "&response="
                     + gRecaptchaResponse;
 
             // Send post request
@@ -42,22 +45,19 @@ public class VerifyRecaptcha {
             wr.close();
 
             int responseCode = con.getResponseCode();
-            log.info("\nSending 'POST' request to URL : " + url);
-            System.out.println("Post parameters : " + postParams);
-            log.info("Response Code : " + responseCode);
+            log.info("Sending 'POST' request to URL : {}", URL);
+            log.info("Response Code : {}", responseCode);
 
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     con.getInputStream()));
             String inputLine;
-            StringBuffer response = new StringBuffer();
+            StringBuilder response = new StringBuilder();
 
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);
             }
             in.close();
 
-            // print result
-            log.info(response.toString());
 
             //parse JSON response and return 'success' value
             JsonReader jsonReader = Json.createReader(new StringReader(response.toString()));
@@ -65,8 +65,8 @@ public class VerifyRecaptcha {
             jsonReader.close();
 
             return jsonObject.getBoolean("success");
-        }catch(Exception e){
-            e.printStackTrace();
+        } catch (Exception ex) {
+            log.error("Error to get captha", ex);
             return false;
         }
     }
