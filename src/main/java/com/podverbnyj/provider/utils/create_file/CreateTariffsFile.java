@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 public class CreateTariffsFile {
+    private CreateTariffsFile() {
+    }
 
     private static FileCreator configureFileCreator(String fileType) {
         FileCreator app;
@@ -25,7 +27,7 @@ public class CreateTariffsFile {
         return app;
     }
 
-    public static void GetFile(HttpServletRequest req) throws DocumentException, IOException {
+    public static void getFile(HttpServletRequest req) throws DocumentException, IOException {
         String fileType = req.getParameter("file");
 
         FileCreator ff = configureFileCreator(fileType);

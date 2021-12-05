@@ -15,70 +15,78 @@ import java.util.List;
 public class SortCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(SortCommand.class);
+    public static final String SERVICES_IS_SORTED = "servicesIsSorted";
+    public static final String TARIFFS_IS_SORTED_BY_NAME = "tariffsIsSortedByName";
+    public static final String SORTED_BY_PRICE = "sortedByPrice";
+    public static final String SORTED_BY_LOGIN = "sortedByLogin";
+    public static final String REFERER = "referer";
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
 
         String sort = req.getParameter("sort");
         String language = (String) req.getSession().getAttribute("language");
-        boolean servicesIsSorted = (boolean) req.getSession().getAttribute("servicesIsSorted");
-        boolean tariffsIsSortedByName = (boolean) req.getSession().getAttribute("tariffsIsSortedByName");
-        boolean sortedByPrice = (boolean) req.getSession().getAttribute("sortedByPrice");
-        boolean sortedByLogin = (boolean) req.getSession().getAttribute("sortedByLogin");
+        boolean servicesIsSorted = (boolean) req.getSession().getAttribute(SERVICES_IS_SORTED);
+        boolean tariffsIsSortedByName = (boolean) req.getSession().getAttribute(TARIFFS_IS_SORTED_BY_NAME);
+        boolean sortedByPrice = (boolean) req.getSession().getAttribute(SORTED_BY_PRICE);
+        boolean sortedByLogin = (boolean) req.getSession().getAttribute(SORTED_BY_LOGIN);
 
-        System.out.println(sort);
-        System.out.println(language);
-        String s1 = "Sort services";
-        String s2 = "Sort tariffs by name";
-        String s3 = "Sort tariffs by price";
-        String s4 = "Sort users by login";
+        String sortServices = "Sort services";
+        String sortTariffsByName = "Sort tariffs by name";
+        String sortTariffsByPrice = "Sort tariffs by price";
+        String sortUsersByLogin = "Sort users by login";
 
 
-        if (s1.equals(sort)) {
+        if (sortServices.equals(sort)) {
             List<Service> services = (List<Service>) req.getSession().getAttribute("ListOfServices");
             if (servicesIsSorted) {
                 Sorter.sortServicesByNameReverseOrder(services, language);
-                req.getSession().setAttribute("servicesIsSorted", false);
+                req.getSession().setAttribute(SERVICES_IS_SORTED, false);
             } else {
                 Sorter.sortServicesByName(services, language);
-                req.getSession().setAttribute("servicesIsSorted", true);
+                req.getSession().setAttribute(SERVICES_IS_SORTED, true);
             }
-            return req.getHeader("referer");
+            log.info("List of services sorted.");
+            return req.getHeader(REFERER);
         }
 
-        if (s2.equals(sort)) {
+        if (sortTariffsByName.equals(sort)) {
             List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
             if (tariffsIsSortedByName) {
                 Sorter.sortTariffsByNameReverseOrder(tariffs, language);
-                req.getSession().setAttribute("tariffsIsSortedByName", false);
+                req.getSession().setAttribute(TARIFFS_IS_SORTED_BY_NAME, false);
             } else {
                 Sorter.sortTariffsByName(tariffs, language);
-                req.getSession().setAttribute("tariffsIsSortedByName", true);
+                req.getSession().setAttribute(TARIFFS_IS_SORTED_BY_NAME, true);
             }
-            return req.getHeader("referer");
+            log.info("List of tariffs sorted by name.");
+            return req.getHeader(REFERER);
         }
 
-        if (s3.equals(sort)) {
+        if (sortTariffsByPrice.equals(sort)) {
             List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
             if (sortedByPrice) {
                 Sorter.sortTariffsByPriceReverseOrder(tariffs);
-                req.getSession().setAttribute("sortedByPrice", false);
+                req.getSession().setAttribute(SORTED_BY_PRICE, false);
             } else {
                 Sorter.sortTariffsByPrice(tariffs);
-                req.getSession().setAttribute("sortedByPrice", true);
+                req.getSession().setAttribute(SORTED_BY_PRICE, true);
             }
+            log.info("List of tariffs sorted by price.");
+            return req.getHeader(REFERER);
         }
 
-        if (s4.equals(sort)) {
+        if (sortUsersByLogin.equals(sort)) {
             List<User> users = (List<User>) req.getSession().getAttribute("ListOfUsers");
             if (sortedByLogin) {
                 Sorter.sortUsersByLoginReverseOrder(users);
-                req.getSession().setAttribute("sortedByLogin", false);
+                req.getSession().setAttribute(SORTED_BY_LOGIN, false);
             } else {
                 Sorter.sortUsersByLogin(users);
-                req.getSession().setAttribute("sortedByLogin", true);
+                req.getSession().setAttribute(SORTED_BY_LOGIN, true);
             }
+            log.info("List of users sorted.");
         }
-        return req.getHeader("referer");
+        return req.getHeader(REFERER);
     }
 }

@@ -120,7 +120,7 @@
 
 <!-- Start of Table -->
 <table class="table table-bordered">
-    <caption>Servises and tariffs table</caption>
+    <caption hidden>Servises and tariffs table</caption>
     <thead>
     <tr class="table-active">
         <th id = "field 01">Наименование пакета</th>

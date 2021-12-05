@@ -7,6 +7,8 @@ import java.util.regex.Pattern;
 
 
 public class PhoneFormatCorrector {
+    private PhoneFormatCorrector() {
+    }
 
     private static final Logger log = LogManager.getLogger(PhoneFormatCorrector.class);
 

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static com.podverbnyj.provider.utils.EmailSender.emailSender;
-import static com.podverbnyj.provider.utils.create_file.CreateTariffsFile.GetFile;
+import static com.podverbnyj.provider.utils.create_file.CreateTariffsFile.getFile;
 
 public class EmailCommand implements Command {
 
@@ -24,7 +24,7 @@ public class EmailCommand implements Command {
         String language = req.getSession().getAttribute("language").toString();
 
         try {
-            GetFile(req);
+            getFile(req);
             log.info("File created");
         } catch (IOException | DocumentException e) {
             //TODO catch

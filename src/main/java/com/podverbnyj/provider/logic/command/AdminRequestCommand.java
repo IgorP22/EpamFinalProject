@@ -27,6 +27,20 @@ public class AdminRequestCommand implements Command {
     private static final UserDAO userDAO = UserDAO.getInstance();
     private static final ServiceDAO serviceDAO = ServiceDAO.getInstance();
     private static final TariffDAO tariffDAO = TariffDAO.getInstance();
+    public static final String USER_TO_EDIT_ID = "userToEditId";
+    public static final String ADMIN_USERS_JSP_SUCCESS = "admin_users.jsp#success";
+    public static final String REFERER = "referer";
+    public static final String SERVICE_TO_EDIT = "serviceToEdit";
+    public static final String TARIFF_TO_EDIT = "tariffToEdit";
+    public static final String USER_TO_EDIT = "userToEdit";
+    public static final String CONFIRMATION = "confirmation";
+    public static final String USER_ID_TO_DELETE = "userIdToDelete";
+    public static final String USER_LOGIN = "userLogin";
+    public static final String SERVICE_ID = "serviceId";
+    public static final String ADMIN_JSP_SUCCESS = "admin.jsp#success";
+    public static final String SERVICE_NAME_RU = "serviceNameRu";
+    public static final String TARIFF_ID = "tariffId";
+    public static final String TARIFF_NAME_RU = "tariffNameRu";
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
@@ -52,23 +66,23 @@ public class AdminRequestCommand implements Command {
         String removeDataFromSession = "Remove data";
 
         if (blockUser.equals(adminRequest)) {
-            int userID = Integer.parseInt(req.getParameter("userToEditId"));
+            int userID = Integer.parseInt(req.getParameter(USER_TO_EDIT_ID));
             User user = userDAO.getById(userID);
             user.setStatus(Status.BLOCKED);
             userDAO.update(user);
             sendEmailAboutBlocking(user);
             getUsersList(req);
-            return "admin_users.jsp#success";
+            return ADMIN_USERS_JSP_SUCCESS;
         }
 
         if (unblockUser.equals(adminRequest)) {
-            int userID = Integer.parseInt(req.getParameter("userToEditId"));
+            int userID = Integer.parseInt(req.getParameter(USER_TO_EDIT_ID));
             User user = userDAO.getById(userID);
             user.setStatus(Status.ACTIVE);
             userDAO.update(user);
             sendEmailAboutUnblocking(user);
             getUsersList(req);
-            return "admin_users.jsp#success";
+            return ADMIN_USERS_JSP_SUCCESS;
         }
 
         if (deleteUser.equals(adminRequest)) {
@@ -83,19 +97,19 @@ public class AdminRequestCommand implements Command {
 
         if (getListOfServicesAndTariff.equals(adminRequest)) {
             getPriceList(req);
-            return req.getHeader("referer");
+            return req.getHeader(REFERER);
         }
 
         if (getUsersList.equals(adminRequest)) {
             getUsersList(req);
-            return req.getHeader("referer");
+            return req.getHeader(REFERER);
         }
 
         if (removeDataFromSession.equals(adminRequest)) {
-            req.getSession().setAttribute("serviceToEdit", null);
-            req.getSession().setAttribute("tariffToEdit", null);
-            req.getSession().setAttribute("userToEdit", null);
-            return req.getHeader("referer");
+            req.getSession().setAttribute(SERVICE_TO_EDIT, null);
+            req.getSession().setAttribute(TARIFF_TO_EDIT, null);
+            req.getSession().setAttribute(USER_TO_EDIT, null);
+            return req.getHeader(REFERER);
         }
 
 
@@ -117,7 +131,7 @@ public class AdminRequestCommand implements Command {
             return deleteTariff(req);
         }
 
-        return req.getHeader("referer");
+        return req.getHeader(REFERER);
     }
 
     private static void sendEmailAboutBlocking(User user) {
@@ -171,52 +185,52 @@ public class AdminRequestCommand implements Command {
     }
 
     private String deleteUser(HttpServletRequest req) throws DBException {
-        String confirmation = req.getParameter("confirmation");
+        String confirmation = req.getParameter(CONFIRMATION);
         if (confirmation == null) {
-            req.getSession().setAttribute("userIdToDelete", req.getParameter("userToEditId"));
+            req.getSession().setAttribute(USER_ID_TO_DELETE, req.getParameter(USER_TO_EDIT_ID));
             return "admin_users.jsp#deleteSUserConfirmation";
         }
 
-        int idToDelete = Integer.parseInt((String) req.getSession().getAttribute("userIdToDelete"));
+        int idToDelete = Integer.parseInt((String) req.getSession().getAttribute(USER_ID_TO_DELETE));
         User user = userDAO.getById(idToDelete);
         if (user.getRole() == Role.ADMIN && userDAO.countAdmins() == 1) {
-            req.setAttribute("confirmation", null);
+            req.setAttribute(CONFIRMATION, null);
             return "admin_users.jsp#lastAdminDeleteError";
         }
 
-        if (req.getParameter("confirmation").equals("true")) {
-            idToDelete = Integer.parseInt((String) req.getSession().getAttribute("userIdToDelete"));
+        if (req.getParameter(CONFIRMATION).equals("true")) {
+            idToDelete = Integer.parseInt((String) req.getSession().getAttribute(USER_ID_TO_DELETE));
             userDAO.delete(userDAO.getById(idToDelete));
             getUsersList(req);
-            req.setAttribute("confirmation", null);
+            req.setAttribute(CONFIRMATION, null);
 
-            return "admin_users.jsp#success";
+            return ADMIN_USERS_JSP_SUCCESS;
         }
-        return req.getHeader("referer");
+        return req.getHeader(REFERER);
     }
 
     private String addOrEditUser(HttpServletRequest req) throws DBException {
 
-        if (req.getParameter("userToEditId") == null && req.getParameter("userLogin") != null) {
+        if (req.getParameter(USER_TO_EDIT_ID) == null && req.getParameter(USER_LOGIN) != null) {
             User user;
             user = getUser(req);
             userDAO.create(user);
             log.info("User added: {}", user.getLogin());
             getUsersList(req);
-            req.getSession().setAttribute("userToEdit", null);
-            return "admin_users.jsp#success";
+            req.getSession().setAttribute(USER_TO_EDIT, null);
+            return ADMIN_USERS_JSP_SUCCESS;
         }
 
-        if (req.getParameter("userToEditId") != null && req.getParameter("userLogin") == null) {
-            int idToEdit = Integer.parseInt(req.getParameter("userToEditId"));
+        if (req.getParameter(USER_TO_EDIT_ID) != null && req.getParameter(USER_LOGIN) == null) {
+            int idToEdit = Integer.parseInt(req.getParameter(USER_TO_EDIT_ID));
             User user = userDAO.getById(idToEdit);
-            req.setAttribute("userToEditId", idToEdit);
-            req.getSession().setAttribute("userToEdit", user);
+            req.setAttribute(USER_TO_EDIT_ID, idToEdit);
+            req.getSession().setAttribute(USER_TO_EDIT, user);
             return "admin_users.jsp#addOrEditUser";
         }
 
-        if (req.getParameter("userToEditId") != null && req.getParameter("userLogin") != null) {
-            int idToEdit = Integer.parseInt(req.getParameter("userToEditId"));
+        if (req.getParameter(USER_TO_EDIT_ID) != null && req.getParameter(USER_LOGIN) != null) {
+            int idToEdit = Integer.parseInt(req.getParameter(USER_TO_EDIT_ID));
             User user;
             user = getUser(req);
             user.setId(idToEdit);
@@ -227,8 +241,8 @@ public class AdminRequestCommand implements Command {
             user.setBalance(userDAO.getById(idToEdit).getBalance());
             userDAO.update(user);
             getUsersList(req);
-            req.getSession().setAttribute("userToEdit", null);
-            return "admin_users.jsp#success";
+            req.getSession().setAttribute(USER_TO_EDIT, null);
+            return ADMIN_USERS_JSP_SUCCESS;
         }
         return null;
     }
@@ -238,7 +252,7 @@ public class AdminRequestCommand implements Command {
         User user;
 
         user = new User.UserBuilder(
-                req.getParameter("userLogin"),
+                req.getParameter(USER_LOGIN),
                 securePassword(req.getParameter("userPassword")))
                 .setEmail(req.getParameter("userEmail"))
                 .setName(req.getParameter("userName"))
@@ -253,105 +267,105 @@ public class AdminRequestCommand implements Command {
     }
 
     private String deleteService(HttpServletRequest req) throws DBException {
-        String confirmation = req.getParameter("confirmation");
+        String confirmation = req.getParameter(CONFIRMATION);
         if (confirmation == null) {
-            req.getSession().setAttribute("serviceIdToDelete", req.getParameter("serviceId"));
+            req.getSession().setAttribute("serviceIdToDelete", req.getParameter(SERVICE_ID));
             return "admin.jsp#deleteServiceConfirmation";
         }
-        if (req.getParameter("confirmation").equals("true")) {
+        if (req.getParameter(CONFIRMATION).equals("true")) {
             int idToDelete = Integer.parseInt((String) req.getSession().getAttribute("serviceIdToDelete"));
             serviceDAO.delete(serviceDAO.getById(idToDelete));
             log.info("Service {} deleted", idToDelete);
             getPriceList(req);
-            req.setAttribute("confirmation", null);
+            req.setAttribute(CONFIRMATION, null);
 
-            return "admin.jsp#success";
+            return ADMIN_JSP_SUCCESS;
         }
-        return req.getHeader("referer");
+        return req.getHeader(REFERER);
     }
 
     private String addOrEditService(HttpServletRequest req) throws DBException {
-        if (req.getParameter("serviceId") == null && req.getParameter("serviceNameRu") != null) {
+        if (req.getParameter(SERVICE_ID) == null && req.getParameter(SERVICE_NAME_RU) != null) {
             Service service = new Service();
-            service.setTitleRu(req.getParameter("serviceNameRu"));
+            service.setTitleRu(req.getParameter(SERVICE_NAME_RU));
             service.setTitleEn(req.getParameter("serviceNameEn"));
             serviceDAO.create(service);
             log.info("Service {} added", service);
             getPriceList(req);
-            req.getSession().setAttribute("serviceToEdit", null);
-            return "admin.jsp#success";
+            req.getSession().setAttribute(SERVICE_TO_EDIT, null);
+            return ADMIN_JSP_SUCCESS;
         }
 
-        if (req.getParameter("serviceId") != null && req.getParameter("serviceNameRu") == null) {
-            int idToEdit = Integer.parseInt(req.getParameter("serviceId"));
+        if (req.getParameter(SERVICE_ID) != null && req.getParameter(SERVICE_NAME_RU) == null) {
+            int idToEdit = Integer.parseInt(req.getParameter(SERVICE_ID));
             Service service = serviceDAO.getById(idToEdit);
-            req.setAttribute("serviceId", idToEdit);
-            req.getSession().setAttribute("serviceToEdit", service);
+            req.setAttribute(SERVICE_ID, idToEdit);
+            req.getSession().setAttribute(SERVICE_TO_EDIT, service);
             return "admin.jsp#addOrEditService";
         }
 
-        if (req.getParameter("serviceId") != null && req.getParameter("serviceNameRu") != null) {
-            int idToEdit = Integer.parseInt(req.getParameter("serviceId"));
+        if (req.getParameter(SERVICE_ID) != null && req.getParameter(SERVICE_NAME_RU) != null) {
+            int idToEdit = Integer.parseInt(req.getParameter(SERVICE_ID));
             Service service = new Service();
             service.setId(idToEdit);
-            service.setTitleRu(req.getParameter("serviceNameRu"));
+            service.setTitleRu(req.getParameter(SERVICE_NAME_RU));
             service.setTitleEn(req.getParameter("serviceNameEn"));
             serviceDAO.update(service);
             log.info("Service {} updated", service);
             getPriceList(req);
-            req.getSession().setAttribute("serviceToEdit", null);
-            return "admin.jsp#success";
+            req.getSession().setAttribute(SERVICE_TO_EDIT, null);
+            return ADMIN_JSP_SUCCESS;
         }
         return null;
     }
 
     private String deleteTariff(HttpServletRequest req) throws DBException {
-        String confirmation = req.getParameter("confirmation");
+        String confirmation = req.getParameter(CONFIRMATION);
         if (confirmation == null) {
-            req.getSession().setAttribute("tariffIdToDelete", req.getParameter("tariffId"));
+            req.getSession().setAttribute("tariffIdToDelete", req.getParameter(TARIFF_ID));
             return "admin.jsp#deleteTariffConfirmation";
         }
-        if (req.getParameter("confirmation").equals("true")) {
+        if (req.getParameter(CONFIRMATION).equals("true")) {
             int idToDelete = Integer.parseInt((String) req.getSession().getAttribute("tariffIdToDelete"));
             tariffDAO.delete(tariffDAO.getById(idToDelete));
             log.info("Tariff with id {} deleted", idToDelete);
             getPriceList(req);
-            req.setAttribute("confirmation", null);
+            req.setAttribute(CONFIRMATION, null);
 
-            return "admin.jsp#success";
+            return ADMIN_JSP_SUCCESS;
         }
-        return req.getHeader("referer");
+        return req.getHeader(REFERER);
     }
 
     private String addOrEditTariff(HttpServletRequest req) throws DBException {
-        if (req.getParameter("tariffId") == null && req.getParameter("tariffNameRu") != null) {
+        if (req.getParameter(TARIFF_ID) == null && req.getParameter(TARIFF_NAME_RU) != null) {
             Tariff tariff = getTariff(req);
             tariffDAO.create(tariff);
             log.info("Tariff added: {}", tariff);
             getPriceList(req);
-            req.getSession().setAttribute("tariffToEdit", null);
-            return "admin.jsp#success";
+            req.getSession().setAttribute(TARIFF_TO_EDIT, null);
+            return ADMIN_JSP_SUCCESS;
         }
 
-        if (req.getParameter("tariffId") != null && req.getParameter("tariffNameRu") == null) {
-            int idToEdit = Integer.parseInt((req.getParameter("tariffId")));
+        if (req.getParameter(TARIFF_ID) != null && req.getParameter(TARIFF_NAME_RU) == null) {
+            int idToEdit = Integer.parseInt((req.getParameter(TARIFF_ID)));
             Tariff tariff = tariffDAO.getById(idToEdit);
             Service service = serviceDAO.getById(tariff.getServiceId());
-            req.setAttribute("tariffId", idToEdit);
+            req.setAttribute(TARIFF_ID, idToEdit);
             req.getSession().setAttribute("serviceListForTariff", service);
-            req.getSession().setAttribute("tariffToEdit", tariff);
+            req.getSession().setAttribute(TARIFF_TO_EDIT, tariff);
             return "admin.jsp#addOrEditTariff";
         }
 
-        if (req.getParameter("tariffId") != null && req.getParameter("tariffNameRu") != null) {
-            int idToEdit = Integer.parseInt(req.getParameter("tariffId"));
+        if (req.getParameter(TARIFF_ID) != null && req.getParameter(TARIFF_NAME_RU) != null) {
+            int idToEdit = Integer.parseInt(req.getParameter(TARIFF_ID));
             Tariff tariff = getTariff(req);
             tariff.setId(idToEdit);
             tariffDAO.update(tariff);
             log.info("Tariff updated: {}", tariff);
             getPriceList(req);
-            req.getSession().setAttribute("tariffToEdit", null);
-            return "admin.jsp#success";
+            req.getSession().setAttribute(TARIFF_TO_EDIT, null);
+            return ADMIN_JSP_SUCCESS;
         }
         return null;
     }
@@ -360,13 +374,13 @@ public class AdminRequestCommand implements Command {
     private Tariff getTariff(HttpServletRequest req) {
         Tariff tariff = new Tariff();
 
-        tariff.setNameRu(req.getParameter("tariffNameRu"));
+        tariff.setNameRu(req.getParameter(TARIFF_NAME_RU));
         tariff.setNameEn(req.getParameter("tariffNameEn"));
         tariff.setPrice(Double.parseDouble(req.getParameter("tariffPrice")));
-        if (req.getParameter("serviceId") == null) {
+        if (req.getParameter(SERVICE_ID) == null) {
             tariff.setServiceId(Integer.parseInt(req.getParameter("serviceIdForTariff")));
         } else {
-            tariff.setServiceId(Integer.parseInt(req.getParameter("serviceId")));
+            tariff.setServiceId(Integer.parseInt(req.getParameter(SERVICE_ID)));
         }
 
         tariff.setDescriptionRu(req.getParameter("tariffDescriptionRu"));

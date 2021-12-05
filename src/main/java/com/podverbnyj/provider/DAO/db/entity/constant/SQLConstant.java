@@ -5,6 +5,9 @@ public class SQLConstant {
     }
 
     public static class UserConstants {
+        private UserConstants() {
+        }
+
         public static final String FIND_ALL_USERS = "SELECT * FROM user";
         public static final String GET_USER_BY_ID = "SELECT * FROM user WHERE user_id=?";
         public static final String GET_USER_BY_LOGIN = "SELECT * FROM user WHERE login=?";
@@ -20,6 +23,9 @@ public class SQLConstant {
     }
 
     public static class ServiceConstants {
+        private ServiceConstants() {
+        }
+
         public static final String FIND_ALL_SERVICES = "SELECT * FROM service";
         public static final String GET_SERVICE_BY_ID = "SELECT * FROM service WHERE service_id=?";
         public static final String CREATE_SERVICE = "INSERT INTO service (title_ru, title_en) "
@@ -30,6 +36,8 @@ public class SQLConstant {
     }
 
     public static class TariffConstants {
+        private TariffConstants() {
+        }
         public static final String FIND_ALL_TARIFFS = "SELECT * FROM tariff";
         public static final String GET_TARIFF_BY_ID = "SELECT * FROM tariff WHERE tariff_id=?";
         public static final String CREATE_TARIFF = "INSERT INTO tariff (name_ru, name_en, "
@@ -40,6 +48,9 @@ public class SQLConstant {
     }
 
     public static class UserTariffConstants {
+        private UserTariffConstants() {
+        }
+
         public static final String GET_ALL_TARIFFS_BY_USER_ID = "SELECT * FROM user_tariffs WHERE user_id = ?";
         public static final String CREATE_USER_ID_TARIFF = "INSERT INTO user_tariffs (user_id, tariff_id) "
                 + "VALUES (?,?)";
@@ -49,6 +60,9 @@ public class SQLConstant {
     }
 
     public static class UserPaymentsConstants {
+        private UserPaymentsConstants() {
+        }
+
         public static final String FIND_ALL_PAYMENTS_BY_USER_ID = "SELECT * FROM user_payments WHERE user_id = ? " +
                 "ORDER BY date DESC";
         public static final String CREATE_PAYMENT = "INSERT INTO user_payments (user_id, date, "
@@ -59,6 +73,8 @@ public class SQLConstant {
     }
 
     public static class PasswordRecoveryConstants {
+        private PasswordRecoveryConstants() {
+        }
         public static final String CREATE_RECOVERY_CODE = "INSERT INTO password_recovery (user_id, code) "
                 + "VALUES (?,?)";
         public static final String GET_ENTITY_BY_USER_ID = "SELECT * FROM password_recovery WHERE user_id = ?";

@@ -3,22 +3,6 @@ N
 src/main/webapp/css/header.css,e\4\e418912e5a2d0e7c9a915e1f5ab75f9fed47c0fa
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
-O
-src/main/webapp/admin_users.jsp,a\d\adeba3f427a3c7235a9ce14df3bf2cbbbc85d17a
-I
-src/main/webapp/error.jsp,c\b\cba3df22242d379bdb72d00919d2e8d49101d1bf
-W
-'src/main/webapp/passwordValidation.jspf,a\f\afb283207417a3b29670c8a76c6af34f2323d087
-Q
-!src/main/webapp/sorter_table.jspf,9\d\9d81c15d9032266a83fcad141fa7d6fbbd3717ec
-L
-src/main/webapp/success.jspf,6\2\62c687d3fd6eb5d082e50d6ec75f5164acac2501
-I
-src/main/webapp/index.jsp,8\e\8e6d3b70c9f5b02570779b0441540d45eceb0ded
-K
-src/main/webapp/logout.jspf,8\d\8d8a342a5f6c8f2267f73dfec9bdcd5be0dfb91d
-I
-src/main/webapp/admin.jsp,1\6\16c841072742f24edfb63d62f4da7ea207d6a9cd
 T
 $src/main/webapp/META-INF/context.xml,c\b\cbfb0d2e9b2b9fbf9d54374577c894a38643c6d0
 i
@@ -37,7 +21,3 @@ I.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml,6\1\
 FinalProject.iml,2\5\25e25892487fe0ce5f60dc3fc215c870855e05ff
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-H
-src/main/webapp/user.jsp,4\5\45e0788112ba00ec6d625a52d48d534e10d1de3c
-Y
-)src/main/webapp/users_actual_tariffs.jspf,1\0\1072b66f24622943168cee61defb09ebdcbd0bbe

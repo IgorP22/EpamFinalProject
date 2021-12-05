@@ -58,11 +58,11 @@ public class VerifyRecaptcha {
             }
             in.close();
 
-
             //parse JSON response and return 'success' value
-            JsonReader jsonReader = Json.createReader(new StringReader(response.toString()));
-            JsonObject jsonObject = jsonReader.readObject();
-            jsonReader.close();
+            JsonObject jsonObject;
+            try (JsonReader jsonReader = Json.createReader(new StringReader(response.toString()))) {
+                jsonObject = jsonReader.readObject();
+            }
 
             return jsonObject.getBoolean("success");
         } catch (Exception ex) {

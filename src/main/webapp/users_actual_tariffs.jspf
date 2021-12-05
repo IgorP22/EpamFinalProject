@@ -2,14 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <form action="controller" method="post">
-    <table class="table table-bordered">
+    <table class="table table-bordered" >
+        <caption hidden>Services and tariffs table for user choice</caption>
         <thead>
         <tr class="table-active">
 
-            <th>Наименование пакета</th>
-            <th>Описание</th>
-            <th>Цена</th>
-            <th></th>
+            <th id = "field 01">Наименование пакета</th>
+            <th id = "field 02">Описание</th>
+            <th id = "field 03">Цена</th>
+            <th id = "field 04"></th>
         </tr>
         </thead>
         <tbody>

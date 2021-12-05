@@ -12,6 +12,7 @@ import java.util.List;
 
 public class TxtFile implements File {
     private static final Logger log = LogManager.getLogger(TxtFile.class);
+    public static final String DEVIDER = " ==> ";
 
     @SuppressWarnings("unchecked")
     @Override
@@ -20,45 +21,42 @@ public class TxtFile implements File {
         List<Tariff> tariffList = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
         String language = req.getSession().getAttribute("language").toString();
 
-        System.out.println(serviceList);
-        System.out.println(tariffList);
-        FileWriter file = new FileWriter(req.getServletContext().getRealPath("/") + "price_list.txt");
+        try (FileWriter file = new FileWriter(req.getServletContext().getRealPath("/") + "price_list.txt")) {
 
-        if (language.equals("ru")) {
-            file.write("Прайс-лист" + System.lineSeparator());
-        } else {
-            file.write("Our prices" + System.lineSeparator());
-        }
-        file.write("------------------------------" + System.lineSeparator());
-        if (language.equals("ru")) {
-            file.write("Наименование                Описание             Цена" + System.lineSeparator());
-        } else {
-            file.write("Name                Description             Price" + System.lineSeparator());
-        }
-
-        file.write("------------------------------" + System.lineSeparator());
-
-        for (Service service : serviceList) {
             if (language.equals("ru")) {
-                file.write(service.getTitleRu() + System.lineSeparator());
+                file.write("Прайс-лист" + System.lineSeparator());
             } else {
-                file.write(service.getTitleEn() + System.lineSeparator());
+                file.write("Our prices" + System.lineSeparator());
             }
-            for (Tariff tariff : tariffList) {
-                if (service.getId() == tariff.getServiceId()) {
-                    if (language.equals("ru")) {
-                        file.write("==> " + tariff.getNameRu() + " ==> " + tariff.getDescriptionRu() + " ==> "
-                                + tariff.getPrice() + System.lineSeparator());
-                    } else {
-                        file.write("==> " + tariff.getNameEn() + " ==> " + tariff.getDescriptionEn() + " ==> "
-                                + tariff.getPrice() + System.lineSeparator());
+            file.write("------------------------------" + System.lineSeparator());
+            if (language.equals("ru")) {
+                file.write("Наименование                Описание             Цена" + System.lineSeparator());
+            } else {
+                file.write("Name                Description             Price" + System.lineSeparator());
+            }
+
+            file.write("------------------------------" + System.lineSeparator());
+
+            for (Service service : serviceList) {
+                if (language.equals("ru")) {
+                    file.write(service.getTitleRu() + System.lineSeparator());
+                } else {
+                    file.write(service.getTitleEn() + System.lineSeparator());
+                }
+                for (Tariff tariff : tariffList) {
+                    if (service.getId() == tariff.getServiceId()) {
+                        if (language.equals("ru")) {
+                            file.write("==> " + tariff.getNameRu() + DEVIDER + tariff.getDescriptionRu() + DEVIDER
+                                    + tariff.getPrice() + System.lineSeparator());
+                        } else {
+                            file.write("==> " + tariff.getNameEn() + DEVIDER + tariff.getDescriptionEn() + DEVIDER
+                                    + tariff.getPrice() + System.lineSeparator());
+                        }
                     }
                 }
             }
         }
 
-        file.close();
-
-        log.info("Price list created: " + req.getServletContext().getRealPath("/") + "price_list.txt");
+        log.info("Price list created: {}}price_list.txt", req.getServletContext().getRealPath("/"));
     }
 }

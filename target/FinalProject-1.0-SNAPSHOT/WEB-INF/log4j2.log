@@ -1584,3 +1584,334 @@ Sending 'POST' request to URL : https://www.google.com/recaptcha/api/siteverify
 16:02:34.431 [http-nio-8080-exec-12] TRACE - command ==> com.podverbnyj.provider.logic.command.DownloadCommand@67fbd04e
 16:02:34.476 [http-nio-8080-exec-12] INFO  - Price list created: G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\price_list.pdf
 16:02:34.485 [http-nio-8080-exec-12] INFO  - File price_list.pdf sent to user
+22:03:54.944 [RMI TCP Connection(17)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+22:03:54.962 [RMI TCP Connection(17)-127.0.0.1] DEBUG - locales ==> {ru=Russian [Русский]}
+22:03:54.963 [Thread-27] INFO  - Time to start debiting funds: 1h 56min 5sec 38ms
+22:04:13.576 [http-nio-8080-exec-29] INFO  - Session 7702CE1A7A16C81F179F84EA5AEBD80D started
+22:04:13.895 [http-nio-8080-exec-29] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+22:04:13.895 [http-nio-8080-exec-29] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+22:04:13.896 [http-nio-8080-exec-29] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+22:04:13.896 [http-nio-8080-exec-29] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+22:04:13.900 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+22:04:13.900 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+22:04:13.901 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV chanels', price=130.0, serviceId=4, descriptionRu='150 каналов в HD качестве', descriptionEn='150 channels in HD quality'}
+22:04:13.901 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+22:04:13.901 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=26, nameRu='55 каналов', nameEn='55 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+22:04:13.902 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+22:04:13.902 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+22:04:13.902 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=250.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+22:04:13.903 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=30, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV', price=200.0, serviceId=4, descriptionRu='300 каналов в HD качестве', descriptionEn='300 channels in HD quality'}
+22:04:13.903 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=31, nameRu='Интернет пакет №3', nameEn='Internet packge #3', price=350.0, serviceId=34, descriptionRu='скорость 1Гб/сек', descriptionEn='speed 1 Gb'}
+22:04:13.903 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=33, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет оптимальный', descriptionEn='Optimal'}
+22:04:13.904 [http-nio-8080-exec-29] TRACE - Tariff created ==> Tariff{id=34, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Эконом', descriptionEn='Econom'}
+22:04:13.912 [http-nio-8080-exec-29] TRACE - User created ==> User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+22:04:13.912 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=356.6, language='ru', role='user', notification=true, status=ACTIVE}
+22:04:13.912 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user2', password='********', email='testfinalproject2@gmail.com', name='Ivan', surname='Ivanov', phone='+38(050)765-43-21', balance=201.65, language='en', role='user', notification=true, status=ACTIVE}
+22:04:13.913 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user7', password='********', email='testfinalproject2@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='+38(050)222-22-22', balance=105.0, language='en', role='user', notification=true, status=ACTIVE}
+22:04:13.913 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user5', password='********', email='testfinalproject2@gmail.com', name='Petr', surname='Petrovi', phone='', balance=66.67, language='en', role='user', notification=false, status=ACTIVE}
+22:04:13.913 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user8', password='********', email='testfinalproject2@gmail.com', name='Sergey', surname='Sergeev', phone='+38 050 555 55 55', balance=65.01, language='ru', role='user', notification=true, status=ACTIVE}
+22:04:13.914 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user9', password='********', email='testfinalproject2@gmail.com', name='Андрей', surname='Андреев', phone='+38(050)555-55-55', balance=10.0, language='en', role='user', notification=true, status=ACTIVE}
+22:04:13.914 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user3', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=84.99, language='en', role='user', notification=true, status=ACTIVE}
+22:04:13.914 [http-nio-8080-exec-29] TRACE - User created ==> User{login='привет1', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+22:04:13.914 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user555', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+22:04:13.915 [http-nio-8080-exec-29] TRACE - User created ==> User{login='привет11', password='********', email='igorp222222@gmail.com', name='', surname='', phone='+38(050)333-33-33', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+22:04:13.915 [http-nio-8080-exec-29] TRACE - User created ==> User{login='user6', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+22:04:23.649 [http-nio-8080-exec-24] TRACE - commandName ==> login
+22:04:23.667 [http-nio-8080-exec-24] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@199c3ebb
+22:04:23.893 [http-nio-8080-exec-24] INFO  - Sending 'POST' request to URL : https://www.google.com/recaptcha/api/siteverify
+22:04:23.893 [http-nio-8080-exec-24] INFO  - Response Code : 200
+22:04:23.934 [http-nio-8080-exec-24] DEBUG - Password secured
+22:04:23.934 [http-nio-8080-exec-24] TRACE - User login ==> admin
+22:04:23.954 [http-nio-8080-exec-24] TRACE - User created ==> User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+22:04:23.954 [http-nio-8080-exec-24] TRACE - Current user ==> User{login='admin', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+22:04:23.955 [http-nio-8080-exec-24] TRACE - User from DB ==>User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+22:04:23.955 [http-nio-8080-exec-24] TRACE - Logged successfully as admin
+22:04:23.955 [http-nio-8080-exec-24] TRACE - Login stored in session
+22:04:23.955 [http-nio-8080-exec-24] TRACE - User role ==> ADMIN
+22:05:27.405 [RMI TCP Connection(20)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+22:05:27.430 [RMI TCP Connection(20)-127.0.0.1] DEBUG - locales ==> {ru=Russian [Русский]}
+22:05:27.431 [Thread-33] INFO  - Time to start debiting funds: 1h 54min 32sec 571ms
+22:05:30.768 [http-nio-8080-exec-34] INFO  - Session FC2ECABF29CDFD613AA9F05F24367E4A started
+22:05:31.066 [http-nio-8080-exec-34] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+22:05:31.067 [http-nio-8080-exec-34] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+22:05:31.067 [http-nio-8080-exec-34] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+22:05:31.067 [http-nio-8080-exec-34] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+22:05:31.073 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+22:05:31.074 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+22:05:31.074 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV chanels', price=130.0, serviceId=4, descriptionRu='150 каналов в HD качестве', descriptionEn='150 channels in HD quality'}
+22:05:31.074 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+22:05:31.075 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=26, nameRu='55 каналов', nameEn='55 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+22:05:31.075 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+22:05:31.075 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+22:05:31.075 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=250.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+22:05:31.076 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=30, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV', price=200.0, serviceId=4, descriptionRu='300 каналов в HD качестве', descriptionEn='300 channels in HD quality'}
+22:05:31.076 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=31, nameRu='Интернет пакет №3', nameEn='Internet packge #3', price=350.0, serviceId=34, descriptionRu='скорость 1Гб/сек', descriptionEn='speed 1 Gb'}
+22:05:31.076 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=33, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет оптимальный', descriptionEn='Optimal'}
+22:05:31.077 [http-nio-8080-exec-34] TRACE - Tariff created ==> Tariff{id=34, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Эконом', descriptionEn='Econom'}
+22:05:31.084 [http-nio-8080-exec-34] TRACE - User created ==> User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+22:05:31.085 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=356.6, language='ru', role='user', notification=true, status=ACTIVE}
+22:05:31.085 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user2', password='********', email='testfinalproject2@gmail.com', name='Ivan', surname='Ivanov', phone='+38(050)765-43-21', balance=201.65, language='en', role='user', notification=true, status=ACTIVE}
+22:05:31.085 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user7', password='********', email='testfinalproject2@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='+38(050)222-22-22', balance=105.0, language='en', role='user', notification=true, status=ACTIVE}
+22:05:31.086 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user5', password='********', email='testfinalproject2@gmail.com', name='Petr', surname='Petrovi', phone='', balance=66.67, language='en', role='user', notification=false, status=ACTIVE}
+22:05:31.086 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user8', password='********', email='testfinalproject2@gmail.com', name='Sergey', surname='Sergeev', phone='+38 050 555 55 55', balance=65.01, language='ru', role='user', notification=true, status=ACTIVE}
+22:05:31.086 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user9', password='********', email='testfinalproject2@gmail.com', name='Андрей', surname='Андреев', phone='+38(050)555-55-55', balance=10.0, language='en', role='user', notification=true, status=ACTIVE}
+22:05:31.086 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user3', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=84.99, language='en', role='user', notification=true, status=ACTIVE}
+22:05:31.087 [http-nio-8080-exec-34] TRACE - User created ==> User{login='привет1', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+22:05:31.087 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user555', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+22:05:31.087 [http-nio-8080-exec-34] TRACE - User created ==> User{login='привет11', password='********', email='igorp222222@gmail.com', name='', surname='', phone='+38(050)333-33-33', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+22:05:31.088 [http-nio-8080-exec-34] TRACE - User created ==> User{login='user6', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+22:05:34.179 [http-nio-8080-exec-27] TRACE - commandName ==> download
+22:05:34.197 [http-nio-8080-exec-27] TRACE - command ==> com.podverbnyj.provider.logic.command.DownloadCommand@29931f91
+22:05:34.205 [http-nio-8080-exec-27] INFO  - Price list created: G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\price_list.txt
+22:05:34.206 [http-nio-8080-exec-27] INFO  - File price_list.txt sent to user
+22:05:47.604 [http-nio-8080-exec-36] TRACE - commandName ==> download
+22:05:47.604 [http-nio-8080-exec-36] TRACE - command ==> com.podverbnyj.provider.logic.command.DownloadCommand@29931f91
+22:05:47.606 [http-nio-8080-exec-36] INFO  - Price list created: G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\price_list.txt
+22:05:47.607 [http-nio-8080-exec-36] INFO  - File price_list.txt sent to user
+22:07:04.140 [RMI TCP Connection(24)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+22:07:04.150 [RMI TCP Connection(24)-127.0.0.1] DEBUG - locales ==> {ru=Russian [Русский]}
+22:07:04.151 [Thread-39] INFO  - Time to start debiting funds: 1h 52min 55sec 851ms
+22:07:07.989 [http-nio-8080-exec-39] INFO  - Session 1D20ADEB6C9C94929D7317A73F3BFCAD started
+22:07:08.272 [http-nio-8080-exec-39] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+22:07:08.272 [http-nio-8080-exec-39] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+22:07:08.272 [http-nio-8080-exec-39] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+22:07:08.273 [http-nio-8080-exec-39] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+22:07:08.278 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+22:07:08.278 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+22:07:08.278 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV chanels', price=130.0, serviceId=4, descriptionRu='150 каналов в HD качестве', descriptionEn='150 channels in HD quality'}
+22:07:08.278 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+22:07:08.278 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=26, nameRu='55 каналов', nameEn='55 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+22:07:08.279 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+22:07:08.279 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+22:07:08.279 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=250.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+22:07:08.279 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=30, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV', price=200.0, serviceId=4, descriptionRu='300 каналов в HD качестве', descriptionEn='300 channels in HD quality'}
+22:07:08.280 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=31, nameRu='Интернет пакет №3', nameEn='Internet packge #3', price=350.0, serviceId=34, descriptionRu='скорость 1Гб/сек', descriptionEn='speed 1 Gb'}
+22:07:08.280 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=33, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет оптимальный', descriptionEn='Optimal'}
+22:07:08.280 [http-nio-8080-exec-39] TRACE - Tariff created ==> Tariff{id=34, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Эконом', descriptionEn='Econom'}
+22:07:08.288 [http-nio-8080-exec-39] TRACE - User created ==> User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+22:07:08.288 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=356.6, language='ru', role='user', notification=true, status=ACTIVE}
+22:07:08.288 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user2', password='********', email='testfinalproject2@gmail.com', name='Ivan', surname='Ivanov', phone='+38(050)765-43-21', balance=201.65, language='en', role='user', notification=true, status=ACTIVE}
+22:07:08.289 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user7', password='********', email='testfinalproject2@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='+38(050)222-22-22', balance=105.0, language='en', role='user', notification=true, status=ACTIVE}
+22:07:08.289 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user5', password='********', email='testfinalproject2@gmail.com', name='Petr', surname='Petrovi', phone='', balance=66.67, language='en', role='user', notification=false, status=ACTIVE}
+22:07:08.289 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user8', password='********', email='testfinalproject2@gmail.com', name='Sergey', surname='Sergeev', phone='+38 050 555 55 55', balance=65.01, language='ru', role='user', notification=true, status=ACTIVE}
+22:07:08.289 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user9', password='********', email='testfinalproject2@gmail.com', name='Андрей', surname='Андреев', phone='+38(050)555-55-55', balance=10.0, language='en', role='user', notification=true, status=ACTIVE}
+22:07:08.290 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user3', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=84.99, language='en', role='user', notification=true, status=ACTIVE}
+22:07:08.290 [http-nio-8080-exec-39] TRACE - User created ==> User{login='привет1', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+22:07:08.290 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user555', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+22:07:08.290 [http-nio-8080-exec-39] TRACE - User created ==> User{login='привет11', password='********', email='igorp222222@gmail.com', name='', surname='', phone='+38(050)333-33-33', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+22:07:08.291 [http-nio-8080-exec-39] TRACE - User created ==> User{login='user6', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+22:07:52.792 [http-nio-8080-exec-46] TRACE - commandName ==> download
+22:07:52.812 [http-nio-8080-exec-46] TRACE - command ==> com.podverbnyj.provider.logic.command.DownloadCommand@5f18f986
+22:07:53.142 [http-nio-8080-exec-46] INFO  - Price list created: G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\price_list.pdf
+22:07:53.153 [http-nio-8080-exec-46] INFO  - File price_list.pdf sent to user
+00:00:00.010 [Thread-39] INFO  - Debiting funds from users accounts started
+00:00:00.010 [Thread-39] TRACE - User created ==> User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+00:00:00.010 [Thread-39] TRACE - User created ==> User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=356.6, language='ru', role='user', notification=true, status=ACTIVE}
+00:00:00.010 [Thread-39] TRACE - User created ==> User{login='user2', password='********', email='testfinalproject2@gmail.com', name='Ivan', surname='Ivanov', phone='+38(050)765-43-21', balance=201.65, language='en', role='user', notification=true, status=ACTIVE}
+00:00:00.010 [Thread-39] TRACE - User created ==> User{login='user7', password='********', email='testfinalproject2@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='+38(050)222-22-22', balance=105.0, language='en', role='user', notification=true, status=ACTIVE}
+00:00:00.010 [Thread-39] TRACE - User created ==> User{login='user5', password='********', email='testfinalproject2@gmail.com', name='Petr', surname='Petrovi', phone='', balance=66.67, language='en', role='user', notification=false, status=ACTIVE}
+00:00:00.010 [Thread-39] TRACE - User created ==> User{login='user8', password='********', email='testfinalproject2@gmail.com', name='Sergey', surname='Sergeev', phone='+38 050 555 55 55', balance=65.01, language='ru', role='user', notification=true, status=ACTIVE}
+00:00:00.010 [Thread-39] TRACE - User created ==> User{login='user9', password='********', email='testfinalproject2@gmail.com', name='Андрей', surname='Андреев', phone='+38(050)555-55-55', balance=10.0, language='en', role='user', notification=true, status=ACTIVE}
+00:00:00.026 [Thread-39] TRACE - User created ==> User{login='user3', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=84.99, language='en', role='user', notification=true, status=ACTIVE}
+00:00:00.026 [Thread-39] TRACE - User created ==> User{login='привет1', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+00:00:00.026 [Thread-39] TRACE - User created ==> User{login='user555', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+00:00:00.027 [Thread-39] TRACE - User created ==> User{login='привет11', password='********', email='igorp222222@gmail.com', name='', surname='', phone='+38(050)333-33-33', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+00:00:00.028 [Thread-39] TRACE - User created ==> User{login='user6', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+00:00:02.104 [Thread-39] INFO  - Email sent to address: testfinalproject2@gmail.com
+00:00:02.104 [Thread-39] INFO  - Email about blocking account sent to useruser9. Reason: insufficient funds.
+00:00:02.104 [Thread-39] INFO  - User user9 blocked.
+00:00:02.135 [Thread-39] INFO  - Users funds debited successfully 
+[User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=334.93333333333334, language='ru', role='user', notification=true, status=ACTIVE}, User{login='user2', password='********', email='testfinalproject2@gmail.com', name='Ivan', surname='Ivanov', phone='+38(050)765-43-21', balance=189.98333333333335, language='en', role='user', notification=true, status=ACTIVE}, User{login='user7', password='********', email='testfinalproject2@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='+38(050)222-22-22', balance=70.0, language='en', role='user', notification=true, status=ACTIVE}, User{login='user5', password='********', email='testfinalproject2@gmail.com', name='Petr', surname='Petrovi', phone='', balance=58.336666666666666, language='en', role='user', notification=false, status=ACTIVE}, User{login='user8', password='********', email='testfinalproject2@gmail.com', name='Sergey', surname='Sergeev', phone='+38 050 555 55 55', balance=41.67666666666668, language='ru', role='user', notification=true, status=ACTIVE}, User{login='user9', password='********', email='testfinalproject2@gmail.com', name='Андрей', surname='Андреев', phone='+38(050)555-55-55', balance=10.0, language='en', role='user', notification=true, status=BLOCKED}, User{login='user3', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=73.32333333333332, language='en', role='user', notification=true, status=ACTIVE}, User{login='привет11', password='********', email='igorp222222@gmail.com', name='', surname='', phone='+38(050)333-33-33', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}, User{login='user6', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}]
+[UserPayments{userId=2, date='null', sum=-21.666666666666668}, UserPayments{userId=4, date='null', sum=-11.666666666666666}, UserPayments{userId=23, date='null', sum=-35.0}, UserPayments{userId=41, date='null', sum=-8.333333333333334}, UserPayments{userId=44, date='null', sum=-23.333333333333332}, UserPayments{userId=48, date='null', sum=-11.666666666666666}]
+00:00:02.135 [Thread-39] INFO  - Time to start debiting funds: 23h 59min 57sec 865ms
+01:05:33.621 [RMI TCP Connection(6)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:05:33.632 [RMI TCP Connection(6)-127.0.0.1] DEBUG - locales ==> {ru=Russian [Русский]}
+01:05:33.633 [Thread-14] INFO  - Time to start debiting funds: 22h 54min 26sec 370ms
+01:05:37.230 [http-nio-8080-exec-7] INFO  - Session 45DD78EEEB79AC0D484CE7530635C646 started
+01:05:37.568 [http-nio-8080-exec-7] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+01:05:37.569 [http-nio-8080-exec-7] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+01:05:37.569 [http-nio-8080-exec-7] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+01:05:37.569 [http-nio-8080-exec-7] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+01:05:37.574 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+01:05:37.574 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+01:05:37.575 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV chanels', price=130.0, serviceId=4, descriptionRu='150 каналов в HD качестве', descriptionEn='150 channels in HD quality'}
+01:05:37.575 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+01:05:37.575 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=26, nameRu='55 каналов', nameEn='55 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+01:05:37.576 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+01:05:37.576 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+01:05:37.577 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=250.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+01:05:37.577 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=30, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV', price=200.0, serviceId=4, descriptionRu='300 каналов в HD качестве', descriptionEn='300 channels in HD quality'}
+01:05:37.577 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=31, nameRu='Интернет пакет №3', nameEn='Internet packge #3', price=350.0, serviceId=34, descriptionRu='скорость 1Гб/сек', descriptionEn='speed 1 Gb'}
+01:05:37.578 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=33, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет оптимальный', descriptionEn='Optimal'}
+01:05:37.578 [http-nio-8080-exec-7] TRACE - Tariff created ==> Tariff{id=34, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Эконом', descriptionEn='Econom'}
+01:05:37.586 [http-nio-8080-exec-7] TRACE - User created ==> User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+01:05:37.587 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=334.93, language='ru', role='user', notification=true, status=ACTIVE}
+01:05:37.587 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user2', password='********', email='testfinalproject2@gmail.com', name='Ivan', surname='Ivanov', phone='+38(050)765-43-21', balance=189.98, language='en', role='user', notification=true, status=ACTIVE}
+01:05:37.587 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user7', password='********', email='testfinalproject2@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='+38(050)222-22-22', balance=70.0, language='en', role='user', notification=true, status=ACTIVE}
+01:05:37.588 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user5', password='********', email='testfinalproject2@gmail.com', name='Petr', surname='Petrovi', phone='', balance=58.34, language='en', role='user', notification=false, status=ACTIVE}
+01:05:37.588 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user8', password='********', email='testfinalproject2@gmail.com', name='Sergey', surname='Sergeev', phone='+38 050 555 55 55', balance=41.68, language='ru', role='user', notification=true, status=ACTIVE}
+01:05:37.588 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user9', password='********', email='testfinalproject2@gmail.com', name='Андрей', surname='Андреев', phone='+38(050)555-55-55', balance=10.0, language='en', role='user', notification=true, status=BLOCKED}
+01:05:37.589 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user3', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=73.32, language='en', role='user', notification=true, status=ACTIVE}
+01:05:37.589 [http-nio-8080-exec-7] TRACE - User created ==> User{login='привет1', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+01:05:37.589 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user555', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+01:05:37.589 [http-nio-8080-exec-7] TRACE - User created ==> User{login='привет11', password='********', email='igorp222222@gmail.com', name='', surname='', phone='+38(050)333-33-33', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+01:05:37.590 [http-nio-8080-exec-7] TRACE - User created ==> User{login='user6', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+01:05:42.442 [http-nio-8080-exec-6] TRACE - commandName ==> sort
+01:05:42.461 [http-nio-8080-exec-6] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@d81386
+01:05:42.462 [http-nio-8080-exec-6] INFO  - List of tariffs sorted by price.
+01:05:43.277 [http-nio-8080-exec-10] TRACE - commandName ==> sort
+01:05:43.278 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@d81386
+01:05:43.280 [http-nio-8080-exec-10] INFO  - List of tariffs sorted by name.
+01:05:43.899 [http-nio-8080-exec-3] TRACE - commandName ==> sort
+01:05:43.899 [http-nio-8080-exec-3] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@d81386
+01:05:43.900 [http-nio-8080-exec-3] INFO  - List of services sorted.
+01:05:45.443 [http-nio-8080-exec-10] TRACE - commandName ==> sort
+01:05:45.444 [http-nio-8080-exec-10] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@d81386
+01:05:45.444 [http-nio-8080-exec-10] INFO  - List of services sorted.
+01:05:55.700 [http-nio-8080-exec-12] TRACE - commandName ==> login
+01:05:55.700 [http-nio-8080-exec-12] TRACE - command ==> com.podverbnyj.provider.logic.command.LoginCommand@6349ce54
+01:05:55.800 [http-nio-8080-exec-12] INFO  - Sending 'POST' request to URL : https://www.google.com/recaptcha/api/siteverify
+01:05:55.800 [http-nio-8080-exec-12] INFO  - Response Code : 200
+01:05:55.833 [http-nio-8080-exec-12] DEBUG - Password secured
+01:05:55.834 [http-nio-8080-exec-12] TRACE - User login ==> user1
+01:05:55.849 [http-nio-8080-exec-12] TRACE - User created ==> User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=334.93, language='ru', role='user', notification=true, status=ACTIVE}
+01:05:55.849 [http-nio-8080-exec-12] TRACE - Current user ==> User{login='user1', password='********', email='null', name='null', surname='null', phone='null', balance=0.0, language='ru', role='user', notification=false, status=BLOCKED}
+01:05:55.849 [http-nio-8080-exec-12] TRACE - User from DB ==>User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=334.93, language='ru', role='user', notification=true, status=ACTIVE}
+01:05:55.849 [http-nio-8080-exec-12] TRACE - Logged successfully as user1
+01:05:55.849 [http-nio-8080-exec-12] TRACE - Login stored in session
+01:05:55.849 [http-nio-8080-exec-12] TRACE - User role ==> USER
+01:05:55.850 [http-nio-8080-exec-12] INFO  - Totac price for User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=334.93, language='ru', role='user', notification=true, status=ACTIVE} = 650.0
+01:05:57.877 [http-nio-8080-exec-11] TRACE - commandName ==> userRequest
+01:05:57.877 [http-nio-8080-exec-11] TRACE - command ==> com.podverbnyj.provider.logic.command.UserRequestCommand@4a582168
+01:05:57.884 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-12-06 00:00:02.0', sum=-21.67}
+01:05:57.885 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-12-05 00:08:20.0', sum=-20.0}
+01:05:57.885 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-12-04 00:08:20.0', sum=-20.0}
+01:05:57.885 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-12-03 00:08:22.0', sum=-20.0}
+01:05:57.885 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-12-02 00:08:20.0', sum=-20.0}
+01:05:57.886 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-29 06:02:11.0', sum=5.0}
+01:05:57.886 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-29 00:08:23.0', sum=-20.0}
+01:05:57.887 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 03:52:29.0', sum=50.0}
+01:05:57.887 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 03:17:10.0', sum=150.0}
+01:05:57.887 [http-nio-8080-exec-11] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 03:17:05.0', sum=250.0}
+01:09:04.519 [http-nio-8080-exec-14] TRACE - command ==> userRequest
+01:09:04.524 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:16.0', sum=-11.67}
+01:09:04.525 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:16.0', sum=-11.67}
+01:09:04.525 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:16.0', sum=-11.67}
+01:09:04.526 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:16.0', sum=-11.67}
+01:09:04.526 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:15.0', sum=-11.67}
+01:09:04.526 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:15.0', sum=-11.67}
+01:09:04.527 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:15.0', sum=-11.67}
+01:09:04.527 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:15.0', sum=-11.67}
+01:09:04.527 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:14.0', sum=-11.67}
+01:09:04.528 [http-nio-8080-exec-14] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:14.0', sum=-11.67}
+01:09:05.123 [http-nio-8080-exec-13] TRACE - command ==> userRequest
+01:09:05.127 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:14.0', sum=-11.67}
+01:09:05.127 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:14.0', sum=-11.67}
+01:09:05.127 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:14.0', sum=-11.67}
+01:09:05.127 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:05.128 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:05.128 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:05.128 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:05.128 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:05.128 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-27 00:18:27.0', sum=25.0}
+01:09:05.129 [http-nio-8080-exec-13] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-26 00:08:20.0', sum=-11.67}
+01:09:05.615 [http-nio-8080-exec-12] TRACE - command ==> userRequest
+01:09:05.619 [http-nio-8080-exec-12] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-25 00:08:20.0', sum=-11.67}
+01:09:05.619 [http-nio-8080-exec-12] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-24 04:08:02.0', sum=6.67}
+01:09:05.619 [http-nio-8080-exec-12] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-24 00:01:40.0', sum=11.67}
+01:09:05.619 [http-nio-8080-exec-12] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-23 20:34:29.0', sum=50.0}
+01:09:05.620 [http-nio-8080-exec-12] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-23 20:30:08.0', sum=20.0}
+01:09:05.620 [http-nio-8080-exec-12] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-23 20:08:48.0', sum=125.0}
+01:09:05.620 [http-nio-8080-exec-12] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-23 19:57:39.0', sum=20.0}
+01:09:06.685 [http-nio-8080-exec-20] TRACE - command ==> userRequest
+01:09:06.688 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:14.0', sum=-11.67}
+01:09:06.688 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:14.0', sum=-11.67}
+01:09:06.688 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:14.0', sum=-11.67}
+01:09:06.689 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:06.689 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:06.689 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:06.690 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:06.690 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-28 02:13:13.0', sum=-11.67}
+01:09:06.690 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-27 00:18:27.0', sum=25.0}
+01:09:06.691 [http-nio-8080-exec-20] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-26 00:08:20.0', sum=-11.67}
+01:09:08.108 [http-nio-8080-exec-17] TRACE - command ==> userRequest
+01:09:08.111 [http-nio-8080-exec-17] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-25 00:08:20.0', sum=-11.67}
+01:09:08.111 [http-nio-8080-exec-17] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-24 04:08:02.0', sum=6.67}
+01:09:08.111 [http-nio-8080-exec-17] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-24 00:01:40.0', sum=11.67}
+01:09:08.111 [http-nio-8080-exec-17] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-23 20:34:29.0', sum=50.0}
+01:09:08.112 [http-nio-8080-exec-17] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-23 20:30:08.0', sum=20.0}
+01:09:08.112 [http-nio-8080-exec-17] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-23 20:08:48.0', sum=125.0}
+01:09:08.112 [http-nio-8080-exec-17] TRACE - User payment created ==> UserPayments{userId=2, date='2021-11-23 19:57:39.0', sum=20.0}
+01:09:15.282 [http-nio-8080-exec-18] TRACE - commandName ==> logout
+01:09:15.282 [http-nio-8080-exec-18] TRACE - command ==> com.podverbnyj.provider.logic.command.LogoutCommand@338c095e
+01:09:15.283 [http-nio-8080-exec-18] INFO  - Session invalidated
+01:09:15.292 [http-nio-8080-exec-19] INFO  - Session 476A5335255AAD8B85D0D198D160D521 started
+01:09:15.294 [http-nio-8080-exec-19] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+01:09:15.294 [http-nio-8080-exec-19] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+01:09:15.294 [http-nio-8080-exec-19] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+01:09:15.294 [http-nio-8080-exec-19] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+01:09:15.295 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+01:09:15.295 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+01:09:15.296 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV chanels', price=130.0, serviceId=4, descriptionRu='150 каналов в HD качестве', descriptionEn='150 channels in HD quality'}
+01:09:15.296 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+01:09:15.297 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=26, nameRu='55 каналов', nameEn='55 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+01:09:15.297 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+01:09:15.297 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+01:09:15.297 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=250.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+01:09:15.298 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=30, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV', price=200.0, serviceId=4, descriptionRu='300 каналов в HD качестве', descriptionEn='300 channels in HD quality'}
+01:09:15.298 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=31, nameRu='Интернет пакет №3', nameEn='Internet packge #3', price=350.0, serviceId=34, descriptionRu='скорость 1Гб/сек', descriptionEn='speed 1 Gb'}
+01:09:15.298 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=33, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет оптимальный', descriptionEn='Optimal'}
+01:09:15.298 [http-nio-8080-exec-19] TRACE - Tariff created ==> Tariff{id=34, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Эконом', descriptionEn='Econom'}
+01:09:15.300 [http-nio-8080-exec-19] TRACE - User created ==> User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+01:09:15.301 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=334.93, language='ru', role='user', notification=true, status=ACTIVE}
+01:09:15.301 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user2', password='********', email='testfinalproject2@gmail.com', name='Ivan', surname='Ivanov', phone='+38(050)765-43-21', balance=189.98, language='en', role='user', notification=true, status=ACTIVE}
+01:09:15.302 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user7', password='********', email='testfinalproject2@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='+38(050)222-22-22', balance=70.0, language='en', role='user', notification=true, status=ACTIVE}
+01:09:15.302 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user5', password='********', email='testfinalproject2@gmail.com', name='Petr', surname='Petrovi', phone='', balance=58.34, language='en', role='user', notification=false, status=ACTIVE}
+01:09:15.302 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user8', password='********', email='testfinalproject2@gmail.com', name='Sergey', surname='Sergeev', phone='+38 050 555 55 55', balance=41.68, language='ru', role='user', notification=true, status=ACTIVE}
+01:09:15.303 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user9', password='********', email='testfinalproject2@gmail.com', name='Андрей', surname='Андреев', phone='+38(050)555-55-55', balance=10.0, language='en', role='user', notification=true, status=BLOCKED}
+01:09:15.303 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user3', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=73.32, language='en', role='user', notification=true, status=ACTIVE}
+01:09:15.303 [http-nio-8080-exec-19] TRACE - User created ==> User{login='привет1', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+01:09:15.303 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user555', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+01:09:15.304 [http-nio-8080-exec-19] TRACE - User created ==> User{login='привет11', password='********', email='igorp222222@gmail.com', name='', surname='', phone='+38(050)333-33-33', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+01:09:15.304 [http-nio-8080-exec-19] TRACE - User created ==> User{login='user6', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+01:13:51.594 [RMI TCP Connection(11)-127.0.0.1] DEBUG - path = G:\EpamJava\FinalProject\target\FinalProject-1.0-SNAPSHOT\WEB-INF\log4j2.log
+01:13:51.604 [RMI TCP Connection(11)-127.0.0.1] DEBUG - locales ==> {ru=Russian [Русский]}
+01:13:51.605 [Thread-20] INFO  - Time to start debiting funds: 22h 46min 8sec 397ms
+01:14:03.543 [http-nio-8080-exec-18] INFO  - Session C73C8B83389472AF463B2CF3B3AFCDF2 started
+01:14:03.911 [http-nio-8080-exec-18] TRACE - Service created ==> Service{id=1, titleRu='Мобильная связь', titleEn='Phone'}
+01:14:03.911 [http-nio-8080-exec-18] TRACE - Service created ==> Service{id=4, titleRu='IP-TV', titleEn='IP-TV'}
+01:14:03.912 [http-nio-8080-exec-18] TRACE - Service created ==> Service{id=34, titleRu='Интернет', titleEn='Internet'}
+01:14:03.912 [http-nio-8080-exec-18] TRACE - Service created ==> Service{id=39, titleRu='Кабельное телевидение', titleEn='Cable TV'}
+01:14:03.917 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=1, nameRu='Телефон 3', nameEn='Phone 3', price=350.0, serviceId=1, descriptionRu='Пакет связь номер 3, состав пакета и его описание, довольно длинное описание для проверки', descriptionEn='Communication package number 3, the composition of the package and its description, a rather long description for verification'}
+01:14:03.917 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=8, nameRu='IPTV 1', nameEn='IPTV 1', price=250.0, serviceId=4, descriptionRu='IP-TV 500 каналов и приставка в комплекте', descriptionEn='IP-TV 500 channels and set-top box included'}
+01:14:03.918 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=22, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV chanels', price=130.0, serviceId=4, descriptionRu='150 каналов в HD качестве', descriptionEn='150 channels in HD quality'}
+01:14:03.918 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=25, nameRu='Интернет пакет №1', nameEn='Internet packge #1', price=250.0, serviceId=34, descriptionRu='скорость 100мб/сек', descriptionEn='speed 100 mb'}
+01:14:03.918 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=26, nameRu='55 каналов', nameEn='55 chanels', price=70.0, serviceId=39, descriptionRu='Эконом', descriptionEn='Econom'}
+01:14:03.918 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=27, nameRu='100 каналов', nameEn='100 chanels', price=100.0, serviceId=39, descriptionRu='Стандарт', descriptionEn='Standart'}
+01:14:03.919 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=28, nameRu='150 каналов', nameEn='150 chanels', price=150.0, serviceId=39, descriptionRu='Оптимальный', descriptionEn='Optimal'}
+01:14:03.919 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=29, nameRu='Интернет пакет №2', nameEn='Internet packge #2', price=250.0, serviceId=34, descriptionRu='скорость 500мб/сек', descriptionEn='speed 500 mb'}
+01:14:03.919 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=30, nameRu='Разные IP-TV каналы', nameEn='Different IP-TV', price=200.0, serviceId=4, descriptionRu='300 каналов в HD качестве', descriptionEn='300 channels in HD quality'}
+01:14:03.920 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=31, nameRu='Интернет пакет №3', nameEn='Internet packge #3', price=350.0, serviceId=34, descriptionRu='скорость 1Гб/сек', descriptionEn='speed 1 Gb'}
+01:14:03.920 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=33, nameRu='Телефон 2', nameEn='Phone 2', price=100.0, serviceId=1, descriptionRu='Пакет оптимальный', descriptionEn='Optimal'}
+01:14:03.921 [http-nio-8080-exec-18] TRACE - Tariff created ==> Tariff{id=34, nameRu='Телефон 1', nameEn='Phone 1', price=50.0, serviceId=1, descriptionRu='Эконом', descriptionEn='Econom'}
+01:14:03.928 [http-nio-8080-exec-18] TRACE - User created ==> User{login='admin', password='********', email='testfinalproject2@gmail.com', name='Сергей', surname='Сергеевич', phone='+38(050)333-33-33', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+01:14:03.928 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user1', password='********', email='testfinalproject2@gmail.com', name='Andrey', surname='Андреевич', phone='+38(050)555-44-44', balance=334.93, language='ru', role='user', notification=true, status=ACTIVE}
+01:14:03.928 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user2', password='********', email='testfinalproject2@gmail.com', name='Ivan', surname='Ivanov', phone='+38(050)765-43-21', balance=189.98, language='en', role='user', notification=true, status=ACTIVE}
+01:14:03.929 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user7', password='********', email='testfinalproject2@gmail.com', name='Igor', surname='Плдодвоаыдао', phone='+38(050)222-22-22', balance=70.0, language='en', role='user', notification=true, status=ACTIVE}
+01:14:03.929 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user5', password='********', email='testfinalproject2@gmail.com', name='Petr', surname='Petrovi', phone='', balance=58.34, language='en', role='user', notification=false, status=ACTIVE}
+01:14:03.929 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user8', password='********', email='testfinalproject2@gmail.com', name='Sergey', surname='Sergeev', phone='+38 050 555 55 55', balance=41.68, language='ru', role='user', notification=true, status=ACTIVE}
+01:14:03.930 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user9', password='********', email='testfinalproject2@gmail.com', name='Андрей', surname='Андреев', phone='+38(050)555-55-55', balance=10.0, language='en', role='user', notification=true, status=BLOCKED}
+01:14:03.930 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user3', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=73.32, language='en', role='user', notification=true, status=ACTIVE}
+01:14:03.930 [http-nio-8080-exec-18] TRACE - User created ==> User{login='привет1', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='admin', notification=false, status=ACTIVE}
+01:14:03.930 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user555', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='en', role='admin', notification=true, status=ACTIVE}
+01:14:03.931 [http-nio-8080-exec-18] TRACE - User created ==> User{login='привет11', password='********', email='igorp222222@gmail.com', name='', surname='', phone='+38(050)333-33-33', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+01:14:03.931 [http-nio-8080-exec-18] TRACE - User created ==> User{login='user6', password='********', email='testfinalproject2@gmail.com', name='', surname='', phone='', balance=0.0, language='ru', role='user', notification=false, status=ACTIVE}
+01:14:12.934 [http-nio-8080-exec-13] TRACE - commandName ==> sort
+01:14:12.954 [http-nio-8080-exec-13] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@34d77577
+01:14:12.955 [http-nio-8080-exec-13] INFO  - List of tariffs sorted by price.
+01:14:15.443 [http-nio-8080-exec-17] TRACE - commandName ==> sort
+01:14:15.443 [http-nio-8080-exec-17] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@34d77577
+01:14:15.444 [http-nio-8080-exec-17] INFO  - List of tariffs sorted by name.
+01:14:16.782 [http-nio-8080-exec-23] TRACE - commandName ==> sort
+01:14:16.782 [http-nio-8080-exec-23] TRACE - command ==> com.podverbnyj.provider.logic.command.SortCommand@34d77577
+01:14:16.783 [http-nio-8080-exec-23] INFO  - List of services sorted.

@@ -11,6 +11,8 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.security.SecureRandom;
+
 import static com.podverbnyj.provider.utils.EmailSender.emailSender;
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
@@ -19,18 +21,20 @@ public class ForgotPasswordCommand implements Command {
     private static final Logger log = LogManager.getLogger(ForgotPasswordCommand.class);
     private static final UserDAO userDAO = UserDAO.getInstance();
     private static final PasswordRecoveryDAO passwordRecoveryDAO = PasswordRecoveryDAO.getInstance();
+    public static final String USER_TO_RECOVER = "userToRecover";
+
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
 
-        if ((req.getSession().getAttribute("userToRecover") != null) &&
+        if ((req.getSession().getAttribute(USER_TO_RECOVER) != null) &&
                 (req.getParameter("userNewPassword") != null)) {
             PasswordRecovery ps =
-                    (PasswordRecovery) req.getSession().getAttribute("userToRecover");
+                    (PasswordRecovery) req.getSession().getAttribute(USER_TO_RECOVER);
             User user = userDAO.getById(ps.getUserId());
             user.setPassword(securePassword(req.getParameter("userNewPassword")));
             userDAO.update(user);
-            req.getSession().setAttribute("userToRecover", null);
+            req.getSession().setAttribute(USER_TO_RECOVER, null);
             return "index.jsp#success";
         }
 
@@ -44,8 +48,9 @@ public class ForgotPasswordCommand implements Command {
             return "index.jsp#noSuchRecordInDb";
         }
 
+        SecureRandom random = new SecureRandom();
         String linkToRestore = String.valueOf(System.currentTimeMillis() +
-                ((int) (Math.random() * 100000)));
+                (random.nextInt(100000)));
         linkToRestore = securePassword(linkToRestore);
         PasswordRecovery pr = new PasswordRecovery();
         pr.setUserId(userDAO.getByLogin(userLoginToRestore).getId());

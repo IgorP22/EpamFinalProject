@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.io.File;
 
-import static com.podverbnyj.provider.utils.create_file.CreateTariffsFile.GetFile;
+import static com.podverbnyj.provider.utils.create_file.CreateTariffsFile.getFile;
 
 
 public class DownloadCommand implements Command {
@@ -22,7 +22,7 @@ public class DownloadCommand implements Command {
 
         String fileType = req.getParameter("file");
         try {
-            GetFile(req);
+            getFile(req);
         } catch (IOException | DocumentException e) {
 
             log.error("File price_list.{}} can't be created to user", fileType);
@@ -36,13 +36,13 @@ public class DownloadCommand implements Command {
         resp.setHeader("Content-Disposition", String.format("attachment; filename=\"%s\"", "price_list."+fileType));
 
         OutputStream out = resp.getOutputStream();
-        FileInputStream in = new FileInputStream(file);
-        byte[] buffer = new byte[4096];
-        int length;
-        while ((length = in.read(buffer)) > 0){
-            out.write(buffer, 0, length);
+        try (FileInputStream in = new FileInputStream(file)) {
+            byte[] buffer = new byte[4096];
+            int length;
+            while ((length = in.read(buffer)) > 0) {
+                out.write(buffer, 0, length);
+            }
         }
-        in.close();
         out.flush();
         log.info("File price_list.{} sent to user", fileType);
         return "referer";

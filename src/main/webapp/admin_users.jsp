@@ -115,7 +115,7 @@
 
 
 <table class="table table-striped table_sort" id="usersTable">
-    <caption>Table of users</caption>
+    <caption hidden>Table of users</caption>
     <thead>
     <tr class="table-active">
         <th id = "field 01">Логин</th>
