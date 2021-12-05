@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static com.podverbnyj.provider.utils.EmailSender.emailSender;
-import static com.podverbnyj.provider.utils.createFile.CreateTariffsFile.GetFile;
+import static com.podverbnyj.provider.utils.create_file.CreateTariffsFile.GetFile;
 
 public class EmailCommand implements Command {
 

@@ -22,9 +22,6 @@ public class ForgotPasswordCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
-        System.out.println(req.getSession().getAttribute("userToRecover"));
-        System.out.println(req.getParameter("userNewPassword"));
-
 
         if ((req.getSession().getAttribute("userToRecover") != null) &&
                 (req.getParameter("userNewPassword") != null)) {
@@ -37,14 +34,9 @@ public class ForgotPasswordCommand implements Command {
             return "index.jsp#success";
         }
 
-
         String userLoginToRestore = req.getParameter("userLoginToRestore");
         String emailToRestore = req.getParameter("emailToRestore");
-        System.out.println(userLoginToRestore);
-        System.out.println(emailToRestore);
-        System.out.println(userDAO.getByLogin(userLoginToRestore));
         User user = userDAO.getByLogin(userLoginToRestore);
-        System.out.println(user);
         if (user == null) {
             return "index.jsp#noSuchRecordInDb";
         }
@@ -52,22 +44,18 @@ public class ForgotPasswordCommand implements Command {
             return "index.jsp#noSuchRecordInDb";
         }
 
-
         String linkToRestore = String.valueOf(System.currentTimeMillis() +
                 ((int) (Math.random() * 100000)));
-        System.out.println(linkToRestore);
         linkToRestore = securePassword(linkToRestore);
-        System.out.println(linkToRestore);
         PasswordRecovery pr = new PasswordRecovery();
         pr.setUserId(userDAO.getByLogin(userLoginToRestore).getId());
         pr.setCode(linkToRestore);
         passwordRecoveryDAO.create(pr);
+        log.info("Password record created in BD {}", pr);
 
-
-        System.out.println(emailToRestore);
         String language = req.getSession().getAttribute("language").toString();
-        System.out.println(language);
         String restoreUrl = "http://localhost:8080/Final/index.jsp?restoreLink=" + linkToRestore;
+        log.info("Password restore link created {}", restoreUrl);
 
         String finalLinkToRestore = linkToRestore;
         Thread t2 = new Thread(() -> {
@@ -76,6 +64,7 @@ public class ForgotPasswordCommand implements Command {
                 Thread.sleep(300000);
             } catch (InterruptedException e) {
                 log.error("Fall thread sleep");
+                Thread.currentThread().interrupt();
             }
             try {
                 passwordRecoveryDAO.deleteByCode(finalLinkToRestore);

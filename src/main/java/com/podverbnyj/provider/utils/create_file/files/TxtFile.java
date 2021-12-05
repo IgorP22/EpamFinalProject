@@ -1,4 +1,4 @@
-package com.podverbnyj.provider.utils.createFile.files;
+package com.podverbnyj.provider.utils.create_file.files;
 
 import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;

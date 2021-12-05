@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.io.File;
 
-import static com.podverbnyj.provider.utils.createFile.CreateTariffsFile.GetFile;
+import static com.podverbnyj.provider.utils.create_file.CreateTariffsFile.GetFile;
 
 
 public class DownloadCommand implements Command {

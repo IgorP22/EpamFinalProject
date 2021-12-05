@@ -1,8 +1,8 @@
-package com.podverbnyj.provider.utils.createFile.fileCreator;
+package com.podverbnyj.provider.utils.create_file.file_сreator;
 
 import com.itextpdf.text.DocumentException;
-import com.podverbnyj.provider.utils.createFile.factories.FileFactory;
-import com.podverbnyj.provider.utils.createFile.files.File;
+import com.podverbnyj.provider.utils.create_file.factories.FileFactory;
+import com.podverbnyj.provider.utils.create_file.files.File;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;

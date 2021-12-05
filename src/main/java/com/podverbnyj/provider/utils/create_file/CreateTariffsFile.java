@@ -1,14 +1,13 @@
-package com.podverbnyj.provider.utils.createFile;
+package com.podverbnyj.provider.utils.create_file;
 
 
 import com.itextpdf.text.DocumentException;
-import com.podverbnyj.provider.utils.createFile.fileCreator.FileCreator;
-import com.podverbnyj.provider.utils.createFile.factories.FileFactory;
-import com.podverbnyj.provider.utils.createFile.factories.PdfFileFactory;
-import com.podverbnyj.provider.utils.createFile.factories.TxtFileFactory;
+import com.podverbnyj.provider.utils.create_file.file_сreator.FileCreator;
+import com.podverbnyj.provider.utils.create_file.factories.FileFactory;
+import com.podverbnyj.provider.utils.create_file.factories.PdfFileFactory;
+import com.podverbnyj.provider.utils.create_file.factories.TxtFileFactory;
 
 import javax.servlet.http.HttpServletRequest;
-import java.awt.*;
 import java.io.IOException;
 
 public class CreateTariffsFile {

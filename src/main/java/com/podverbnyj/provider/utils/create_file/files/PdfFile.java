@@ -1,4 +1,4 @@
-package com.podverbnyj.provider.utils.createFile.files;
+package com.podverbnyj.provider.utils.create_file.files;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.BaseFont;
@@ -21,10 +21,7 @@ public class PdfFile implements File {
     @SuppressWarnings("unchecked")
     @Override
     public void create(HttpServletRequest req) throws IOException, DocumentException {
-        List<Service> serviceList = (List<Service>) req.getSession().getAttribute("ListOfServices");
-        List<Tariff> tariffList = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
-        System.out.println(serviceList);
-        System.out.println(tariffList);
+
         String language = req.getSession().getAttribute("language").toString();
 
         Document document = new Document();
@@ -35,7 +32,6 @@ public class PdfFile implements File {
         document.open();
         BaseFont unicode =
                 BaseFont.createFont("g:/windows/fonts/arialuni.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-//        Font font = FontFactory.getFont(FontFactory.TIMES_ROMAN, 16, BaseColor.BLACK);
         Paragraph paragraph;
 
 
@@ -69,6 +65,19 @@ public class PdfFile implements File {
         }
         table.addCell(paragraph);
 
+        createTable(req, language, unicode, table);
+
+        document.add(table);
+
+        document.close();
+
+        log.info("Price list created: {}price_list.pdf", req.getServletContext().getRealPath("/"));
+    }
+
+    private void createTable(HttpServletRequest req, String language, BaseFont unicode, PdfPTable table) {
+        Paragraph paragraph;
+        List<Service> serviceList = (List<Service>) req.getSession().getAttribute("ListOfServices");
+        List<Tariff> tariffList = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
 
         for (Service service : serviceList) {
             PdfPCell cell;
@@ -98,10 +107,5 @@ public class PdfFile implements File {
                 }
             }
         }
-        document.add(table);
-
-        document.close();
-
-        log.info("Price list created: " + req.getServletContext().getRealPath("/") + "price_list.pdf");
     }
 }
