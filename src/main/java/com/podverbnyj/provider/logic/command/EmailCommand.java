@@ -19,15 +19,13 @@ public class EmailCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
-        String fileType = req.getParameter("file");
+
         String emailAddress = req.getParameter("email");
-        System.out.println(fileType);
-        System.out.println(emailAddress);
         String language = req.getSession().getAttribute("language").toString();
-        System.out.println(language);
 
         try {
             GetFile(req);
+            log.info("File created");
         } catch (IOException | DocumentException e) {
             //TODO catch
             e.printStackTrace();

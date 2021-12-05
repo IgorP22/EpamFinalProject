@@ -11,7 +11,8 @@ public class UserTariff implements Serializable {
         this.tariffId = tariffId;
     }
 
-    public UserTariff(){}
+    public UserTariff() {
+    }
 
     public int getUserId() {
         return userId;

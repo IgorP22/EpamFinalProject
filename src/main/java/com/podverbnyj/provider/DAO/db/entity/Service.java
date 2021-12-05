@@ -7,15 +7,6 @@ public class Service implements Serializable {
     private String titleRu;
     private String titleEn;
 
-
-    private Service(String titleRu, String titleEn) {
-        this.titleRu = titleRu;
-        this.titleEn = titleEn;
-    }
-
-
-    public Service(){}
-
     public int getId() {
         return id;
     }

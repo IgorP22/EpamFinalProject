@@ -25,7 +25,7 @@ public class DownloadCommand implements Command {
             GetFile(req);
         } catch (IOException | DocumentException e) {
 
-            log.error("File price_list."+fileType+" can't be created to user");
+            log.error("File price_list.{}} can't be created to user", fileType);
         }
 
         String fileName = req.getServletContext().getRealPath("/") + "price_list."+fileType;
@@ -44,7 +44,7 @@ public class DownloadCommand implements Command {
         }
         in.close();
         out.flush();
-        log.info("File price_list."+fileType+" sent to user");
+        log.info("File price_list.{} sent to user", fileType);
         return "referer";
     }
 }

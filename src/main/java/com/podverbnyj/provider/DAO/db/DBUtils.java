@@ -27,14 +27,13 @@ public class DBUtils {
     private DataSource ds;
 
     private DBUtils() {
-        //ResourceBundle rb = ResourceBundle.getBundle("database");
         try {
             Context initContext = new InitialContext();
-            Context envContext  = (Context)initContext.lookup("java:/comp/env");
-            ds = (DataSource)envContext.lookup("jdbc/Provider");
+            Context envContext = (Context) initContext.lookup("java:/comp/env");
+            ds = (DataSource) envContext.lookup("jdbc/Provider");
         } catch (NamingException ex) {
 
-            log.error("Cannot obtain a data source",ex);
+            log.error("Cannot obtain a data source", ex);
             throw new IllegalStateException(ex);
         }
     }
@@ -44,7 +43,7 @@ public class DBUtils {
         try {
             con = ds.getConnection();
         } catch (SQLException ex) {
-            log.error("Cannot obtain a connection",ex);
+            log.error("Cannot obtain a connection", ex);
             throw new IllegalStateException(ex);
         }
         return con;

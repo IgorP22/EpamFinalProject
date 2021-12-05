@@ -11,15 +11,6 @@ public class Tariff implements Serializable {
     private String descriptionRu;
     private String descriptionEn;
 
-    public Tariff(String nameRu, String nameEn, double price) {
-        this.nameRu = nameRu;
-        this.nameEn = nameEn;
-        this.price = price;
-    }
-
-    public Tariff (){}
-
-
 
     public int getId() {
         return id;

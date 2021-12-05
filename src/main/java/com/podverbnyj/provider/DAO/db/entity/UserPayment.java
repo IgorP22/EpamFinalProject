@@ -8,18 +8,13 @@ public class UserPayment implements Serializable {
     private Date date;
     private double sum;
 
-    public UserPayment(int userId, Date date, double sum) {
-        this.userId = userId;
-        this.date = date;
-        this.sum = sum;
-    }
-
     public UserPayment(int userId, double sum) {
         this.userId = userId;
         this.sum = sum;
     }
 
-    public UserPayment(){}
+    public UserPayment() {
+    }
 
     public int getUserId() {
         return userId;

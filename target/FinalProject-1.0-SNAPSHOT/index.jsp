@@ -101,11 +101,12 @@
 
 <!-- Start of Table -->
 <table class="table table-bordered">
+    <caption>Servises and tariffs table</caption>
     <thead>
     <tr class="table-active">
-        <th><fmt:message key="index_jsp.link.name"/></th>
-        <th><fmt:message key="index_jsp.link.description"/></th>
-        <th><fmt:message key="index_jsp.link.price"/></th>
+        <th id = "field 01"><fmt:message key="index_jsp.link.name"/></th>
+        <th id = "field 02"><fmt:message key="index_jsp.link.description"/></th>
+        <th id = "field 03"><fmt:message key="index_jsp.link.price"/></th>
     </tr>
     </thead>
     <tbody>

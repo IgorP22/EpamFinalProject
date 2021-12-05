@@ -1,7 +1,6 @@
 package com.podverbnyj.provider.DAO.db;
 
 import com.podverbnyj.provider.DAO.db.entity.PasswordRecovery;
-import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,8 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.PasswordRecoveryConstants.*;
 
@@ -45,9 +42,6 @@ public class PasswordRecoveryDBManager {
             close(ps);
         }
     }
-
-
-
 
 
     public PasswordRecovery getPasswordRecovery(Connection con, int userId) throws SQLException {
@@ -106,7 +100,7 @@ public class PasswordRecoveryDBManager {
             try {
                 resource.close();
             } catch (Exception ex) {
-                log.error("Error closing resource " + resource, ex);
+                log.error("Error closing resource {}", resource, ex);
             }
         }
     }

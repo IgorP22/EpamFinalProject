@@ -68,7 +68,7 @@ public class DebitFunds {
                         "Best wishes, your provider.) ";
             }
             emailSender(user.getEmail(), subject, body, null);
-            log.info("User {} email about blocking account sent. Reason: insufficient funds.", user.getLogin());
+            log.info("Email about blocking account sent to user{}. Reason: insufficient funds.", user.getLogin());
         }
     }
 }

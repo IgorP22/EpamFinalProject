@@ -61,7 +61,6 @@ public class TariffDBManager {
     }
 
 
-
     public Tariff getById(Connection con, int id) throws SQLException {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -110,7 +109,7 @@ public class TariffDBManager {
             try {
                 resource.close();
             } catch (Exception ex) {
-                log.error("Error closing resource " + resource, ex);
+                log.error("Error closing resource {}", resource, ex);
             }
         }
     }
@@ -136,7 +135,7 @@ public class TariffDBManager {
         tariff.setDescriptionRu(rs.getString("description_ru"));
         tariff.setDescriptionEn(rs.getString("description_en"));
 
-        log.trace("Tariff created ==> " + tariff);
+        log.trace("Tariff created ==> {}", tariff);
         return tariff;
     }
 }

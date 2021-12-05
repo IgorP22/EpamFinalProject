@@ -71,19 +71,19 @@ public class ForgotPasswordCommand implements Command {
 
         String finalLinkToRestore = linkToRestore;
         Thread t2 = new Thread(() -> {
-            System.out.println("Поток старт");
+            log.info("Thread for deleting {} after 5 min tarted", finalLinkToRestore);
             try {
                 Thread.sleep(300000);
             } catch (InterruptedException e) {
                 log.error("Fall thread sleep");
             }
-            System.out.println(finalLinkToRestore);
             try {
                 passwordRecoveryDAO.deleteByCode(finalLinkToRestore);
+                log.info("Password restore link {} deleted", finalLinkToRestore);
             } catch (DBException e) {
-                log.error("Recover password link wasn't deleted from BD" + finalLinkToRestore);
+                log.error("Recover password link wasn't deleted from BD {}", finalLinkToRestore);
             }
-            System.out.println("Поток стоп");
+            log.info("Thread stopped");
         });
         t2.start();
 

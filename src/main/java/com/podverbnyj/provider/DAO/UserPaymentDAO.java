@@ -36,20 +36,20 @@ public class UserPaymentDAO {
         try {
             return userPaymentDBManager.findAllByUserId(con, userId);
         } catch (SQLException ex) {
-            log.error("Can't receive payment history from DB for user "+userId, ex);
-            throw new DBException("Can't receive payment history from DB for user "+userId);
+            log.error("Can't receive payment history from DB for user {}", userId, ex);
+            throw new DBException("Can't receive payment history from DB for user " + userId);
         } finally {
             userPaymentDBManager.close(con);
         }
     }
 
-    public List<UserPayment> findGroup(int userId, int limit, int offset ) throws DBException {
+    public List<UserPayment> findGroup(int userId, int limit, int offset) throws DBException {
         Connection con = dbUtils.getConnection();
         try {
-            return userPaymentDBManager.findGroupByUserId(con, userId,limit,offset);
+            return userPaymentDBManager.findGroupByUserId(con, userId, limit, offset);
         } catch (SQLException ex) {
-            log.error("Can't receive payment history from DB for user "+userId, ex);
-            throw new DBException("Can't receive payment history from DB for user "+userId);
+            log.error("Can't receive payment history from DB for user {}", userId, ex);
+            throw new DBException("Can't receive payment history from DB for user " + userId);
         } finally {
             userPaymentDBManager.close(con);
         }
@@ -60,7 +60,7 @@ public class UserPaymentDAO {
         try {
             return userPaymentDBManager.create(con, userPayment);
         } catch (SQLException ex) {
-            log.error("Can't add payment ==> " + userPayment, ex);
+            log.error("Can't add payment ==> {}", userPayment, ex);
             throw new DBException("Can't add payment ==> " + userPayment);
         } finally {
             userPaymentDBManager.close(con);
@@ -72,8 +72,8 @@ public class UserPaymentDAO {
         try {
             return userPaymentDBManager.getUsersPaymentsSize(con, userId);
         } catch (SQLException ex) {
-            log.error("Can't receive payment size from DB for user "+userId, ex);
-            throw new DBException("Can't receive payment size from DB for user "+userId);
+            log.error("Can't receive payment size from DB for user {}", userId, ex);
+            throw new DBException("Can't receive payment size from DB for user " + userId);
         } finally {
             userPaymentDBManager.close(con);
         }

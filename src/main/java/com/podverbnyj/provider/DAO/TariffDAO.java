@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 
-public class TariffDAO implements AbstractDAO<Tariff>{
+public class TariffDAO implements AbstractDAO<Tariff> {
 
     private static final Logger log = LogManager.getLogger(TariffDAO.class);
     private static final DBUtils dbUtils = DBUtils.getInstance();
@@ -51,7 +51,7 @@ public class TariffDAO implements AbstractDAO<Tariff>{
         try {
             return tariffDBManager.create(con, tariff);
         } catch (SQLException ex) {
-            log.error("Can't create tariff ==> " + tariff, ex);
+            log.error("Can't create tariff ==> {}", tariff, ex);
             throw new DBException("Can't create tariff ==> " + tariff);
         } finally {
             tariffDBManager.close(con);
@@ -65,7 +65,7 @@ public class TariffDAO implements AbstractDAO<Tariff>{
         try {
             return tariffDBManager.getById(con, id);
         } catch (SQLException ex) {
-            log.error("Can't get tariff by ID ==> " + id, ex);
+            log.error("Can't get tariff by ID ==> {}", id, ex);
             throw new DBException("Can't create tariff by ID ==> " + id);
         } finally {
             tariffDBManager.close(con);
@@ -78,8 +78,8 @@ public class TariffDAO implements AbstractDAO<Tariff>{
         Connection con = dbUtils.getConnection();
         try {
             return tariffDBManager.update(con, tariff);
-        }catch (SQLException ex) {
-            log.error("Can't update tariff ==> " + tariff.getId(), ex);
+        } catch (SQLException ex) {
+            log.error("Can't update tariff ==> {}", tariff.getId(), ex);
             throw new DBException("Can't update tariff ==> " + tariff.getId());
         } finally {
             tariffDBManager.close(con);
@@ -91,8 +91,8 @@ public class TariffDAO implements AbstractDAO<Tariff>{
         Connection con = dbUtils.getConnection();
         try {
             return tariffDBManager.delete(con, tariff);
-        }catch (SQLException ex) {
-            log.error("Can't delete tariff ==> " + tariff.getId(), ex);
+        } catch (SQLException ex) {
+            log.error("Can't delete tariff ==> {}", tariff.getId(), ex);
             throw new DBException("Can't delete tariff ==> " + tariff.getId());
         } finally {
             tariffDBManager.close(con);

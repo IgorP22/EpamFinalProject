@@ -11,10 +11,8 @@ import com.podverbnyj.provider.DAO.db.entity.constant.Role;
 import com.podverbnyj.provider.DAO.db.entity.constant.Status;
 import org.apache.logging.log4j.*;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +26,14 @@ public class UserRequestCommand implements Command {
     private static final UserPaymentDAO userPaymentDAO = UserPaymentDAO.getInstance();
     private static final UserTariffDAO userTariffDAO = UserTariffDAO.getInstance();
     private static final ServiceDAO serviceDAO = ServiceDAO.getInstance();
-    private static final int shift = 0;
+    public static final String USER_JSP_SUCCESS = "user.jsp#success";
+    public static final String USER_FLAG = "userFlag";
+    public static final String CURRENT_USER = "currentUser";
+
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException, SQLException {
         String userRequest = req.getParameter("userRequest");
-        System.out.println(userRequest);
 
         String getServices = "Choice of services";
         String editProfile = "Edit profile";
@@ -41,33 +41,28 @@ public class UserRequestCommand implements Command {
         String paymentHistory = "Payment history";
         String updateServices = "Update services";
 
-        if (req.getSession().getAttribute("currentUser") == null) {
+        if (req.getSession().getAttribute(CURRENT_USER) == null) {
+            log.info("Attempt to access page without permission");
             return "index.jsp";
         }
-        req.getSession().setAttribute("userFlag", null);
-        int userID = ((User) (req.getSession().getAttribute("currentUser"))).getId();
+        req.getSession().setAttribute(USER_FLAG, null);
+        User currentUser = ((User) (req.getSession().getAttribute(CURRENT_USER)));
+        int userID = currentUser.getId();
 
         if (editBalance.equals(userRequest)) {
             User user = userDAO.getById(userID);
-            System.out.println(req.getParameter("sum"));
             double sum = Double.parseDouble(req.getParameter("sum"));
             user.setBalance((user.getBalance() + sum));
             user.setStatus(Status.ACTIVE);
             userDAO.update(user);
             UserPayment userPayment = new UserPayment(userID, sum);
             userPaymentDAO.create(userPayment);
-
-
-            req.getSession().setAttribute("currentUser", user);
-            return "user.jsp#success";
+            req.getSession().setAttribute(CURRENT_USER, user);
+            return USER_JSP_SUCCESS;
         }
 
         if (paymentHistory.equals(userRequest)) {
-//            List<UserPayment> userPaymentsList;
-//            userPaymentsList = userPaymentDAO.findAll(userID);
-//            System.out.println(userPaymentsList);
-//            req.getSession().setAttribute("userPaymentsList", userPaymentsList);
-
+            final String PAGE_SIZE = "pageSize";
             int page;
             if (req.getParameter("page") == null || req.getParameter("page").equals("")) {
                 page = 1;
@@ -77,48 +72,33 @@ public class UserRequestCommand implements Command {
             }
 
             int pageSize;
-            if (req.getParameter("pageSize") == null || req.getParameter("pageSize").equals("")) {
+            if (req.getParameter(PAGE_SIZE) == null || req.getParameter(PAGE_SIZE).equals("")) {
                 pageSize = 10;
             } else {
-                String paramPageSize = req.getParameter("pageSize");
+                String paramPageSize = req.getParameter(PAGE_SIZE);
                 pageSize = Integer.parseInt(paramPageSize);
             }
 
-            System.out.println(page);
-            System.out.println(pageSize);
-
-
             int size = userPaymentDAO.getUsersPaymentsSize(userID);
-            System.out.println(size);
 
 
             List<UserPayment> userPaymentsList = userPaymentDAO.findGroup(userID, pageSize, pageSize * (page - 1));
-            System.out.println(userPaymentsList);
 
-            int minPagePossible = Math.max(page - shift, 1);
+            int minPagePossible = Math.max(page, 1);
 
             int pageCount = (int) Math.ceil((double) size / pageSize);
-            System.out.println(pageCount);
-            int maxPagePossible = Math.min(page + shift, pageCount);
+            int maxPagePossible = Math.min(page, pageCount);
 
             req.getSession().setAttribute("userPaymentsList", userPaymentsList);
             req.getSession().setAttribute("pageCount", pageCount);
             req.getSession().setAttribute("page", page);
-            req.getSession().setAttribute("pageSize", pageSize);
+            req.getSession().setAttribute(PAGE_SIZE, pageSize);
             req.getSession().setAttribute("minPossiblePage", minPagePossible);
             req.getSession().setAttribute("maxPossiblePage", maxPagePossible);
 
             String userFlag = "History";
-            req.getSession().setAttribute("userFlag", userFlag);
+            req.getSession().setAttribute(USER_FLAG, userFlag);
             return "user.jsp";
-//            try {
-//                req.getRequestDispatcher("WEB-INF/jsp/user.jsp").forward(req, resp);
-//            } catch (ServletException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-
         }
 
         if (editProfile.equals(userRequest)) {
@@ -129,9 +109,8 @@ public class UserRequestCommand implements Command {
             String userFlag = "Choice";
             List<UserTariff> userTariffList;
             userTariffList = userTariffDAO.findAll(userID);
-            System.out.println(userTariffList);
             req.getSession().setAttribute("userTariffList", userTariffList);
-            req.getSession().setAttribute("userFlag", userFlag);
+            req.getSession().setAttribute(USER_FLAG, userFlag);
         }
 
         if (updateServices.equals(userRequest)) {
@@ -149,8 +128,7 @@ public class UserRequestCommand implements Command {
             userTariffDAO.update(userTariffList, userID);
             double totalCost = userTariffDAO.getTotalCost(userID);
             req.getSession().setAttribute("totalCost", totalCost);
-            System.out.println(userTariffList);
-            return "user.jsp#success";
+            return USER_JSP_SUCCESS;
         }
 
         return req.getHeader("referer");
@@ -166,12 +144,12 @@ public class UserRequestCommand implements Command {
         if (password.equals(req.getParameter("userPassword"))) {
             user.setPassword(password);
         }
-        user.setBalance(((User) req.getSession().getAttribute("currentUser")).getBalance());
+        user.setBalance(((User) req.getSession().getAttribute(CURRENT_USER)).getBalance());
 
         userDAO.update(user);
-        req.getSession().setAttribute("currentUser", user);
+        req.getSession().setAttribute(CURRENT_USER, user);
         req.getSession().setAttribute("userToEdit", null);
-        return "user.jsp#success";
+        return USER_JSP_SUCCESS;
     }
 
     private User getUser(HttpServletRequest req) throws DBException {

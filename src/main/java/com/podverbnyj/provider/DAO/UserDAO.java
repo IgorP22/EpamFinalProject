@@ -67,7 +67,7 @@ public class UserDAO implements AbstractDAO<User> {
         try {
             return userDBManager.getById(con, id);
         } catch (SQLException ex) {
-            log.error("Can't get user by ID ==> " + id, ex);
+            log.error("Can't get user by ID ==> {}", id, ex);
             throw new DBException("Can't create user by ID ==> " + id);
         } finally {
             userDBManager.close(con);
@@ -80,7 +80,7 @@ public class UserDAO implements AbstractDAO<User> {
         try {
             return userDBManager.getByLogin(con, name);
         } catch (SQLException ex) {
-            log.error("Can't get user by name ==> " + name, ex);
+            log.error("Can't get user by name ==> {}", name, ex);
             throw new DBException("Can't create user by name ==> " + name);
         } finally {
             userDBManager.close(con);
@@ -94,7 +94,7 @@ public class UserDAO implements AbstractDAO<User> {
         try {
             return userDBManager.update(con, user);
         } catch (SQLException ex) {
-            log.error("Can't update user ==> " + user.getLogin(), ex);
+            log.error("Can't update user ==> {}", user.getLogin(), ex);
             throw new DBException("Can't update user ==> " + user.getLogin());
         } finally {
             userDBManager.close(con);
@@ -107,7 +107,7 @@ public class UserDAO implements AbstractDAO<User> {
         try {
             return userDBManager.delete(con, user);
         } catch (SQLException ex) {
-            log.error("Can't delete user ==> " + user.getLogin(), ex);
+            log.error("Can't delete user ==> {}", user.getLogin(), ex);
             throw new DBException("Can't delete user ==> " + user.getLogin());
         } finally {
             userDBManager.close(con);

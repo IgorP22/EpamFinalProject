@@ -1,6 +1,8 @@
 package com.podverbnyj.provider.DAO.db.entity.constant;
 
 public class SQLConstant {
+    private SQLConstant() {
+    }
 
     public static class UserConstants {
         public static final String FIND_ALL_USERS = "SELECT * FROM user";

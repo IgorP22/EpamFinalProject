@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserConstants.COUNT_ADMINS;
 import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserPaymentsConstants.*;
 
 
@@ -94,7 +93,6 @@ public class UserPaymentDBManager {
     }
 
 
-
     public boolean create(Connection con, UserPayment userPayment) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -111,12 +109,7 @@ public class UserPaymentDBManager {
         UserPayment userPayment = new UserPayment();
 
         userPayment.setUserId(rs.getInt(2));
-        System.out.println();
-
-//        System.out.println(rs.getDate(2));
-
         userPayment.setDate(rs.getTimestamp(3));
-
         userPayment.setSum(rs.getDouble(4));
 
         log.trace("User payment created ==> " + userPayment);
@@ -140,7 +133,7 @@ public class UserPaymentDBManager {
             try {
                 resource.close();
             } catch (Exception ex) {
-                log.error("Error closing resource " + resource, ex);
+                log.error("Error closing resource {}", resource, ex);
             }
         }
     }

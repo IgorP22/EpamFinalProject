@@ -139,10 +139,10 @@ public class UserDBManager {
     public void debitAllUsers(Connection con, List<User> listOfUsers, List<UserPayment> userPaymentList) throws SQLException {
         con.setAutoCommit(false);
         for (User user : listOfUsers) {
-            update(con,user);
+            update(con, user);
         }
-        for (UserPayment userPayment: userPaymentList){
-            UserPaymentDBManager.getInstance().create(con,userPayment);
+        for (UserPayment userPayment : userPaymentList) {
+            UserPaymentDBManager.getInstance().create(con, userPayment);
         }
     }
 
@@ -152,7 +152,7 @@ public class UserDBManager {
             try {
                 resource.close();
             } catch (Exception ex) {
-                log.error("Error closing resource " + resource, ex);
+                log.error("Error closing resource {}", resource, ex);
             }
         }
     }

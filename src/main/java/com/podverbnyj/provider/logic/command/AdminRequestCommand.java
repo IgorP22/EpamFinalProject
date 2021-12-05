@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+import static com.podverbnyj.provider.utils.EmailSender.emailSender;
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
 public class AdminRequestCommand implements Command {
@@ -35,7 +36,6 @@ public class AdminRequestCommand implements Command {
         }
 
         String adminRequest = req.getParameter("adminRequest");
-        System.out.println(adminRequest);
 
         String getListOfServicesAndTariff = "List of services and tariffs";
         String getUsersList = "List of users";
@@ -56,7 +56,7 @@ public class AdminRequestCommand implements Command {
             User user = userDAO.getById(userID);
             user.setStatus(Status.BLOCKED);
             userDAO.update(user);
-            //todo email to user
+            sendEmailAboutBlocking(user);
             getUsersList(req);
             return "admin_users.jsp#success";
         }
@@ -66,7 +66,7 @@ public class AdminRequestCommand implements Command {
             User user = userDAO.getById(userID);
             user.setStatus(Status.ACTIVE);
             userDAO.update(user);
-            //todo email to user
+            sendEmailAboutUnblocking(user);
             getUsersList(req);
             return "admin_users.jsp#success";
         }
@@ -120,6 +120,45 @@ public class AdminRequestCommand implements Command {
         return req.getHeader("referer");
     }
 
+    private static void sendEmailAboutBlocking(User user) {
+        if (user.isNotification() && (user.getEmail() != null)) {
+            String subject;
+            String body;
+            if (user.getLanguage() == Language.RU) {
+                subject = "Ваш аккаунт заблокирован администратором.";
+                body = "Уважаемый пользователь, " + user.getLogin() + "." + System.lineSeparator() +
+                        "Ваш аккаунт был заблокирован администратором." + System.lineSeparator() +
+                        "Пожалуйста свяжитесь с  нами любым удобным для Вас способом..";
+            } else {
+                subject = "Your account has been blocked by the administrator.";
+                body = "Dear user, " + user.getLogin() + "." + System.lineSeparator() +
+                        "Your account has been blocked by the administrator." + System.lineSeparator() +
+                        "Please contact us in any way convenient for you.";
+            }
+            emailSender(user.getEmail(), subject, body, null);
+            log.info("Email about blocking account sent to user{}. Reason: blocked by admin.", user.getLogin());
+        }
+    }
+
+    private static void sendEmailAboutUnblocking(User user) {
+        if (user.isNotification() && (user.getEmail() != null)) {
+            String subject;
+            String body;
+            if (user.getLanguage() == Language.RU) {
+                subject = "Ваш аккаунт был разблокирован.";
+                body = "Уважаемый пользователь, " + user.getLogin() + "." + System.lineSeparator() +
+                        "Ваш аккаунт был разблокирован.";
+            } else {
+                subject = "Your account has been unblocked.";
+                body = "Dear user, " + user.getLogin() + "." + System.lineSeparator() +
+                        "Your account has been unblocked.";
+            }
+            emailSender(user.getEmail(), subject, body, null);
+            log.info("Email about unblocking account sent to user{}.", user.getLogin());
+        }
+    }
+
+
     private void getUsersList(HttpServletRequest req) throws DBException {
         List<User> listOfUsers = userDAO.findAll();
         boolean sortedByLogin = (boolean) req.getSession().getAttribute("sortedByPrice");
@@ -161,15 +200,8 @@ public class AdminRequestCommand implements Command {
         if (req.getParameter("userToEditId") == null && req.getParameter("userLogin") != null) {
             User user;
             user = getUser(req);
-//            if (userDAO.getByLogin(user.getLogin()) != null) {
-//                String busyMessage = "This username is already taken";
-//                req.getSession().setAttribute("busyMessage",busyMessage);
-//                return req.getHeader("referer");
-//            }
-
-
             userDAO.create(user);
-            System.out.println("User added");
+            log.info("User added: {}", user.getLogin());
             getUsersList(req);
             req.getSession().setAttribute("userToEdit", null);
             return "admin_users.jsp#success";
@@ -180,7 +212,6 @@ public class AdminRequestCommand implements Command {
             User user = userDAO.getById(idToEdit);
             req.setAttribute("userToEditId", idToEdit);
             req.getSession().setAttribute("userToEdit", user);
-            System.out.println(idToEdit);
             return "admin_users.jsp#addOrEditUser";
         }
 
@@ -230,7 +261,7 @@ public class AdminRequestCommand implements Command {
         if (req.getParameter("confirmation").equals("true")) {
             int idToDelete = Integer.parseInt((String) req.getSession().getAttribute("serviceIdToDelete"));
             serviceDAO.delete(serviceDAO.getById(idToDelete));
-            System.out.println("Service " + idToDelete + " deleted");
+            log.info("Service {} deleted", idToDelete);
             getPriceList(req);
             req.setAttribute("confirmation", null);
 
@@ -241,11 +272,11 @@ public class AdminRequestCommand implements Command {
 
     private String addOrEditService(HttpServletRequest req) throws DBException {
         if (req.getParameter("serviceId") == null && req.getParameter("serviceNameRu") != null) {
-            System.out.println("Service added");
             Service service = new Service();
             service.setTitleRu(req.getParameter("serviceNameRu"));
             service.setTitleEn(req.getParameter("serviceNameEn"));
             serviceDAO.create(service);
+            log.info("Service {} added", service);
             getPriceList(req);
             req.getSession().setAttribute("serviceToEdit", null);
             return "admin.jsp#success";
@@ -266,6 +297,7 @@ public class AdminRequestCommand implements Command {
             service.setTitleRu(req.getParameter("serviceNameRu"));
             service.setTitleEn(req.getParameter("serviceNameEn"));
             serviceDAO.update(service);
+            log.info("Service {} updated", service);
             getPriceList(req);
             req.getSession().setAttribute("serviceToEdit", null);
             return "admin.jsp#success";
@@ -275,7 +307,6 @@ public class AdminRequestCommand implements Command {
 
     private String deleteTariff(HttpServletRequest req) throws DBException {
         String confirmation = req.getParameter("confirmation");
-        System.out.println(confirmation);
         if (confirmation == null) {
             req.getSession().setAttribute("tariffIdToDelete", req.getParameter("tariffId"));
             return "admin.jsp#deleteTariffConfirmation";
@@ -283,7 +314,7 @@ public class AdminRequestCommand implements Command {
         if (req.getParameter("confirmation").equals("true")) {
             int idToDelete = Integer.parseInt((String) req.getSession().getAttribute("tariffIdToDelete"));
             tariffDAO.delete(tariffDAO.getById(idToDelete));
-            System.out.println("Tariff " + idToDelete + " deleted");
+            log.info("Tariff with id {} deleted", idToDelete);
             getPriceList(req);
             req.setAttribute("confirmation", null);
 
@@ -294,9 +325,9 @@ public class AdminRequestCommand implements Command {
 
     private String addOrEditTariff(HttpServletRequest req) throws DBException {
         if (req.getParameter("tariffId") == null && req.getParameter("tariffNameRu") != null) {
-            System.out.println("Tariff added");
             Tariff tariff = getTariff(req);
             tariffDAO.create(tariff);
+            log.info("Tariff added: {}", tariff);
             getPriceList(req);
             req.getSession().setAttribute("tariffToEdit", null);
             return "admin.jsp#success";
@@ -317,6 +348,7 @@ public class AdminRequestCommand implements Command {
             Tariff tariff = getTariff(req);
             tariff.setId(idToEdit);
             tariffDAO.update(tariff);
+            log.info("Tariff updated: {}", tariff);
             getPriceList(req);
             req.getSession().setAttribute("tariffToEdit", null);
             return "admin.jsp#success";

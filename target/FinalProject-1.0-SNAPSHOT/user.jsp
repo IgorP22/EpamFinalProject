@@ -206,15 +206,7 @@
 
         <div class="col-md-1">
             Page ${page} of ${pageCount}
-                <%--            <c:forEach var="p" begin="${minPossiblePage}" end="${maxPossiblePage}">--%>
-                <%--                <c:choose>--%>
-                <%--                    <c:when test="${page == p}">${p}</c:when>--%>
-                <%--                    <c:otherwise>--%>
-                <%--                        &lt;%&ndash;                <a href="page?page=${p}&pageSize=${pageSize}">${p}</a>&ndash;%&gt;--%>
-                <%--                        ${p}--%>
-                <%--                    </c:otherwise>--%>
-                <%--                </c:choose>--%>
-                <%--            </c:forEach>--%>
+
         </div>
 
         <div class="col-md-1">
@@ -292,100 +284,10 @@
 
 <%@ include file="sorter_table.jspf" %>
 
-<%--<script>--%>
-<%--    $(document).ready(function () {--%>
-<%--        $('#paymentHistory').DataTable({--%>
-<%--            "pagingType": "full_numbers"--%>
-<%--        });--%>
-<%--    });--%>
-
-<%--</script>--%>
 
 <c:if test="${flag == 'Choice'}">
-    <form action="controller" method="post">
-        <table class="table table-bordered">
-            <thead>
-            <tr class="table-active">
-
-                <th>Наименование пакета</th>
-                <th>Описание</th>
-                <th>Цена</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-
-            <c:forEach var="service" items="${ListOfServices}">
-                <tr class="table-primary" style="font-size: 1.2em">
-                    <c:if test="${language=='ru'}">
-                        <td>${service.titleRu}</td>
-                    </c:if>
-
-                    <c:if test="${language=='en'}">
-                        <td>${service.titleEn}</td>
-                    </c:if>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <c:forEach var="tariff" items="${ListOfTariffs}">
-                    <c:if test="${service.id == tariff.serviceId}">
-                        <tr>
-                            <td>
-                                <div class="form-check">
-                                    <c:set var="flag" value=""/>
-
-                                    <c:forEach var="userTariff" items="${userTariffList}">
-                                        <c:if test="${tariff.id == userTariff.tariffId}">
-                                            <c:set var="flag" value="checked"/>
-
-                                        </c:if>
-
-                                    </c:forEach>
-
-                                    <input class="form-check-input" type="checkbox" name="${service.id}"
-                                           id="${service.id}" value="${tariff.id}" onclick="onlyOne(this)" ${flag}>
-
-                                    <label class="form-check-label" for="${service.id}">
-
-                                    </label>
-
-                                </div>
-                            </td>
-                            <c:if test="${language=='ru'}">
-                                <td>${tariff.nameRu}</td>
-                                <td>${tariff.descriptionRu}</td>
-                            </c:if>
-                            <c:if test="${language=='en'}">
-                                <td>${tariff.nameEn}</td>
-                                <td>${tariff.descriptionEn}</td>
-                            </c:if>
-                            <td>${tariff.price}</td>
-
-                        </tr>
-                    </c:if>
-                </c:forEach>
-
-            </c:forEach>
-
-            </tbody>
-        </table>
-
-        <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
-        <button type="submit" name="userRequest" class="btn btn-primary" value="Update services">Update services
-        </button>
-    </form>
+    <%@ include file="users_actual_tariffs.jspf" %>
 </c:if>
-
-<script>
-    function onlyOne(checkbox) {
-        document.getElementsByName(checkbox.name).forEach(n => {
-            n.checked = n === checkbox ? n.checked : false;
-        });
-    }
-
-</script>
 
 
 <%@ include file="add_or_edit_user.jspf" %>

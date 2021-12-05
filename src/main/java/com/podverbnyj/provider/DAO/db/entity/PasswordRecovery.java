@@ -6,10 +6,6 @@ public class PasswordRecovery implements Serializable {
     private int userId;
     private String code;
 
-
-
-    public PasswordRecovery(){}
-
     public int getUserId() {
         return userId;
     }

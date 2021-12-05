@@ -15,15 +15,15 @@ import javax.servlet.http.HttpServletRequest;
 public class EmailSender {
     private static final Logger log = LogManager.getLogger(EmailSender.class);
 
-    private static final String USER_NAME = "*****";  // GMail user name (just the part before "@gmail.com")
-    private static final String PASSWORD = "*****"; // GMail password
+    private static final String USER_NAME = "testfinalproject2";  // GMail username (just the part before "@gmail.com")
+    private static final String PASSWORD = ""; // GMail password
 
 
     public static void emailSender(String address, String subject, String body, HttpServletRequest req) {
 
 
         sendFromGMail(address, subject, body, req);
-        log.info("Email sent to address: " + address);
+        log.info("Email sent to address: {}", address);
     }
 
     private static void sendFromGMail(String to, String subject, String body, HttpServletRequest req) {
@@ -55,9 +55,6 @@ public class EmailSender {
                 String fileType = req.getParameter("file");
                 // Create the message part
                 BodyPart messageBodyPart = new MimeBodyPart();
-
-                // Now set the actual message
-                messageBodyPart.setText("This is message body");
 
                 // Create a multipart message
                 Multipart multipart = new MimeMultipart();

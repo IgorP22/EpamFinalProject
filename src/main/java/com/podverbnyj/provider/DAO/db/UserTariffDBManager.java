@@ -53,7 +53,7 @@ public class UserTariffDBManager {
     }
 
     public double getTotalCost(Connection con, int userId) throws SQLException {
-        double totalSum=0;
+        double totalSum = 0;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -71,15 +71,13 @@ public class UserTariffDBManager {
     }
 
 
-
-
     private UserTariff getUserTariffs(ResultSet rs) throws SQLException {
         UserTariff userTariff = new UserTariff();
 
         userTariff.setUserId(rs.getInt(1));
         userTariff.setTariffId(rs.getInt(2));
 
-        log.trace("User tariffs created ==> " + userTariff);
+        log.trace("User tariffs created ==> {}", userTariff);
         return userTariff;
     }
 
@@ -87,7 +85,6 @@ public class UserTariffDBManager {
     public boolean update(Connection con, List<UserTariff> userTariffs, int userId) throws SQLException {
         PreparedStatement ps = null;
         con.setAutoCommit(false);
-        System.out.println("update"+userTariffs + "id " + userId);
         try {
             ps = con.prepareStatement(DELETE_TARIFFS_BY_USER_ID);
             ps.setInt(1, userId);
@@ -105,8 +102,8 @@ public class UserTariffDBManager {
                 close(ps);
             }
         }
-        System.out.println("update"+userTariffs + "id " + userId);
         con.commit();
+        log.info("Updated {} for {}", userTariffs, userId);
         return true;
     }
 
@@ -135,7 +132,7 @@ public class UserTariffDBManager {
             try {
                 resource.close();
             } catch (Exception ex) {
-                log.error("Error closing resource " + resource, ex);
+                log.error("Error closing resource {}", resource, ex);
             }
         }
     }

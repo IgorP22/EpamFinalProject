@@ -1,23 +1,16 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.DAO.ServiceDAO;
-import com.podverbnyj.provider.DAO.TariffDAO;
-import com.podverbnyj.provider.DAO.UserDAO;
 import com.podverbnyj.provider.DAO.db.DBException;
 import com.podverbnyj.provider.DAO.db.entity.Service;
 import com.podverbnyj.provider.DAO.db.entity.Tariff;
 import com.podverbnyj.provider.DAO.db.entity.User;
-import com.podverbnyj.provider.DAO.db.entity.constant.Role;
 import com.podverbnyj.provider.utils.Sorter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
 public class SortCommand implements Command {
 

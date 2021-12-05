@@ -4,7 +4,10 @@ public enum Language {
     RU("ru"), EN("en");
 
     private final String value;
-    Language (String value) {this.value=value;}
+
+    Language(String value) {
+        this.value = value;
+    }
 
     public boolean equalsTo(String name) {
         return value.equals(name);

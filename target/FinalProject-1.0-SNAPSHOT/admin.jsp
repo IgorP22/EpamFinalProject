@@ -123,11 +123,11 @@
     <caption>Servises and tariffs table</caption>
     <thead>
     <tr class="table-active">
-        <th>Наименование пакета</th>
-        <th>Описание</th>
-        <th>Цена</th>
-        <th></th>
-        <th></th>
+        <th id = "field 01">Наименование пакета</th>
+        <th id = "field 02">Описание</th>
+        <th id = "field 03">Цена</th>
+        <th id = "field 04"></th>
+        <th id = "field 05"></th>
     </tr>
     </thead>
     <tbody>

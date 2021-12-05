@@ -4,7 +4,10 @@ public enum Role {
     ADMIN("admin"), USER("user");
 
     private final String value;
-    Role (String value) {this.value=value;}
+
+    Role(String value) {
+        this.value = value;
+    }
 
     public boolean equalsTo(String name) {
         return value.equals(name);

@@ -64,10 +64,10 @@ public class UserTariffDAO {
             try {
                 con.rollback();
             } catch (SQLException e) {
-                log.error("Rollback error " + userTariffs, ex);
+                log.error("Rollback error {}", userTariffs, ex);
                 throw new DBException("Transaction failed & rollback failed");
             }
-            log.error("Can't create list of tariffs ==> " + userTariffs, ex);
+            log.error("Can't create list of tariffs ==> {}", userTariffs, ex);
             throw new DBException("Can't create list of tariffs");
         } finally {
             userTariffDBManager.close(con);

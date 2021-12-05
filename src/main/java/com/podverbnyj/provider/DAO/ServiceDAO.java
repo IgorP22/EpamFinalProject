@@ -51,7 +51,7 @@ public class ServiceDAO implements AbstractDAO<Service>{
         try {
             return serviceDBManager.create(con, service);
         } catch (SQLException ex) {
-            log.error("Can't create service ==> " + service, ex);
+            log.error("Can't create service ==> {}", service, ex);
             throw new DBException("Can't create service ==> " + service);
         } finally {
             serviceDBManager.close(con);
@@ -65,7 +65,7 @@ public class ServiceDAO implements AbstractDAO<Service>{
         try {
             return serviceDBManager.getById(con, id);
         } catch (SQLException ex) {
-            log.error("Can't get service by ID ==> " + id, ex);
+            log.error("Can't get service by ID ==> {}", id, ex);
             throw new DBException("Can't create service by ID ==> " + id);
         } finally {
             serviceDBManager.close(con);
@@ -79,7 +79,7 @@ public class ServiceDAO implements AbstractDAO<Service>{
         try {
             return serviceDBManager.update(con, service);
         }catch (SQLException ex) {
-            log.error("Can't update service ==> " + service.getId(), ex);
+            log.error("Can't update service ==> {}", service.getId(), ex);
             throw new DBException("Can't update service ==> " + service.getId());
         } finally {
             serviceDBManager.close(con);
@@ -92,7 +92,7 @@ public class ServiceDAO implements AbstractDAO<Service>{
         try {
             return serviceDBManager.delete(con, service);
         }catch (SQLException ex) {
-            log.error("Can't delete service ==> " + service.getId(), ex);
+            log.error("Can't delete service ==> {}", service.getId(), ex);
             throw new DBException("Can't delete service ==> " + service.getId());
         } finally {
             serviceDBManager.close(con);

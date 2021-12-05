@@ -61,7 +61,6 @@ public class ServiceDBManager {
     }
 
 
-
     public Service getById(Connection con, int id) throws SQLException {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -110,7 +109,7 @@ public class ServiceDBManager {
             try {
                 resource.close();
             } catch (Exception ex) {
-                log.error("Error closing resource " + resource, ex);
+                log.error("Error closing resource {}", resource, ex);
             }
         }
     }
@@ -118,7 +117,7 @@ public class ServiceDBManager {
     private void setServiceStatement(Service service, PreparedStatement ps) throws SQLException {
         int index = 1;
         ps.setString(index++, service.getTitleRu());
-        ps.setString(index++, service.getTitleEn());
+        ps.setString(index, service.getTitleEn());
 
     }
 
@@ -129,7 +128,7 @@ public class ServiceDBManager {
         service.setTitleRu(rs.getString("title_ru"));
         service.setTitleEn(rs.getString("title_en"));
 
-        log.trace("Service created ==> " + service);
+        log.trace("Service created ==> {}", service);
         return service;
     }
 }

@@ -10,7 +10,6 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Calendar;
@@ -62,7 +61,7 @@ public class ContextListener implements ServletContextListener {
                 c.set(Calendar.MINUTE, 0);
                 c.set(Calendar.SECOND, 0);
                 c.set(Calendar.MILLISECOND, 0);
-                long timeBeforeTaskStart = (c.getTimeInMillis() - System.currentTimeMillis()) + 500000;
+                long timeBeforeTaskStart = (c.getTimeInMillis() - System.currentTimeMillis());
                 Duration duration = Duration.ofMillis(timeBeforeTaskStart);
                 long hours = duration.toHours();
                 duration = duration.minusHours(hours);
