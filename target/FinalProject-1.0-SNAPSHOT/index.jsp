@@ -101,7 +101,7 @@
 
 <!-- Start of Table -->
 <table class="table table-bordered">
-    <caption>Servises and tariffs table</caption>
+    <caption hidden>Services and tariffs table</caption>
     <thead>
     <tr class="table-active">
         <th id = "field 01"><fmt:message key="index_jsp.link.name"/></th>

@@ -259,10 +259,11 @@
 
 
     <table class="table table-bordered table_sort" id="paymentHistory">
+        <caption hidden>Payment history table</caption>
         <thead>
         <tr class="table-active">
-            <th data-order="-1" class="sorted">Дата и время</th>
-            <th>Сумма</th>
+            <th data-order="-1" class="sorted" id = "field 01">Дата и время</th>
+            <th id = "field 02">Сумма</th>
         </tr>
         </thead>
 

@@ -188,7 +188,7 @@ public class UserDBManager {
                 .setNotification(rs.getInt("notification"))
                 .setStatus(Status.valueOf(rs.getString("status")))
                 .build();
-        log.trace("User created ==> " + user);
+        log.trace("User created ==> {}", user);
         return user;
     }
 }

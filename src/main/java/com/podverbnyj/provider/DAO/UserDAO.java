@@ -54,7 +54,7 @@ public class UserDAO implements AbstractDAO<User> {
         try {
             return userDBManager.create(con, user);
         } catch (SQLException ex) {
-            log.error("Can't create user ==> " + user, ex);
+            log.error("Can't create user ==> {}", user, ex);
             throw new DBException("Can't create user ==> " + user);
         } finally {
             userDBManager.close(con);
@@ -131,19 +131,16 @@ public class UserDAO implements AbstractDAO<User> {
         try {
             userDBManager.debitAllUsers(con, listOfUsers, userPaymentList);
             con.commit();
-            log.info("Users funds debited successfully " + System.lineSeparator()
-                    + listOfUsers + System.lineSeparator() + userPaymentList);
+            log.info("Users funds debited successfully \n{}\n{}", listOfUsers, userPaymentList);
 
         } catch (SQLException ex) {
             try {
                 con.rollback();
             } catch (SQLException e) {
-                log.error("Rollback error, funds are not debited "
-                        + listOfUsers + System.lineSeparator() + userPaymentList, ex);
+                log.error("Rollback error, funds are not debited \n{}\n{}", listOfUsers, userPaymentList, ex);
                 throw new DBException("Rollback error, funds are not debited");
             }
-            log.error("Funds are not debited " + listOfUsers
-                    + System.lineSeparator() + userPaymentList, ex);
+            log.error("Funds are not debited \n{}\n{}", listOfUsers, userPaymentList, ex);
             throw new DBException("Funds are not debited");
         } finally {
             userDBManager.close(con);

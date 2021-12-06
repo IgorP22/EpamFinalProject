@@ -27,7 +27,7 @@ public class EmailCommand implements Command {
             getFile(req);
             log.info("File created");
         } catch (IOException | DocumentException e) {
-            //TODO catch
+            log.error("Can't create price file");
             e.printStackTrace();
         }
 

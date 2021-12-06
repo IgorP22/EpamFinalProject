@@ -62,43 +62,7 @@ public class UserRequestCommand implements Command {
         }
 
         if (paymentHistory.equals(userRequest)) {
-            final String PAGE_SIZE = "pageSize";
-            int page;
-            if (req.getParameter("page") == null || req.getParameter("page").equals("")) {
-                page = 1;
-            } else {
-                String paramPage = req.getParameter("page");
-                page = Integer.parseInt(paramPage);
-            }
-
-            int pageSize;
-            if (req.getParameter(PAGE_SIZE) == null || req.getParameter(PAGE_SIZE).equals("")) {
-                pageSize = 10;
-            } else {
-                String paramPageSize = req.getParameter(PAGE_SIZE);
-                pageSize = Integer.parseInt(paramPageSize);
-            }
-
-            int size = userPaymentDAO.getUsersPaymentsSize(userID);
-
-
-            List<UserPayment> userPaymentsList = userPaymentDAO.findGroup(userID, pageSize, pageSize * (page - 1));
-
-            int minPagePossible = Math.max(page, 1);
-
-            int pageCount = (int) Math.ceil((double) size / pageSize);
-            int maxPagePossible = Math.min(page, pageCount);
-
-            req.getSession().setAttribute("userPaymentsList", userPaymentsList);
-            req.getSession().setAttribute("pageCount", pageCount);
-            req.getSession().setAttribute("page", page);
-            req.getSession().setAttribute(PAGE_SIZE, pageSize);
-            req.getSession().setAttribute("minPossiblePage", minPagePossible);
-            req.getSession().setAttribute("maxPossiblePage", maxPagePossible);
-
-            String userFlag = "History";
-            req.getSession().setAttribute(USER_FLAG, userFlag);
-            return "user.jsp";
+            return getPaginatedPages(req, userID);
         }
 
         if (editProfile.equals(userRequest)) {
@@ -132,6 +96,46 @@ public class UserRequestCommand implements Command {
         }
 
         return req.getHeader("referer");
+    }
+
+    private String getPaginatedPages(HttpServletRequest req, int userID) throws DBException {
+        final String PAGE_SIZE = "pageSize";
+        int page;
+        if (req.getParameter("page") == null || req.getParameter("page").equals("")) {
+            page = 1;
+        } else {
+            String paramPage = req.getParameter("page");
+            page = Integer.parseInt(paramPage);
+        }
+
+        int pageSize;
+        if (req.getParameter(PAGE_SIZE) == null || req.getParameter(PAGE_SIZE).equals("")) {
+            pageSize = 10;
+        } else {
+            String paramPageSize = req.getParameter(PAGE_SIZE);
+            pageSize = Integer.parseInt(paramPageSize);
+        }
+
+        int size = userPaymentDAO.getUsersPaymentsSize(userID);
+
+
+        List<UserPayment> userPaymentsList = userPaymentDAO.findGroup(userID, pageSize, pageSize * (page - 1));
+
+        int minPagePossible = Math.max(page, 1);
+
+        int pageCount = (int) Math.ceil((double) size / pageSize);
+        int maxPagePossible = Math.min(page, pageCount);
+
+        req.getSession().setAttribute("userPaymentsList", userPaymentsList);
+        req.getSession().setAttribute("pageCount", pageCount);
+        req.getSession().setAttribute("page", page);
+        req.getSession().setAttribute(PAGE_SIZE, pageSize);
+        req.getSession().setAttribute("minPossiblePage", minPagePossible);
+        req.getSession().setAttribute("maxPossiblePage", maxPagePossible);
+
+        String userFlag = "History";
+        req.getSession().setAttribute(USER_FLAG, userFlag);
+        return "user.jsp";
     }
 
     private String addOrEditUser(HttpServletRequest req) throws DBException {

@@ -112,7 +112,7 @@ public class UserPaymentDBManager {
         userPayment.setDate(rs.getTimestamp(3));
         userPayment.setSum(rs.getDouble(4));
 
-        log.trace("User payment created ==> " + userPayment);
+        log.trace("User payment created ==> {}", userPayment);
         return userPayment;
     }
 
