@@ -1,6 +1,6 @@
-package com.podverbnyj.provider.DAO.db;
+package com.podverbnyj.provider.dao.db;
 
-import com.podverbnyj.provider.DAO.db.entity.UserTariff;
+import com.podverbnyj.provider.dao.db.entity.UserTariff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserTariffConstants.*;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserTariffConstants.*;
 
 
 public class UserTariffDBManager {

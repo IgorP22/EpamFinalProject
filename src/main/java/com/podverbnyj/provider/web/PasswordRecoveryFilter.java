@@ -1,9 +1,9 @@
 package com.podverbnyj.provider.web;
 
-import com.podverbnyj.provider.DAO.PasswordRecoveryDAO;
-import com.podverbnyj.provider.DAO.UserDAO;
-import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.entity.PasswordRecovery;
+import com.podverbnyj.provider.dao.PasswordRecoveryDAO;
+import com.podverbnyj.provider.dao.UserDAO;
+import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.entity.PasswordRecovery;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

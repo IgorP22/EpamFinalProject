@@ -1,16 +1,16 @@
-package com.podverbnyj.provider.DAO.db.entity;
+package com.podverbnyj.provider.dao.db.entity;
 
 
-import com.podverbnyj.provider.DAO.db.entity.constant.Language;
-import com.podverbnyj.provider.DAO.db.entity.constant.Role;
-import com.podverbnyj.provider.DAO.db.entity.constant.Status;
+import com.podverbnyj.provider.dao.db.entity.constant.Language;
+import com.podverbnyj.provider.dao.db.entity.constant.Role;
+import com.podverbnyj.provider.dao.db.entity.constant.Status;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-import static com.podverbnyj.provider.DAO.db.entity.constant.Language.*;
-import static com.podverbnyj.provider.DAO.db.entity.constant.Role.*;
-import static com.podverbnyj.provider.DAO.db.entity.constant.Status.*;
+import static com.podverbnyj.provider.dao.db.entity.constant.Language.*;
+import static com.podverbnyj.provider.dao.db.entity.constant.Role.*;
+import static com.podverbnyj.provider.dao.db.entity.constant.Status.*;
 
 
 public class User implements Serializable {

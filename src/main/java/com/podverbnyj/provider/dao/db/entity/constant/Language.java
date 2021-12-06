@@ -1,4 +1,4 @@
-package com.podverbnyj.provider.DAO.db.entity.constant;
+package com.podverbnyj.provider.dao.db.entity.constant;
 
 public enum Language {
     RU("ru"), EN("en");

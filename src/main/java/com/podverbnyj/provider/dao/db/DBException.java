@@ -1,4 +1,4 @@
-package com.podverbnyj.provider.DAO.db;
+package com.podverbnyj.provider.dao.db;
 
 public class DBException extends Exception {
 

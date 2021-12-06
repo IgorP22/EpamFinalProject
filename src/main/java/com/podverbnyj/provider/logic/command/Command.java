@@ -1,6 +1,6 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.dao.db.DBException;
 
 import javax.servlet.http.*;
 import java.io.IOException;

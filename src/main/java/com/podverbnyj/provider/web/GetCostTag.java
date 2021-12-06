@@ -1,7 +1,7 @@
 package com.podverbnyj.provider.web;
 
-import com.podverbnyj.provider.DAO.UserTariffDAO;
-import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.dao.UserTariffDAO;
+import com.podverbnyj.provider.dao.db.DBException;
 
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;

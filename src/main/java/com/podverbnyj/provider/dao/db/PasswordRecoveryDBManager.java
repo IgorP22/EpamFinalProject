@@ -1,6 +1,6 @@
-package com.podverbnyj.provider.DAO.db;
+package com.podverbnyj.provider.dao.db;
 
-import com.podverbnyj.provider.DAO.db.entity.PasswordRecovery;
+import com.podverbnyj.provider.dao.db.entity.PasswordRecovery;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.PasswordRecoveryConstants.*;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.PasswordRecoveryConstants.*;
 
 
 public class PasswordRecoveryDBManager {

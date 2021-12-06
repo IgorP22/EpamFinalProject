@@ -5,8 +5,8 @@ import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.podverbnyj.provider.DAO.db.entity.Service;
-import com.podverbnyj.provider.DAO.db.entity.Tariff;
+import com.podverbnyj.provider.dao.db.entity.Service;
+import com.podverbnyj.provider.dao.db.entity.Tariff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,7 +18,6 @@ import java.util.List;
 public class PdfFile implements File {
     private static final Logger log = LogManager.getLogger(PdfFile.class);
 
-    @SuppressWarnings("unchecked")
     @Override
     public void create(HttpServletRequest req) throws IOException, DocumentException {
 

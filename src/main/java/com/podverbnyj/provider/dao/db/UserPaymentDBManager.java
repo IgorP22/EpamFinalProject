@@ -1,6 +1,6 @@
-package com.podverbnyj.provider.DAO.db;
+package com.podverbnyj.provider.dao.db;
 
-import com.podverbnyj.provider.DAO.db.entity.UserPayment;
+import com.podverbnyj.provider.dao.db.entity.UserPayment;
 import org.apache.logging.log4j.*;
 
 import java.sql.*;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserPaymentsConstants.*;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserPaymentsConstants.*;
 
 
 public class UserPaymentDBManager {

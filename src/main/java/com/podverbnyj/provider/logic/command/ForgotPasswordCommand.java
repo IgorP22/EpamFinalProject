@@ -1,10 +1,10 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.DAO.PasswordRecoveryDAO;
-import com.podverbnyj.provider.DAO.UserDAO;
-import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.entity.PasswordRecovery;
-import com.podverbnyj.provider.DAO.db.entity.User;
+import com.podverbnyj.provider.dao.PasswordRecoveryDAO;
+import com.podverbnyj.provider.dao.UserDAO;
+import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.entity.PasswordRecovery;
+import com.podverbnyj.provider.dao.db.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

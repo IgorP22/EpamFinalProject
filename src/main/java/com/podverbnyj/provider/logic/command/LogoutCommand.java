@@ -1,6 +1,6 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.dao.db.DBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

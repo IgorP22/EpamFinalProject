@@ -1,12 +1,12 @@
 package com.podverbnyj.provider.utils;
 
-import com.podverbnyj.provider.DAO.UserDAO;
-import com.podverbnyj.provider.DAO.UserTariffDAO;
-import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.entity.User;
-import com.podverbnyj.provider.DAO.db.entity.UserPayment;
-import com.podverbnyj.provider.DAO.db.entity.constant.Language;
-import com.podverbnyj.provider.DAO.db.entity.constant.Status;
+import com.podverbnyj.provider.dao.UserDAO;
+import com.podverbnyj.provider.dao.UserTariffDAO;
+import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.entity.User;
+import com.podverbnyj.provider.dao.db.entity.UserPayment;
+import com.podverbnyj.provider.dao.db.entity.constant.Language;
+import com.podverbnyj.provider.dao.db.entity.constant.Status;
 import org.apache.logging.log4j.*;
 
 import java.util.ArrayList;

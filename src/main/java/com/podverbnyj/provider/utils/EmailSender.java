@@ -13,8 +13,10 @@ import javax.mail.internet.*;
 import javax.servlet.http.HttpServletRequest;
 
 public class EmailSender {
-    private static final Logger log = LogManager.getLogger(EmailSender.class);
+    private EmailSender() {
+    }
 
+    private static final Logger log = LogManager.getLogger(EmailSender.class);
     private static final String USER_NAME = "testfinalproject2";  // GMail username (just the part before "@gmail.com")
     private static final String PASSWORD = ""; // GMail password
 
@@ -56,6 +58,9 @@ public class EmailSender {
                 // Create the message part
                 BodyPart messageBodyPart = new MimeBodyPart();
 
+                // Now set the actual message
+                messageBodyPart.setText(body);
+
                 // Create a multipart message
                 Multipart multipart = new MimeMultipart();
 
@@ -85,7 +90,7 @@ public class EmailSender {
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
         } catch (MessagingException ae) {
-            ae.printStackTrace();
+            log.error("Email sending fall down....");
         }
     }
 }

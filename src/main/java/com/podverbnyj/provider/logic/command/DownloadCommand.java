@@ -1,7 +1,7 @@
 package com.podverbnyj.provider.logic.command;
 
 import com.itextpdf.text.DocumentException;
-import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.dao.db.DBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,9 +23,9 @@ public class DownloadCommand implements Command {
         String fileType = req.getParameter("file");
         try {
             getFile(req);
-        } catch (IOException | DocumentException e) {
+        } catch (IOException | DocumentException ex) {
 
-            log.error("File price_list.{}} can't be created to user", fileType);
+            log.error("File price_list.{}} can't be created to user", fileType, ex);
         }
 
         String fileName = req.getServletContext().getRealPath("/") + "price_list."+fileType;

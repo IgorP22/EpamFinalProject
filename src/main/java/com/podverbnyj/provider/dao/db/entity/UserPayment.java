@@ -1,4 +1,4 @@
-package com.podverbnyj.provider.DAO.db.entity;
+package com.podverbnyj.provider.dao.db.entity;
 
 import java.io.Serializable;
 import java.util.Date;

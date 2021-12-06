@@ -1,7 +1,7 @@
-package com.podverbnyj.provider.DAO;
+package com.podverbnyj.provider.dao;
 
 
-import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.dao.db.DBException;
 
 
 import java.util.List;

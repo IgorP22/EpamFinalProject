@@ -1,9 +1,9 @@
-package com.podverbnyj.provider.DAO;
+package com.podverbnyj.provider.dao;
 
-import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.DBUtils;
-import com.podverbnyj.provider.DAO.db.UserPaymentDBManager;
-import com.podverbnyj.provider.DAO.db.entity.UserPayment;
+import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.DBUtils;
+import com.podverbnyj.provider.dao.db.UserPaymentDBManager;
+import com.podverbnyj.provider.dao.db.entity.UserPayment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

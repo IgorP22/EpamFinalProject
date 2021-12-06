@@ -8,7 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.dao.db.DBException;
 import com.podverbnyj.provider.logic.command.Command;
 import com.podverbnyj.provider.logic.command.CommandContainer;
 import org.apache.logging.log4j.*;

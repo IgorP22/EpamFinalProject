@@ -1,9 +1,9 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.entity.Service;
-import com.podverbnyj.provider.DAO.db.entity.Tariff;
-import com.podverbnyj.provider.DAO.db.entity.User;
+import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.entity.Service;
+import com.podverbnyj.provider.dao.db.entity.Tariff;
+import com.podverbnyj.provider.dao.db.entity.User;
 import com.podverbnyj.provider.utils.Sorter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

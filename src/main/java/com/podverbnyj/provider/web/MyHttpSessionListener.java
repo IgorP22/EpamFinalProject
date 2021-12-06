@@ -1,12 +1,12 @@
 package com.podverbnyj.provider.web;
 
-import com.podverbnyj.provider.DAO.ServiceDAO;
-import com.podverbnyj.provider.DAO.TariffDAO;
-import com.podverbnyj.provider.DAO.UserDAO;
-import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.entity.Service;
-import com.podverbnyj.provider.DAO.db.entity.Tariff;
-import com.podverbnyj.provider.DAO.db.entity.User;
+import com.podverbnyj.provider.dao.ServiceDAO;
+import com.podverbnyj.provider.dao.TariffDAO;
+import com.podverbnyj.provider.dao.UserDAO;
+import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.entity.Service;
+import com.podverbnyj.provider.dao.db.entity.Tariff;
+import com.podverbnyj.provider.dao.db.entity.User;
 import com.podverbnyj.provider.utils.Sorter;
 
 import javax.servlet.http.HttpSessionEvent;

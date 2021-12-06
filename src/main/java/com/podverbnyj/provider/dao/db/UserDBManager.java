@@ -1,10 +1,10 @@
-package com.podverbnyj.provider.DAO.db;
+package com.podverbnyj.provider.dao.db;
 
-import com.podverbnyj.provider.DAO.db.entity.User;
-import com.podverbnyj.provider.DAO.db.entity.UserPayment;
-import com.podverbnyj.provider.DAO.db.entity.constant.Language;
-import com.podverbnyj.provider.DAO.db.entity.constant.Role;
-import com.podverbnyj.provider.DAO.db.entity.constant.Status;
+import com.podverbnyj.provider.dao.db.entity.User;
+import com.podverbnyj.provider.dao.db.entity.UserPayment;
+import com.podverbnyj.provider.dao.db.entity.constant.Language;
+import com.podverbnyj.provider.dao.db.entity.constant.Role;
+import com.podverbnyj.provider.dao.db.entity.constant.Status;
 import org.apache.logging.log4j.*;
 
 
@@ -12,9 +12,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.podverbnyj.provider.DAO.db.entity.constant.SQLConstant.UserConstants.*;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserConstants.*;
 
-@SuppressWarnings("UnusedAssignment")
 public class UserDBManager {
 
     private static final Logger log = LogManager.getLogger(UserDBManager.class);

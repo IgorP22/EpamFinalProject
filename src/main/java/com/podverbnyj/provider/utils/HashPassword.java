@@ -1,6 +1,6 @@
 package com.podverbnyj.provider.utils;
 
-import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.dao.db.DBException;
 import org.apache.logging.log4j.*;
 
 import java.security.MessageDigest;
@@ -14,7 +14,7 @@ public class HashPassword {
     private static final Logger log = LogManager.getLogger(HashPassword.class);
 
     public static String securePassword(String input) throws DBException {
-        MessageDigest digester = null;
+        MessageDigest digester;
         try {
             digester = MessageDigest.getInstance("SHA-256");
             digester.update(input.getBytes());

@@ -2,11 +2,11 @@ package com.podverbnyj.provider.logic.command;
 
 import javax.servlet.http.*;
 
-import com.podverbnyj.provider.DAO.UserDAO;
-import com.podverbnyj.provider.DAO.UserTariffDAO;
-import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.entity.User;
-import com.podverbnyj.provider.DAO.db.entity.constant.Role;
+import com.podverbnyj.provider.dao.UserDAO;
+import com.podverbnyj.provider.dao.UserTariffDAO;
+import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.entity.User;
+import com.podverbnyj.provider.dao.db.entity.constant.Role;
 import com.podverbnyj.provider.utils.VerifyRecaptcha;
 import org.apache.logging.log4j.*;
 

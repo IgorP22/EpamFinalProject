@@ -1,8 +1,8 @@
 package com.podverbnyj.provider.utils;
 
-import com.podverbnyj.provider.DAO.db.entity.Service;
-import com.podverbnyj.provider.DAO.db.entity.Tariff;
-import com.podverbnyj.provider.DAO.db.entity.User;
+import com.podverbnyj.provider.dao.db.entity.Service;
+import com.podverbnyj.provider.dao.db.entity.Tariff;
+import com.podverbnyj.provider.dao.db.entity.User;
 
 import java.util.*;
 

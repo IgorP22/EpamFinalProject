@@ -1,14 +1,14 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.DAO.*;
-import com.podverbnyj.provider.DAO.db.DBException;
-import com.podverbnyj.provider.DAO.db.entity.Service;
-import com.podverbnyj.provider.DAO.db.entity.User;
-import com.podverbnyj.provider.DAO.db.entity.UserPayment;
-import com.podverbnyj.provider.DAO.db.entity.UserTariff;
-import com.podverbnyj.provider.DAO.db.entity.constant.Language;
-import com.podverbnyj.provider.DAO.db.entity.constant.Role;
-import com.podverbnyj.provider.DAO.db.entity.constant.Status;
+import com.podverbnyj.provider.dao.*;
+import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.entity.Service;
+import com.podverbnyj.provider.dao.db.entity.User;
+import com.podverbnyj.provider.dao.db.entity.UserPayment;
+import com.podverbnyj.provider.dao.db.entity.UserTariff;
+import com.podverbnyj.provider.dao.db.entity.constant.Language;
+import com.podverbnyj.provider.dao.db.entity.constant.Role;
+import com.podverbnyj.provider.dao.db.entity.constant.Status;
 import org.apache.logging.log4j.*;
 
 import javax.servlet.http.HttpServletRequest;

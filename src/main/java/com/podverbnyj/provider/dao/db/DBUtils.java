@@ -1,4 +1,4 @@
-package com.podverbnyj.provider.DAO.db;
+package com.podverbnyj.provider.dao.db;
 
 
 import org.apache.logging.log4j.*;

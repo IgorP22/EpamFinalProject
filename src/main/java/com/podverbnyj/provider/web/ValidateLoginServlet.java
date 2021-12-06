@@ -1,7 +1,7 @@
 package com.podverbnyj.provider.web;
 
-import com.podverbnyj.provider.DAO.UserDAO;
-import com.podverbnyj.provider.DAO.db.DBException;
+import com.podverbnyj.provider.dao.UserDAO;
+import com.podverbnyj.provider.dao.db.DBException;
 import org.apache.logging.log4j.*;
 
 import java.io.IOException;
