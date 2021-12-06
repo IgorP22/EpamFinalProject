@@ -34,10 +34,12 @@ public class ServiceDBManager {
 
     public List<Service> findAll(Connection con) throws SQLException {
         List<Service> services = new ArrayList<>();
+        PreparedStatement ps = null;
         ResultSet rs = null;
         Service service;
         try {
-            rs = con.createStatement().executeQuery(FIND_ALL_SERVICES);
+            ps = con.prepareStatement(FIND_ALL_SERVICES);
+            rs = ps.executeQuery();
             while (rs.next()) {
                 service = getService(rs);
                 services.add(service);
@@ -45,6 +47,7 @@ public class ServiceDBManager {
             return services;
         } finally {
             close(rs);
+            close(ps);
         }
     }
 

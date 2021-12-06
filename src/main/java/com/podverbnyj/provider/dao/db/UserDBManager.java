@@ -16,6 +16,7 @@ import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserCon
 
 public class UserDBManager {
 
+
     private static final Logger log = LogManager.getLogger(UserDBManager.class);
 
 
@@ -34,10 +35,12 @@ public class UserDBManager {
 
     public List<User> findAll(Connection con) throws SQLException {
         List<User> users = new ArrayList<>();
+        PreparedStatement ps = null;
         ResultSet rs = null;
         User user;
         try {
-            rs = con.createStatement().executeQuery(FIND_ALL_USERS);
+            ps = con.prepareStatement(FIND_ALL_USERS);
+            rs = ps.executeQuery();
             while (rs.next()) {
                 user = getUser(rs);
                 users.add(user);
@@ -45,6 +48,7 @@ public class UserDBManager {
             return users;
         } finally {
             close(rs);
+            close(ps);
         }
     }
 
@@ -122,16 +126,19 @@ public class UserDBManager {
     }
 
     public int countAdmins(Connection con) throws SQLException {
+        PreparedStatement ps = null;
         ResultSet rs = null;
         int counter = 1;
         try {
-            rs = con.createStatement().executeQuery(COUNT_ADMINS);
+            ps = con.prepareStatement(COUNT_ADMINS);
+            rs = ps.executeQuery();
             if (rs.next()) {
                 counter = rs.getInt(1);
             }
             return counter;
         } finally {
             close(rs);
+            close(ps);
         }
     }
 

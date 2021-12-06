@@ -9,10 +9,6 @@ public enum Language {
         this.value = value;
     }
 
-    public boolean equalsTo(String name) {
-        return value.equals(name);
-    }
-
     public String value() {
         return value;
     }

@@ -52,18 +52,60 @@ public class AdminRequestCommand implements Command {
         String adminRequest = req.getParameter("adminRequest");
 
         String getListOfServicesAndTariff = "List of services and tariffs";
-        String getUsersList = "List of users";
-
-        String addOrEditUser = "Add or edit user";
-        String blockUser = "Block user";
-        String unblockUser = "Unblock user";
-        String deleteUser = "Delete user";
 
         String editService = "Add or edit service";
         String deleteService = "Delete service";
         String editTariff = "Add or edit tariff";
         String deleteTariff = "Delete tariff";
         String removeDataFromSession = "Remove data";
+
+        if (adminRequest.contains("user")) {
+
+            String address = userRequests(adminRequest,req);
+            if (address != null) return address;
+
+        }
+
+        if (getListOfServicesAndTariff.equals(adminRequest)) {
+            getPriceList(req);
+            return req.getHeader(REFERER);
+        }
+
+        if (removeDataFromSession.equals(adminRequest)) {
+            req.getSession().setAttribute(SERVICE_TO_EDIT, null);
+            req.getSession().setAttribute(TARIFF_TO_EDIT, null);
+            req.getSession().setAttribute(USER_TO_EDIT, null);
+            return req.getHeader(REFERER);
+        }
+
+        if (editService.equals(adminRequest)) {
+            String address = addOrEditService(req);
+            if (address != null) return address;
+        }
+
+        if (deleteService.equals(adminRequest)) {
+            return deleteService(req);
+        }
+
+        if (editTariff.equals(adminRequest)) {
+            String address = addOrEditTariff(req);
+            if (address != null) return address;
+        }
+
+        if (deleteTariff.equals(adminRequest)) {
+            return deleteTariff(req);
+        }
+
+        return req.getHeader(REFERER);
+    }
+
+
+    private static String userRequests(String adminRequest, HttpServletRequest req) throws DBException {
+        String getUsersList = "List of users";
+        String addOrEditUser = "Add or edit user";
+        String blockUser = "Block user";
+        String unblockUser = "Unblock user";
+        String deleteUser = "Delete user";
 
         if (blockUser.equals(adminRequest)) {
             int userID = Integer.parseInt(req.getParameter(USER_TO_EDIT_ID));
@@ -94,47 +136,14 @@ public class AdminRequestCommand implements Command {
             if (address != null) return address;
         }
 
-
-        if (getListOfServicesAndTariff.equals(adminRequest)) {
-            getPriceList(req);
-            return req.getHeader(REFERER);
-        }
-
         if (getUsersList.equals(adminRequest)) {
             getUsersList(req);
             return req.getHeader(REFERER);
         }
-
-        if (removeDataFromSession.equals(adminRequest)) {
-            req.getSession().setAttribute(SERVICE_TO_EDIT, null);
-            req.getSession().setAttribute(TARIFF_TO_EDIT, null);
-            req.getSession().setAttribute(USER_TO_EDIT, null);
-            return req.getHeader(REFERER);
-        }
-
-
-        if (editService.equals(adminRequest)) {
-            String address = addOrEditService(req);
-            if (address != null) return address;
-        }
-
-        if (deleteService.equals(adminRequest)) {
-            return deleteService(req);
-        }
-
-        if (editTariff.equals(adminRequest)) {
-            String address = addOrEditTariff(req);
-            if (address != null) return address;
-        }
-
-        if (deleteTariff.equals(adminRequest)) {
-            return deleteTariff(req);
-        }
-
-        return req.getHeader(REFERER);
+        return null;
     }
 
-    private static void sendEmailAboutBlocking(User user) {
+    private static void sendEmailAboutBlocking(User user) throws DBException {
         if (user.isNotification() && (user.getEmail() != null)) {
             String subject;
             String body;
@@ -154,7 +163,7 @@ public class AdminRequestCommand implements Command {
         }
     }
 
-    private static void sendEmailAboutUnblocking(User user) {
+    private static void sendEmailAboutUnblocking(User user) throws DBException {
         if (user.isNotification() && (user.getEmail() != null)) {
             String subject;
             String body;
@@ -173,7 +182,7 @@ public class AdminRequestCommand implements Command {
     }
 
 
-    private void getUsersList(HttpServletRequest req) throws DBException {
+    private static void getUsersList(HttpServletRequest req) throws DBException {
         List<User> listOfUsers = userDAO.findAll();
         boolean sortedByLogin = (boolean) req.getSession().getAttribute("sortedByPrice");
         if (sortedByLogin) {
@@ -184,7 +193,7 @@ public class AdminRequestCommand implements Command {
         req.getSession().setAttribute("ListOfUsers", listOfUsers);
     }
 
-    private String deleteUser(HttpServletRequest req) throws DBException {
+    private static String deleteUser(HttpServletRequest req) throws DBException {
         String confirmation = req.getParameter(CONFIRMATION);
         if (confirmation == null) {
             req.getSession().setAttribute(USER_ID_TO_DELETE, req.getParameter(USER_TO_EDIT_ID));
@@ -209,7 +218,7 @@ public class AdminRequestCommand implements Command {
         return req.getHeader(REFERER);
     }
 
-    private String addOrEditUser(HttpServletRequest req) throws DBException {
+    private static String addOrEditUser(HttpServletRequest req) throws DBException {
 
         if (req.getParameter(USER_TO_EDIT_ID) == null && req.getParameter(USER_LOGIN) != null) {
             User user;
@@ -247,7 +256,7 @@ public class AdminRequestCommand implements Command {
         return null;
     }
 
-    private User getUser(HttpServletRequest req) throws DBException {
+    private static User getUser(HttpServletRequest req) throws DBException {
 
         User user;
 

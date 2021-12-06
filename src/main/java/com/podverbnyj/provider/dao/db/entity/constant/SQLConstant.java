@@ -28,8 +28,7 @@ public class SQLConstant {
 
         public static final String FIND_ALL_SERVICES = "SELECT * FROM service";
         public static final String GET_SERVICE_BY_ID = "SELECT * FROM service WHERE service_id=?";
-        public static final String CREATE_SERVICE = "INSERT INTO service (title_ru, title_en) "
-                + "VALUES (?,?)";
+        public static final String CREATE_SERVICE = "INSERT INTO service (title_ru, title_en) VALUES (?,?)";
         public static final String UPDATE_SERVICE = "UPDATE service SET title_ru = ?, title_en = ? "
                 + " WHERE (service_id = ?)";
         public static final String DELETE_SERVICE_BY_ID = "DELETE FROM service WHERE service_id = ?";

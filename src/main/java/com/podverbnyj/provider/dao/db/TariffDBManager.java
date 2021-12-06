@@ -34,10 +34,12 @@ public class TariffDBManager {
 
     public List<Tariff> findAll(Connection con) throws SQLException {
         List<Tariff> tariffs = new ArrayList<>();
+        PreparedStatement ps = null;
         ResultSet rs = null;
         Tariff tariff;
         try {
-            rs = con.createStatement().executeQuery(FIND_ALL_TARIFFS);
+            ps = con.prepareStatement(FIND_ALL_TARIFFS);
+            rs = ps.executeQuery();
             while (rs.next()) {
                 tariff = getTariff(rs);
                 tariffs.add(tariff);
@@ -45,6 +47,7 @@ public class TariffDBManager {
             return tariffs;
         } finally {
             close(rs);
+            close(ps);
         }
     }
 

@@ -39,54 +39,70 @@ public class SortCommand implements Command {
 
         if (sortServices.equals(sort)) {
             List<Service> services = (List<Service>) req.getSession().getAttribute("ListOfServices");
-            if (servicesIsSorted) {
-                Sorter.sortServicesByNameReverseOrder(services, language);
-                req.getSession().setAttribute(SERVICES_IS_SORTED, false);
-            } else {
-                Sorter.sortServicesByName(services, language);
-                req.getSession().setAttribute(SERVICES_IS_SORTED, true);
-            }
+            choseServicesSorting(req, language, servicesIsSorted, services);
             log.info("List of services sorted.");
             return req.getHeader(REFERER);
         }
 
         if (sortTariffsByName.equals(sort)) {
             List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
-            if (tariffsIsSortedByName) {
-                Sorter.sortTariffsByNameReverseOrder(tariffs, language);
-                req.getSession().setAttribute(TARIFFS_IS_SORTED_BY_NAME, false);
-            } else {
-                Sorter.sortTariffsByName(tariffs, language);
-                req.getSession().setAttribute(TARIFFS_IS_SORTED_BY_NAME, true);
-            }
+            choseTariffsByNameSorting(req, language, tariffsIsSortedByName, tariffs);
             log.info("List of tariffs sorted by name.");
             return req.getHeader(REFERER);
         }
 
         if (sortTariffsByPrice.equals(sort)) {
             List<Tariff> tariffs = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
-            if (sortedByPrice) {
-                Sorter.sortTariffsByPriceReverseOrder(tariffs);
-                req.getSession().setAttribute(SORTED_BY_PRICE, false);
-            } else {
-                Sorter.sortTariffsByPrice(tariffs);
-                req.getSession().setAttribute(SORTED_BY_PRICE, true);
-            }
+            choseTariffsByPriceSorting(req, sortedByPrice, tariffs);
             log.info("List of tariffs sorted by price.");
             return req.getHeader(REFERER);
         }
 
         if (sortUsersByLogin.equals(sort)) {
             List<User> users = (List<User>) req.getSession().getAttribute("ListOfUsers");
-            if (sortedByLogin) {
-                Sorter.sortUsersByLoginReverseOrder(users);
-                req.getSession().setAttribute(SORTED_BY_LOGIN, false);
-            } else {
-                Sorter.sortUsersByLogin(users);
-                req.getSession().setAttribute(SORTED_BY_LOGIN, true);
-            }
+            choseUserByLoginSorting(req, sortedByLogin, users);
             log.info("List of users sorted.");
         }
         return req.getHeader(REFERER);
+    }
+
+    private void choseUserByLoginSorting(HttpServletRequest req, boolean sortedByLogin, List<User> users) {
+        if (sortedByLogin) {
+            Sorter.sortUsersByLoginReverseOrder(users);
+            req.getSession().setAttribute(SORTED_BY_LOGIN, false);
+        } else {
+            Sorter.sortUsersByLogin(users);
+            req.getSession().setAttribute(SORTED_BY_LOGIN, true);
+        }
+    }
+
+    private void choseTariffsByPriceSorting(HttpServletRequest req, boolean sortedByPrice, List<Tariff> tariffs) {
+        if (sortedByPrice) {
+            Sorter.sortTariffsByPriceReverseOrder(tariffs);
+            req.getSession().setAttribute(SORTED_BY_PRICE, false);
+        } else {
+            Sorter.sortTariffsByPrice(tariffs);
+            req.getSession().setAttribute(SORTED_BY_PRICE, true);
+        }
+    }
+
+    private void choseTariffsByNameSorting(HttpServletRequest req, String language, boolean tariffsIsSortedByName, List<Tariff> tariffs) {
+        if (tariffsIsSortedByName) {
+            Sorter.sortTariffsByNameReverseOrder(tariffs, language);
+            req.getSession().setAttribute(TARIFFS_IS_SORTED_BY_NAME, false);
+        } else {
+            Sorter.sortTariffsByName(tariffs, language);
+            req.getSession().setAttribute(TARIFFS_IS_SORTED_BY_NAME, true);
+        }
+    }
+
+    private void choseServicesSorting(HttpServletRequest req, String language, boolean servicesIsSorted, List<Service> services) {
+        if (servicesIsSorted) {
+            Sorter.sortServicesByNameReverseOrder(services, language);
+            req.getSession().setAttribute(SERVICES_IS_SORTED, false);
+        } else {
+            Sorter.sortServicesByName(services, language);
+            req.getSession().setAttribute(SERVICES_IS_SORTED, true);
+        }
     }
 }

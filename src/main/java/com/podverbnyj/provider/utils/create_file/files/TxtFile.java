@@ -14,8 +14,7 @@ public class TxtFile implements File {
     private static final Logger log = LogManager.getLogger(TxtFile.class);
     public static final String DEVIDER = " ==> ";
 
-    @SuppressWarnings("unchecked")
-    @Override
+        @Override
     public void create(HttpServletRequest req) throws IOException {
         List<Service> serviceList = (List<Service>) req.getSession().getAttribute("ListOfServices");
         List<Tariff> tariffList = (List<Tariff>) req.getSession().getAttribute("ListOfTariffs");
@@ -23,19 +22,7 @@ public class TxtFile implements File {
 
         try (FileWriter file = new FileWriter(req.getServletContext().getRealPath("/") + "price_list.txt")) {
 
-            if (language.equals("ru")) {
-                file.write("Прайс-лист" + System.lineSeparator());
-            } else {
-                file.write("Our prices" + System.lineSeparator());
-            }
-            file.write("------------------------------" + System.lineSeparator());
-            if (language.equals("ru")) {
-                file.write("Наименование                Описание             Цена" + System.lineSeparator());
-            } else {
-                file.write("Name                Description             Price" + System.lineSeparator());
-            }
-
-            file.write("------------------------------" + System.lineSeparator());
+            prepareHeader(language, file);
 
             for (Service service : serviceList) {
                 if (language.equals("ru")) {
@@ -58,5 +45,21 @@ public class TxtFile implements File {
         }
 
         log.info("Price list created: {}}price_list.txt", req.getServletContext().getRealPath("/"));
+    }
+
+    private void prepareHeader(String language, FileWriter file) throws IOException {
+        if (language.equals("ru")) {
+            file.write("Прайс-лист" + System.lineSeparator());
+        } else {
+            file.write("Our prices" + System.lineSeparator());
+        }
+        file.write("------------------------------" + System.lineSeparator());
+        if (language.equals("ru")) {
+            file.write("Наименование                Описание             Цена" + System.lineSeparator());
+        } else {
+            file.write("Name                Description             Price" + System.lineSeparator());
+        }
+
+        file.write("------------------------------" + System.lineSeparator());
     }
 }

@@ -67,7 +67,11 @@ public class DebitFunds {
                         "Please top up your account to resume services.." + System.lineSeparator() +
                         "Best wishes, your provider.) ";
             }
-            emailSender(user.getEmail(), subject, body, null);
+            try {
+                emailSender(user.getEmail(), subject, body, null);
+            } catch (DBException e) {
+                log.error("Email sending to user {} fall down ....", user.getLogin());
+            }
             log.info("Email about blocking account sent to user{}. Reason: insufficient funds.", user.getLogin());
         }
     }
