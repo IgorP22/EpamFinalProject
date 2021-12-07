@@ -1,6 +1,7 @@
 package com.podverbnyj.provider.dao.db.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class UserTariff implements Serializable {
     private int userId;

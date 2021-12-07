@@ -8,8 +8,10 @@ import static org.mockito.Mockito.*;
 
 import com.podverbnyj.provider.dao.db.entity.User;
 
+import com.podverbnyj.provider.dao.db.entity.constant.Language;
+import com.podverbnyj.provider.dao.db.entity.constant.Role;
+import com.podverbnyj.provider.dao.db.entity.constant.Status;
 import org.junit.*;
-import org.mockito.MockedStatic;
 
 import java.sql.*;
 import java.util.List;
@@ -17,18 +19,7 @@ import java.util.List;
 public class UserDBManagerTest {
 
     private Connection con;
-//
-//    private static MockedStatic<UserDBManager> userDBManagerMock;
-//
-//    @BeforeClass
-//    public static void setUpGlobal() {
-//        userDBManagerMock = mockStatic(UserDBManager.class);
-//    }
-//
-//    @AfterClass
-//    public static void tearDownAll() {
-//        userDBManagerMock.close();
-//    }
+
 
     @Before
     public void setUpFindAllTest() throws SQLException {
@@ -258,8 +249,18 @@ public class UserDBManagerTest {
 
         User user = userDBManager.getById(con, 7);
 
-        User user1 = new User.UserBuilder("obama", "obamapass").build();
-        assertEquals(user1, user);
+        User testUser = new User.UserBuilder("obama", "obamapass").build();
+        testUser.setId(15);
+        testUser.setEmail("testfinalproject2@gmail.com");
+        testUser.setName("Sergey");
+        testUser.setSurname("Sergeev");
+        testUser.setPhone("+38(050)222-22-22");
+        testUser.setBalance(200);
+        testUser.setLanguage(Language.RU);
+        testUser.setRole(Role.USER);
+        testUser.setNotification(true);
+        testUser.setStatus(Status.ACTIVE);
+        assertEquals(testUser, user);
     }
 
     @Before

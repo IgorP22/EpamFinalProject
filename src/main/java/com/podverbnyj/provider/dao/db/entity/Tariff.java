@@ -1,6 +1,7 @@
 package com.podverbnyj.provider.dao.db.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Tariff implements Serializable {
     private int id;
@@ -67,6 +68,15 @@ public class Tariff implements Serializable {
     public void setDescriptionEn(String descriptionEn) {
         this.descriptionEn = descriptionEn;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tariff tariff = (Tariff) o;
+        return id == tariff.id && Double.compare(tariff.price, price) == 0 && serviceId == tariff.serviceId && nameRu.equals(tariff.nameRu) && nameEn.equals(tariff.nameEn) && descriptionRu.equals(tariff.descriptionRu) && descriptionEn.equals(tariff.descriptionEn);
+    }
+
 
     @Override
     public String toString() {

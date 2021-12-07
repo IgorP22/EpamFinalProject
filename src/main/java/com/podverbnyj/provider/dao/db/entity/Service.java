@@ -1,6 +1,7 @@
 package com.podverbnyj.provider.dao.db.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Service implements Serializable {
     private int id;
@@ -31,6 +32,13 @@ public class Service implements Serializable {
         this.titleEn = titleEn;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Service service = (Service) o;
+        return id == service.id && titleRu.equals(service.titleRu) && titleEn.equals(service.titleEn);
+    }
 
     @Override
     public String toString() {
