@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 import static com.podverbnyj.provider.utils.EmailSender.emailSender;
-import static com.podverbnyj.provider.utils.HashPassword.securePassword;
+import static com.podverbnyj.provider.utils.GetUser.getUser;
 
 public class AdminRequestCommand implements Command {
 
@@ -48,7 +48,6 @@ public class AdminRequestCommand implements Command {
         if (req.getSession().getAttribute("currentUser") == null) {
             return req.getHeader("index.jsp");
         }
-
         String adminRequest = req.getParameter("adminRequest");
 
         String getListOfServicesAndTariff = "List of services and tariffs";
@@ -58,26 +57,22 @@ public class AdminRequestCommand implements Command {
         String editTariff = "Add or edit tariff";
         String deleteTariff = "Delete tariff";
         String removeDataFromSession = "Remove data";
-
         if (adminRequest.contains("user")) {
 
             String address = userRequests(adminRequest,req);
             if (address != null) return address;
 
         }
-
         if (getListOfServicesAndTariff.equals(adminRequest)) {
             getPriceList(req);
             return req.getHeader(REFERER);
         }
-
         if (removeDataFromSession.equals(adminRequest)) {
             req.getSession().setAttribute(SERVICE_TO_EDIT, null);
             req.getSession().setAttribute(TARIFF_TO_EDIT, null);
             req.getSession().setAttribute(USER_TO_EDIT, null);
             return req.getHeader(REFERER);
         }
-
         if (editService.equals(adminRequest)) {
             String address = addOrEditService(req);
             if (address != null) return address;
@@ -254,25 +249,6 @@ public class AdminRequestCommand implements Command {
             return ADMIN_USERS_JSP_SUCCESS;
         }
         return null;
-    }
-
-    private static User getUser(HttpServletRequest req) throws DBException {
-
-        User user;
-
-        user = new User.UserBuilder(
-                req.getParameter(USER_LOGIN),
-                securePassword(req.getParameter("userPassword")))
-                .setEmail(req.getParameter("userEmail"))
-                .setName(req.getParameter("userName"))
-                .setSurname(req.getParameter("userSurname"))
-                .setPhone(req.getParameter("userPhone"))
-                .setLanguage(Language.valueOf(req.getParameter("userLanguage")))
-                .setRole(Role.valueOf(req.getParameter("userRole")))
-                .setNotification(Boolean.parseBoolean(req.getParameter("userNotification")))
-                .setStatus(Status.valueOf(req.getParameter("userStatus")))
-                .build();
-        return user;
     }
 
     private String deleteService(HttpServletRequest req) throws DBException {

@@ -77,6 +77,10 @@ public class Tariff implements Serializable {
         return id == tariff.id && Double.compare(tariff.price, price) == 0 && serviceId == tariff.serviceId && nameRu.equals(tariff.nameRu) && nameEn.equals(tariff.nameEn) && descriptionRu.equals(tariff.descriptionRu) && descriptionEn.equals(tariff.descriptionEn);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nameRu, nameEn, price, serviceId, descriptionRu, descriptionEn);
+    }
 
     @Override
     public String toString() {

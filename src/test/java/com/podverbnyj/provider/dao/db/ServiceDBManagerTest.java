@@ -42,14 +42,15 @@ public class ServiceDBManagerTest {
         when(rs.getInt(1))
                 .thenReturn(7)
                 .thenReturn(15);
-
         when(rs.getString("title_ru"))
                 .thenReturn("Сервис 1")
                 .thenReturn("Сервис 2");
-
         when(rs.getString("title_en"))
                 .thenReturn("Service 1")
                 .thenReturn("Service 2");
+
+        when(con.prepareStatement(FIND_ALL_SERVICES))
+                .thenReturn(ps);
 
 
     }

@@ -41,6 +41,11 @@ public class Service implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(id, titleRu, titleEn);
+    }
+
+    @Override
     public String toString() {
         return "Service{" +
                 "id=" + id +
