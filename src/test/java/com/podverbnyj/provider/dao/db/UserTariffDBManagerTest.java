@@ -1,8 +1,6 @@
 package com.podverbnyj.provider.dao.db;
 
 
-
-import com.podverbnyj.provider.dao.db.entity.Tariff;
 import com.podverbnyj.provider.dao.db.entity.UserTariff;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +14,6 @@ import java.util.List;
 
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserTariffConstants.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

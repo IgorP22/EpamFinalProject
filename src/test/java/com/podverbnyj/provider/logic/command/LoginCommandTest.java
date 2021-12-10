@@ -6,7 +6,6 @@ import com.podverbnyj.provider.dao.db.entity.User;
 import com.podverbnyj.provider.dao.db.entity.constant.Language;
 import com.podverbnyj.provider.dao.db.entity.constant.Role;
 import com.podverbnyj.provider.dao.db.entity.constant.Status;
-import com.podverbnyj.provider.utils.GetUser;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;

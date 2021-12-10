@@ -2,8 +2,6 @@ package com.podverbnyj.provider.dao.db;
 
 
 import com.podverbnyj.provider.dao.db.entity.PasswordRecovery;
-import com.podverbnyj.provider.dao.db.entity.Service;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,9 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.PasswordRecoveryConstants.*;
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.ServiceConstants.CREATE_SERVICE;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

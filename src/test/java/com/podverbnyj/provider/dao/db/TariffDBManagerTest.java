@@ -1,7 +1,6 @@
 package com.podverbnyj.provider.dao.db;
 
 
-import com.podverbnyj.provider.dao.db.entity.Service;
 import com.podverbnyj.provider.dao.db.entity.Tariff;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.ServiceConstants.*;
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.TariffConstants.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

@@ -1,12 +1,6 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.dao.ServiceDAO;
-import com.podverbnyj.provider.dao.TariffDAO;
-import com.podverbnyj.provider.dao.UserDAO;
 import com.podverbnyj.provider.dao.db.DBUtils;
-import com.podverbnyj.provider.dao.db.ServiceDBManager;
-import com.podverbnyj.provider.dao.db.UserDBManager;
-import com.podverbnyj.provider.dao.db.entity.Service;
 import com.podverbnyj.provider.dao.db.entity.User;
 import com.podverbnyj.provider.dao.db.entity.constant.Language;
 import com.podverbnyj.provider.dao.db.entity.constant.Role;
@@ -24,14 +18,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.ServiceConstants.CREATE_SERVICE;
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.ServiceConstants.FIND_ALL_SERVICES;
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.TariffConstants.FIND_ALL_TARIFFS;
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserConstants.GET_USER_BY_ID;
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserConstants.UPDATE_USER;
-import static com.podverbnyj.provider.logic.command.AdminRequestCommand.REFERER;
-import static com.podverbnyj.provider.logic.command.AdminRequestCommand.SERVICE_NAME_RU;
-import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 

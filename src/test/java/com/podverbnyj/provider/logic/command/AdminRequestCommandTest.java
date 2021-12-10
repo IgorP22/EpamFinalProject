@@ -1,12 +1,6 @@
 package com.podverbnyj.provider.logic.command;
 
-import com.podverbnyj.provider.dao.ServiceDAO;
-import com.podverbnyj.provider.dao.TariffDAO;
-import com.podverbnyj.provider.dao.UserDAO;
 import com.podverbnyj.provider.dao.db.DBUtils;
-import com.podverbnyj.provider.dao.db.ServiceDBManager;
-import com.podverbnyj.provider.dao.db.UserDBManager;
-import com.podverbnyj.provider.dao.db.entity.Service;
 import com.podverbnyj.provider.dao.db.entity.User;
 import com.podverbnyj.provider.dao.db.entity.constant.Language;
 import com.podverbnyj.provider.dao.db.entity.constant.Role;
@@ -311,11 +305,6 @@ public class AdminRequestCommandTest {
                 .thenReturn(ps);
         when(ps.executeUpdate()).thenReturn(1);
 
-
-
-//        when(con.prepareStatement(FIND_ALL_SERVICES))
-//                .thenReturn(ps);
-
         ResultSet rs = mock(ResultSet.class);
 
         when(ps.executeQuery())
@@ -339,8 +328,6 @@ public class AdminRequestCommandTest {
                 .thenReturn("Service 1")
                 .thenReturn("Service 2");
 
-//        when(con.prepareStatement(FIND_ALL_TARIFFS))
-//                .thenReturn(ps);
 
         when(rs.getInt("tariff_id"))
                 .thenReturn(7)
@@ -449,7 +436,12 @@ public class AdminRequestCommandTest {
 //
         ResultSet rs = mock(ResultSet.class);
         PreparedStatement ps = mock(PreparedStatement.class);
-        when(con.prepareStatement(GET_USER_BY_ID)).thenReturn(ps);
+//        when(con.prepareStatement(GET_USER_BY_ID)).thenReturn(ps);
+
+
+        when(con.prepareStatement(any()))
+                .thenReturn(ps);
+        when(ps.executeUpdate()).thenReturn(1);
 
         when(ps.executeQuery())
                 .thenReturn(rs);
@@ -501,8 +493,6 @@ public class AdminRequestCommandTest {
         when(rs.getString("status"))
                 .thenReturn("BLOCKED");
 
-        UserDBManager userDBManager = mock(UserDBManager.class);
-
         when(con.prepareStatement(UPDATE_USER))
                 .thenReturn(ps);
 
@@ -539,10 +529,7 @@ public class AdminRequestCommandTest {
         HttpSession sessionMock = mock(HttpSession.class);
         when(req.getSession()).thenReturn(sessionMock);
         when(req.getSession().getAttribute("currentUser")).thenReturn(user);
-//
-//        when(req.getParameter(SERVICE_ID)).thenReturn("15");
-//
-//
+
         ResultSet rs = mock(ResultSet.class);
         PreparedStatement ps = mock(PreparedStatement.class);
         when(con.prepareStatement(GET_USER_BY_ID)).thenReturn(ps);
@@ -597,7 +584,6 @@ public class AdminRequestCommandTest {
         when(rs.getString("status"))
                 .thenReturn("BLOCKED");
 
-        UserDBManager userDBManager = mock(UserDBManager.class);
 
         when(con.prepareStatement(UPDATE_USER))
                 .thenReturn(ps);
@@ -615,9 +601,5 @@ public class AdminRequestCommandTest {
         assertEquals("admin_users.jsp#success", new AdminRequestCommand().execute(req, resp));
 
     }
-
-
-
-
 
 }
