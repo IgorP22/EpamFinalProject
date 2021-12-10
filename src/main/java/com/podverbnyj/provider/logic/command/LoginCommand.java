@@ -32,7 +32,7 @@ public class LoginCommand implements Command {
         try {
             verify = VerifyRecaptcha.verify(gRecaptchaResponse);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new DBException("Captcha not verified error");
         }
 
         User currentUser = new User.UserBuilder(login, securePassword(password)).build();
@@ -62,7 +62,7 @@ public class LoginCommand implements Command {
             req.getSession().setAttribute("userFlag", null);
             double totalCost = userTariffDAO.getTotalCost(user.getId());
             req.getSession().setAttribute("totalCost", totalCost);
-            log.info("Totac price for {} = {}",user,totalCost);
+            log.info("Total price for {} = {}",user,totalCost);
             if (!verify) {
                 return "index.jsp#wrongCaptcha";
             }

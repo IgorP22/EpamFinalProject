@@ -1,7 +1,12 @@
 package com.podverbnyj.provider.logic.command;
 
+import com.podverbnyj.provider.dao.ServiceDAO;
+import com.podverbnyj.provider.dao.TariffDAO;
 import com.podverbnyj.provider.dao.UserDAO;
 import com.podverbnyj.provider.dao.db.DBUtils;
+import com.podverbnyj.provider.dao.db.ServiceDBManager;
+import com.podverbnyj.provider.dao.db.UserDBManager;
+import com.podverbnyj.provider.dao.db.entity.Service;
 import com.podverbnyj.provider.dao.db.entity.User;
 import com.podverbnyj.provider.dao.db.entity.constant.Language;
 import com.podverbnyj.provider.dao.db.entity.constant.Role;
@@ -15,17 +20,23 @@ import org.mockito.MockedStatic;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserConstants.GET_USER_BY_LOGIN;
-import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserTariffConstants.GET_TOTAL_COST_BY_USER_ID;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.ServiceConstants.CREATE_SERVICE;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.ServiceConstants.FIND_ALL_SERVICES;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.TariffConstants.FIND_ALL_TARIFFS;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserConstants.GET_USER_BY_ID;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserConstants.UPDATE_USER;
+import static com.podverbnyj.provider.logic.command.AdminRequestCommand.REFERER;
+import static com.podverbnyj.provider.logic.command.AdminRequestCommand.SERVICE_NAME_RU;
+import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
-public class LoginCommandTest {
+public class UserRequestCommandTest {
+
     private DBUtils dbUtils;
     private static MockedStatic<DBUtils> dbUtilsMock;
     private Connection con;
@@ -53,45 +64,59 @@ public class LoginCommandTest {
 
 
     @Test
-    public void loginCommandTest() throws Exception {
-        User user = new User.UserBuilder("user5", "5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442").
-                setRole(Role.USER).
-                setLanguage(Language.RU).
-                setStatus(Status.ACTIVE).
-                build();
+    public void editUserTest() throws Exception {
 
         HttpServletRequest req = mock(HttpServletRequest.class);
         HttpServletResponse resp = mock(HttpServletResponse.class);
+        User testUser = new User.UserBuilder("user5", "5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442").
+                setRole(Role.USER).
+                setLanguage(Language.RU).
+                setStatus(Status.ACTIVE).
+                setId(10).
+                build();
 
-        when(req.getParameter("g-recaptcha-response")).thenReturn("test");
+        HttpSession sessionMock = mock(HttpSession.class);
+        when(req.getSession()).thenReturn(sessionMock);
 
-        when(req.getParameter("login")).thenReturn("user5");
-        when(req.getParameter("password")).thenReturn("user5");
+        when(req.getParameter("userRequest")).thenReturn("Edit profile");
+        when(req.getSession().getAttribute("currentUser")).thenReturn(testUser);
+        when(req.getParameter("userToEditId")).thenReturn("10");
 
-        UserDAO userDAO = mock(UserDAO.class);
+        when(req.getParameter("userLogin")).thenReturn("user5");
+        when(req.getParameter("userPassword")).thenReturn("5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442");
+        when(req.getParameter("userEmail")).thenReturn("test");
+        when(req.getParameter("userName")).thenReturn("test");
+        when(req.getParameter("userSurname")).thenReturn("test");
+        when(req.getParameter("userPhone")).thenReturn("test");
+        when(req.getParameter("userLanguage")).thenReturn("RU");
+        when(req.getParameter("userRole")).thenReturn("USER");
+        when(req.getParameter("userNotification")).thenReturn("0");
+        when(req.getParameter("userStatus")).thenReturn("ACTIVE");
 
-        when(userDAO.getByLogin("user5")).thenReturn(user);
+
 
         PreparedStatement ps = mock(PreparedStatement.class);
-
         ResultSet rs = mock(ResultSet.class);
-
-        when(con.prepareStatement(GET_USER_BY_LOGIN))
+        when(con.prepareStatement(any()))
                 .thenReturn(ps);
-
         when(ps.executeQuery())
                 .thenReturn(rs);
+
+
+
+
 
         when(rs.next())
                 .thenReturn(true)
                 .thenReturn(false);
 
         when(rs.getString("login"))
-                .thenReturn("user5");
+                .thenReturn("obama");
 
 
         when(rs.getString("password"))
-                .thenReturn("5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442");
+                .thenReturn("obamapass");
+
 
         when(rs.getInt("user_id"))
                 .thenReturn(7);
@@ -120,7 +145,7 @@ public class LoginCommandTest {
                 .thenReturn("RU");
 
         when(rs.getString("role"))
-                .thenReturn("USER");
+                .thenReturn("ADMIN");
 
         when(rs.getInt("notification"))
                 .thenReturn(-1);
@@ -128,13 +153,12 @@ public class LoginCommandTest {
         when(rs.getString("status"))
                 .thenReturn("BLOCKED");
 
-        HttpSession sessionMock = mock(HttpSession.class);
-        when(req.getSession()).thenReturn(sessionMock);
 
-        when(con.prepareStatement(GET_TOTAL_COST_BY_USER_ID))
-                .thenReturn(ps);
 
-        assertEquals("index.jsp#userNotExist", new LoginCommand().execute(req, resp));
+        assertEquals("user.jsp#success", new UserRequestCommand().execute(req, resp));
+
 
     }
+
+
 }
