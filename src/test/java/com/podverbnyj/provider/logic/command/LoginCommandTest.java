@@ -6,6 +6,7 @@ import com.podverbnyj.provider.dao.db.entity.User;
 import com.podverbnyj.provider.dao.db.entity.constant.Language;
 import com.podverbnyj.provider.dao.db.entity.constant.Role;
 import com.podverbnyj.provider.dao.db.entity.constant.Status;
+import com.podverbnyj.provider.utils.GetUser;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -87,7 +88,7 @@ public class LoginCommandTest {
                 .thenReturn(false);
 
         when(rs.getString("login"))
-                .thenReturn("user5");
+                .thenReturn("user6");
 
 
         when(rs.getString("password"))
@@ -133,6 +134,8 @@ public class LoginCommandTest {
 
         when(con.prepareStatement(GET_TOTAL_COST_BY_USER_ID))
                 .thenReturn(ps);
+
+
 
         assertEquals("index.jsp#userNotExist", new LoginCommand().execute(req, resp));
 

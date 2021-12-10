@@ -105,6 +105,14 @@ public class UserRequestCommandTest {
 
 
 
+        when(ps.executeUpdate()).thenReturn(1);
+
+
+        when(ps.executeQuery())
+                .thenReturn(rs);
+
+
+
 
         when(rs.next())
                 .thenReturn(true)
@@ -160,5 +168,209 @@ public class UserRequestCommandTest {
 
     }
 
+
+    @Test
+    public void editBalanceTest() throws Exception {
+
+        HttpServletRequest req = mock(HttpServletRequest.class);
+        HttpServletResponse resp = mock(HttpServletResponse.class);
+        User testUser = new User.UserBuilder("user5", "5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442").
+                setRole(Role.USER).
+                setLanguage(Language.RU).
+                setStatus(Status.ACTIVE).
+                setId(10).
+                build();
+
+        HttpSession sessionMock = mock(HttpSession.class);
+        when(req.getSession()).thenReturn(sessionMock);
+
+        when(req.getParameter("userRequest")).thenReturn("Edit balance");
+        when(req.getSession().getAttribute("currentUser")).thenReturn(testUser);
+        when(req.getParameter("userToEditId")).thenReturn("10");
+
+        when(req.getParameter("userLogin")).thenReturn("user5");
+        when(req.getParameter("userPassword")).thenReturn("5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442");
+        when(req.getParameter("userEmail")).thenReturn("test");
+        when(req.getParameter("userName")).thenReturn("test");
+        when(req.getParameter("userSurname")).thenReturn("test");
+        when(req.getParameter("userPhone")).thenReturn("test");
+        when(req.getParameter("userLanguage")).thenReturn("RU");
+        when(req.getParameter("userRole")).thenReturn("USER");
+        when(req.getParameter("userNotification")).thenReturn("0");
+        when(req.getParameter("userStatus")).thenReturn("ACTIVE");
+
+
+
+        PreparedStatement ps = mock(PreparedStatement.class);
+        ResultSet rs = mock(ResultSet.class);
+        when(con.prepareStatement(any()))
+                .thenReturn(ps);
+        when(ps.executeQuery())
+                .thenReturn(rs);
+
+
+
+
+
+        when(rs.next())
+                .thenReturn(true)
+                .thenReturn(false);
+
+        when(rs.getString("login"))
+                .thenReturn("obama");
+
+
+        when(rs.getString("password"))
+                .thenReturn("obamapass");
+
+
+        when(rs.getInt("user_id"))
+                .thenReturn(7);
+
+
+        when(rs.getString("email"))
+                .thenReturn("testfinalproject2@gmail.com");
+
+
+        when(rs.getString("name"))
+                .thenReturn("Andrey");
+
+
+        when(rs.getString("surname"))
+                .thenReturn("Andreev");
+
+
+        when(rs.getString("phone"))
+                .thenReturn("+38(050)333-33-33");
+
+
+        when(rs.getDouble("balance"))
+                .thenReturn(330.5);
+
+        when(rs.getString("language"))
+                .thenReturn("RU");
+
+        when(rs.getString("role"))
+                .thenReturn("ADMIN");
+
+        when(rs.getInt("notification"))
+                .thenReturn(-1);
+
+        when(rs.getString("status"))
+                .thenReturn("BLOCKED");
+
+
+        when(req.getParameter("sum")).thenReturn("500.5");
+
+
+
+
+        assertEquals("user.jsp#success", new UserRequestCommand().execute(req, resp));
+
+
+    }
+
+    @Test
+    public void paymentHistoryTest() throws Exception {
+
+        HttpServletRequest req = mock(HttpServletRequest.class);
+        HttpServletResponse resp = mock(HttpServletResponse.class);
+        User testUser = new User.UserBuilder("user5", "5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442").
+                setRole(Role.USER).
+                setLanguage(Language.RU).
+                setStatus(Status.ACTIVE).
+                setId(10).
+                build();
+
+        HttpSession sessionMock = mock(HttpSession.class);
+        when(req.getSession()).thenReturn(sessionMock);
+
+        when(req.getParameter("userRequest")).thenReturn("Payment history");
+        when(req.getSession().getAttribute("currentUser")).thenReturn(testUser);
+        when(req.getParameter("userToEditId")).thenReturn("10");
+
+        when(req.getParameter("userLogin")).thenReturn("user5");
+        when(req.getParameter("userPassword")).thenReturn("5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442");
+        when(req.getParameter("userEmail")).thenReturn("test");
+        when(req.getParameter("userName")).thenReturn("test");
+        when(req.getParameter("userSurname")).thenReturn("test");
+        when(req.getParameter("userPhone")).thenReturn("test");
+        when(req.getParameter("userLanguage")).thenReturn("RU");
+        when(req.getParameter("userRole")).thenReturn("USER");
+        when(req.getParameter("userNotification")).thenReturn("0");
+        when(req.getParameter("userStatus")).thenReturn("ACTIVE");
+
+
+
+        PreparedStatement ps = mock(PreparedStatement.class);
+        ResultSet rs = mock(ResultSet.class);
+        when(con.prepareStatement(any()))
+                .thenReturn(ps);
+        when(ps.executeQuery())
+                .thenReturn(rs);
+
+
+
+
+
+        when(rs.next())
+                .thenReturn(true)
+                .thenReturn(false);
+
+        when(rs.getString("login"))
+                .thenReturn("obama");
+
+
+        when(rs.getString("password"))
+                .thenReturn("obamapass");
+
+
+        when(rs.getInt("user_id"))
+                .thenReturn(7);
+
+
+        when(rs.getString("email"))
+                .thenReturn("testfinalproject2@gmail.com");
+
+
+        when(rs.getString("name"))
+                .thenReturn("Andrey");
+
+
+        when(rs.getString("surname"))
+                .thenReturn("Andreev");
+
+
+        when(rs.getString("phone"))
+                .thenReturn("+38(050)333-33-33");
+
+
+        when(rs.getDouble("balance"))
+                .thenReturn(330.5);
+
+        when(rs.getString("language"))
+                .thenReturn("RU");
+
+        when(rs.getString("role"))
+                .thenReturn("ADMIN");
+
+        when(rs.getInt("notification"))
+                .thenReturn(-1);
+
+        when(rs.getString("status"))
+                .thenReturn("BLOCKED");
+
+
+        when(req.getParameter("sum")).thenReturn("500.5");
+
+
+
+
+
+
+        assertEquals("user.jsp", new UserRequestCommand().execute(req, resp));
+
+
+    }
 
 }

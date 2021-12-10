@@ -5,6 +5,7 @@ import com.podverbnyj.provider.dao.TariffDAO;
 import com.podverbnyj.provider.dao.UserDAO;
 import com.podverbnyj.provider.dao.db.DBUtils;
 import com.podverbnyj.provider.dao.db.ServiceDBManager;
+import com.podverbnyj.provider.dao.db.UserDBManager;
 import com.podverbnyj.provider.dao.db.entity.Service;
 import com.podverbnyj.provider.dao.db.entity.User;
 import com.podverbnyj.provider.dao.db.entity.constant.Language;
@@ -25,6 +26,7 @@ import java.sql.ResultSet;
 
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.ServiceConstants.*;
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.TariffConstants.FIND_ALL_TARIFFS;
+import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserConstants.*;
 import static com.podverbnyj.provider.logic.command.AdminRequestCommand.*;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
@@ -419,6 +421,198 @@ public class AdminRequestCommandTest {
                 .thenReturn("Service 3");
 
         assertEquals("admin.jsp#addOrEditService", new AdminRequestCommand().execute(req, resp));
+
+    }
+
+    @Test
+    public void blockUserTest() throws Exception {
+        HttpServletRequest req = mock(HttpServletRequest.class);
+        HttpServletResponse resp = mock(HttpServletResponse.class);
+
+
+        User user = new User.UserBuilder("user5", "5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442").
+                setRole(Role.ADMIN).
+                setLanguage(Language.RU).
+                setStatus(Status.ACTIVE).
+                build();
+
+        when(req.getParameter("adminRequest")).thenReturn("Block user");
+        when(req.getParameter(USER_TO_EDIT_ID)).thenReturn("10");
+
+
+        HttpSession sessionMock = mock(HttpSession.class);
+        when(req.getSession()).thenReturn(sessionMock);
+        when(req.getSession().getAttribute("currentUser")).thenReturn(user);
+//
+//        when(req.getParameter(SERVICE_ID)).thenReturn("15");
+//
+//
+        ResultSet rs = mock(ResultSet.class);
+        PreparedStatement ps = mock(PreparedStatement.class);
+        when(con.prepareStatement(GET_USER_BY_ID)).thenReturn(ps);
+
+        when(ps.executeQuery())
+                .thenReturn(rs);
+
+        when(rs.next())
+                .thenReturn(true)
+                .thenReturn(false);
+
+        when(rs.getString("login"))
+                .thenReturn("obama");
+
+
+        when(rs.getString("password"))
+                .thenReturn("obamapass");
+
+
+        when(rs.getInt("user_id"))
+                .thenReturn(10);
+
+
+        when(rs.getString("email"))
+                .thenReturn("testfinalproject2@gmail.com");
+
+
+        when(rs.getString("name"))
+                .thenReturn("Andrey");
+
+
+        when(rs.getString("surname"))
+                .thenReturn("Andreev");
+
+
+        when(rs.getString("phone"))
+                .thenReturn("+38(050)333-33-33");
+
+
+        when(rs.getDouble("balance"))
+                .thenReturn(330.5);
+
+        when(rs.getString("language"))
+                .thenReturn("RU");
+
+        when(rs.getString("role"))
+                .thenReturn("ADMIN");
+
+        when(rs.getInt("notification"))
+                .thenReturn(-1);
+
+        when(rs.getString("status"))
+                .thenReturn("BLOCKED");
+
+        UserDBManager userDBManager = mock(UserDBManager.class);
+
+        when(con.prepareStatement(UPDATE_USER))
+                .thenReturn(ps);
+
+        when(con.prepareStatement(FIND_ALL_USERS))
+                .thenReturn(ps);
+
+        when(req.getSession().getAttribute("servicesIsSorted")).thenReturn(false);
+        when(req.getSession().getAttribute("tariffsIsSortedByName")).thenReturn(false);
+        when(req.getSession().getAttribute("sortedByPrice")).thenReturn(false);
+        when(req.getSession().getAttribute("language")).thenReturn("en");
+
+
+
+        assertEquals("admin_users.jsp#success", new AdminRequestCommand().execute(req, resp));
+
+    }
+
+    @Test
+    public void unBlockUserTest() throws Exception {
+        HttpServletRequest req = mock(HttpServletRequest.class);
+        HttpServletResponse resp = mock(HttpServletResponse.class);
+
+
+        User user = new User.UserBuilder("user5", "5A39BEAD318F306939ACB1D016647BE2E38C6501C58367FDB3E9F52542AA2442").
+                setRole(Role.ADMIN).
+                setLanguage(Language.RU).
+                setStatus(Status.ACTIVE).
+                build();
+
+        when(req.getParameter("adminRequest")).thenReturn("Unblock user");
+        when(req.getParameter(USER_TO_EDIT_ID)).thenReturn("10");
+
+
+        HttpSession sessionMock = mock(HttpSession.class);
+        when(req.getSession()).thenReturn(sessionMock);
+        when(req.getSession().getAttribute("currentUser")).thenReturn(user);
+//
+//        when(req.getParameter(SERVICE_ID)).thenReturn("15");
+//
+//
+        ResultSet rs = mock(ResultSet.class);
+        PreparedStatement ps = mock(PreparedStatement.class);
+        when(con.prepareStatement(GET_USER_BY_ID)).thenReturn(ps);
+
+        when(ps.executeQuery())
+                .thenReturn(rs);
+
+        when(rs.next())
+                .thenReturn(true)
+                .thenReturn(false);
+
+        when(rs.getString("login"))
+                .thenReturn("obama");
+
+
+        when(rs.getString("password"))
+                .thenReturn("obamapass");
+
+
+        when(rs.getInt("user_id"))
+                .thenReturn(10);
+
+
+        when(rs.getString("email"))
+                .thenReturn("testfinalproject2@gmail.com");
+
+
+        when(rs.getString("name"))
+                .thenReturn("Andrey");
+
+
+        when(rs.getString("surname"))
+                .thenReturn("Andreev");
+
+
+        when(rs.getString("phone"))
+                .thenReturn("+38(050)333-33-33");
+
+
+        when(rs.getDouble("balance"))
+                .thenReturn(330.5);
+
+        when(rs.getString("language"))
+                .thenReturn("RU");
+
+        when(rs.getString("role"))
+                .thenReturn("ADMIN");
+
+        when(rs.getInt("notification"))
+                .thenReturn(-1);
+
+        when(rs.getString("status"))
+                .thenReturn("BLOCKED");
+
+        UserDBManager userDBManager = mock(UserDBManager.class);
+
+        when(con.prepareStatement(UPDATE_USER))
+                .thenReturn(ps);
+
+        when(con.prepareStatement(FIND_ALL_USERS))
+                .thenReturn(ps);
+
+        when(req.getSession().getAttribute("servicesIsSorted")).thenReturn(false);
+        when(req.getSession().getAttribute("tariffsIsSortedByName")).thenReturn(false);
+        when(req.getSession().getAttribute("sortedByPrice")).thenReturn(false);
+        when(req.getSession().getAttribute("language")).thenReturn("en");
+
+
+
+        assertEquals("admin_users.jsp#success", new AdminRequestCommand().execute(req, resp));
 
     }
 
