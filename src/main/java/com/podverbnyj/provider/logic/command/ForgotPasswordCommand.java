@@ -92,7 +92,7 @@ public class ForgotPasswordCommand implements Command {
                     restoreUrl;
         } else {
             subject = "Password restore link.";
-            body = "Hi" + user.getLogin() + "!" + System.lineSeparator() +
+            body = "Hi " + user.getLogin() + "!" + System.lineSeparator() +
                     "The password recovery link will be active within 5 minutes." + System.lineSeparator() +
                     restoreUrl;
         }

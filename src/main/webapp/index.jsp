@@ -30,7 +30,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to provider main page</title>
+    <title><fmt:message key="index_jsp.title"/></title>
 </head>
 
 
@@ -71,11 +71,7 @@
                     <fmt:message key="index_jsp.link.login"/>
                 </button>
                 <br>
-                <a href="#forgotPassword" data-bs-toggle="modal">Забыли пароль?</a>
-                <%--                <button type="button"  data-bs-toggle="modal"--%>
-                <%--                        data-bs-target="#forgotPassword">--%>
-                <%--                    <fmt:message key="index_jsp.link.login"/>--%>
-                <%--                </button>--%>
+                <a href="#forgotPassword" data-bs-toggle="modal"><fmt:message key="index_jsp.forgot_password"/></a>
 
 
             </div>
@@ -93,8 +89,6 @@
 
 <body>
 
-<%--<a href="http://localhost:8080/Final/price_list.txt" download="price_list.txt">Скачать txt</a>--%>
-<%--<a href="http://localhost:8080/Final/price_list.pdf" download="price_list.pdf">Скачать pdf</a>--%>
 
 <mylib:sort_buttons/>
 
@@ -147,10 +141,7 @@
 </table>
 
 
-<!-- Кнопка-триггер модального окна -->
-<%--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailModal">--%>
-<%--    <fmt:message key="index_jsp.link.get_price_to_email"/>--%>
-<%--</button>--%>
+
 
 <!-- Модальное окно -->
 <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
@@ -299,7 +290,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">You missed CAPTCHA.</h5>
+                <h5 class="modal-title"><fmt:message
+                        key="index_jsp.wrong_captcha"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
@@ -326,11 +318,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Email sent.</h5>
+                <h5 class="modal-title"><fmt:message
+                        key="index_jsp.email_sent"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                        key="index_jsp.link.close"/></button>
             </div>
         </div>
     </div>
@@ -353,15 +347,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Login</h5>
+                <h5 class="modal-title"><fmt:message
+                        key="index_jsp.link.login"/></h5>
             </div>
             <form action="controller" method="post" class="form-inline form-search pull-right">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="login" class="col-form-label">Имя пользователя:</label>
+                        <label for="login" class="col-form-label"><fmt:message
+                                key="index_jsp.username"/></label>
                         <input type="text" name="login" class="form-control" id="login"
                                minlength="5" required>
-                        <label for="password" class="col-form-label">Введите пароль:</label>
+                        <label for="password" class="col-form-label"><fmt:message
+                                key="index_jsp.password"/></label>
                         <input type="password" name="password" class="form-control" id="password"
                                minlength="5" required>
                         <br>
@@ -378,7 +375,8 @@
 
                     <button type="submit" class="btn btn-primary" value="login"><fmt:message
                             key="index_jsp.link.login"/></button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                            key="index_jsp.link.close"/></button>
 
                 </div>
             </form>
@@ -402,12 +400,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Восстановление пароля</h5>
+                <h5 class="modal-title"><fmt:message
+                        key="index_jsp.password_recovery"/></h5>
             </div>
             <form action="controller" method="post" class="form-inline form-search pull-right">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="userLoginToRestore" class="col-form-label">Имя пользователя:</label>
+                        <label for="userLoginToRestore" class="col-form-label"><fmt:message
+                                key="index_jsp.username"/></label>
                         <input type="text" name="userLoginToRestore" class="form-control" id="userLoginToRestore"
                                minlength="5" required>
 
@@ -427,7 +427,8 @@
 
                     <input type="hidden" name="command" value="forgotPassword">
 
-                    <button type="submit" class="btn btn-primary" value="forgotPassword">Submit</button>
+                    <button type="submit" class="btn btn-primary" value="forgotPassword"><fmt:message
+                            key="index_jsp.submit"/></button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
                             key="index_jsp.link.close"/></button>
 
@@ -442,7 +443,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Welcome to password recovery page ${userLoginToRecover}.</h5>
+                <h5 class="modal-title"><fmt:message
+                        key="index_jsp.recovery_tittle"/> ${userLoginToRecover}.</h5>
             </div>
             <form action="controller" method="post" class="form-inline form-search pull-right">
                 <div class="modal-body">
@@ -450,28 +452,29 @@
                         <div class="row">
 
                             <div class="form-group col-md-6">
-                                <label for="userNewPassword" class="col-form-label">Пароль:</label>
+                                <label for="userNewPassword" class="col-form-label"><fmt:message
+                                        key="index_jsp.password"/></label>
                                 <input type="password" name="userNewPassword" class="form-control" id="userNewPassword"
 
                                        onkeyup='passwordValidation();'
-                                       minlength="5" maxlength="150" placeholder="Любые символы" required>
+                                       minlength="5" maxlength="150" placeholder="<fmt:message
+                                        key="index_jsp.any_symbols"/>" required>
                                 <span style="font-size: smaller" id='message'></span>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="confirmPassword" class="col-form-label">Повторите ввод пароля:</label>
+                                <label for="confirmPassword" class="col-form-label"><fmt:message
+                                        key="index_jsp.repeat_password"/></label>
                                 <input type="password" name="confirmPassword" class="form-control"
                                        id="confirmPassword" onkeyup='passwordValidation();'
 
-                                       minlength="5" maxlength="30" placeholder="Любые символы">
+                                       minlength="5" maxlength="30" placeholder="<fmt:message
+                                        key="index_jsp.any_symbols"/>">
                             </div>
 
                         </div>
 
                     </div>
-                    ${userLoginToRecover}
-                    ${userToRecover.userId}
-                    ${userToRecover.code}
                 </div>
 
 
@@ -479,8 +482,10 @@
 
                     <input type="hidden" name="command" value="forgotPassword">
                     <input type="hidden" name="userToRecover" value="${userToRecover}">
-                    <button type="submit" class="btn btn-primary" value="forgotPassword">Submit</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" value="forgotPassword"><fmt:message
+                            key="index_jsp.submit"/></button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                            key="index_jsp.link.close"/></button>
 
                 </div>
             </form>
@@ -505,11 +510,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Link is not valid.</h5>
+                <h5 class="modal-title"><fmt:message
+                        key="index_jsp.invalid_link"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                        key="index_jsp.link.close"/></button>
             </div>
         </div>
     </div>
@@ -531,11 +538,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">No such user or email in DB.</h5>
+                <h5 class="modal-title"><fmt:message
+                        key="index_jsp.no_such_user"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message
+                        key="index_jsp.link.close"/></button>
             </div>
         </div>
     </div>
