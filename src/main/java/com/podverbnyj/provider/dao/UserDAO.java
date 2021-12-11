@@ -14,7 +14,17 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-
+/**
+ * DAO level for database table 'user', implements AbstractDAO interface,
+ * parametrized by User.
+ *
+ * All method get connection from datasource, and call the same named method
+ * from UserDBManager on it, send or receive data (more comments in UserDBManager),
+ * and close connection at the end.
+ *
+ * If UserDBManager throw exception, it's caught here and replaced by our own DBException
+ * with high level message for error page.
+ */
 public class UserDAO implements AbstractDAO<User> {
 
     private static final Logger log = LogManager.getLogger(UserDAO.class);

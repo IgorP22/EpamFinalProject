@@ -10,7 +10,16 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-
+/**
+ * DAO level for database table 'password_recovery'.
+ *
+ * All method get connection from datasource, and call the same named method
+ * from PasswordRecoveryDBManager on it, send or receive data (more comments
+ * in PasswordRecoveryDBManager), and close connection at the end.
+ *
+ * If PasswordRecoveryDBManager throw exception, it's caught here and replaced
+ * by our own DBException with high level message for error page.
+ */
 public class PasswordRecoveryDAO {
 
     private static final Logger log = LogManager.getLogger(PasswordRecoveryDAO.class);

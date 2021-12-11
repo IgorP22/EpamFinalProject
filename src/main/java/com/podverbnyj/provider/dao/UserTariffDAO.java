@@ -11,7 +11,16 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-
+/**
+ * DAO level for database table 'user_tariffs'.
+ *
+ * All method get connection from datasource, and call the same named method
+ * from UserTariffDBManager on it, send or receive data (more comments in UserTariffDBManager),
+ * and close connection at the end.
+ *
+ * If UserTariffDBManager throw exception, it's caught here and replaced by our own DBException
+ * with high level message for error page.
+ */
 public class UserTariffDAO {
 
     private static final Logger log = LogManager.getLogger(UserTariffDAO.class);

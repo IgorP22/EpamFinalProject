@@ -11,7 +11,16 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-
+/**
+ * DAO level for database table 'user_payments'.
+ *
+ * All method get connection from datasource, and call the same named method
+ * from UserPaymentDBManager on it, send or receive data (more comments
+ * in UserPaymentDBManager), and close connection at the end.
+ *
+ * If UserPaymentDBManager throw exception, it's caught here and replaced by
+ * our own DBException with high level message for error page.
+ */
 public class UserPaymentDAO {
 
     private static final Logger log = LogManager.getLogger(UserPaymentDAO.class);

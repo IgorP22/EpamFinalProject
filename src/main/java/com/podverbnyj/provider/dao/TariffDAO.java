@@ -11,7 +11,17 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-
+/**
+ * DAO level for database table 'tariff', implements AbstractDAO interface,
+ * parametrized by Tariff.
+ *
+ * All method get connection from datasource, and call the same named method
+ * from TariffDBManager on it, send or receive data (more comments in TariffDBManager),
+ * and close connection at the end.
+ *
+ * If TariffDBManager throw exception, it's caught here and replaced by our own DBException
+ * with high level message for error page.
+ */
 public class TariffDAO implements AbstractDAO<Tariff> {
 
     private static final Logger log = LogManager.getLogger(TariffDAO.class);

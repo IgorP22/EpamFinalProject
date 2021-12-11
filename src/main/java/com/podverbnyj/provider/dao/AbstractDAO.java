@@ -6,6 +6,10 @@ import com.podverbnyj.provider.dao.db.DBException;
 
 import java.util.List;
 
+/**
+ * Interface for CRUD realizing
+ * @param <T> generic type
+ */
 interface AbstractDAO<T> {
 
     List<T> findAll() throws DBException;
