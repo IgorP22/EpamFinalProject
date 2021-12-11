@@ -2,6 +2,12 @@ package com.podverbnyj.provider.dao.db.entity;
 
 import java.io.Serializable;
 
+/**
+ * Class 'UserTariff' for receiving database entity for table 'user_tariffs'
+ *
+ * userId - user ID who order tariff
+ * tariffId - id of tariff ordered by user
+ */
 public class UserTariff implements Serializable {
     private int userId;
     private int tariffId;

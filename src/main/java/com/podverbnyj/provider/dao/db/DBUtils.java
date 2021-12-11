@@ -11,6 +11,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+/**
+ * Connection pool generator
+ */
 public class DBUtils {
 
     private static final Logger log = LogManager.getLogger(DBUtils.class);

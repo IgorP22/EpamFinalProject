@@ -19,18 +19,20 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/red_stars.css"/>
 
-<%@ include file="success.jspf" %>
+
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
        scope="session"/>
 <fmt:setLocale value="${language}"/>
+
+<%@ include file="success.jspf" %>
 
 
 <!DOCTYPE html>
 <html lang="${language}">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User page</title>
+    <title><fmt:message key="user.page.title"/></title>
 </head>
 
 
@@ -44,12 +46,12 @@
     <div class="page-header">
         <div class="row">
             <div class="col-md-4">
-                <h1>Страница пользователя</h1>
+                <h1><fmt:message key="user.page.title"/></h1>
             </div>
 
             <div class="col-md-3">
                 <div class="row align-items-center">
-                    <h5>Добро пожаловать</h5><br>
+                    <h5><fmt:message key="index_jsp.link.welcome"/></h5><br>
                     <c:if test="${currentUser.name == null}">
                         <h4>
                                 ${currentUser.login}
@@ -67,8 +69,8 @@
 
             </div>
             <div class="col-md-3">
-                <h5>Общая стоимость подключенных услуг:</h5>
-                <h3><javaTag:getTotalCost userID="${currentUser.id}"/> грн</h3><h5>(за период 30 дней)</h5>
+                <h5><fmt:message key="user.page.total_cost"/></h5>
+                <h3><javaTag:getTotalCost userID="${currentUser.id}"/> &#8372;</h3><h5><fmt:message key="user.page.period"/></h5>
             </div>
 
             <div class="col-md-1">
@@ -96,26 +98,33 @@
         <div class="col-md-5">
             <form action="controller" method="post">
                 <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
-                <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services">Choice of
-                    services
+                <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services"><fmt:message key="user.page.choice_of_services"/>
                 </button>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#addOrEditUser">
-                    Edit profile
+                    <fmt:message key="user.page.edit_profile"/>
                 </button>
                 <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
                 <button type="submit" class="btn btn-primary" name="userRequest" value="Payment history">
-                    Payment history
+                    <fmt:message key="user.page.payment_history"/>
                 </button>
             </form>
         </div>
         <div class="col-md-2">
             <h4>
-                <c:set var="color" value="color:darkred"/>
+
                 <c:if test="${currentUser.status == 'ACTIVE'}">
                     <c:set var="color" value="color:green"/>
+                    <span style="${color}"><fmt:message key="user.page.status"/> <fmt:message key="add_or_edit_user.active"/></span>
                 </c:if>
-                <span style="${color}">Status: ${currentUser.status}</span>
+                <c:if test="${currentUser.status != 'ACTIVE'}">
+                    <c:set var="color" value="color:darkred"/>
+                    <span style="${color}"><fmt:message key="user.page.status"/> <fmt:message key="add_or_edit_user.blocked"/></span>
+                </c:if>
+
+
+
+
             </h4>
         </div>
         <div class="col-md-2">
@@ -124,7 +133,7 @@
                 <c:if test="${currentUser.balance > 0}">
                     <c:set var="color" value="color:green"/>
                 </c:if>
-                <span style="${color}">Your balance: ${currentUser.balance}</span>
+                <span style="${color}"><fmt:message key="user.page.your_balance"/> ${currentUser.balance}</span>
             </h4>
         </div>
         <div class="col-md-3">
@@ -133,12 +142,12 @@
                     <div class="col-auto">
                         <input type="number" class="form-control"
                                pattern="^\d?\d\.\d\d$" name="sum"
-                               min="1" step="0.01" id="sum" placeholder="Сумма пополнения">
+                               min="1" step="0.01" id="sum" placeholder="<fmt:message key="user.page.top_up_amount"/>">
                     </div>
                     <div class="col-auto">
                         <input type="hidden" name="command" value="userRequest">
                         <input type="hidden" name="userToEditId" value="${currentUser.id}">
-                        <button type="submit" value="Edit balance" class="btn btn-success" name="userRequest">Пополнить
+                        <button type="submit" value="Edit balance" class="btn btn-success" name="userRequest"><fmt:message key="user.page.pay"/>
                         </button>
                     </div>
                 </div>
@@ -151,8 +160,6 @@
 
 </header>
 
-<%--<javaTag:getTotalCost userID="${currentUser.id}"/>--%>
-
 
 <body>
 
@@ -162,24 +169,8 @@
 
 <c:if test="${flag == 'History'}">
 
-    <h3>История пополнения и списаний со счета</h3>
+    <h3><fmt:message key="user.page.history_of_deposits_and_withdrawals"/></h3>
     <hr>
-
-
-    <%--    <nav aria-label="Page navigation example">--%>
-    <%--        <ul class="pagination justify-content-center">--%>
-    <%--            <li class="page-item disabled">--%>
-    <%--                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>--%>
-    <%--            </li>--%>
-    <%--            <li class="page-item"><a class="page-link" href="#">1</a></li>--%>
-    <%--            <li class="page-item"><a class="page-link" href="#">2</a></li>--%>
-    <%--            <li class="page-item"><a class="page-link" href="#">3</a></li>--%>
-    <%--            <li class="page-item">--%>
-    <%--                <a class="page-link" href="#">Next</a>--%>
-    <%--            </li>--%>
-    <%--        </ul>--%>
-    <%--    </nav>--%>
-
 
     <div class="row">
 
@@ -195,18 +186,18 @@
                         <input type="hidden" name="pageSize" value="${pageSize}">
                         <input type="hidden" name="command" value="userRequest">
                         <button type="submit" name="userRequest" value="Payment history">
-                            Previous
+                            <fmt:message key="user.page.previous"/>
                         </button>
                     </form>
                 </c:when>
                 <c:otherwise>
-                    Previous
+                    <fmt:message key="user.page.previous"/>
                 </c:otherwise>
             </c:choose>
         </div>
 
         <div class="col-md-1">
-            Page ${page} of ${pageCount}
+            <fmt:message key="user.page.page"/> ${page} <fmt:message key="user.page.of"/> ${pageCount}
 
         </div>
 
@@ -219,12 +210,12 @@
                         <input type="hidden" name="pageSize" value="${pageSize}">
                         <input type="hidden" name="command" value="userRequest">
                         <button type="submit" name="userRequest" value="Payment history">
-                            Next
+                            <fmt:message key="user.page.next"/>
                         </button>
                     </form>
                 </c:when>
                 <c:otherwise>
-                    Next
+                    <fmt:message key="user.page.next"/>
                 </c:otherwise>
             </c:choose>
 
@@ -249,7 +240,7 @@
                 <input type="hidden" name="pageSize" value="${pageSize}">
                 <input type="hidden" name="command" value="userRequest">
                 <button type="submit" name="userRequest" value="Payment history">
-                    Go
+                    <fmt:message key="user.page.go"/>
                 </button>
             </form>
         </div>
@@ -263,8 +254,8 @@
         <caption hidden>Payment history table</caption>
         <thead>
         <tr class="table-active">
-            <th data-order="-1" class="sorted" id = "field 01">Дата и время</th>
-            <th id = "field 02">Сумма</th>
+            <th data-order="-1" class="sorted" id = "field 01"><fmt:message key="user.page.date_and_time"/></th>
+            <th id = "field 02"><fmt:message key="user.page.sum"/></th>
         </tr>
         </thead>
 

@@ -3,6 +3,13 @@ package com.podverbnyj.provider.dao.db.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Class 'UserPayment' for receiving database entity for table 'user_payments'
+ *
+ * userId - user ID from whom the funds are debited or replenished
+ * date - date and time of the financial transaction
+ * sum - sum of transaction
+ */
 public class UserPayment implements Serializable {
     private int userId;
     private Date date;

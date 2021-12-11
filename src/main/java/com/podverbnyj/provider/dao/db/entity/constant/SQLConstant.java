@@ -1,10 +1,17 @@
 package com.podverbnyj.provider.dao.db.entity.constant;
 
+/**
+ * SQL constants for all tables database 'provider'
+ */
 public class SQLConstant {
     private SQLConstant() {
     }
 
     public static class UserConstants {
+
+        /**
+         * Constants for table 'user'
+         */
         private UserConstants() {
         }
 
@@ -22,6 +29,9 @@ public class SQLConstant {
 
     }
 
+    /**
+     * Constants for table 'service'
+     */
     public static class ServiceConstants {
         private ServiceConstants() {
         }
@@ -34,6 +44,9 @@ public class SQLConstant {
         public static final String DELETE_SERVICE_BY_ID = "DELETE FROM service WHERE service_id = ?";
     }
 
+    /**
+     * Constants for table 'tariff'
+     */
     public static class TariffConstants {
         private TariffConstants() {
         }
@@ -46,6 +59,9 @@ public class SQLConstant {
         public static final String DELETE_TARIFF_BY_ID = "DELETE FROM tariff WHERE tariff_id = ?";
     }
 
+    /**
+     * Constants for table 'user_tariffs'
+     */
     public static class UserTariffConstants {
         private UserTariffConstants() {
         }
@@ -58,6 +74,9 @@ public class SQLConstant {
                 + "ON user_tariffs.tariff_id = tariff.tariff_id WHERE user_id = ?";
     }
 
+    /**
+     * Constants for table 'user_payments'
+     */
     public static class UserPaymentsConstants {
         private UserPaymentsConstants() {
         }
@@ -71,6 +90,9 @@ public class SQLConstant {
                 "ORDER BY date DESC LIMIT ? OFFSET ?";
     }
 
+    /**
+     * Constants for table 'password_recovery'
+     */
     public static class PasswordRecoveryConstants {
         private PasswordRecoveryConstants() {
         }

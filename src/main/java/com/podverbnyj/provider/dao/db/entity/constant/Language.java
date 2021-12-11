@@ -1,5 +1,8 @@
 package com.podverbnyj.provider.dao.db.entity.constant;
 
+/**
+ * Enum constant for field Language database user table
+ */
 public enum Language {
     RU("ru"), EN("en");
 

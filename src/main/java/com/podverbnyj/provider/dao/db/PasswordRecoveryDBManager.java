@@ -11,7 +11,9 @@ import java.sql.SQLException;
 
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.PasswordRecoveryConstants.*;
 
-
+/**
+ * Database table 'password_recovery' DBManager
+ */
 public class PasswordRecoveryDBManager {
 
     private static final Logger log = LogManager.getLogger(PasswordRecoveryDBManager.class);
@@ -30,6 +32,13 @@ public class PasswordRecoveryDBManager {
         // no op
     }
 
+    /**
+     * Create new entity for password recovery
+     * @param con - received from DAO level
+     * @param passwordRecovery - database entity
+     * @return 'true' if entity created
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean create(Connection con, PasswordRecovery passwordRecovery) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -43,7 +52,13 @@ public class PasswordRecoveryDBManager {
         }
     }
 
-
+    /**
+     * Receive entity from database by UserId
+     * @param con - received from DAO level
+     * @param userId - user Id
+     * @return PasswordRecovery database entity
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public PasswordRecovery getPasswordRecovery(Connection con, int userId) throws SQLException {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -63,6 +78,13 @@ public class PasswordRecoveryDBManager {
         }
     }
 
+    /**
+     * Receive entity from database restore password code
+     * @param con - received from DAO level
+     * @param code - restore password code
+     * @return PasswordRecovery database entity
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public PasswordRecovery getPasswordRecovery(Connection con, String code) throws SQLException {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -83,6 +105,13 @@ public class PasswordRecoveryDBManager {
     }
 
 
+    /**
+     * Delete entity from database by restore password code
+     * @param con - received from DAO level
+     * @param code - restore password code
+     * @return PasswordRecovery database entity
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean deleteByCode(Connection con, String code) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -95,6 +124,10 @@ public class PasswordRecoveryDBManager {
         }
     }
 
+    /**
+     * Close resources after using
+     * @param resource - type of resource to close
+     */
     public void close(AutoCloseable resource) {
         if (resource != null) {
             try {
