@@ -18,9 +18,11 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/red_stars.css"/>
 
-<%@ include file="success.jspf" %>
+
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
 <fmt:setLocale value="${language}" />
+
+<%@ include file="success.jspf" %>
 
 
 
@@ -28,7 +30,7 @@
 <html lang="${language}">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin page for editing and creating users</title>
+    <title><fmt:message key="admin.users.admin_users"/></title>
 </head>
 
 
@@ -43,12 +45,12 @@
     <div class="page-header">
         <div class="row">
             <div class="col-md-8">
-                <h1>Административная страница</h1>
+                <h1><fmt:message key="admin.admin_page"/></h1>
 
             </div>
             <div class="col-md-2">
                 <div class="row align-items-center">
-                    <h5>Добро пожаловать</h5><br>
+                    <h5><fmt:message key="index_jsp.link.welcome"/></h5><br>
                     <c:if test="${currentUser.name == null}">
                         <h4>
                             <td>${currentUser.login}</td>
@@ -89,14 +91,13 @@
 
         <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
 
-        <a href="admin.jsp" class="btn btn-primary" role="button">List of
-            services and tariffs</a>
+        <a href="admin.jsp" class="btn btn-primary" role="button"><fmt:message key="admin.list_of_services_and_tariffs"/></a>
 
-        <button type="submit" name="adminRequest" class="btn btn-success" value="List of users">List of users</button>
+        <button type="submit" name="adminRequest" class="btn btn-success" value="List of users"><fmt:message key="admin.users.list_of_users"/></button>
 
         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                 data-bs-target="#addOrEditUser">
-            Add new user
+            <fmt:message key="admin.users.add_new_user"/>
         </button>
 
 
@@ -118,17 +119,17 @@
     <caption hidden>Table of users</caption>
     <thead>
     <tr class="table-active">
-        <th id = "field 01">Логин</th>
-        <th id = "field 02">Общая стоимость услуг</th>
-        <th id = "field 03">Email</th>
-        <th id = "field 04">Имя</th>
-        <th id = "field 05">Фамилия</th>
-        <th id = "field 06">Телефон</th>
-        <th id = "field 07">Баланс</th>
-        <th id = "field 08">Язык</th>
-        <th id = "field 09">Роль</th>
-        <th id = "field 10">Уведомления</th>
-        <th id = "field 11">Статус</th>
+        <th id = "field 01"><fmt:message key="admin.users.login"/></th>
+        <th id = "field 02"><fmt:message key="admin.users.total_cost"/></th>
+        <th id = "field 03"><fmt:message key="admin.users.email"/></th>
+        <th id = "field 04"><fmt:message key="admin.users.name"/></th>
+        <th id = "field 05"><fmt:message key="admin.users.surname"/></th>
+        <th id = "field 06"><fmt:message key="admin.users.phone"/></th>
+        <th id = "field 07"><fmt:message key="admin.users.balance"/></th>
+        <th id = "field 08"><fmt:message key="admin.users.language"/></th>
+        <th id = "field 09"><fmt:message key="admin.users.role"/></th>
+        <th id = "field 10"><fmt:message key="admin.users.notification"/></th>
+        <th id = "field 11"><fmt:message key="admin.users.status"/></th>
         <th id = "field 12"></th>
         <th id = "field 13"></th>
     </tr>
@@ -145,34 +146,34 @@
             <td>${currentUser.balance}</td>
             <c:choose>
                 <c:when test="${currentUser.language == 'RU'}">
-                    <td>Русский</td>
+                    <td><fmt:message key="add_or_edit_user.russian"/></td>
                 </c:when>
                 <c:otherwise>
-                    <td>Английский</td>
+                    <td><fmt:message key="add_or_edit_user.english"/></td>
                 </c:otherwise>
             </c:choose>
             <c:choose>
                 <c:when test="${currentUser.role == 'ADMIN'}">
-                    <td>Администратор</td>
+                    <td><fmt:message key="add_or_edit_user.admin"/></td>
                 </c:when>
                 <c:otherwise>
-                    <td>Пользователь</td>
+                    <td><fmt:message key="add_or_edit_user.user"/></td>
                 </c:otherwise>
             </c:choose>
             <c:choose>
                 <c:when test="${currentUser.notification == 'false'}">
-                    <td>Выключено</td>
+                    <td><fmt:message key="add_or_edit_user.off"/></td>
                 </c:when>
                 <c:otherwise>
-                    <td>Включено</td>
+                    <td><fmt:message key="add_or_edit_user.on"/></td>
                 </c:otherwise>
             </c:choose>
             <c:choose>
                 <c:when test="${currentUser.status == 'BLOCKED'}">
-                    <td>Заблокирован</td>
+                    <td><fmt:message key="add_or_edit_user.blocked"/></td>
                 </c:when>
                 <c:otherwise>
-                    <td>Активен</td>
+                    <td><fmt:message key="add_or_edit_user.active"/></td>
                 </c:otherwise>
             </c:choose>
 
@@ -184,25 +185,25 @@
                 <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
                 <td>
                     <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
-                            value="Add or edit user">Edit user
+                            value="Add or edit user"><fmt:message key="admin.users.edit_user"/>
                     </button>
                 </td>
                 <td>
 
                     <c:if test="${currentUser.role == 'ADMIN'}">
                         <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                value="Delete user">Delete user
+                                value="Delete user"><fmt:message key="admin.users.delete_user"/>
                         </button>
                     </c:if>
                     <c:if test="${currentUser.role == 'USER'}">
                         <c:if test="${currentUser.status == 'BLOCKED'}">
                             <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                    value="Unblock user">Unblock user
+                                    value="Unblock user"><fmt:message key="admin.users.block_user"/>
                             </button>
                         </c:if>
                         <c:if test="${currentUser.status == 'ACTIVE'}">
                             <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                    value="Block user">Block user
+                                    value="Block user"><fmt:message key="admin.users.unblock_user"/>
                             </button>
                         </c:if>
                     </c:if>
@@ -242,22 +243,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Delete confirmation window</h5>
+                <h5 class="modal-title"><fmt:message key="admin.users.delete_user_confirmation_window"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete user account?<br>
-                Data can't be restored!!!
+                <fmt:message key="admin.users.are_you_sure"/><br>
+                <fmt:message key="admin.delete_data_cant_restored"/>
             </div>
 
             <div class="modal-footer">
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="adminRequest">
                     <input type="hidden" name="confirmation" value="true">
-                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete user">Delete
+                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete user"><fmt:message key="admin.delete"/>
                     </button>
                 </form>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="admin.cancel"/></button>
             </div>
         </div>
     </div>
@@ -279,11 +280,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Last admin user can't be deleted</h5>
+                <h5 class="modal-title"><fmt:message key="admin.users.last_admin"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><fmt:message key="index_jsp.link.close"/></button>
             </div>
         </div>
     </div>

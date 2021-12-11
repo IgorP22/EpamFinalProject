@@ -1,9 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <form action="controller" method="post">
     <input type="hidden" name="command" value="logout">
-    <button type="submit" class="btn btn-primary" name="logout" value="logout">Logout
+    <button type="submit" class="btn btn-primary" name="logout" value="logout"><fmt:message key="logout_page_logout"/>
     </button>
 </form>
 

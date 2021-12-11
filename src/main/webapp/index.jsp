@@ -98,9 +98,9 @@
     <caption hidden>Services and tariffs table</caption>
     <thead>
     <tr class="table-active">
-        <th id = "field 01"><fmt:message key="index_jsp.link.name"/></th>
-        <th id = "field 02"><fmt:message key="index_jsp.link.description"/></th>
-        <th id = "field 03"><fmt:message key="index_jsp.link.price"/></th>
+        <th id="field 01"><fmt:message key="index_jsp.link.name"/></th>
+        <th id="field 02"><fmt:message key="index_jsp.link.description"/></th>
+        <th id="field 03"><fmt:message key="index_jsp.link.price"/></th>
     </tr>
     </thead>
     <tbody>
@@ -139,8 +139,6 @@
 
     </tbody>
 </table>
-
-
 
 
 <!-- Модальное окно -->
@@ -550,7 +548,6 @@
     </div>
 </div>
 
-
 <script>
     $(document).ready(function () {
         var hash = window.location.hash;
@@ -561,7 +558,6 @@
         }
     })
 </script>
-
 
 </body>
 </html>

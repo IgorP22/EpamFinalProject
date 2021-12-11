@@ -11,7 +11,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Данные пользователя</h5>
+                <h5 class="modal-title"><fmt:message
+                        key="add_or_edit_user.user_data"/></h5>
             </div>
 
             <form action="controller" method="post">
@@ -29,35 +30,42 @@
                     </c:if>
 
                     <div class="mb-3">
-                        <label for="userLogin" class="col-form-label">Логин:</label>
+                        <label for="userLogin" class="col-form-label"><fmt:message
+                                key="add_or_edit_user.login"/></label>
                         <input type="text" name="userLogin" class="form-control" id="userLogin"
                                onkeyup="validateLogin();"
                                value="${userToEdit.login}"
-                               minlength="5" maxlength="30" placeholder="Допустимы любые символы" required>
+                               minlength="5" maxlength="30" placeholder="<fmt:message
+                                key="index_jsp.any_symbols"/>" required>
                         <span class="error" style="font-size: smaller" id='user_message'></span>
 
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="userPassword" class="sr-only">Пароль:</label>
+                                <label for="userPassword" class="sr-only"><fmt:message
+                                        key="index_jsp.password"/></label>
                                 <input type="password" name="userPassword" class="form-control" id="userPassword"
                                        value="${userToEdit.password}"
                                        onkeyup='passwordValidation();'
 
-                                       minlength="5" maxlength="150" placeholder="Допустимы любые символы" required>
+                                       minlength="5" maxlength="150" placeholder="<fmt:message
+                                key="index_jsp.any_symbols"/>" required>
                                 <span style="font-size: smaller" id='message'></span>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="confirmPassword" class="sr-only">Повторите ввод пароля:</label>
+                                <label for="confirmPassword" class="sr-only"><fmt:message
+                                        key="index_jsp.repeat_password"/></label>
                                 <input type="password" name="confirmPassword" class="form-control"
                                        id="confirmPassword" data-match="#userPassword"
                                        onkeyup='passwordValidation();'
                                        value="${userToEdit.password}"
-                                       minlength="5" maxlength="30" placeholder="Допустимы любые символы" required>
+                                       minlength="5" maxlength="30" placeholder="<fmt:message
+                                key="index_jsp.any_symbols"/>" required>
                             </div>
                         </div>
 
-                        <label for="userEmail" class="col-form-label">Почта:</label>
+                        <label for="userEmail" class="col-form-label"><fmt:message
+                                key="index_jsp.link.enter_email_here"/></label>
                         <input type="text" name="userEmail" class="form-control" id="userEmail"
                                value="${userToEdit.email}"
                                pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
@@ -65,51 +73,64 @@
 
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="userName" class="col-form-label">Имя:</label>
+                                <label for="userName" class="col-form-label"><fmt:message
+                                        key="add_or_edit_user.name"/></label>
                                 <input type="text" name="userName" class="form-control" id="userName"
                                        value="${userToEdit.name}"
                                        pattern="^[a-zA-ZА-Яа-яЁё]+$"
-                                       maxlength="30" placeholder="Допустимы любые буквы">
+                                       maxlength="30" placeholder="<fmt:message
+                                        key="add_or_edit_user.any_letters"/>">
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="userSurname" class="col-form-label">Фамилия:</label>
+                                <label for="userSurname" class="col-form-label"><fmt:message
+                                        key="add_or_edit_user.surname"/></label>
                                 <input type="text" name="userSurname" class="form-control" id="userSurname"
                                        value="${userToEdit.surname}"
                                        pattern="^[a-zA-ZА-Яа-яЁё]+$"
-                                       maxlength="30" placeholder="Допустимы любые буквы">
+                                       maxlength="30" placeholder="<fmt:message
+                                        key="add_or_edit_user.any_letters"/>">
                             </div>
                         </div>
 
-                        <label for="userPhone" class="col-form-label">Телефон:</label>
+                        <label for="userPhone" class="col-form-label"><fmt:message
+                                key="add_or_edit_user.phone"/></label>
                         <input type="tel" name="userPhone" class="form-control userPhone" id="userPhone"
                                value="${userToEdit.phone}"
                                minlength="17" maxlength="17" placeholder="+38(000)000-00-00">
 
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="userLanguage">Язык:</label>
+                                <label for="userLanguage"><fmt:message
+                                        key="add_or_edit_user.language"/></label>
                                 <select name="userLanguage" id="userLanguage" class="form-control">
-                                    <option value="RU">Русский</option>
+                                    <option value="RU"><fmt:message
+                                            key="add_or_edit_user.russian"/></option>
                                     <c:if test="${userToEdit.language == 'EN'}">
-                                        <option value="EN" selected>Английский</option>
+                                        <option value="EN" selected><fmt:message
+                                                key="add_or_edit_user.english"/></option>
                                     </c:if>
                                     <c:if test="${userToEdit.language != 'EN'}">
-                                        <option value="EN">Английский</option>
+                                        <option value="EN"><fmt:message
+                                                key="add_or_edit_user.english"/></option>
                                     </c:if>
                                 </select>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <c:if test="${currentUser.role == 'ADMIN' && currentUser.login != userToEdit.login}">
-                                    <label for="userRole">Роль:</label>
+                                    <label for="userRole"><fmt:message
+                                            key="add_or_edit_user.role"/></label>
                                     <select name="userRole" id="userRole" class="form-control">
-                                        <option value="USER"> Пользователь</option>
+                                        <option value="USER"> <fmt:message
+                                                key="add_or_edit_user.user"/></option>
                                         <c:if test="${userToEdit.role == 'ADMIN'}">
-                                            <option value="ADMIN" selected>Администратор</option>
+                                            <option value="ADMIN" selected><fmt:message
+                                                    key="add_or_edit_user.admin"/></option>
                                         </c:if>
                                         <c:if test="${userToEdit.role != 'ADMIN'}">
-                                            <option value="ADMIN">Администратор</option>
+                                            <option value="ADMIN"><fmt:message
+                                                    key="add_or_edit_user.admin"/></option>
                                         </c:if>
                                     </select>
                                 </c:if>
@@ -124,28 +145,36 @@
 
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="userNotification">Уведомления:</label>
+                                <label for="userNotification"><fmt:message
+                                        key="add_or_edit_user.notification"/></label>
                                 <select name="userNotification" id="userNotification" class="form-control">
-                                    <option value="false">Выключено</option>
+                                    <option value="false"><fmt:message
+                                            key="add_or_edit_user.off"/></option>
                                     <c:if test="${userToEdit.notification == 'true'}">
-                                        <option value="true" selected>Включено</option>
+                                        <option value="true" selected><fmt:message
+                                                key="add_or_edit_user.on"/></option>
                                     </c:if>
                                     <c:if test="${userToEdit.notification != 'true'}">
-                                        <option value="true">Включено</option>
+                                        <option value="true"><fmt:message
+                                                key="add_or_edit_user.on"/></option>
                                     </c:if>
                                 </select>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <c:if test="${currentUser.role == 'ADMIN' && currentUser.login != userToEdit.login}">
-                                    <label for="userStatus">Статус:</label>
+                                    <label for="userStatus"><fmt:message
+                                            key="add_or_edit_user.status"/></label>
                                     <select name="userStatus" id="userStatus" class="form-control">
-                                        <option value="BLOCKED">Заблокирован</option>
+                                        <option value="BLOCKED"><fmt:message
+                                                key="add_or_edit_user.blocked"/></option>
                                         <c:if test="${userToEdit.status == 'ACTIVE'}">
-                                            <option value="ACTIVE" selected>Активен</option>
+                                            <option value="ACTIVE" selected><fmt:message
+                                                    key="add_or_edit_user.active"/></option>
                                         </c:if>
                                         <c:if test="${userToEdit.status != 'ACTIVE'}">
-                                            <option value="ACTIVE">Активен</option>
+                                            <option value="ACTIVE"><fmt:message
+                                                    key="add_or_edit_user.active"/></option>
                                         </c:if>
                                     </select>
                                 </c:if>
@@ -163,7 +192,7 @@
                     <c:if test="${currentUser.role == 'ADMIN'}">
                     <input type="hidden" name="command" value="adminRequest">
                     <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit user">
-                        Submit
+                        <fmt:message key="index_jsp.submit"/>
                     </button>
                     </c:if>
 
@@ -171,7 +200,7 @@
                     <input type="hidden" name="command" value="userRequest">
                     <button type="submit" class="btn btn-primary" name="userRequest" value="Edit profile"
                             id="validateButton">
-                        Submit
+                        <fmt:message key="index_jsp.submit"/>
                     </button>
                     </c:if>
             </form>
@@ -179,7 +208,8 @@
             <button type="submit" class="btn btn-secondary"
                     data-bs-dismiss="modal"
                     name="adminRequest" value="Remove data" formnovalidate
-            >Cancel
+            ><fmt:message
+                    key="index_jsp.link.cancel"/>
             </button>
         </div>
     </div>
@@ -216,7 +246,8 @@
 
             if (document.getElementById('userLogin').value.length < 5) {
                 document.getElementById('user_message').style.color = 'red';
-                document.getElementById('user_message').innerHTML = 'Минимальная длина 5 символов';
+                document.getElementById('user_message').innerHTML = '<fmt:message
+                                            key="add_or_edit_user.min_length"/>';
                 userLogin.setCustomValidity(' ');
                 return false;
             }
@@ -225,11 +256,13 @@
             if (data == 1) {// Имя пользователя существует
                 // alert("Такое имя пользователя существует");
                 document.getElementById('user_message').style.color = 'red';
-                document.getElementById('user_message').innerHTML = 'Логин занят';
+                document.getElementById('user_message').innerHTML = '<fmt:message
+                                            key="add_or_edit_user.login_busy"/>';
                 userLogin.setCustomValidity('Логин занят');
             } else {
                 document.getElementById('user_message').style.color = 'green';
-                document.getElementById('user_message').innerHTML = 'Логин доступен';
+                document.getElementById('user_message').innerHTML = '<fmt:message
+                                            key="add_or_edit_user.login_available"/>';
                 userLogin.setCustomValidity('');
             }
         });

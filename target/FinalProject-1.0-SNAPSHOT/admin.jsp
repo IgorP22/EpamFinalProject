@@ -14,19 +14,20 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/red_stars.css"/>
 
-<%@ include file="success.jspf" %>
+
 <c:set var="language"
        value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"
        scope="session"/>
 <fmt:setLocale value="${language}"/>
 
+<%@ include file="success.jspf" %>
 
 <!DOCTYPE html>
 <html lang="${language}">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to provider main page</title>
+    <title><fmt:message key="admin.admin_page"/></title>
 </head>
 <body>
 
@@ -42,12 +43,12 @@
     <div class="page-header">
         <div class="row">
             <div class="col-md-8">
-                <h1>Административная страница</h1>
+                <h1><fmt:message key="admin.admin_page"/></h1>
 
             </div>
             <div class="col-md-2">
                 <div class="row align-items-center">
-                    <h5>Добро пожаловать</h5><br>
+                    <h5><fmt:message key="index_jsp.link.welcome"/></h5><br>
                     <c:if test="${currentUser.name == null}">
                         <h4>
                             <td>${currentUser.login}</td>
@@ -86,22 +87,22 @@
 
 
         <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
-        <button type="submit" name="adminRequest" class="btn btn-primary" value="List of services and tariffs">List of
-            services and tariffs
+        <button type="submit" name="adminRequest" class="btn btn-primary" value="List of services and tariffs">
+            <fmt:message key="admin.list_of_services_and_tariffs"/>
         </button>
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#addOrEditService">
-            Add new service
+            <fmt:message key="admin.add_new_service"/>
         </button>
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#addOrEditTariff">
-            Add new tariff
+            <fmt:message key="admin.add_new_tariff"/>
         </button>
 
 
-        <a href="admin_users.jsp" class="btn btn-success" role="button">Users page</a>
+        <a href="admin_users.jsp" class="btn btn-success" role="button"><fmt:message key="admin.working_with_users"/></a>
 
 
     </form>
@@ -123,9 +124,9 @@
     <caption hidden>Servises and tariffs table</caption>
     <thead>
     <tr class="table-active">
-        <th id = "field 01">Наименование пакета</th>
-        <th id = "field 02">Описание</th>
-        <th id = "field 03">Цена</th>
+        <th id = "field 01"><fmt:message key="index_jsp.link.name"/></th>
+        <th id = "field 02"><fmt:message key="index_jsp.link.description"/></th>
+        <th id = "field 03"><fmt:message key="index_jsp.link.price"/></th>
         <th id = "field 04"></th>
         <th id = "field 05"></th>
     </tr>
@@ -148,12 +149,12 @@
                 <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
                 <td>
                     <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
-                            value="Add or edit service">Edit service
+                            value="Add or edit service"><fmt:message key="admin.edit_service"/>
                     </button>
                 </td>
                 <td>
                     <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                            value="Delete service">Delete service
+                            value="Delete service"><fmt:message key="admin.delete_service"/>
                     </button>
                 </td>
             </form>
@@ -180,12 +181,12 @@
                         <input type="hidden" name="command" class="btn btn-primary" value="adminRequest">
                         <td>
                             <button type="submit" name="adminRequest" class="btn btn-secondary btn-sm"
-                                    value="Add or edit tariff">Edit tariff
+                                    value="Add or edit tariff"><fmt:message key="admin.edit_tariff"/>
                             </button>
                         </td>
                         <td>
                             <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                    value="Delete tariff">Delete tariff
+                                    value="Delete tariff"><fmt:message key="admin.delete_tariff"/>
                             </button>
                         </td>
 
@@ -207,22 +208,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Delete confirmation window</h5>
+                <h5 class="modal-title"><fmt:message key="admin.delete_service_confirmation_window"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete service?<br>
-                Data can't be restored!!!
+                <fmt:message key="admin.delete_are_you_sure"/><br>
+                <fmt:message key="admin.delete_data_cant_restored"/>
             </div>
 
             <div class="modal-footer">
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="adminRequest">
                     <input type="hidden" name="confirmation" value="true">
-                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete service">Delete
+                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete service"><fmt:message key="admin.delete"/>
                     </button>
                 </form>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="admin.cancel"/></button>
             </div>
         </div>
     </div>
@@ -246,22 +247,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Delete confirmation window</h5>
+                <h5 class="modal-title"><fmt:message key="admin.delete_tariff_confirmation_window"/></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete tariff?<br>
-                Data can't be restored!!!
+                <fmt:message key="admin.delete_are_you_sure"/><br>
+                <fmt:message key="admin.delete_data_cant_restored"/>
             </div>
 
             <div class="modal-footer">
                 <form action="controller" method="post">
                     <input type="hidden" name="command" value="adminRequest">
                     <input type="hidden" name="confirmation" value="true">
-                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete tariff">Delete
+                    <button type="submit" class="btn btn-danger" name="adminRequest" value="Delete tariff"><fmt:message key="admin.delete"/>
                     </button>
                 </form>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="admin.cancel"/></button>
             </div>
         </div>
     </div>
@@ -287,7 +288,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Данные сервиса</h5>
+                <h5 class="modal-title"><fmt:message key="admin.service_data"/></h5>
 
             </div>
             <form action="controller" method="post">
@@ -300,28 +301,28 @@
                     </c:if>
 
                     <div class="mb-3">
-                        <label for="serviceNameRu" class="col-form-label">Название сервиса на русском языке:</label>
+                        <label for="serviceNameRu" class="col-form-label"><fmt:message key="admin.service_name_ru"/></label>
                         <input type="text" name="serviceNameRu" class="form-control" id="serviceNameRu"
                                value="${serviceToEdit.titleRu}"
 
-                               minlength="5" maxlength="150" placeholder="Допустимы любые символы" required>
-                        <label for="serviceNameEn" class="col-form-label">Название сервиса на английском языке:</label>
+                               minlength="5" maxlength="150" placeholder="<fmt:message key="index_jsp.any_symbols"/>" required>
+                        <label for="serviceNameEn" class="col-form-label"><fmt:message key="admin.service_name_en"/></label>
                         <input type="text" name="serviceNameEn" class="form-control" id="serviceNameEn"
                                pattern="^[^а-яА-ЯЁё]+" value="${serviceToEdit.titleEn}"
-                               minlength="5" maxlength="150" placeholder="Любые символы кроме кирилицы" required>
+                               minlength="5" maxlength="150" placeholder="<fmt:message key="admin.any_symbols_beside_ru"/>" required>
 
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="command" value="adminRequest">
                     <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit service">
-                        Submit
+                        <fmt:message key="index_jsp.submit"/>
                     </button>
 
                     <button type="submit" class="btn btn-secondary"
                             data-bs-dismiss="modal"
                             name="adminRequest" value="Remove data"
-                    >Cancel
+                    ><fmt:message key="index_jsp.link.cancel"/>
                     </button>
                 </div>
             </form>
@@ -347,7 +348,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Данные тарифа</h5>
+                <h5 class="modal-title"><fmt:message key="admin.tariff_data"/></h5>
 
             </div>
             <form action="controller" method="post">
@@ -363,36 +364,34 @@
 
 
                     <div class="mb-3">
-                        <label for="tariffNameRu" class="col-form-label">Название тарифа на русском языке:</label>
+                        <label for="tariffNameRu" class="col-form-label"><fmt:message key="admin.tariff_name_ru"/></label>
                         <input type="text" name="tariffNameRu" class="form-control" id="tariffNameRu"
                                value="${tariffToEdit.nameRu}"
-                               minlength="5" maxlength="150" placeholder="Допустимы любые символы" required>
+                               minlength="5" maxlength="150" placeholder="<fmt:message key="index_jsp.any_symbols"/>" required>
 
-                        <label for="tariffNameEn" class="col-form-label">Название тарифа на английском языке:</label>
+                        <label for="tariffNameEn" class="col-form-label"><fmt:message key="admin.tariff_name_en"/></label>
                         <input type="text" name="tariffNameEn" class="form-control" id="tariffNameEn"
                                pattern="^[^а-яА-ЯЁё]+" value="${tariffToEdit.nameEn}"
-                               minlength="5" maxlength="150" placeholder="Любые символы кроме кирилицы" required>
+                               minlength="5" maxlength="150" placeholder="<fmt:message key="admin.any_symbols_beside_ru"/>" required>
 
-                        <label for="tariffPrice" class="col-form-label">Цена тарифа:</label>
+                        <label for="tariffPrice" class="col-form-label"><fmt:message key="admin.tariff_price"/></label>
                         <input type="text" name="tariffPrice" class="form-control" id="tariffPrice"
                         <%--                               pattern="^[^а-яА-ЯЁё]+"--%>
                                value="${tariffToEdit.price}"
-                               minlength="1" maxlength="10" placeholder="Любые символы кроме кирилицы" required>
+                               minlength="1" maxlength="10" placeholder="<fmt:message key="admin.any_symbols_beside_ru"/>" required>
 
-                        <label for="tariffDescriptionRu" class="col-form-label">Описание тарифа на русском
-                            языке:</label>
+                        <label for="tariffDescriptionRu" class="col-form-label"><fmt:message key="admin.tariff_description_ru"/></label>
                         <input type="text" name="tariffDescriptionRu" class="form-control" id="tariffDescriptionRu"
                                value="${tariffToEdit.descriptionRu}"
-                               minlength="5" maxlength="3000" placeholder="Допустимы любые символы" required>
+                               minlength="5" maxlength="3000" placeholder="<fmt:message key="index_jsp.any_symbols"/>" required>
 
-                        <label for="tariffDescriptionEn" class="col-form-label">Описание тарифа на английском
-                            языке:</label>
+                        <label for="tariffDescriptionEn" class="col-form-label"><fmt:message key="admin.tariff_description_en"/></label>
                         <input type="text" name="tariffDescriptionEn" class="form-control" id="tariffDescriptionEn"
                                pattern="^[^а-яА-ЯЁё]+" value="${tariffToEdit.descriptionEn}"
-                               minlength="5" maxlength="3000" placeholder="Любые символы кроме кирилицы" required>
+                               minlength="5" maxlength="3000" placeholder="<fmt:message key="admin.any_symbols_beside_ru"/>" required>
                         <c:if test="${tariffToEdit.id != null}">
                             <div class="form-group">
-                                <label for="disabledSelect">Сервис</label>
+                                <label for="disabledSelect"><fmt:message key="admin.tariff_service"/></label>
                                 <select id="disabledSelect" class="form-control" disabled>
 
                                     <option>${serviceName}</option>
@@ -402,7 +401,7 @@
 
                         <c:if test="${tariffToEdit.id == null}">
                             <div class="form-group">
-                                <label for="serviceIdForTariff">Сервис</label>
+                                <label for="serviceIdForTariff"><fmt:message key="admin.tariff_service"/></label>
                                 <select name="serviceIdForTariff" id="serviceIdForTariff" class="form-control">
 
                                     <c:forEach var="serviceList" items="${ListOfServices}">
@@ -419,13 +418,13 @@
                 <div class="modal-footer">
                     <input type="hidden" name="command" value="adminRequest">
                     <button type="submit" class="btn btn-primary" name="adminRequest" value="Add or edit tariff">
-                        Submit
+                        <fmt:message key="index_jsp.submit"/>
                     </button>
 
                     <button type="submit" class="btn btn-secondary"
                             data-bs-dismiss="modal"
                             name="adminRequest" value="Remove data"
-                    >Cancel
+                    ><fmt:message key="index_jsp.link.cancel"/>
                     </button>
                 </div>
             </form>

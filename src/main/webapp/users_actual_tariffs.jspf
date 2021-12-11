@@ -7,9 +7,9 @@
         <thead>
         <tr class="table-active">
 
-            <th id = "field 01">Наименование пакета</th>
-            <th id = "field 02">Описание</th>
-            <th id = "field 03">Цена</th>
+            <th id = "field 01"><fmt:message key="index_jsp.link.name"/></th>
+            <th id = "field 02"><fmt:message key="index_jsp.link.description"/></th>
+            <th id = "field 03"><fmt:message key="index_jsp.link.price"/></th>
             <th id = "field 04"></th>
         </tr>
         </thead>
@@ -73,7 +73,7 @@
     </table>
 
     <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
-    <button type="submit" name="userRequest" class="btn btn-primary" value="Update services">Update services
+    <button type="submit" name="userRequest" class="btn btn-primary" value="Update services"><fmt:message key="user.page.update_services"/>
     </button>
 </form>
 
