@@ -33,9 +33,9 @@ public class PasswordRecoveryDBManager {
     }
 
     /**
-     * Create new entity for password recovery
-     * @param con - received from DAO level
-     * @param passwordRecovery - database entity
+     * Create new entity in DB for password recovery
+     * @param con connection received from DAO level
+     * @param passwordRecovery new database entity data
      * @return 'true' if entity created
      * @throws SQLException in case of errors in data exchange with the database
      */
@@ -54,8 +54,8 @@ public class PasswordRecoveryDBManager {
 
     /**
      * Receive entity from database by UserId
-     * @param con - received from DAO level
-     * @param userId - user Id
+     * @param con received from DAO level
+     * @param userId user Id
      * @return PasswordRecovery database entity
      * @throws SQLException in case of errors in data exchange with the database
      */
@@ -79,9 +79,9 @@ public class PasswordRecoveryDBManager {
     }
 
     /**
-     * Receive entity from database restore password code
-     * @param con - received from DAO level
-     * @param code - restore password code
+     * Receive entity from database restore password by code
+     * @param con received from DAO level
+     * @param code restore password code
      * @return PasswordRecovery database entity
      * @throws SQLException in case of errors in data exchange with the database
      */
@@ -107,8 +107,8 @@ public class PasswordRecoveryDBManager {
 
     /**
      * Delete entity from database by restore password code
-     * @param con - received from DAO level
-     * @param code - restore password code
+     * @param con received from DAO level
+     * @param code restore password code
      * @return PasswordRecovery database entity
      * @throws SQLException in case of errors in data exchange with the database
      */
@@ -126,7 +126,7 @@ public class PasswordRecoveryDBManager {
 
     /**
      * Close resources after using
-     * @param resource - type of resource to close
+     * @param resource any autocloseable resource to close
      */
     public void close(AutoCloseable resource) {
         if (resource != null) {

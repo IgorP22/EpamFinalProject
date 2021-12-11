@@ -44,8 +44,8 @@ public class User implements Serializable {
     private Status status;
 
     /**
-     * Private construct user entity for Builder pattern
-     * @param userBuilder - Builder pattern entity
+     * Private constructor for Builder pattern
+     * @param userBuilder Builder pattern entity
      */
     private User(UserBuilder userBuilder) {
         this.id = userBuilder.id;
@@ -62,9 +62,6 @@ public class User implements Serializable {
         this.status = userBuilder.status;
     }
 
-    /*
-
-     */
     public int getId() {
         return id;
     }
@@ -194,7 +191,7 @@ public class User implements Serializable {
 
     /**
      * Builder pattern used. Email don't planed to be required field first,
-     * so it's not in main constructor, only login and password. As for default it set to null,
+     * so it's not in main constructor, only login and password. Default it's set to null,
      * but not null email controlled in other parts of code and by database
      */
     public static class UserBuilder {

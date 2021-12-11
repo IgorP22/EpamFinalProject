@@ -13,7 +13,9 @@ import java.util.List;
 
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.TariffConstants.*;
 
-
+/**
+ * Database table 'tariff' DBManager
+ */
 public class TariffDBManager {
 
     private static final Logger log = LogManager.getLogger(TariffDBManager.class);
@@ -32,6 +34,12 @@ public class TariffDBManager {
         // no op
     }
 
+    /**
+     * Create list of all tariff from DB
+     * @param con connection received from DAO level
+     * @return List of all tariffs from DB
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public List<Tariff> findAll(Connection con) throws SQLException {
         List<Tariff> tariffs = new ArrayList<>();
         PreparedStatement ps = null;
@@ -51,6 +59,13 @@ public class TariffDBManager {
         }
     }
 
+    /**
+     * Create new tariff entity in DB
+     * @param con connection received from DAO level
+     * @param tariff new database entity data
+     * @return 'true' if entity created
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean create(Connection con, Tariff tariff) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -63,7 +78,13 @@ public class TariffDBManager {
         }
     }
 
-
+    /**
+     * Receive tariff entity from database by tariff id
+     * @param con connection received from DAO level
+     * @param id tariff id
+     * @return returns the tariff record with the specified id, may be 'null' if no such tariff
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public Tariff getById(Connection con, int id) throws SQLException {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -82,6 +103,14 @@ public class TariffDBManager {
         }
     }
 
+    /**
+     * Update tariff entity in database, tariff to edit is selected by the tariff
+     * id from the param
+     * @param con connection received from DAO level
+     * @param tariff tariff to update
+     * @return returns 'true' if update was successful
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean update(Connection con, Tariff tariff) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -95,6 +124,14 @@ public class TariffDBManager {
         }
     }
 
+    /**
+     * Delete tariff entity from database, tariff to delete is selected by the tariff
+     * id from the param, other tariff fields are not used
+     * @param con connection received from DAO level
+     * @param tariff tariff to delete
+     * @return returns 'true' if delete was successful
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean delete(Connection con, Tariff tariff) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -107,6 +144,10 @@ public class TariffDBManager {
         }
     }
 
+    /**
+     * Close resources after using
+     * @param resource any autocloseable resource to close
+     */
     public void close(AutoCloseable resource) {
         if (resource != null) {
             try {
@@ -117,6 +158,12 @@ public class TariffDBManager {
         }
     }
 
+    /**
+     * Set fields of tariff entity to the prepared statement parameters for SQL request
+     * @param tariff data to set into @param ps here
+     * @param ps prepared statement
+     * @throws SQLException in case of errors to set parameters
+     */
     private void setTariffStatement(Tariff tariff, PreparedStatement ps) throws SQLException {
         int index = 1;
         ps.setString(index++, tariff.getNameRu());
@@ -127,6 +174,12 @@ public class TariffDBManager {
         ps.setString(index, tariff.getDescriptionEn());
     }
 
+    /**
+     * Write all data from ResultSet to the tariff entity
+     * @param rs result set
+     * @return tariff entity with data from @param
+     * @throws SQLException in case of errors to receive data
+     */
     private Tariff getTariff(ResultSet rs) throws SQLException {
         Tariff tariff = new Tariff();
 

@@ -13,7 +13,9 @@ import java.util.List;
 
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.UserTariffConstants.*;
 
-
+/**
+ * Database table 'user_tariffs' DBManager
+ */
 public class UserTariffDBManager {
 
     private static final Logger log = LogManager.getLogger(UserTariffDBManager.class);
@@ -31,7 +33,14 @@ public class UserTariffDBManager {
     private UserTariffDBManager() {
         // no op
     }
-
+    /**
+     * Create list of all tariff for user with @param userId from DB
+     *
+     * @param con connection received from DAO level
+     * @param userId id of user for 'user_tariffs' table
+     * @return List of all tariffs for specified userId from DB
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public List<UserTariff> findAllByUserId(Connection con, int userId) throws SQLException {
         List<UserTariff> userTariffs = new ArrayList<>();
         PreparedStatement ps = null;
@@ -52,6 +61,12 @@ public class UserTariffDBManager {
         }
     }
 
+    /**
+     * Receive total cost of all tariffs connected by user with @param userId from DB
+     * @param con connection received from DAO level
+     * @return total cost of tariffs chased by user
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public double getTotalCost(Connection con, int userId) throws SQLException {
         double totalSum = 0;
         PreparedStatement ps = null;
@@ -71,6 +86,13 @@ public class UserTariffDBManager {
     }
 
 
+    /**
+     * Write all data from ResultSet to the userTariff entity (one record)
+     *
+     * @param rs result set
+     * @return userTariff - entity with data from @param
+     * @throws SQLException in case of errors to receive data
+     */
     private UserTariff getUserTariffs(ResultSet rs) throws SQLException {
         UserTariff userTariff = new UserTariff();
 
@@ -81,7 +103,17 @@ public class UserTariffDBManager {
         return userTariff;
     }
 
-
+    /**
+     * Update userTariffs entity in database for specified user with user's id from the param
+     *
+     * Transaction realized here (first all records are deleted and then new ones are inserted)
+     *
+     * @param con connection received from DAO level
+     * @param userTariffs  list of tariffs selected by user
+     * @param userId userId to update
+     * @return 'true' if update was successful
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean update(Connection con, List<UserTariff> userTariffs, int userId) throws SQLException {
         PreparedStatement ps = null;
         con.setAutoCommit(false);
@@ -107,6 +139,12 @@ public class UserTariffDBManager {
         return true;
     }
 
+    /**
+     * Set fields of userTariff entity to the prepared statement parameters for SQL request
+     * @param userTariff - data to set into @param ps here
+     * @param ps prepared statement
+     * @throws SQLException in case of errors to set parameters
+     */
     private void setUserTariff(UserTariff userTariff, PreparedStatement ps) throws SQLException {
 
         ps.setInt(1, userTariff.getUserId());
@@ -114,6 +152,14 @@ public class UserTariffDBManager {
 
     }
 
+    /**
+     * Delete all entity with specified userID from @param
+     *
+     * @param con connection received from DAO level
+     * @param userId userId to delete
+     * @return 'true' if delete was successful
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean delete(Connection con, int userId) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -126,7 +172,10 @@ public class UserTariffDBManager {
         }
     }
 
-
+    /**
+     * Close resources after using
+     * @param resource any autocloseable resource to close
+     */
     public void close(AutoCloseable resource) {
         if (resource != null) {
             try {

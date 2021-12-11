@@ -13,7 +13,9 @@ import java.util.List;
 
 import static com.podverbnyj.provider.dao.db.entity.constant.SQLConstant.ServiceConstants.*;
 
-
+/**
+ * Database table 'service' DBManager
+ */
 public class ServiceDBManager {
 
     private static final Logger log = LogManager.getLogger(ServiceDBManager.class);
@@ -32,6 +34,12 @@ public class ServiceDBManager {
         // no op
     }
 
+    /**
+     * Create list of all services from DB
+     * @param con  connection received from DAO level
+     * @return List of all services from DB
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public List<Service> findAll(Connection con) throws SQLException {
         List<Service> services = new ArrayList<>();
         PreparedStatement ps = null;
@@ -51,6 +59,13 @@ public class ServiceDBManager {
         }
     }
 
+    /**
+     * Create new service entity in DB
+     * @param con connection received from DAO level
+     * @param service new database entity data
+     * @return 'true' if entity created
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean create(Connection con, Service service) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -63,7 +78,13 @@ public class ServiceDBManager {
         }
     }
 
-
+    /**
+     * Receive service entity from database by service id
+     * @param con connection received from DAO level
+     * @param id service id
+     * @return returns the service record with the specified id, may be 'null' if no such service
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public Service getById(Connection con, int id) throws SQLException {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -82,6 +103,14 @@ public class ServiceDBManager {
         }
     }
 
+    /**
+     * Update service entity in database, service to edit is selected by the service
+     * id from the param
+     * @param con connection received from DAO level
+     * @param service service to update
+     * @return returns 'true' if update was successful
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean update(Connection con, Service service) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -95,6 +124,14 @@ public class ServiceDBManager {
         }
     }
 
+    /**
+     * Delete service entity from database, service to delete is selected by the service
+     * id from the param, other service fields are not used
+     * @param con connection received from DAO level
+     * @param service service to delete
+     * @return returns 'true' if delete was successful
+     * @throws SQLException in case of errors in data exchange with the database
+     */
     public boolean delete(Connection con, Service service) throws SQLException {
         PreparedStatement ps = null;
         try {
@@ -107,6 +144,10 @@ public class ServiceDBManager {
         }
     }
 
+    /**
+     * Close resources after using
+     * @param resource any autocloseable resource to close
+     */
     public void close(AutoCloseable resource) {
         if (resource != null) {
             try {
@@ -117,6 +158,13 @@ public class ServiceDBManager {
         }
     }
 
+
+    /**
+     * Set fields of service entity to the prepared statement parameters for SQL request
+     * @param service data to set into @param ps here
+     * @param ps prepared statement
+     * @throws SQLException in case of errors to set parameters
+     */
     private void setServiceStatement(Service service, PreparedStatement ps) throws SQLException {
         int index = 1;
         ps.setString(index++, service.getTitleRu());
@@ -124,6 +172,12 @@ public class ServiceDBManager {
 
     }
 
+    /**
+     * Write all data from ResultSet to the service entity
+     * @param rs result set
+     * @return Service - entity with data from @param
+     * @throws SQLException in case of errors to receive data
+     */
     private Service getService(ResultSet rs) throws SQLException {
         Service service = new Service();
 
