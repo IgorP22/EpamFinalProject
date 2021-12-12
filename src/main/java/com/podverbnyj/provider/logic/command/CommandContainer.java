@@ -2,6 +2,10 @@ package com.podverbnyj.provider.logic.command;
 
 import java.util.*;
 
+/**
+ * Command container contains HashMap with received commands from
+ * web application and classes which handles them
+ */
 public class CommandContainer {
 	
 	private static Map<String, Command> commands;

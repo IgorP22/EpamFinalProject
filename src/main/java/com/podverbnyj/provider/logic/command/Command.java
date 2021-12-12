@@ -6,6 +6,9 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Command interface to realize command center
+ */
 public interface Command {
 
 	String execute(HttpServletRequest req,
