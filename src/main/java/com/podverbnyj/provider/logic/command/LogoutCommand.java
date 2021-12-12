@@ -7,6 +7,10 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * LogoutCommand invalidate session on user logout.
+ * Implements Command interface.
+ */
 public class LogoutCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(LogoutCommand.class);

@@ -22,7 +22,7 @@ import static com.podverbnyj.provider.utils.EmailSender.emailSender;
 import static com.podverbnyj.provider.utils.GetUser.getUser;
 
 /**
- * This class handles all requests from administrator of web application,
+ * AdminRequestCommand class handles all requests from admin pages of web application,
  * implements Command interface.
  */
 public class AdminRequestCommand implements Command {
@@ -61,6 +61,7 @@ public class AdminRequestCommand implements Command {
 
         // checking access rights to administrative pages
         if (req.getSession().getAttribute("currentUser") == null) {
+            log.info("Attempt to access admin page without permission");
             // redirecting to start page if no 'currentUser' in session
             return req.getHeader("index.jsp");
         }

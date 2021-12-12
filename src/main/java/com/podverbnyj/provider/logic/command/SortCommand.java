@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+/**
+ * SortCommand center call methods to sort all lists used in webapp, depend on request parameter.
+ * Implements Command interface.
+ */
 public class SortCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(SortCommand.class);

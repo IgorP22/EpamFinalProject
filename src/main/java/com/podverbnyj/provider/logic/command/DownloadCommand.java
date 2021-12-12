@@ -12,7 +12,12 @@ import java.io.File;
 
 import static com.podverbnyj.provider.utils.create_file.CreateTariffsFile.getFile;
 
-
+/**
+ * DownloadCommand class handles requests from unauthorized user of web application to download price_list,
+ * call method getFile to create price_list file in format .txt or .pdf depends on request
+ * and return it as download content.
+ * Implements Command interface.
+ */
 public class DownloadCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(DownloadCommand.class);

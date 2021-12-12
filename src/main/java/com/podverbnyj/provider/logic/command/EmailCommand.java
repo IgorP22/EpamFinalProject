@@ -13,6 +13,13 @@ import java.io.IOException;
 import static com.podverbnyj.provider.utils.EmailSender.emailSender;
 import static com.podverbnyj.provider.utils.create_file.CreateTariffsFile.getFile;
 
+
+/**
+ * EmailCommand class handles requests from unauthorized user of web application to get price_list by mail,
+ * call method getFile to create price_list file in format .txt or .pdf depends on request
+ * and then call emailSender method, to send price_list to specified email.
+ * Implements Command interface.
+ */
 public class EmailCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(EmailCommand.class);

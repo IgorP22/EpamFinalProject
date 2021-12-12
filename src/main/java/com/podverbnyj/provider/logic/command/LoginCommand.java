@@ -14,6 +14,10 @@ import java.io.IOException;
 
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
+/**
+ * LoginCommand class get user login, password, captcha and redirecting user depend on user role.
+ * Implements Command interface.
+ */
 public class LoginCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(LoginCommand.class);
@@ -32,48 +36,58 @@ public class LoginCommand implements Command {
         try {
             verify = VerifyRecaptcha.verify(gRecaptchaResponse);
         } catch (IOException e) {
+            // bad practice, it's not database exception, but used to throw our own exception if captcha verification error
             throw new DBException("Captcha not verified error");
         }
 
+        // create currentUser with entered login and password
         User currentUser = new User.UserBuilder(login, securePassword(password)).build();
         log.trace("User login ==> {}", login);
 
-
+        // get user from DB by login
         User user = userDAO.getByLogin(login);
         log.trace("Current user ==> {}", currentUser);
         log.trace("User from DB ==>{}", user);
 
 
+        // error verification captha
+        if (!verify) {
+            return "index.jsp#wrongCaptcha";
+        }
+        // if user exist in DB redirecting to user or admin page depends on role
         if (currentUser.equals(user)) {
             log.trace("Logged successfully as {}", login);
             req.getSession().setAttribute("login", login);
             log.trace("Login stored in session");
             log.trace("User role ==> {}", user.getRole());
             req.getSession().setAttribute("role", user.getRole());
+
+            // if user role is 'admin', redirecting to admin.jsp
             if (user.getRole().equals(Role.ADMIN)) {
+                // set currentUser attribute in session scope
                 req.getSession().setAttribute("user", user);
                 req.getSession().setAttribute("currentUser", user);
-                if (!verify) {
-                    return "index.jsp#wrongCaptcha";
-                }
                 return "admin.jsp";
             }
+
             req.getSession().setAttribute("currentUser", user);
             req.getSession().setAttribute("userFlag", null);
+
+            // receive total price of services for user
             double totalCost = userTariffDAO.getTotalCost(user.getId());
             req.getSession().setAttribute("totalCost", totalCost);
             log.info("Total price for {} = {}",user,totalCost);
-            if (!verify) {
-                return "index.jsp#wrongCaptcha";
-            }
+            // redirecting to user.jsp
             return "user.jsp";
         }
 
+        // error if passwords don't match
         if (user!=null && user.getLogin().equals(currentUser.getLogin())) {
             log.trace("Login failed, username and password don't match");
             return "index.jsp#wrongPassword";
         }
 
+        // error if no such user
         log.trace("Login failed, no such username in db");
         return "index.jsp#userNotExist";
     }

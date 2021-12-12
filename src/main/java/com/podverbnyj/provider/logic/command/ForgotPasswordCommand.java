@@ -16,6 +16,13 @@ import java.security.SecureRandom;
 import static com.podverbnyj.provider.utils.EmailSender.emailSender;
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
+/**
+ * ForgotPasswordCommand class handles requests from unauthorized user of web application to restore forgotten password,
+ * check possibility to restore, generate unique password restore link, send it email, and
+ * start 5 minute delayed thread to delete this link.
+ *
+ * Implements Command interface.
+ */
 public class ForgotPasswordCommand implements Command {
 
     private static final Logger log = LogManager.getLogger(ForgotPasswordCommand.class);
@@ -27,6 +34,8 @@ public class ForgotPasswordCommand implements Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws DBException {
 
+
+        // if attributes userToRestore & userNewPassword present, set user's new password in DB
         if ((req.getSession().getAttribute(USER_TO_RECOVER) != null) &&
                 (req.getParameter("userNewPassword") != null)) {
             PasswordRecovery ps =
@@ -38,6 +47,7 @@ public class ForgotPasswordCommand implements Command {
             return "index.jsp#success";
         }
 
+        // if combination of userName & email isn't present in DB, redirect to error modal window of webapp
         String userLoginToRestore = req.getParameter("userLoginToRestore");
         String emailToRestore = req.getParameter("emailToRestore");
         User user = userDAO.getByLogin(userLoginToRestore);
@@ -48,6 +58,7 @@ public class ForgotPasswordCommand implements Command {
             return "index.jsp#noSuchRecordInDb";
         }
 
+        // generating restore password link
         SecureRandom random = new SecureRandom();
         String linkToRestore = String.valueOf(System.currentTimeMillis() +
                 (random.nextInt(100000)));
@@ -55,6 +66,7 @@ public class ForgotPasswordCommand implements Command {
         PasswordRecovery pr = new PasswordRecovery();
         pr.setUserId(userDAO.getByLogin(userLoginToRestore).getId());
         pr.setCode(linkToRestore);
+        // creating record in DB with userId & linkToRestore
         passwordRecoveryDAO.create(pr);
         log.info("Password record created in BD {}", pr);
 
@@ -62,6 +74,7 @@ public class ForgotPasswordCommand implements Command {
         String restoreUrl = "http://localhost:8080/Final/index.jsp?restoreLink=" + linkToRestore;
         log.info("Password restore link created {}", restoreUrl);
 
+        // starting 5 minute delayed thead to delete link from DB
         String finalLinkToRestore = linkToRestore;
         Thread t2 = new Thread(() -> {
             log.info("Thread for deleting {} after 5 min tarted", finalLinkToRestore);
@@ -82,9 +95,9 @@ public class ForgotPasswordCommand implements Command {
         t2.start();
 
 
+        // generate body and subject for email
         String body;
         String subject;
-
         if ("ru".equals(language)) {
             subject = "Ссылка на восстановление пароля";
             body = "Здравствуйте, " + user.getLogin() + "!" + System.lineSeparator() +
@@ -97,6 +110,7 @@ public class ForgotPasswordCommand implements Command {
                     restoreUrl;
         }
 
+        // send email
         emailSender(emailToRestore, subject, body, null);
 
         return "index.jsp#success";
