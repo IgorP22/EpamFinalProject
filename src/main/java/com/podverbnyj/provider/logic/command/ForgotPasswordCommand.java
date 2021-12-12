@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.security.SecureRandom;
 
+import static com.podverbnyj.provider.logic.command.LoginCommand.captchaVerification;
 import static com.podverbnyj.provider.utils.EmailSender.emailSender;
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
@@ -46,6 +47,9 @@ public class ForgotPasswordCommand implements Command {
             req.getSession().setAttribute(USER_TO_RECOVER, null);
             return "index.jsp#success";
         }
+
+        String errorAddress = captchaVerification(req);
+        if (errorAddress != null) return errorAddress;
 
         // if combination of userName & email isn't present in DB, redirect to error modal window of webapp
         String userLoginToRestore = req.getParameter("userLoginToRestore");

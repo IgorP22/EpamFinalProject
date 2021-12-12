@@ -30,15 +30,9 @@ public class LoginCommand implements Command {
 
         String login = req.getParameter("login");
         String password = req.getParameter("password");
-        String gRecaptchaResponse = req
-                .getParameter("g-recaptcha-response");
-        boolean verify = false;
-        try {
-            verify = VerifyRecaptcha.verify(gRecaptchaResponse);
-        } catch (IOException e) {
-            // bad practice, it's not database exception, but used to throw our own exception if captcha verification error
-            throw new DBException("Captcha not verified error");
-        }
+        String errorAddress = captchaVerification(req);
+        if (errorAddress != null) return errorAddress;
+
 
         // create currentUser with entered login and password
         User currentUser = new User.UserBuilder(login, securePassword(password)).build();
@@ -50,10 +44,6 @@ public class LoginCommand implements Command {
         log.trace("User from DB ==>{}", user);
 
 
-        // error verification captha
-        if (!verify) {
-            return "index.jsp#wrongCaptcha";
-        }
         // if user exist in DB redirecting to user or admin page depends on role
         if (currentUser.equals(user)) {
             log.trace("Logged successfully as {}", login);
@@ -90,5 +80,30 @@ public class LoginCommand implements Command {
         // error if no such user
         log.trace("Login failed, no such username in db");
         return "index.jsp#userNotExist";
+    }
+
+    /**
+     * Captcha verification method
+     *
+     * @param req used to receive 'g-recaptcha-response' parameter
+     * @return address to redirect in case of captcha verification error, or 'null' if passed
+     * @throws DBException our own exception
+     */
+    public static String captchaVerification(HttpServletRequest req) throws DBException {
+        String gRecaptchaResponse = req
+                .getParameter("g-recaptcha-response");
+        boolean verify;
+        try {
+            verify = VerifyRecaptcha.verify(gRecaptchaResponse);
+        } catch (IOException e) {
+            // bad practice, it's not database exception, but used to throw our own exception if captcha verification error
+            throw new DBException("Captcha not verified error");
+        }
+
+        // error verification captcha
+        if (!verify) {
+            return "index.jsp#wrongCaptcha";
+        }
+        return null;
     }
 }
