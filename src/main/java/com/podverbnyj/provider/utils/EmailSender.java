@@ -1,6 +1,7 @@
 package com.podverbnyj.provider.utils;
 
 
+import com.podverbnyj.provider.dao.db.DBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,6 +13,9 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Email sender
+ */
 public class EmailSender {
     private EmailSender() {
     }
@@ -21,14 +25,22 @@ public class EmailSender {
     private static final String PASSWORD = ""; // GMail password
 
 
-    public static void emailSender(String address, String subject, String body, HttpServletRequest req) {
 
-
+    public static void emailSender(String address, String subject, String body, HttpServletRequest req) throws DBException {
         sendFromGMail(address, subject, body, req);
         log.info("Email sent to address: {}", address);
     }
 
-    private static void sendFromGMail(String to, String subject, String body, HttpServletRequest req) {
+    /**
+     * Gmail file sender
+     *
+     * @param to recipient email
+     * @param subject email subject
+     * @param body email body
+     * @param req used to take file type to send, or if null ==> email without attachment
+     * @throws DBException  high level message for error page.
+     */
+    private static void sendFromGMail(String to, String subject, String body, HttpServletRequest req) throws DBException {
 
         Properties props = System.getProperties();
         String host = "smtp.gmail.com";
@@ -47,8 +59,6 @@ public class EmailSender {
             message.setFrom(new InternetAddress(EmailSender.USER_NAME));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
             message.setSubject(subject);
-
-
             if (req == null) {
                 message.setText(body);
             }
@@ -91,6 +101,8 @@ public class EmailSender {
             transport.close();
         } catch (MessagingException ae) {
             log.error("Email sending fall down....");
+            // chaging message exception to our own exception
+            throw new DBException("Email sending error");
         }
     }
 }
