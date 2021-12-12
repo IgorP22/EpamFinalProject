@@ -88,6 +88,10 @@ public class SQLConstant {
         public static final String GET_COUNT_USERS_PAYMENT_SIZE = "SELECT COUNT(*) FROM user_payments WHERE user_id = ?";
         public static final String FIND_GROUP_PAYMENTS_BY_USER_ID = "SELECT * FROM user_payments WHERE user_id = ? " +
                 "ORDER BY date DESC LIMIT ? OFFSET ?";
+        public static final String GET_COUNT_USERS_PAYMENT_SIZE_ONLY_POSITIVE = "SELECT COUNT(*) FROM user_payments " +
+                "WHERE user_id = ? AND sum>0";
+        public static final String FIND_GROUP_PAYMENTS_BY_USER_ID_ONLY_POSITIVE = "SELECT * FROM user_payments " +
+                "WHERE user_id = ? AND sum>0 ORDER BY date DESC LIMIT ? OFFSET ?";
     }
 
     /**

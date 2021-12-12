@@ -22,7 +22,7 @@ public class EmailSender {
 
     private static final Logger log = LogManager.getLogger(EmailSender.class);
     private static final String USER_NAME = "testfinalproject2";  // GMail username (just the part before "@gmail.com")
-    private static final String PASSWORD = ""; // GMail password
+    private static final String PASSWORD = "Test222tesT"; // GMail password
 
 
 

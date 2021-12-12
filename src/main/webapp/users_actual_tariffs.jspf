@@ -34,18 +34,18 @@
                     <tr>
                         <td>
                             <div class="form-check">
-                                <c:set var="flag" value=""/>
+                                <c:set var="checked_flag" value=""/>
 
                                 <c:forEach var="userTariff" items="${userTariffList}">
                                     <c:if test="${tariff.id == userTariff.tariffId}">
-                                        <c:set var="flag" value="checked"/>
+                                        <c:set var="checked_flag" value="checked"/>
 
                                     </c:if>
 
                                 </c:forEach>
 
                                 <input class="form-check-input" type="checkbox" name="${service.id}"
-                                       id="${service.id}" value="${tariff.id}" onclick="onlyOne(this)" ${flag}>
+                                       id="${service.id}" value="${tariff.id}" onclick="onlyOne(this)" ${checked_flag}>
 
                                 <label class="form-check-label" for="${service.id}">
 

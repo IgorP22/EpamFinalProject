@@ -57,8 +57,20 @@ public class UserPaymentDAO {
         try {
             return userPaymentDBManager.findGroupByUserId(con, userId, limit, offset);
         } catch (SQLException ex) {
-            log.error("Can't receive payment history from DB for user {}", userId, ex);
-            throw new DBException("Can't receive payment history from DB for user " + userId);
+            log.error("Can't receive payment history group from DB for user {}", userId, ex);
+            throw new DBException("Can't receive payment history group from DB for user " + userId);
+        } finally {
+            userPaymentDBManager.close(con);
+        }
+    }
+
+    public List<UserPayment> findTopUpGroup(int userId, int limit, int offset) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userPaymentDBManager.findTopUpGroupByUserId(con, userId, limit, offset);
+        } catch (SQLException ex) {
+            log.error("Can't receive payment history group (positive only) from DB for user {}", userId, ex);
+            throw new DBException("Can't receive payment history group (positive only) from DB for user " + userId);
         } finally {
             userPaymentDBManager.close(con);
         }
@@ -80,6 +92,18 @@ public class UserPaymentDAO {
         Connection con = dbUtils.getConnection();
         try {
             return userPaymentDBManager.getUsersPaymentsSize(con, userId);
+        } catch (SQLException ex) {
+            log.error("Can't receive payment size from DB for user {}", userId, ex);
+            throw new DBException("Can't receive payment size from DB for user " + userId);
+        } finally {
+            userPaymentDBManager.close(con);
+        }
+    }
+
+    public int getUsersPaymentsTopUpSize(int userId) throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userPaymentDBManager.getUsersPaymentsTopUpSize(con, userId);
         } catch (SQLException ex) {
             log.error("Can't receive payment size from DB for user {}", userId, ex);
             throw new DBException("Can't receive payment size from DB for user " + userId);

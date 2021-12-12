@@ -95,7 +95,41 @@ public class UserPaymentDBManager {
     }
 
     /**
-     * Get number of records for user's account with @param userId from DB
+     * Create list of payments, made from user's account with @param userId from DB,
+     * but take only part, and only positive, which set in @param limit and @param offset
+     * Created to realize pagination.
+     *
+     * @param con connection received from DAO level
+     * @param userId id of user for 'user_payments' table
+     * @param limit number of records from DB
+     * @param offset number of rows to skip
+     * @return List of payments for specified user, with specified size from DB
+     * @throws SQLException in case of errors in data exchange with the database
+     */
+    public List<UserPayment> findTopUpGroupByUserId(Connection con, int userId, int limit, int offset) throws SQLException {
+        List<UserPayment> userPayments = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        UserPayment userPayment;
+        try {
+            ps = con.prepareStatement(FIND_GROUP_PAYMENTS_BY_USER_ID_ONLY_POSITIVE);
+            ps.setInt(1, userId);
+            ps.setInt(2, limit);
+            ps.setInt(3, offset);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                userPayment = getUserPayments(rs);
+                userPayments.add(userPayment);
+            }
+            return userPayments;
+        } finally {
+            close(rs);
+            close(ps);
+        }
+    }
+
+    /**
+     * Get number of positive sum records for user's account with @param userId from DB
      * @param con connection received from DAO level
      * @param userId id of user for 'user_payments' table
      * @return number of records for specified user's account
@@ -107,6 +141,31 @@ public class UserPaymentDBManager {
         ResultSet rs = null;
         try {
             ps = con.prepareStatement(GET_COUNT_USERS_PAYMENT_SIZE);
+            ps.setInt(1, userId);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                result = rs.getInt(1);
+            }
+            return result;
+        } finally {
+            close(rs);
+            close(ps);
+        }
+    }
+
+    /**
+     * Get number of records for user's account with @param userId from DB
+     * @param con connection received from DAO level
+     * @param userId id of user for 'user_payments' table
+     * @return number of records for specified user's account
+     * @throws SQLException in case of errors in data exchange with the database
+     */
+    public int getUsersPaymentsTopUpSize(Connection con, int userId) throws SQLException {
+        int result = 0;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            ps = con.prepareStatement(GET_COUNT_USERS_PAYMENT_SIZE_ONLY_POSITIVE);
             ps.setInt(1, userId);
             rs = ps.executeQuery();
             if (rs.next()) {

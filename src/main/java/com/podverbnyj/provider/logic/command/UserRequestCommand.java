@@ -30,6 +30,7 @@ public class UserRequestCommand implements Command {
     public static final String USER_JSP_SUCCESS = "user.jsp#success";
     public static final String USER_FLAG = "userFlag";
     public static final String CURRENT_USER = "currentUser";
+    public static final String ONLY_TOP_UP = "OnlyTopUp";
 
     /**
      * Main method for handling user requests, get parameters of 'userRequest' and
@@ -100,6 +101,7 @@ public class UserRequestCommand implements Command {
             req.getSession().setAttribute("userTariffList", userTariffList);
             // set flag to show results on user.jsp page
             req.getSession().setAttribute(USER_FLAG, userFlag);
+            return "user.jsp";
         }
 
         // if 'userRequest' parameters equal 'Update services'
@@ -130,12 +132,25 @@ public class UserRequestCommand implements Command {
     /**
      * Realise paginated history of payments list for specified user
      *
-     * @param req  receive or set flags for pagination
+     * @param req    receive or set flags for pagination
      * @param userID user id to receive payment history list
      * @return history of payment list, divided into pages
      * @throws DBException high level message for error page.
      */
     private String getPaginatedPages(HttpServletRequest req, int userID) throws DBException {
+        // chose payments flag set
+        if (req.getSession().getAttribute(ONLY_TOP_UP) == null) {
+            req.getSession().setAttribute(ONLY_TOP_UP, "Off");
+        }
+
+        if ("Off".equals(req.getParameter("sorter"))) {
+            req.getSession().setAttribute(ONLY_TOP_UP, "On");
+        }
+
+        if ("On".equals(req.getParameter("sorter"))) {
+            req.getSession().setAttribute(ONLY_TOP_UP, "Off");
+        }
+
         final String PAGE_SIZE = "pageSize";
         int page;
         if (req.getParameter("page") == null || req.getParameter("page").equals("")) {
@@ -153,9 +168,18 @@ public class UserRequestCommand implements Command {
             pageSize = Integer.parseInt(paramPageSize);
         }
 
-        int size = userPaymentDAO.getUsersPaymentsSize(userID);
 
-        List<UserPayment> userPaymentsList = userPaymentDAO.findGroup(userID, pageSize, pageSize * (page - 1));
+        // switch content flag (all list or only top_up list)
+        int size;
+        List<UserPayment> userPaymentsList;
+
+        if ("On".equals(req.getSession().getAttribute(ONLY_TOP_UP))) {
+            size = userPaymentDAO.getUsersPaymentsTopUpSize(userID);
+            userPaymentsList = userPaymentDAO.findTopUpGroup(userID, pageSize, pageSize * (page - 1));
+        } else {
+            size = userPaymentDAO.getUsersPaymentsSize(userID);
+            userPaymentsList = userPaymentDAO.findGroup(userID, pageSize, pageSize * (page - 1));
+        }
 
         int minPagePossible = Math.max(page, 1);
 

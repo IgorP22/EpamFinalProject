@@ -16,7 +16,7 @@ import java.net.URL;
 public class VerifyRecaptcha {
 
     public static final String URL = "https://www.google.com/recaptcha/api/siteverify";
-    public static final String SECRET = "";
+    public static final String SECRET = "6Leyol4dAAAAAAoxBY1qQmEU7hBGm1Jb7SMRS3Wn";
     private static final String USER_AGENT = "Mozilla/5.0";
     private static final Logger log = LogManager.getLogger(VerifyRecaptcha.class);
 

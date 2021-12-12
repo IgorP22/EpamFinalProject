@@ -70,7 +70,8 @@
             </div>
             <div class="col-md-3">
                 <h5><fmt:message key="user.page.total_cost"/></h5>
-                <h3><javaTag:getTotalCost userID="${currentUser.id}"/> &#8372;</h3><h5><fmt:message key="user.page.period"/></h5>
+                <h3><javaTag:getTotalCost userID="${currentUser.id}"/> &#8372;</h3><h5><fmt:message
+                    key="user.page.period"/></h5>
             </div>
 
             <div class="col-md-1">
@@ -85,7 +86,7 @@
 
             <div class="col-md-1">
 
-                    <%@ include file="logout.jspf" %>
+                <%@ include file="logout.jspf" %>
 
             </div>
         </div>
@@ -98,7 +99,8 @@
         <div class="col-md-5">
             <form action="controller" method="post">
                 <input type="hidden" name="command" class="btn btn-primary" value="userRequest">
-                <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services"><fmt:message key="user.page.choice_of_services"/>
+                <button type="submit" name="userRequest" class="btn btn-primary" value="Choice of services"><fmt:message
+                        key="user.page.choice_of_services"/>
                 </button>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#addOrEditUser">
@@ -115,14 +117,14 @@
 
                 <c:if test="${currentUser.status == 'ACTIVE'}">
                     <c:set var="color" value="color:green"/>
-                    <span style="${color}"><fmt:message key="user.page.status"/> <fmt:message key="add_or_edit_user.active"/></span>
+                    <span style="${color}"><fmt:message key="user.page.status"/> <fmt:message
+                            key="add_or_edit_user.active"/></span>
                 </c:if>
                 <c:if test="${currentUser.status != 'ACTIVE'}">
                     <c:set var="color" value="color:darkred"/>
-                    <span style="${color}"><fmt:message key="user.page.status"/> <fmt:message key="add_or_edit_user.blocked"/></span>
+                    <span style="${color}"><fmt:message key="user.page.status"/> <fmt:message
+                            key="add_or_edit_user.blocked"/></span>
                 </c:if>
-
-
 
 
             </h4>
@@ -147,7 +149,8 @@
                     <div class="col-auto">
                         <input type="hidden" name="command" value="userRequest">
                         <input type="hidden" name="userToEditId" value="${currentUser.id}">
-                        <button type="submit" value="Edit balance" class="btn btn-success" name="userRequest"><fmt:message key="user.page.pay"/>
+                        <button type="submit" value="Edit balance" class="btn btn-success" name="userRequest">
+                            <fmt:message key="user.page.pay"/>
                         </button>
                     </div>
                 </div>
@@ -220,7 +223,7 @@
             </c:choose>
 
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
 
 
             <form action="controller" method="get">
@@ -235,7 +238,6 @@
                        min="1" id="pageSize" placeholder="${pageSize}/page" value="${pageSize}">
 
 
-
                 <input type="hidden" name="page" value="${p}">
                 <input type="hidden" name="pageSize" value="${pageSize}">
                 <input type="hidden" name="command" value="userRequest">
@@ -244,7 +246,35 @@
                 </button>
             </form>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-5">
+            <div class="form-check">
+
+
+                <form action="controller" method="post">
+                    <input type="hidden" name="command" value="userRequest">
+                    <input type="hidden" name="userRequest" value="Payment history">
+                    <c:set var="top_up_flag" value=""/>
+                    <c:set var="all_flag" value=""/>
+                    <c:if test="${OnlyTopUp == 'Off'}">
+                        <c:set var="top_up_flag" value="checked"/>
+                    </c:if>
+                    <c:if test="${OnlyTopUp == 'On'}">
+                        <c:set var="all_flag" value="checked"/>
+                    </c:if>
+
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sorter" id="sorter"
+                                   value="On" onclick="this.form.submit();" ${top_up_flag}><fmt:message key="user.page.all_payments"/>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sorter" id="sorter"
+                                   value="Off" onclick="this.form.submit();" ${all_flag}><fmt:message key="user.page.only_top_up"/>
+                        </div>
+                </form>
+
+            </div>
+
         </div>
 
     </div>
@@ -254,8 +284,8 @@
         <caption hidden>Payment history table</caption>
         <thead>
         <tr class="table-active">
-            <th data-order="-1" class="sorted" id = "field 01"><fmt:message key="user.page.date_and_time"/></th>
-            <th id = "field 02"><fmt:message key="user.page.sum"/></th>
+            <th data-order="-1" class="sorted" id="field 01"><fmt:message key="user.page.date_and_time"/></th>
+            <th id="field 02"><fmt:message key="user.page.sum"/></th>
         </tr>
         </thead>
 
