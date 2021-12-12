@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import static com.podverbnyj.provider.utils.HashPassword.securePassword;
 
+/**
+ *  Creating User record with parameters from request with UserBuilder
+ */
 public class GetUser {
     private GetUser() {
     }

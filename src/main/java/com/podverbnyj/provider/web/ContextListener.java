@@ -22,6 +22,7 @@ public class ContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+        // logger initialization
         ServletContext ctx = sce.getServletContext();
         String path = ctx.getRealPath("/WEB-INF/log4j2.log");
         System.setProperty("logFile", path);
@@ -29,11 +30,11 @@ public class ContextListener implements ServletContextListener {
         final Logger log = LogManager.getLogger(ContextListener.class);
         log.debug("path = {}", path);
 
+        // start debit funds thread
         debitFundsThread(log);
 
 
         // I18n initialization
-
         // obtain file name with locales descriptions
         String localesFileName = ctx.getInitParameter("locales");
 

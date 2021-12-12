@@ -5,8 +5,11 @@ import org.apache.logging.log4j.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+/**
+ * Phone format corrector, not used yet. Plane use it later for restore password by phone part.
+ */
 public class PhoneFormatCorrector {
+
     private PhoneFormatCorrector() {
     }
 
@@ -20,11 +23,8 @@ public class PhoneFormatCorrector {
         while (matcher.find()) {
             digits.append(matcher.group());
         }
-        String result = null;
-        if (digits.length() >=9) {
-            result = "+380" + digits.substring(digits.length()-9);
-        }
+
         log.debug("Phone number changed ({}) ==> ({})",input,input);
-        return result;
+        return digits.toString();
     }
 }

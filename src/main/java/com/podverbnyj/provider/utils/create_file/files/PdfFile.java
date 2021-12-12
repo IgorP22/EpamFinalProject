@@ -15,9 +15,20 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * .pdf file creator
+ */
 public class PdfFile implements File {
     private static final Logger log = LogManager.getLogger(PdfFile.class);
 
+
+    /**
+     * Generate .pdf file
+     *
+     * @param req used to get language of created file
+     * @throws DocumentException to change low level exception to our own exception
+     * @throws IOException in case of file creation error
+     */
     @Override
     public void create(HttpServletRequest req) throws IOException, DocumentException {
 
@@ -73,6 +84,14 @@ public class PdfFile implements File {
         log.info("Price list created: {}price_list.pdf", req.getServletContext().getRealPath("/"));
     }
 
+    /**
+     * Generate table for  file
+     *
+     * @param req used to get lists of services and tariffs
+     * @param language file language
+     * @param unicode set file codding
+     * @param table table object
+     */
     private void createTable(HttpServletRequest req, String language, BaseFont unicode, PdfPTable table) {
         Paragraph paragraph;
         List<Service> serviceList = (List<Service>) req.getSession().getAttribute("ListOfServices");

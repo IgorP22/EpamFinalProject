@@ -6,6 +6,9 @@ import org.apache.logging.log4j.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Secure password class
+ */
 public class HashPassword {
 
     private HashPassword() {
@@ -13,6 +16,13 @@ public class HashPassword {
 
     private static final Logger log = LogManager.getLogger(HashPassword.class);
 
+    /**
+     * Secure password method
+     *
+     * @param input password
+     * @return password conwerted with SHA-256 algorithm
+     * @throws DBException our own exception
+     */
     public static String securePassword(String input) throws DBException {
         MessageDigest digester;
         try {
@@ -20,9 +30,9 @@ public class HashPassword {
             digester.update(input.getBytes());
         } catch (NoSuchAlgorithmException ex) {
             log.debug("Secure password error", ex);
+            // wrong exception name, used to throw our own exception
             throw new DBException("Secure password error");
         }
-
 
         byte[] hash = digester.digest();
 

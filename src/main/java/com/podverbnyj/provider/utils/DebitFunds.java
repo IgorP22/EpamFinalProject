@@ -14,6 +14,10 @@ import java.util.List;
 
 import static com.podverbnyj.provider.utils.EmailSender.emailSender;
 
+/**
+ * Class DebitFunds create list of users whose balance have to be automatically
+ * debited, generate list of payment history, and send email about blocking user.
+ */
 public class DebitFunds {
     private static final Logger log = LogManager.getLogger(DebitFunds.class);
     private static final UserDAO userDAO = UserDAO.getInstance();
@@ -22,24 +26,37 @@ public class DebitFunds {
     private DebitFunds() {
     }
 
+    /**
+     * Debiting funds method
+     *
+     * @throws DBException high level message for log.
+     */
     public static void debitFunds() throws DBException {
         log.info("Debiting funds from users accounts started");
+
         List<User> listOfUsers;
         List<UserPayment> userPaymentList = new ArrayList<>();
 
+        // get list of all users
         listOfUsers = userDAO.findAll();
 
+        // remove admin from list
         listOfUsers.removeIf(user -> ("admin").equals(user.getRole().value()));
+        // remove blocked users from list
         listOfUsers.removeIf(user -> ("blocked").equals(user.getStatus().value()));
 
+
         for (User user : listOfUsers) {
+            // get sum to debit
             double sumToDebit = userTariffDAO.getTotalCost(user.getId()) / 30;
 
+            // block users with insufficient funds
             if (user.getBalance() < sumToDebit) {
                 sendEmail(user);
                 log.info("User {} blocked.", user.getLogin());
                 user.setStatus(Status.BLOCKED);
             } else {
+                // creating list of all payments, which was > 0
                 if (sumToDebit > 0.009) {
                     user.setBalance(user.getBalance() - sumToDebit);
                     UserPayment userPayment = new UserPayment(user.getId(), -sumToDebit);
@@ -47,9 +64,15 @@ public class DebitFunds {
                 }
             }
         }
+        // update data in DB
         userDAO.debitAllUsers(listOfUsers, userPaymentList);
     }
 
+    /**
+     * Send email to user about blocking his account. Reason: insufficient funds.
+     *
+     * @param user user for receiving  language, email and notification setting from DB
+     */
     private static void sendEmail(User user) {
         if (user.isNotification() && (user.getEmail() != null)) {
             String subject;

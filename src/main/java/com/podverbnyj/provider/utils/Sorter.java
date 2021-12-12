@@ -6,6 +6,10 @@ import com.podverbnyj.provider.dao.db.entity.User;
 
 import java.util.*;
 
+/**
+ * Sorting util, all method have title according to sorting type.
+ * Field to sort depends on language from parameters.
+ */
 public class Sorter {
 
     private Sorter() {

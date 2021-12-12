@@ -10,10 +10,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * .txt file creator
+ */
 public class TxtFile implements File {
     private static final Logger log = LogManager.getLogger(TxtFile.class);
     public static final String DEVIDER = " ==> ";
 
+    /**
+     * Generate .txt file
+     *
+     * @param req used to get language, lists of services and tariffs
+     * @throws IOException in case of file creation error
+     */
         @Override
     public void create(HttpServletRequest req) throws IOException {
         List<Service> serviceList = (List<Service>) req.getSession().getAttribute("ListOfServices");
@@ -47,6 +56,13 @@ public class TxtFile implements File {
         log.info("Price list created: {}}price_list.txt", req.getServletContext().getRealPath("/"));
     }
 
+    /**
+     * Header for table generator
+     *
+     * @param language file language
+     * @param file FileWriter to add header table
+     * @throws IOException in case of adding data to file error
+     */
     private void prepareHeader(String language, FileWriter file) throws IOException {
         if (language.equals("ru")) {
             file.write("Прайс-лист" + System.lineSeparator());

@@ -6,9 +6,6 @@ import com.podverbnyj.provider.dao.db.DBException;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
-
-
-
 public class GetCostTag extends TagSupport {
     private static final UserTariffDAO userTariffDAO = UserTariffDAO.getInstance();
     private int userID;
