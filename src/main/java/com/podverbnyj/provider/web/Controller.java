@@ -22,22 +22,27 @@ public class Controller extends HttpServlet {
     private static final Logger log = LogManager.getLogger(Controller.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         String commandName = req.getParameter("command");
         log.trace("command ==> {}", commandName);
         Command command = CommandContainer.getCommand(commandName);
         String address = "error.jsp";
         try {
             address = command.execute(req, resp);
-        } catch (DBException | SQLException ex) {
+        } catch (DBException | SQLException | IOException ex) {
             log.error("Error receiving address ",ex);
             req.setAttribute("ex", ex);
         }
-        req.getRequestDispatcher(address).forward(req, resp);
+        try {
+            req.getRequestDispatcher(address).forward(req, resp);
+        } catch (ServletException | IOException e) {
+            log.error("Main controller doGet forward to {} error ", address);
+
+        }
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         String commandName = req.getParameter("command");
         log.trace("commandName ==> {}", commandName);
 
@@ -46,10 +51,14 @@ public class Controller extends HttpServlet {
         String address = "error.jsp";
         try {
             address = command.execute(req, resp);
-        } catch (DBException | SQLException ex) {
+        } catch (DBException | SQLException | IOException ex) {
             log.error("Error receiving address ",ex);
             req.getSession().setAttribute("ex", ex);
         }
-        resp.sendRedirect(address);
+        try {
+            resp.sendRedirect(address);
+        } catch (IOException e) {
+            log.error("Main controller doPost sendRedirect to {} error ", address);
+        }
     }
 }
