@@ -13,6 +13,9 @@ import com.podverbnyj.provider.logic.command.Command;
 import com.podverbnyj.provider.logic.command.CommandContainer;
 import org.apache.logging.log4j.*;
 
+/**
+ * Main webapp controller
+ */
 @WebServlet("/controller")
 public class Controller extends HttpServlet {
 

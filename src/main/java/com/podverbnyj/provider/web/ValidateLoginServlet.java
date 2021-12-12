@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Validation servlet for checking free login when edit or create user
+ */
+
 @WebServlet(urlPatterns = {"/ValidateLoginServlet",})
 public class ValidateLoginServlet extends HttpServlet {
 
@@ -28,8 +32,6 @@ public class ValidateLoginServlet extends HttpServlet {
         } catch (IOException e) {
             log.error("Can't check existing users for login {}", login);
         }
-
-
 
         try {
             if ((login != null) && (userDAO.getByLogin(login)) != null) {

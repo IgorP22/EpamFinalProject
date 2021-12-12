@@ -14,6 +14,10 @@ import javax.servlet.http.HttpSessionListener;
 import java.util.List;
 import org.apache.logging.log4j.*;
 
+/**
+ * Session listener for generating lists of services, tariffs and users and
+ * set initialization attributes into session at session star.
+ */
 public class MyHttpSessionListener implements HttpSessionListener {
     private static final Logger log = LogManager.getLogger(MyHttpSessionListener.class);
 

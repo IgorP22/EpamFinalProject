@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import org.apache.logging.log4j.*;
 
+/**
+ * Servlet filter to catch and check restore link for password recover
+ */
 @WebFilter(urlPatterns = {"/index.jsp"})
 public class PasswordRecoveryFilter implements Filter {
 

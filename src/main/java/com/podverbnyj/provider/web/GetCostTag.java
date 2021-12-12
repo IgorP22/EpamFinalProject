@@ -6,6 +6,9 @@ import com.podverbnyj.provider.dao.db.DBException;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
+/**
+ * My own java tag to receive cost of all connected tariffs for specified user
+ */
 public class GetCostTag extends TagSupport {
     private static final UserTariffDAO userTariffDAO = UserTariffDAO.getInstance();
     private int userID;

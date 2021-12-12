@@ -3,6 +3,9 @@ package com.podverbnyj.provider.web;
 import javax.servlet.*;
 import java.io.IOException;
 
+/**
+ * Filter add UTF-8 encoding for all requests adn responses.
+ */
 public class CharsetFilter implements Filter {
 
     private String encoding;

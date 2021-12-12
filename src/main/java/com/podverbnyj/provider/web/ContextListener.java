@@ -17,6 +17,9 @@ import java.util.Properties;
 
 import static com.podverbnyj.provider.utils.DebitFunds.debitFunds;
 
+/**
+ * Listener to initialize webapp context
+ */
 @WebListener
 public class ContextListener implements ServletContextListener {
 
@@ -53,6 +56,11 @@ public class ContextListener implements ServletContextListener {
         log.debug("locales ==> {}", locales);
     }
 
+    /**
+     * Start thread to debit funds from users accounts at  00.00 every day
+     *
+     * @param log log4j logger
+     */
     private void debitFundsThread(Logger log) {
         Thread t1 = new Thread(() -> {
             while (true) {
