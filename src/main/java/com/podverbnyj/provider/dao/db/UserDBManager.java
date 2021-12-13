@@ -62,6 +62,31 @@ public class UserDBManager {
     }
 
     /**
+     * Create list of all users from DB
+     * @param con connection received from DAO level
+     * @return List of all users from DB
+     * @throws SQLException in case of errors in data exchange with the database
+     */
+    public List<User> findAllNotificatedUsers(Connection con) throws SQLException {
+        List<User> users = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        User user;
+        try {
+            ps = con.prepareStatement(FIND_ALL_NOTIFICATED_USERS);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                user = getUser(rs);
+                users.add(user);
+            }
+            return users;
+        } finally {
+            close(rs);
+            close(ps);
+        }
+    }
+
+    /**
      * Create new user entity in DB
      * @param con connection received from DAO level
      * @param user ew database entity data

@@ -100,6 +100,9 @@
             <fmt:message key="admin.users.add_new_user"/>
         </button>
 
+        <button type="submit" name="adminRequest" class="btn btn-success" value="Email to all user">Почта></button>
+
+
 
     </form>
     <hr>

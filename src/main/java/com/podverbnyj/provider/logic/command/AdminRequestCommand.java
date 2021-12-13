@@ -3,10 +3,13 @@ package com.podverbnyj.provider.logic.command;
 import com.podverbnyj.provider.dao.ServiceDAO;
 import com.podverbnyj.provider.dao.TariffDAO;
 import com.podverbnyj.provider.dao.UserDAO;
+import com.podverbnyj.provider.dao.UserTariffDAO;
 import com.podverbnyj.provider.dao.db.DBException;
+import com.podverbnyj.provider.dao.db.UserDBManager;
 import com.podverbnyj.provider.dao.db.entity.Service;
 import com.podverbnyj.provider.dao.db.entity.Tariff;
 import com.podverbnyj.provider.dao.db.entity.User;
+import com.podverbnyj.provider.dao.db.entity.UserTariff;
 import com.podverbnyj.provider.dao.db.entity.constant.Language;
 import com.podverbnyj.provider.dao.db.entity.constant.Role;
 import com.podverbnyj.provider.dao.db.entity.constant.Status;
@@ -31,6 +34,7 @@ public class AdminRequestCommand implements Command {
     private static final UserDAO userDAO = UserDAO.getInstance();
     private static final ServiceDAO serviceDAO = ServiceDAO.getInstance();
     private static final TariffDAO tariffDAO = TariffDAO.getInstance();
+    private static final UserTariffDAO userTariffDAO = UserTariffDAO.getInstance();
     public static final String USER_TO_EDIT_ID = "userToEditId";
     public static final String ADMIN_USERS_JSP_SUCCESS = "admin_users.jsp#success";
     public static final String REFERER = "referer";
@@ -150,6 +154,13 @@ public class AdminRequestCommand implements Command {
         String blockUser = "Block user";
         String unblockUser = "Unblock user";
         String deleteUser = "Delete user";
+        String sendEmailToAllUsers = "Email to all user";
+
+        if (sendEmailToAllUsers.equals(adminRequest)) {
+            List<User> listOfNotificatedUsers = userDAO.findAllNotificatedUsers();
+            sendEmailAboutAction(listOfNotificatedUsers);
+            return ADMIN_USERS_JSP_SUCCESS;
+        }
 
         // blocking user
         if (blockUser.equals(adminRequest)) {
@@ -193,6 +204,58 @@ public class AdminRequestCommand implements Command {
         // return null if case of some other requests
         return null;
     }
+
+
+    /**
+     * Send email to user about blocking his account
+     *
+     * @param listOfNotificatedUsers user list for receiving  language, email and notification setting from DB
+     * @throws DBException high level message for error page.
+     */
+    private static void sendEmailAboutAction(List<User> listOfNotificatedUsers) throws DBException {
+        for (User user: listOfNotificatedUsers) {
+            String subject;
+            String body;
+            List<UserTariff> userTariffList;
+            userTariffList = userTariffDAO.findAll(user.getId());
+
+            StringBuilder tariffList = new StringBuilder();
+
+            if (user.getLanguage() == Language.RU) {
+                for (UserTariff userTariff:userTariffList) {
+                    userTariff.getTariffId();
+                    tariffList.append(tariffDAO.getById(userTariff.getTariffId()).getNameRu())
+                            .append(":  Старая цена -  ")
+                            .append(tariffDAO.getById(userTariff.getTariffId()).getPrice())
+                            .append("  Новая цена: ")
+                            .append((tariffDAO.getById(userTariff.getTariffId()).getPrice())/2)
+                            .append(System.lineSeparator());
+                }
+                subject = "Aкция!!! -50% на ваши тарифы co следующего месяца";
+                body = "Уважаемый пользователь, " + user.getLogin() + "." + System.lineSeparator() +
+                        "Стоимость снижена " + System.lineSeparator() +
+                        tariffList;
+            } else {
+                for (UserTariff userTariff:userTariffList) {
+                    userTariff.getTariffId();
+                    tariffList.append(tariffDAO.getById(userTariff.getTariffId()).getNameEn())
+                            .append(":  Old price -  ")
+                            .append(tariffDAO.getById(userTariff.getTariffId()).getPrice())
+                            .append("  New price: ")
+                            .append((tariffDAO.getById(userTariff.getTariffId()).getPrice())/2)
+                            .append(System.lineSeparator());
+                }
+                subject = "Promotion!!! -50% on your tariffs of the next month";
+                body = "Dear user, " + user.getLogin() + "." + System.lineSeparator() +
+                        "Cost reduced " + System.lineSeparator() +
+                        tariffList;
+            }
+            emailSender(user.getEmail(), subject, body, null);
+            log.info("Email about blocking account sent to user{}. Reason: blocked by admin.", user.getLogin());
+        }
+    }
+
+
 
     /**
      * Send email to user about blocking his account
