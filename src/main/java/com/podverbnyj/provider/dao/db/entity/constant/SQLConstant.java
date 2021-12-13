@@ -16,6 +16,10 @@ public class SQLConstant {
         }
 
         public static final String FIND_ALL_USERS = "SELECT * FROM user";
+        public static final String FIND_ALL_NOTIFICATED_USERS = "SELECT * FROM user WHERE "+
+                "role='USER' AND notification='1'";
+
+
         public static final String GET_USER_BY_ID = "SELECT * FROM user WHERE user_id=?";
         public static final String GET_USER_BY_LOGIN = "SELECT * FROM user WHERE login=?";
         public static final String CREATE_USER = "INSERT INTO user (login, password, email,"

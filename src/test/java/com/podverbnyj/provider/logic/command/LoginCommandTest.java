@@ -136,7 +136,7 @@ public class LoginCommandTest {
 
 
 
-        assertEquals("index.jsp#userNotExist", new LoginCommand().execute(req, resp));
+        assertEquals("index.jsp#wrongCaptcha", new LoginCommand().execute(req, resp));
 
     }
 }

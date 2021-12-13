@@ -58,6 +58,18 @@ public class UserDAO implements AbstractDAO<User> {
         }
     }
 
+    public List<User> findAllNotificatedUsers() throws DBException {
+        Connection con = dbUtils.getConnection();
+        try {
+            return userDBManager.findAllNotificatedUsers(con);
+        } catch (SQLException ex) {
+            log.error("Can't receive list of users from DB", ex);
+            throw new DBException("Can't receive list of users from DB");
+        } finally {
+            userDBManager.close(con);
+        }
+    }
+
     @Override
     public boolean create(User user) throws DBException {
         Connection con = dbUtils.getConnection();
