@@ -58,6 +58,7 @@ public class UserRequestCommand implements Command {
             // redirecting to start page if no 'currentUser' in session
             return "index.jsp";
         }
+
         req.getSession().setAttribute(USER_FLAG, null);
         User currentUser = ((User) (req.getSession().getAttribute(CURRENT_USER)));
         currentUser = userDAO.getById(currentUser.getId());
