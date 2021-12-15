@@ -448,28 +448,28 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <div class="row">
-
                             <div class="form-group col-md-6">
-                                <label for="userNewPassword" class="col-form-label"><fmt:message
+                                <label for="userPassword" class="sr-only"><fmt:message
                                         key="index_jsp.password"/></label>
-                                <input type="password" name="userNewPassword" class="form-control" id="userNewPassword"
+                                <input type="password" name="userPassword" class="form-control" id="userPassword"
 
                                        onkeyup='passwordValidation();'
+
                                        minlength="5" maxlength="150" placeholder="<fmt:message
-                                        key="index_jsp.any_symbols"/>" required>
+                                key="index_jsp.any_symbols"/>" required>
                                 <span style="font-size: smaller" id='message'></span>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="confirmPassword" class="col-form-label"><fmt:message
+                                <label for="confirmPassword" class="sr-only"><fmt:message
                                         key="index_jsp.repeat_password"/></label>
                                 <input type="password" name="confirmPassword" class="form-control"
-                                       id="confirmPassword" onkeyup='passwordValidation();'
+                                       id="confirmPassword" data-match="#userPassword"
+                                       onkeyup='passwordValidation();'
 
                                        minlength="5" maxlength="30" placeholder="<fmt:message
-                                        key="index_jsp.any_symbols"/>">
+                                key="index_jsp.any_symbols"/>" required>
                             </div>
-
                         </div>
 
                     </div>
