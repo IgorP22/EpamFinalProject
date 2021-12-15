@@ -5,7 +5,6 @@ import com.podverbnyj.provider.dao.TariffDAO;
 import com.podverbnyj.provider.dao.UserDAO;
 import com.podverbnyj.provider.dao.UserTariffDAO;
 import com.podverbnyj.provider.dao.db.DBException;
-import com.podverbnyj.provider.dao.db.UserDBManager;
 import com.podverbnyj.provider.dao.db.entity.Service;
 import com.podverbnyj.provider.dao.db.entity.Tariff;
 import com.podverbnyj.provider.dao.db.entity.User;
@@ -223,7 +222,6 @@ public class AdminRequestCommand implements Command {
 
             if (user.getLanguage() == Language.RU) {
                 for (UserTariff userTariff:userTariffList) {
-                    userTariff.getTariffId();
                     tariffList.append(tariffDAO.getById(userTariff.getTariffId()).getNameRu())
                             .append(":  Старая цена -  ")
                             .append(tariffDAO.getById(userTariff.getTariffId()).getPrice())
@@ -237,7 +235,7 @@ public class AdminRequestCommand implements Command {
                         tariffList;
             } else {
                 for (UserTariff userTariff:userTariffList) {
-                    userTariff.getTariffId();
+
                     tariffList.append(tariffDAO.getById(userTariff.getTariffId()).getNameEn())
                             .append(":  Old price -  ")
                             .append(tariffDAO.getById(userTariff.getTariffId()).getPrice())
@@ -352,6 +350,13 @@ public class AdminRequestCommand implements Command {
         if (req.getParameter(CONFIRMATION).equals("true")) {
             idToDelete = Integer.parseInt((String) req.getSession().getAttribute(USER_ID_TO_DELETE));
             userDAO.delete(userDAO.getById(idToDelete));
+            User currentUser = (User) req.getSession().getAttribute("currentUser");
+            if (currentUser.getId() == idToDelete) {
+                req.getSession().invalidate();
+                log.info("Current user account deleted. Session invalidated");
+                return "index.jsp";
+            }
+
             getUsersList(req);
             req.setAttribute(CONFIRMATION, null);
             return ADMIN_USERS_JSP_SUCCESS;
