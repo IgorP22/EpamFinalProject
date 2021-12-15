@@ -60,6 +60,8 @@ public class UserRequestCommand implements Command {
         }
         req.getSession().setAttribute(USER_FLAG, null);
         User currentUser = ((User) (req.getSession().getAttribute(CURRENT_USER)));
+        currentUser = userDAO.getById(currentUser.getId());
+        req.getSession().setAttribute(CURRENT_USER, currentUser);
         int userID = currentUser.getId();
 
         // if 'userRequest' parameters equal 'Edit balance'
