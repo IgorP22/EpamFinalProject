@@ -201,12 +201,12 @@
                     <c:if test="${currentUser.role == 'USER'}">
                         <c:if test="${currentUser.status == 'BLOCKED'}">
                             <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                    value="Unblock user"><fmt:message key="admin.users.block_user"/>
+                                    value="Unblock user"><fmt:message key="admin.users.unblock_user"/>
                             </button>
                         </c:if>
                         <c:if test="${currentUser.status == 'ACTIVE'}">
                             <button type="submit" name="adminRequest" class="btn btn-danger btn-sm"
-                                    value="Block user"><fmt:message key="admin.users.unblock_user"/>
+                                    value="Block user"><fmt:message key="admin.users.block_user"/>
                             </button>
                         </c:if>
                     </c:if>
